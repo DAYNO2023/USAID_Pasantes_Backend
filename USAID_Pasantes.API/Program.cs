@@ -20,7 +20,13 @@ namespace USAID_Pasantes.API
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.ConfigureKestrel(serverOptions =>
+                    {
+                        // Establece el timeout en 2 minutos para el servidor
+                        serverOptions.Limits.KeepAliveTimeout = TimeSpan.FromMinutes(2);
+                        serverOptions.Limits.RequestHeadersTimeout = TimeSpan.FromMinutes(2);
+                    })
+                    .UseStartup<Startup>();
                 });
     }
 }

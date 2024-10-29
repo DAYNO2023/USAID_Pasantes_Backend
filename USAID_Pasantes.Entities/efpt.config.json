@@ -1,0 +1,233 @@
+﻿{
+   "CodeGenerationMode": 0,
+   "ContextClassName": "DB_UsaidpasantesContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": "Entities",
+   "OutputContextPath": null,
+   "OutputPath": "Entities",
+   "ProjectRootNamespace": "USAID_Pasantes.Entities",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 2,
+   "Tables": [
+      {
+         "Name": "[Accs].[tbModulos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Accs].[tbModulosPorRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Accs].[tbRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Accs].[tbUsuarios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Comm].[tbDiscusiones]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Comm].[tbDocumentosImagenesPorDiscusion]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Comm].[tbForos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Comm].[tbForosPorActividad]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Comm].[tbForosPorEmpleados]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Comm].[tbNotificaciones]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Comm].[tbNotificacionesPorUsuario]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Comm].[tbPreguntasFrecuentes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Comm].[tbTokens]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbActividades]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbActividadesPorOptante]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbBeneficios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbBeneficiosPorOptante]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbComponentes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbComponentesPorRegionalPorEmpleado]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbCuestionarios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbDocumentos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbDocumentosOptantes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbEmpleadosPorActividad]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbEmpresas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbHojaTiempo]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbHojaTiempoPorOptante]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbHojaTiempoPorOptanteBitacora]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbOpcionesPorPregunta]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbOptantes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbOptantesBitacora]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbPreguntasPorCuestionario]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbProyectos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbRecibos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbRecibosPorOptante]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gest].[tbRespuestasPorOptante]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbBancos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbCarreraPorFacultadPorRegional]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbCarreras]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbDepartamentos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbEmpleados]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbEstadosCiviles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbFacultades]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbFacultadPorRegional]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbMunicipios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbPuestos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbRegionalCorporativa]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbRegionales]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbTipoDocumento]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbTipoSangre]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbUniversidades]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "vb600.DB_USAIDPasantes",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}
