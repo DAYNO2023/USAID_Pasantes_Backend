@@ -6,28 +6,28 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbRegionales
+    public partial class tbRegionales
     {
-        public TbRegionales()
+        public tbRegionales()
         {
-            TbFacultadPorRegional = new HashSet<TbFacultadPorRegional>();
+            tbFacultadPorRegional = new HashSet<tbFacultadPorRegional>();
         }
 
-        public int RegiId { get; set; }
-        public int UnivId { get; set; }
-        public string MuniId { get; set; }
-        public string RegiDescripcionRegional { get; set; }
-        public string RegiAbreviatura { get; set; }
-        public int? RegiUsuarioCreacion { get; set; }
-        public DateTime? RegiFechaCreacion { get; set; }
-        public int? RegiUsuarioModificacion { get; set; }
-        public DateTime? RegiFechaModificacion { get; set; }
-        public bool? RegiEstado { get; set; }
+        public int regi_Id { get; set; }
+        public int univ_Id { get; set; }
+        public string muni_Id { get; set; }
+        public string regi_DescripcionRegional { get; set; }
+        public string regi_Abreviatura { get; set; }
+        public int? regi_UsuarioCreacion { get; set; }
+        public DateTime? regi_FechaCreacion { get; set; }
+        public int? regi_UsuarioModificacion { get; set; }
+        public DateTime? regi_FechaModificacion { get; set; }
+        public bool? regi_Estado { get; set; }
 
-        public virtual TbMunicipios Muni { get; set; }
-        public virtual TbUsuarios RegiUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios RegiUsuarioModificacionNavigation { get; set; }
-        public virtual TbUniversidades Univ { get; set; }
-        public virtual ICollection<TbFacultadPorRegional> TbFacultadPorRegional { get; set; }
+        public virtual tbMunicipios muni { get; set; }
+        public virtual tbUsuarios regi_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios regi_UsuarioModificacionNavigation { get; set; }
+        public virtual tbUniversidades univ { get; set; }
+        public virtual ICollection<tbFacultadPorRegional> tbFacultadPorRegional { get; set; }
     }
 }

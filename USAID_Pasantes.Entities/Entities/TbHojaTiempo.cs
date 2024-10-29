@@ -6,28 +6,28 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbHojaTiempo
+    public partial class tbHojaTiempo
     {
-        public TbHojaTiempo()
+        public tbHojaTiempo()
         {
-            TbHojaTiempoPorOptante = new HashSet<TbHojaTiempoPorOptante>();
+            tbHojaTiempoPorOptante = new HashSet<tbHojaTiempoPorOptante>();
         }
 
-        public int HotiId { get; set; }
-        public int CompId { get; set; }
-        public DateTime HotiPeriodoInicio { get; set; }
-        public DateTime? HotiPeriodoFinal { get; set; }
-        public DateTime HotiFechaHoraEntregaLimite { get; set; }
-        public int? HotiUsuarioCreacion { get; set; }
-        public DateTime? HotiFechaCreacion { get; set; }
-        public int? HotiUsuarioModificacion { get; set; }
-        public DateTime? HotiFechaModificacion { get; set; }
-        public bool? HotiEstado { get; set; }
-        public TimeSpan? HotiHorasMinimas { get; set; }
+        public int hoti_Id { get; set; }
+        public int comp_Id { get; set; }
+        public DateTime hoti_PeriodoInicio { get; set; }
+        public DateTime? hoti_PeriodoFinal { get; set; }
+        public DateTime hoti_FechaHoraEntregaLimite { get; set; }
+        public int? hoti_UsuarioCreacion { get; set; }
+        public DateTime? hoti_FechaCreacion { get; set; }
+        public int? hoti_UsuarioModificacion { get; set; }
+        public DateTime? hoti_FechaModificacion { get; set; }
+        public bool? hoti_Estado { get; set; }
+        public TimeSpan? hoti_HorasMinimas { get; set; }
 
-        public virtual TbComponentes Comp { get; set; }
-        public virtual TbUsuarios HotiUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios HotiUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbHojaTiempoPorOptante> TbHojaTiempoPorOptante { get; set; }
+        public virtual tbComponentes comp { get; set; }
+        public virtual tbUsuarios hoti_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios hoti_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbHojaTiempoPorOptante> tbHojaTiempoPorOptante { get; set; }
     }
 }

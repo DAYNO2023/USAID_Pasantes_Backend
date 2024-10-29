@@ -6,21 +6,21 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbForosPorEmpleados
+    public partial class tbForosPorEmpleados
     {
-        public int FoemId { get; set; }
-        public int ForoId { get; set; }
-        public string FoemDescripcion { get; set; }
-        public bool FoemForoProgramado { get; set; }
-        public DateTime? FoemFechaHoraProgramado { get; set; }
-        public int? FoemUsuarioCreacion { get; set; }
-        public DateTime? FoemFechaCreacion { get; set; }
-        public int? FoemUsuarioModificacion { get; set; }
-        public DateTime? FoemFechaModificacion { get; set; }
-        public bool? FoemEstado { get; set; }
+        public int foem_Id { get; set; }
+        public int foro_Id { get; set; }
+        public string foem_Descripcion { get; set; }
+        public bool foem_ForoProgramado { get; set; }
+        public DateTime? foem_FechaHoraProgramado { get; set; }
+        public int? foem_UsuarioCreacion { get; set; }
+        public DateTime? foem_FechaCreacion { get; set; }
+        public int? foem_UsuarioModificacion { get; set; }
+        public DateTime? foem_FechaModificacion { get; set; }
+        public bool? foem_Estado { get; set; }
 
-        public virtual TbUsuarios FoemUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios FoemUsuarioModificacionNavigation { get; set; }
-        public virtual TbForos Foro { get; set; }
+        public virtual tbUsuarios foem_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios foem_UsuarioModificacionNavigation { get; set; }
+        public virtual tbForos foro { get; set; }
     }
 }

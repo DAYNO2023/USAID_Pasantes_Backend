@@ -6,25 +6,25 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbBeneficios
+    public partial class tbBeneficios
     {
-        public TbBeneficios()
+        public tbBeneficios()
         {
-            TbBeneficiosPorOptante = new HashSet<TbBeneficiosPorOptante>();
+            tbBeneficiosPorOptante = new HashSet<tbBeneficiosPorOptante>();
         }
 
-        public int BeneId { get; set; }
-        public string BeneNombreBeneficio { get; set; }
-        public string BeneDescripcionBeneficio { get; set; }
-        public decimal BeneCantidad { get; set; }
-        public int? BeneUsuarioCreacion { get; set; }
-        public DateTime? BeneFechaCreacion { get; set; }
-        public int? BeneUsuarioModificacion { get; set; }
-        public DateTime? BeneFechaModificacion { get; set; }
-        public bool? BeneEstado { get; set; }
+        public int bene_Id { get; set; }
+        public string bene_NombreBeneficio { get; set; }
+        public string bene_DescripcionBeneficio { get; set; }
+        public decimal bene_Cantidad { get; set; }
+        public int? bene_UsuarioCreacion { get; set; }
+        public DateTime? bene_FechaCreacion { get; set; }
+        public int? bene_UsuarioModificacion { get; set; }
+        public DateTime? bene_FechaModificacion { get; set; }
+        public bool? bene_Estado { get; set; }
 
-        public virtual TbUsuarios BeneUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios BeneUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbBeneficiosPorOptante> TbBeneficiosPorOptante { get; set; }
+        public virtual tbUsuarios bene_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios bene_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbBeneficiosPorOptante> tbBeneficiosPorOptante { get; set; }
     }
 }

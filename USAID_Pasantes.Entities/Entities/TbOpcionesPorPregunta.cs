@@ -6,19 +6,19 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbOpcionesPorPregunta
+    public partial class tbOpcionesPorPregunta
     {
-        public TbOpcionesPorPregunta()
+        public tbOpcionesPorPregunta()
         {
-            TbRespuestasPorOptante = new HashSet<TbRespuestasPorOptante>();
+            tbRespuestasPorOptante = new HashSet<tbRespuestasPorOptante>();
         }
 
-        public int OpprId { get; set; }
-        public int PrcuId { get; set; }
-        public string OpprNombreOpcion { get; set; }
-        public bool OpprEsRespuesta { get; set; }
+        public int oppr_Id { get; set; }
+        public int prcu_Id { get; set; }
+        public string oppr_NombreOpcion { get; set; }
+        public bool oppr_EsRespuesta { get; set; }
 
-        public virtual TbPreguntasPorCuestionario Prcu { get; set; }
-        public virtual ICollection<TbRespuestasPorOptante> TbRespuestasPorOptante { get; set; }
+        public virtual tbPreguntasPorCuestionario prcu { get; set; }
+        public virtual ICollection<tbRespuestasPorOptante> tbRespuestasPorOptante { get; set; }
     }
 }

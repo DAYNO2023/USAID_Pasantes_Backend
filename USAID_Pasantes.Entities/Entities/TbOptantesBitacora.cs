@@ -6,39 +6,39 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbOptantesBitacora
+    public partial class tbOptantesBitacora
     {
-        public string OptaAccion { get; set; }
-        public int? OptaId { get; set; }
-        public string OptaImagen { get; set; }
-        public string OptaDni { get; set; }
-        public string OptaPrimerNombre { get; set; }
-        public string OptaSegundoNombre { get; set; }
-        public string OptaPrimerApellido { get; set; }
-        public string OptaSegundoApellido { get; set; }
-        public string OptaSexo { get; set; }
-        public string OptaDireccion { get; set; }
-        public string OptaCorreoElectronico { get; set; }
-        public string OptaTelefono1 { get; set; }
-        public string OptaTelefono2 { get; set; }
-        public DateTime? OptaFechaInicio { get; set; }
-        public DateTime? OptaFechaFin { get; set; }
-        public string OptaObservacion { get; set; }
-        public int? CompId { get; set; }
-        public int? CiviId { get; set; }
-        public int? TisaId { get; set; }
-        public string MuniId { get; set; }
-        public int? CafrId { get; set; }
-        public int? BancId { get; set; }
-        public bool? OptaTipoPago { get; set; }
-        public string OptaCuentaBancaria { get; set; }
-        public bool? OptaOptanteAceptado { get; set; }
-        public int? OptaUsuarioCreacion { get; set; }
-        public DateTime? OptaFechaCreacion { get; set; }
-        public int? OptaUsuarioModificacion { get; set; }
-        public DateTime? OptaFechamodificacion { get; set; }
-        public int? OptaUsuarioEliminado { get; set; }
-        public DateTime? OptaFechaEliminado { get; set; }
-        public bool? OptaEstado { get; set; }
+        public string opta_Accion { get; set; }
+        public int? opta_Id { get; set; }
+        public string opta_Imagen { get; set; }
+        public string opta_DNI { get; set; }
+        public string opta_PrimerNombre { get; set; }
+        public string opta_SegundoNombre { get; set; }
+        public string opta_PrimerApellido { get; set; }
+        public string opta_SegundoApellido { get; set; }
+        public string opta_Sexo { get; set; }
+        public string opta_Direccion { get; set; }
+        public string opta_CorreoElectronico { get; set; }
+        public string opta_Telefono1 { get; set; }
+        public string opta_Telefono2 { get; set; }
+        public DateTime? opta_FechaInicio { get; set; }
+        public DateTime? opta_FechaFin { get; set; }
+        public string opta_Observacion { get; set; }
+        public int? comp_Id { get; set; }
+        public int? civi_Id { get; set; }
+        public int? tisa_Id { get; set; }
+        public string muni_Id { get; set; }
+        public int? cafr_Id { get; set; }
+        public int? banc_Id { get; set; }
+        public bool? opta_TipoPago { get; set; }
+        public string opta_CuentaBancaria { get; set; }
+        public bool? opta_OptanteAceptado { get; set; }
+        public int? opta_UsuarioCreacion { get; set; }
+        public DateTime? opta_FechaCreacion { get; set; }
+        public int? opta_UsuarioModificacion { get; set; }
+        public DateTime? opta_Fechamodificacion { get; set; }
+        public int? opta_UsuarioEliminado { get; set; }
+        public DateTime? opta_FechaEliminado { get; set; }
+        public bool? opta_Estado { get; set; }
     }
 }

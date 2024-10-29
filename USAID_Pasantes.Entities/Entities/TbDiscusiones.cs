@@ -6,28 +6,28 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbDiscusiones
+    public partial class tbDiscusiones
     {
-        public TbDiscusiones()
+        public tbDiscusiones()
         {
-            TbDocumentosImagenesPorDiscusion = new HashSet<TbDocumentosImagenesPorDiscusion>();
+            tbDocumentosImagenesPorDiscusion = new HashSet<tbDocumentosImagenesPorDiscusion>();
         }
 
-        public int DiscId { get; set; }
-        public int FafeId { get; set; }
-        public int OpemId { get; set; }
-        public bool? DiscEsOptante { get; set; }
-        public string DiscAsunto { get; set; }
-        public string DiscMensaje { get; set; }
-        public decimal? DiscHoras { get; set; }
-        public int? DiscUsuarioCreacion { get; set; }
-        public DateTime? DiscFechaCreacion { get; set; }
-        public int? DiscUsuarioModificacion { get; set; }
-        public DateTime? DiscFechaModificacion { get; set; }
-        public bool? DiscEstado { get; set; }
+        public int disc_Id { get; set; }
+        public int fafe_Id { get; set; }
+        public int opem_Id { get; set; }
+        public bool? disc_EsOptante { get; set; }
+        public string disc_Asunto { get; set; }
+        public string disc_Mensaje { get; set; }
+        public decimal? disc_Horas { get; set; }
+        public int? disc_UsuarioCreacion { get; set; }
+        public DateTime? disc_FechaCreacion { get; set; }
+        public int? disc_UsuarioModificacion { get; set; }
+        public DateTime? disc_FechaModificacion { get; set; }
+        public bool? disc_Estado { get; set; }
 
-        public virtual TbUsuarios DiscUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios DiscUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbDocumentosImagenesPorDiscusion> TbDocumentosImagenesPorDiscusion { get; set; }
+        public virtual tbUsuarios disc_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios disc_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbDocumentosImagenesPorDiscusion> tbDocumentosImagenesPorDiscusion { get; set; }
     }
 }

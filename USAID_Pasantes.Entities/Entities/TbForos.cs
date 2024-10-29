@@ -6,27 +6,27 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbForos
+    public partial class tbForos
     {
-        public TbForos()
+        public tbForos()
         {
-            TbForosPorActividad = new HashSet<TbForosPorActividad>();
-            TbForosPorEmpleados = new HashSet<TbForosPorEmpleados>();
+            tbForosPorActividad = new HashSet<tbForosPorActividad>();
+            tbForosPorEmpleados = new HashSet<tbForosPorEmpleados>();
         }
 
-        public int ForoId { get; set; }
-        public string ForoTitulo { get; set; }
-        public bool ForoEsNacional { get; set; }
-        public bool ForoEsParaEmpleados { get; set; }
-        public int? ForoUsuarioCreacion { get; set; }
-        public DateTime? ForoFechaCreacion { get; set; }
-        public int? ForoUsuarioModificacion { get; set; }
-        public DateTime? ForoFechaModificacion { get; set; }
-        public bool? ForoEstado { get; set; }
+        public int foro_Id { get; set; }
+        public string foro_Titulo { get; set; }
+        public bool foro_EsNacional { get; set; }
+        public bool foro_EsParaEmpleados { get; set; }
+        public int? foro_UsuarioCreacion { get; set; }
+        public DateTime? foro_FechaCreacion { get; set; }
+        public int? foro_UsuarioModificacion { get; set; }
+        public DateTime? foro_FechaModificacion { get; set; }
+        public bool? foro_Estado { get; set; }
 
-        public virtual TbUsuarios ForoUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios ForoUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbForosPorActividad> TbForosPorActividad { get; set; }
-        public virtual ICollection<TbForosPorEmpleados> TbForosPorEmpleados { get; set; }
+        public virtual tbUsuarios foro_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios foro_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbForosPorActividad> tbForosPorActividad { get; set; }
+        public virtual ICollection<tbForosPorEmpleados> tbForosPorEmpleados { get; set; }
     }
 }

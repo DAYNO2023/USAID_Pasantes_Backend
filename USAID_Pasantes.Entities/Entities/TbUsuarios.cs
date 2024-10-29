@@ -6,174 +6,174 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbUsuarios
+    public partial class tbUsuarios
     {
-        public TbUsuarios()
+        public tbUsuarios()
         {
-            InverseUsuaUsuarioCreacionNavigation = new HashSet<TbUsuarios>();
-            InverseUsuaUsuarioModificacionNavigation = new HashSet<TbUsuarios>();
-            TbActividadesActiUsuarioCreacionNavigation = new HashSet<TbActividades>();
-            TbActividadesActiUsuarioModificacionNavigation = new HashSet<TbActividades>();
-            TbActividadesPorOptanteAcpeUsuarioCreacionNavigation = new HashSet<TbActividadesPorOptante>();
-            TbActividadesPorOptanteAcpeUsuarioModificacionNavigation = new HashSet<TbActividadesPorOptante>();
-            TbBancosBancUsuarioCreacionNavigation = new HashSet<TbBancos>();
-            TbBancosBancUsuarioModificacionNavigation = new HashSet<TbBancos>();
-            TbBeneficiosBeneUsuarioCreacionNavigation = new HashSet<TbBeneficios>();
-            TbBeneficiosBeneUsuarioModificacionNavigation = new HashSet<TbBeneficios>();
-            TbCarrerasCarrUsuarioCreacionNavigation = new HashSet<TbCarreras>();
-            TbCarrerasCarrUsuarioModificacionNavigation = new HashSet<TbCarreras>();
-            TbComponentesCompUsuarioCreacionNavigation = new HashSet<TbComponentes>();
-            TbComponentesCompUsuarioModificacionNavigation = new HashSet<TbComponentes>();
-            TbCuestionariosCuesUsuarioCreacionNavigation = new HashSet<TbCuestionarios>();
-            TbCuestionariosCuesUsuarioModificacionNavigation = new HashSet<TbCuestionarios>();
-            TbDepartamentosDepaUsuarioCreacionNavigation = new HashSet<TbDepartamentos>();
-            TbDepartamentosDepaUsuarioModificacionNavigation = new HashSet<TbDepartamentos>();
-            TbDiscusionesDiscUsuarioCreacionNavigation = new HashSet<TbDiscusiones>();
-            TbDiscusionesDiscUsuarioModificacionNavigation = new HashSet<TbDiscusiones>();
-            TbDocumentosDocuUsuarioCreacionNavigation = new HashSet<TbDocumentos>();
-            TbDocumentosDocuUsuarioModificacionNavigation = new HashSet<TbDocumentos>();
-            TbDocumentosOptantesDoopUsuarioCreacionNavigation = new HashSet<TbDocumentosOptantes>();
-            TbDocumentosOptantesDoopUsuarioModificacionNavigation = new HashSet<TbDocumentosOptantes>();
-            TbEmpleadosEmplUsuarioCreacionNavigation = new HashSet<TbEmpleados>();
-            TbEmpleadosEmplUsuarioModificacionNavigation = new HashSet<TbEmpleados>();
-            TbEmpresasEmprUsuarioCreacionNavigation = new HashSet<TbEmpresas>();
-            TbEmpresasEmprUsuarioModificacionNavigation = new HashSet<TbEmpresas>();
-            TbEstadosCivilesCiviUsuarioCreacionNavigation = new HashSet<TbEstadosCiviles>();
-            TbEstadosCivilesCiviUsuarioModificacionNavigation = new HashSet<TbEstadosCiviles>();
-            TbFacultadesFacuUsuarioCreacionNavigation = new HashSet<TbFacultades>();
-            TbFacultadesFacuUsuarioModificacionNavigation = new HashSet<TbFacultades>();
-            TbForosForoUsuarioCreacionNavigation = new HashSet<TbForos>();
-            TbForosForoUsuarioModificacionNavigation = new HashSet<TbForos>();
-            TbForosPorActividadFoacUsuarioCreacionNavigation = new HashSet<TbForosPorActividad>();
-            TbForosPorActividadFoacUsuarioModificacionNavigation = new HashSet<TbForosPorActividad>();
-            TbForosPorEmpleadosFoemUsuarioCreacionNavigation = new HashSet<TbForosPorEmpleados>();
-            TbForosPorEmpleadosFoemUsuarioModificacionNavigation = new HashSet<TbForosPorEmpleados>();
-            TbHojaTiempoHotiUsuarioCreacionNavigation = new HashSet<TbHojaTiempo>();
-            TbHojaTiempoHotiUsuarioModificacionNavigation = new HashSet<TbHojaTiempo>();
-            TbHojaTiempoPorOptanteHotoUsuarioCreacionNavigation = new HashSet<TbHojaTiempoPorOptante>();
-            TbHojaTiempoPorOptanteHotoUsuarioModificacionNavigation = new HashSet<TbHojaTiempoPorOptante>();
-            TbModulosModuUsuarioCreacionNavigation = new HashSet<TbModulos>();
-            TbModulosModuUsuarioModificacionNavigation = new HashSet<TbModulos>();
-            TbMunicipiosMuniUsuarioCreacionNavigation = new HashSet<TbMunicipios>();
-            TbMunicipiosMuniUsuarioModificacionNavigation = new HashSet<TbMunicipios>();
-            TbNotificacionesNotiUsuarioCreacionNavigation = new HashSet<TbNotificaciones>();
-            TbNotificacionesNotiUsuarioModificacionNavigation = new HashSet<TbNotificaciones>();
-            TbNotificacionesPorUsuarioNapuUsuarioCreacionNavigation = new HashSet<TbNotificacionesPorUsuario>();
-            TbNotificacionesPorUsuarioNapuUsuarioModificacionNavigation = new HashSet<TbNotificacionesPorUsuario>();
-            TbNotificacionesPorUsuarioUsua = new HashSet<TbNotificacionesPorUsuario>();
-            TbOptantesOptaUsuarioCreacionNavigation = new HashSet<TbOptantes>();
-            TbOptantesOptaUsuarioModificacionNavigation = new HashSet<TbOptantes>();
-            TbPreguntasFrecuentesPrfrUsuarioCreacionNavigation = new HashSet<TbPreguntasFrecuentes>();
-            TbPreguntasFrecuentesPrfrUsuarioModificacionNavigation = new HashSet<TbPreguntasFrecuentes>();
-            TbProyectosPrytUsuarioCreacionNavigation = new HashSet<TbProyectos>();
-            TbProyectosPrytUsuarioModificacionNavigation = new HashSet<TbProyectos>();
-            TbPuestosPustUsuarioCreacionNavigation = new HashSet<TbPuestos>();
-            TbPuestosPustUsuarioModificacionNavigation = new HashSet<TbPuestos>();
-            TbRecibosReciUsuarioCreacionNavigation = new HashSet<TbRecibos>();
-            TbRecibosReciUsuarioModificacionNavigation = new HashSet<TbRecibos>();
-            TbRegionalCorporativaRecoUsuarioCreacionNavigation = new HashSet<TbRegionalCorporativa>();
-            TbRegionalCorporativaRecoUsuarioModificacionNavigation = new HashSet<TbRegionalCorporativa>();
-            TbRegionalesRegiUsuarioCreacionNavigation = new HashSet<TbRegionales>();
-            TbRegionalesRegiUsuarioModificacionNavigation = new HashSet<TbRegionales>();
-            TbRolesRoleUsuarioCreacionNavigation = new HashSet<TbRoles>();
-            TbRolesRoleUsuarioModificacionNavigation = new HashSet<TbRoles>();
-            TbTipoDocumentoTidoUsuarioCreacionNavigation = new HashSet<TbTipoDocumento>();
-            TbTipoDocumentoTidoUsuarioModificacionNavigation = new HashSet<TbTipoDocumento>();
-            TbTipoSangreTisaUsuarioCreacionNavigation = new HashSet<TbTipoSangre>();
-            TbTipoSangreTisaUsuarioModificacionNavigation = new HashSet<TbTipoSangre>();
-            TbTokens = new HashSet<TbTokens>();
-            TbUniversidadesUnivUsuarioCreacionNavigation = new HashSet<TbUniversidades>();
-            TbUniversidadesUnivUsuarioModificacionNavigation = new HashSet<TbUniversidades>();
+            Inverseusua_UsuarioCreacionNavigation = new HashSet<tbUsuarios>();
+            Inverseusua_UsuarioModificacionNavigation = new HashSet<tbUsuarios>();
+            tbActividadesPorOptanteacpe_UsuarioCreacionNavigation = new HashSet<tbActividadesPorOptante>();
+            tbActividadesPorOptanteacpe_UsuarioModificacionNavigation = new HashSet<tbActividadesPorOptante>();
+            tbActividadesacti_UsuarioCreacionNavigation = new HashSet<tbActividades>();
+            tbActividadesacti_UsuarioModificacionNavigation = new HashSet<tbActividades>();
+            tbBancosbanc_UsuarioCreacionNavigation = new HashSet<tbBancos>();
+            tbBancosbanc_UsuarioModificacionNavigation = new HashSet<tbBancos>();
+            tbBeneficiosbene_UsuarioCreacionNavigation = new HashSet<tbBeneficios>();
+            tbBeneficiosbene_UsuarioModificacionNavigation = new HashSet<tbBeneficios>();
+            tbCarrerascarr_UsuarioCreacionNavigation = new HashSet<tbCarreras>();
+            tbCarrerascarr_UsuarioModificacionNavigation = new HashSet<tbCarreras>();
+            tbComponentescomp_UsuarioCreacionNavigation = new HashSet<tbComponentes>();
+            tbComponentescomp_UsuarioModificacionNavigation = new HashSet<tbComponentes>();
+            tbCuestionarioscues_UsuarioCreacionNavigation = new HashSet<tbCuestionarios>();
+            tbCuestionarioscues_UsuarioModificacionNavigation = new HashSet<tbCuestionarios>();
+            tbDepartamentosdepa_UsuarioCreacionNavigation = new HashSet<tbDepartamentos>();
+            tbDepartamentosdepa_UsuarioModificacionNavigation = new HashSet<tbDepartamentos>();
+            tbDiscusionesdisc_UsuarioCreacionNavigation = new HashSet<tbDiscusiones>();
+            tbDiscusionesdisc_UsuarioModificacionNavigation = new HashSet<tbDiscusiones>();
+            tbDocumentosOptantesdoop_UsuarioCreacionNavigation = new HashSet<tbDocumentosOptantes>();
+            tbDocumentosOptantesdoop_UsuarioModificacionNavigation = new HashSet<tbDocumentosOptantes>();
+            tbDocumentosdocu_UsuarioCreacionNavigation = new HashSet<tbDocumentos>();
+            tbDocumentosdocu_UsuarioModificacionNavigation = new HashSet<tbDocumentos>();
+            tbEmpleadosempl_UsuarioCreacionNavigation = new HashSet<tbEmpleados>();
+            tbEmpleadosempl_UsuarioModificacionNavigation = new HashSet<tbEmpleados>();
+            tbEmpresasempr_UsuarioCreacionNavigation = new HashSet<tbEmpresas>();
+            tbEmpresasempr_UsuarioModificacionNavigation = new HashSet<tbEmpresas>();
+            tbEstadosCivilescivi_UsuarioCreacionNavigation = new HashSet<tbEstadosCiviles>();
+            tbEstadosCivilescivi_UsuarioModificacionNavigation = new HashSet<tbEstadosCiviles>();
+            tbFacultadesfacu_UsuarioCreacionNavigation = new HashSet<tbFacultades>();
+            tbFacultadesfacu_UsuarioModificacionNavigation = new HashSet<tbFacultades>();
+            tbForosPorActividadfoac_UsuarioCreacionNavigation = new HashSet<tbForosPorActividad>();
+            tbForosPorActividadfoac_UsuarioModificacionNavigation = new HashSet<tbForosPorActividad>();
+            tbForosPorEmpleadosfoem_UsuarioCreacionNavigation = new HashSet<tbForosPorEmpleados>();
+            tbForosPorEmpleadosfoem_UsuarioModificacionNavigation = new HashSet<tbForosPorEmpleados>();
+            tbForosforo_UsuarioCreacionNavigation = new HashSet<tbForos>();
+            tbForosforo_UsuarioModificacionNavigation = new HashSet<tbForos>();
+            tbHojaTiempoPorOptantehoto_UsuarioCreacionNavigation = new HashSet<tbHojaTiempoPorOptante>();
+            tbHojaTiempoPorOptantehoto_UsuarioModificacionNavigation = new HashSet<tbHojaTiempoPorOptante>();
+            tbHojaTiempohoti_UsuarioCreacionNavigation = new HashSet<tbHojaTiempo>();
+            tbHojaTiempohoti_UsuarioModificacionNavigation = new HashSet<tbHojaTiempo>();
+            tbModulosmodu_UsuarioCreacionNavigation = new HashSet<tbModulos>();
+            tbModulosmodu_UsuarioModificacionNavigation = new HashSet<tbModulos>();
+            tbMunicipiosmuni_UsuarioCreacionNavigation = new HashSet<tbMunicipios>();
+            tbMunicipiosmuni_UsuarioModificacionNavigation = new HashSet<tbMunicipios>();
+            tbNotificacionesPorUsuarionapu_UsuarioCreacionNavigation = new HashSet<tbNotificacionesPorUsuario>();
+            tbNotificacionesPorUsuarionapu_UsuarioModificacionNavigation = new HashSet<tbNotificacionesPorUsuario>();
+            tbNotificacionesPorUsuariousua = new HashSet<tbNotificacionesPorUsuario>();
+            tbNotificacionesnoti_UsuarioCreacionNavigation = new HashSet<tbNotificaciones>();
+            tbNotificacionesnoti_UsuarioModificacionNavigation = new HashSet<tbNotificaciones>();
+            tbOptantesopta_UsuarioCreacionNavigation = new HashSet<tbOptantes>();
+            tbOptantesopta_UsuarioModificacionNavigation = new HashSet<tbOptantes>();
+            tbPreguntasFrecuentesprfr_UsuarioCreacionNavigation = new HashSet<tbPreguntasFrecuentes>();
+            tbPreguntasFrecuentesprfr_UsuarioModificacionNavigation = new HashSet<tbPreguntasFrecuentes>();
+            tbProyectospryt_UsuarioCreacionNavigation = new HashSet<tbProyectos>();
+            tbProyectospryt_UsuarioModificacionNavigation = new HashSet<tbProyectos>();
+            tbPuestospust_UsuarioCreacionNavigation = new HashSet<tbPuestos>();
+            tbPuestospust_UsuarioModificacionNavigation = new HashSet<tbPuestos>();
+            tbRecibosreci_UsuarioCreacionNavigation = new HashSet<tbRecibos>();
+            tbRecibosreci_UsuarioModificacionNavigation = new HashSet<tbRecibos>();
+            tbRegionalCorporativareco_UsuarioCreacionNavigation = new HashSet<tbRegionalCorporativa>();
+            tbRegionalCorporativareco_UsuarioModificacionNavigation = new HashSet<tbRegionalCorporativa>();
+            tbRegionalesregi_UsuarioCreacionNavigation = new HashSet<tbRegionales>();
+            tbRegionalesregi_UsuarioModificacionNavigation = new HashSet<tbRegionales>();
+            tbRolesrole_UsuarioCreacionNavigation = new HashSet<tbRoles>();
+            tbRolesrole_UsuarioModificacionNavigation = new HashSet<tbRoles>();
+            tbTipoDocumentotido_UsuarioCreacionNavigation = new HashSet<tbTipoDocumento>();
+            tbTipoDocumentotido_UsuarioModificacionNavigation = new HashSet<tbTipoDocumento>();
+            tbTipoSangretisa_UsuarioCreacionNavigation = new HashSet<tbTipoSangre>();
+            tbTipoSangretisa_UsuarioModificacionNavigation = new HashSet<tbTipoSangre>();
+            tbTokens = new HashSet<tbTokens>();
+            tbUniversidadesuniv_UsuarioCreacionNavigation = new HashSet<tbUniversidades>();
+            tbUniversidadesuniv_UsuarioModificacionNavigation = new HashSet<tbUniversidades>();
         }
 
-        public int UsuaId { get; set; }
-        public int EmopId { get; set; }
-        public int RoleId { get; set; }
-        public bool UsuaAdministrador { get; set; }
-        public bool UsuaEsOptante { get; set; }
-        public string UsuaUsuario { get; set; }
-        public string UsuaContraseña { get; set; }
-        public int? UsuaUsuarioCreacion { get; set; }
-        public DateTime? UsuaFechaCreacion { get; set; }
-        public int? UsuaUsuarioModificacion { get; set; }
-        public DateTime? UsuaFechaModificacion { get; set; }
-        public bool? UsuaEstado { get; set; }
+        public int usua_Id { get; set; }
+        public int emop_Id { get; set; }
+        public int role_Id { get; set; }
+        public bool usua_Administrador { get; set; }
+        public bool usua_EsOptante { get; set; }
+        public string usua_Usuario { get; set; }
+        public string usua_Contraseña { get; set; }
+        public int? usua_UsuarioCreacion { get; set; }
+        public DateTime? usua_FechaCreacion { get; set; }
+        public int? usua_UsuarioModificacion { get; set; }
+        public DateTime? usua_FechaModificacion { get; set; }
+        public bool? usua_Estado { get; set; }
 
-        public virtual TbUsuarios UsuaUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios UsuaUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbUsuarios> InverseUsuaUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbUsuarios> InverseUsuaUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbActividades> TbActividadesActiUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbActividades> TbActividadesActiUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbActividadesPorOptante> TbActividadesPorOptanteAcpeUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbActividadesPorOptante> TbActividadesPorOptanteAcpeUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbBancos> TbBancosBancUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbBancos> TbBancosBancUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbBeneficios> TbBeneficiosBeneUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbBeneficios> TbBeneficiosBeneUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbCarreras> TbCarrerasCarrUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbCarreras> TbCarrerasCarrUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbComponentes> TbComponentesCompUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbComponentes> TbComponentesCompUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbCuestionarios> TbCuestionariosCuesUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbCuestionarios> TbCuestionariosCuesUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbDepartamentos> TbDepartamentosDepaUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbDepartamentos> TbDepartamentosDepaUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbDiscusiones> TbDiscusionesDiscUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbDiscusiones> TbDiscusionesDiscUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbDocumentos> TbDocumentosDocuUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbDocumentos> TbDocumentosDocuUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbDocumentosOptantes> TbDocumentosOptantesDoopUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbDocumentosOptantes> TbDocumentosOptantesDoopUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbEmpleados> TbEmpleadosEmplUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbEmpleados> TbEmpleadosEmplUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbEmpresas> TbEmpresasEmprUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbEmpresas> TbEmpresasEmprUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbEstadosCiviles> TbEstadosCivilesCiviUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbEstadosCiviles> TbEstadosCivilesCiviUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbFacultades> TbFacultadesFacuUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbFacultades> TbFacultadesFacuUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbForos> TbForosForoUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbForos> TbForosForoUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbForosPorActividad> TbForosPorActividadFoacUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbForosPorActividad> TbForosPorActividadFoacUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbForosPorEmpleados> TbForosPorEmpleadosFoemUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbForosPorEmpleados> TbForosPorEmpleadosFoemUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbHojaTiempo> TbHojaTiempoHotiUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbHojaTiempo> TbHojaTiempoHotiUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbHojaTiempoPorOptante> TbHojaTiempoPorOptanteHotoUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbHojaTiempoPorOptante> TbHojaTiempoPorOptanteHotoUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbModulos> TbModulosModuUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbModulos> TbModulosModuUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbMunicipios> TbMunicipiosMuniUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbMunicipios> TbMunicipiosMuniUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbNotificaciones> TbNotificacionesNotiUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbNotificaciones> TbNotificacionesNotiUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbNotificacionesPorUsuario> TbNotificacionesPorUsuarioNapuUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbNotificacionesPorUsuario> TbNotificacionesPorUsuarioNapuUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbNotificacionesPorUsuario> TbNotificacionesPorUsuarioUsua { get; set; }
-        public virtual ICollection<TbOptantes> TbOptantesOptaUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbOptantes> TbOptantesOptaUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbPreguntasFrecuentes> TbPreguntasFrecuentesPrfrUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbPreguntasFrecuentes> TbPreguntasFrecuentesPrfrUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbProyectos> TbProyectosPrytUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbProyectos> TbProyectosPrytUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbPuestos> TbPuestosPustUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbPuestos> TbPuestosPustUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbRecibos> TbRecibosReciUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbRecibos> TbRecibosReciUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbRegionalCorporativa> TbRegionalCorporativaRecoUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbRegionalCorporativa> TbRegionalCorporativaRecoUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbRegionales> TbRegionalesRegiUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbRegionales> TbRegionalesRegiUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbRoles> TbRolesRoleUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbRoles> TbRolesRoleUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbTipoDocumento> TbTipoDocumentoTidoUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbTipoDocumento> TbTipoDocumentoTidoUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbTipoSangre> TbTipoSangreTisaUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbTipoSangre> TbTipoSangreTisaUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbTokens> TbTokens { get; set; }
-        public virtual ICollection<TbUniversidades> TbUniversidadesUnivUsuarioCreacionNavigation { get; set; }
-        public virtual ICollection<TbUniversidades> TbUniversidadesUnivUsuarioModificacionNavigation { get; set; }
+        public virtual tbUsuarios usua_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios usua_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbUsuarios> Inverseusua_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbUsuarios> Inverseusua_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbActividadesPorOptante> tbActividadesPorOptanteacpe_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbActividadesPorOptante> tbActividadesPorOptanteacpe_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbActividades> tbActividadesacti_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbActividades> tbActividadesacti_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbBancos> tbBancosbanc_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbBancos> tbBancosbanc_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbBeneficios> tbBeneficiosbene_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbBeneficios> tbBeneficiosbene_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbCarreras> tbCarrerascarr_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbCarreras> tbCarrerascarr_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbComponentes> tbComponentescomp_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbComponentes> tbComponentescomp_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbCuestionarios> tbCuestionarioscues_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbCuestionarios> tbCuestionarioscues_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbDepartamentos> tbDepartamentosdepa_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbDepartamentos> tbDepartamentosdepa_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbDiscusiones> tbDiscusionesdisc_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbDiscusiones> tbDiscusionesdisc_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbDocumentosOptantes> tbDocumentosOptantesdoop_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbDocumentosOptantes> tbDocumentosOptantesdoop_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbDocumentos> tbDocumentosdocu_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbDocumentos> tbDocumentosdocu_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbEmpleados> tbEmpleadosempl_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbEmpleados> tbEmpleadosempl_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbEmpresas> tbEmpresasempr_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbEmpresas> tbEmpresasempr_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbEstadosCiviles> tbEstadosCivilescivi_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbEstadosCiviles> tbEstadosCivilescivi_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbFacultades> tbFacultadesfacu_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbFacultades> tbFacultadesfacu_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbForosPorActividad> tbForosPorActividadfoac_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbForosPorActividad> tbForosPorActividadfoac_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbForosPorEmpleados> tbForosPorEmpleadosfoem_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbForosPorEmpleados> tbForosPorEmpleadosfoem_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbForos> tbForosforo_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbForos> tbForosforo_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbHojaTiempoPorOptante> tbHojaTiempoPorOptantehoto_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbHojaTiempoPorOptante> tbHojaTiempoPorOptantehoto_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbHojaTiempo> tbHojaTiempohoti_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbHojaTiempo> tbHojaTiempohoti_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbModulos> tbModulosmodu_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbModulos> tbModulosmodu_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbMunicipios> tbMunicipiosmuni_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbMunicipios> tbMunicipiosmuni_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbNotificacionesPorUsuario> tbNotificacionesPorUsuarionapu_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbNotificacionesPorUsuario> tbNotificacionesPorUsuarionapu_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbNotificacionesPorUsuario> tbNotificacionesPorUsuariousua { get; set; }
+        public virtual ICollection<tbNotificaciones> tbNotificacionesnoti_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbNotificaciones> tbNotificacionesnoti_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbOptantes> tbOptantesopta_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbOptantes> tbOptantesopta_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbPreguntasFrecuentes> tbPreguntasFrecuentesprfr_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbPreguntasFrecuentes> tbPreguntasFrecuentesprfr_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbProyectos> tbProyectospryt_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbProyectos> tbProyectospryt_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbPuestos> tbPuestospust_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbPuestos> tbPuestospust_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbRecibos> tbRecibosreci_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbRecibos> tbRecibosreci_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbRegionalCorporativa> tbRegionalCorporativareco_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbRegionalCorporativa> tbRegionalCorporativareco_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbRegionales> tbRegionalesregi_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbRegionales> tbRegionalesregi_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbRoles> tbRolesrole_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbRoles> tbRolesrole_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbTipoDocumento> tbTipoDocumentotido_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbTipoDocumento> tbTipoDocumentotido_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbTipoSangre> tbTipoSangretisa_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbTipoSangre> tbTipoSangretisa_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbTokens> tbTokens { get; set; }
+        public virtual ICollection<tbUniversidades> tbUniversidadesuniv_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbUniversidades> tbUniversidadesuniv_UsuarioModificacionNavigation { get; set; }
     }
 }

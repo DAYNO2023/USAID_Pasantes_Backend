@@ -6,26 +6,26 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbRegionalCorporativa
+    public partial class tbRegionalCorporativa
     {
-        public TbRegionalCorporativa()
+        public tbRegionalCorporativa()
         {
-            TbComponentesPorRegionalPorEmpleado = new HashSet<TbComponentesPorRegionalPorEmpleado>();
+            tbComponentesPorRegionalPorEmpleado = new HashSet<tbComponentesPorRegionalPorEmpleado>();
         }
 
-        public int RecoId { get; set; }
-        public string MuniId { get; set; }
-        public string RecoNombreRegionalCorportiva { get; set; }
-        public string RecoDireccionExacta { get; set; }
-        public int? RecoUsuarioCreacion { get; set; }
-        public DateTime? RecoFechaCreacion { get; set; }
-        public int? RecoUsuarioModificacion { get; set; }
-        public DateTime? RecoFechaModificacion { get; set; }
-        public bool? RecoEstado { get; set; }
+        public int reco_Id { get; set; }
+        public string muni_Id { get; set; }
+        public string reco_NombreRegionalCorportiva { get; set; }
+        public string reco_DireccionExacta { get; set; }
+        public int? reco_UsuarioCreacion { get; set; }
+        public DateTime? reco_FechaCreacion { get; set; }
+        public int? reco_UsuarioModificacion { get; set; }
+        public DateTime? reco_FechaModificacion { get; set; }
+        public bool? reco_Estado { get; set; }
 
-        public virtual TbMunicipios Muni { get; set; }
-        public virtual TbUsuarios RecoUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios RecoUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbComponentesPorRegionalPorEmpleado> TbComponentesPorRegionalPorEmpleado { get; set; }
+        public virtual tbMunicipios muni { get; set; }
+        public virtual tbUsuarios reco_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios reco_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbComponentesPorRegionalPorEmpleado> tbComponentesPorRegionalPorEmpleado { get; set; }
     }
 }

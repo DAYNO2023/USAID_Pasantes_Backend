@@ -6,25 +6,25 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbEstadosCiviles
+    public partial class tbEstadosCiviles
     {
-        public TbEstadosCiviles()
+        public tbEstadosCiviles()
         {
-            TbEmpleados = new HashSet<TbEmpleados>();
-            TbOptantes = new HashSet<TbOptantes>();
+            tbEmpleados = new HashSet<tbEmpleados>();
+            tbOptantes = new HashSet<tbOptantes>();
         }
 
-        public int CiviId { get; set; }
-        public string CiviDescripcionEstadoCivil { get; set; }
-        public int? CiviUsuarioCreacion { get; set; }
-        public DateTime? CiviFechaCreacion { get; set; }
-        public int? CiviUsuarioModificacion { get; set; }
-        public DateTime? CiviFechaModificacion { get; set; }
-        public bool? CiviEstado { get; set; }
+        public int civi_Id { get; set; }
+        public string civi_DescripcionEstadoCivil { get; set; }
+        public int? civi_UsuarioCreacion { get; set; }
+        public DateTime? civi_FechaCreacion { get; set; }
+        public int? civi_UsuarioModificacion { get; set; }
+        public DateTime? civi_FechaModificacion { get; set; }
+        public bool? civi_Estado { get; set; }
 
-        public virtual TbUsuarios CiviUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios CiviUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbEmpleados> TbEmpleados { get; set; }
-        public virtual ICollection<TbOptantes> TbOptantes { get; set; }
+        public virtual tbUsuarios civi_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios civi_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbEmpleados> tbEmpleados { get; set; }
+        public virtual ICollection<tbOptantes> tbOptantes { get; set; }
     }
 }

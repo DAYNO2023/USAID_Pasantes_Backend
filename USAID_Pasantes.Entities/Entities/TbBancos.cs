@@ -6,23 +6,23 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbBancos
+    public partial class tbBancos
     {
-        public TbBancos()
+        public tbBancos()
         {
-            TbOptantes = new HashSet<TbOptantes>();
+            tbOptantes = new HashSet<tbOptantes>();
         }
 
-        public int BancId { get; set; }
-        public string BancDescripcion { get; set; }
-        public int? BancUsuarioCreacion { get; set; }
-        public DateTime? BancFechaCreacion { get; set; }
-        public int? BancUsuarioModificacion { get; set; }
-        public DateTime? BancFechaModificacion { get; set; }
-        public bool? BancEstado { get; set; }
+        public int banc_Id { get; set; }
+        public string banc_Descripcion { get; set; }
+        public int? banc_UsuarioCreacion { get; set; }
+        public DateTime? banc_FechaCreacion { get; set; }
+        public int? banc_UsuarioModificacion { get; set; }
+        public DateTime? banc_FechaModificacion { get; set; }
+        public bool? banc_Estado { get; set; }
 
-        public virtual TbUsuarios BancUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios BancUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbOptantes> TbOptantes { get; set; }
+        public virtual tbUsuarios banc_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios banc_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbOptantes> tbOptantes { get; set; }
     }
 }

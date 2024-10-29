@@ -6,19 +6,19 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbNotificaciones
+    public partial class tbNotificaciones
     {
-        public int NotiId { get; set; }
-        public string NotiDescripcion { get; set; }
-        public DateTime NotiFecha { get; set; }
-        public string NotiRuta { get; set; }
-        public int NotiUsuarioCreacion { get; set; }
-        public DateTime NotiFechaCreacion { get; set; }
-        public int? NotiUsuarioModificacion { get; set; }
-        public DateTime? NotiFechaModificacion { get; set; }
-        public bool? NotiEstado { get; set; }
+        public int noti_Id { get; set; }
+        public string noti_Descripcion { get; set; }
+        public DateTime noti_Fecha { get; set; }
+        public string noti_Ruta { get; set; }
+        public int noti_UsuarioCreacion { get; set; }
+        public DateTime noti_FechaCreacion { get; set; }
+        public int? noti_UsuarioModificacion { get; set; }
+        public DateTime? noti_FechaModificacion { get; set; }
+        public bool? noti_Estado { get; set; }
 
-        public virtual TbUsuarios NotiUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios NotiUsuarioModificacionNavigation { get; set; }
+        public virtual tbUsuarios noti_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios noti_UsuarioModificacionNavigation { get; set; }
     }
 }

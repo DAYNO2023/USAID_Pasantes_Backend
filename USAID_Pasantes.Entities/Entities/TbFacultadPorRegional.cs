@@ -6,19 +6,19 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbFacultadPorRegional
+    public partial class tbFacultadPorRegional
     {
-        public TbFacultadPorRegional()
+        public tbFacultadPorRegional()
         {
-            TbCarreraPorFacultadPorRegional = new HashSet<TbCarreraPorFacultadPorRegional>();
+            tbCarreraPorFacultadPorRegional = new HashSet<tbCarreraPorFacultadPorRegional>();
         }
 
-        public int FareId { get; set; }
-        public int FacuId { get; set; }
-        public int RegiId { get; set; }
+        public int fare_Id { get; set; }
+        public int facu_Id { get; set; }
+        public int regi_Id { get; set; }
 
-        public virtual TbFacultades Facu { get; set; }
-        public virtual TbRegionales Regi { get; set; }
-        public virtual ICollection<TbCarreraPorFacultadPorRegional> TbCarreraPorFacultadPorRegional { get; set; }
+        public virtual tbFacultades facu { get; set; }
+        public virtual tbRegionales regi { get; set; }
+        public virtual ICollection<tbCarreraPorFacultadPorRegional> tbCarreraPorFacultadPorRegional { get; set; }
     }
 }

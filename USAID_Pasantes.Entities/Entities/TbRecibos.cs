@@ -6,23 +6,23 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbRecibos
+    public partial class tbRecibos
     {
-        public int ReciId { get; set; }
-        public int EmplId { get; set; }
-        public string ReciPara { get; set; }
-        public DateTime ReciPeriodoInicio { get; set; }
-        public DateTime? ReciPeriodoFinal { get; set; }
-        public DateTime ReciFechaHoraLimite { get; set; }
-        public string ReciCertificacion { get; set; }
-        public int? ReciUsuarioCreacion { get; set; }
-        public DateTime? ReciFechaCreacion { get; set; }
-        public int? ReciUsuarioModificacion { get; set; }
-        public DateTime? ReciFechaModificacion { get; set; }
-        public bool? ReciEstado { get; set; }
+        public int reci_Id { get; set; }
+        public int empl_Id { get; set; }
+        public string reci_Para { get; set; }
+        public DateTime reci_PeriodoInicio { get; set; }
+        public DateTime? reci_PeriodoFinal { get; set; }
+        public DateTime reci_FechaHoraLimite { get; set; }
+        public string reci_Certificacion { get; set; }
+        public int? reci_UsuarioCreacion { get; set; }
+        public DateTime? reci_FechaCreacion { get; set; }
+        public int? reci_UsuarioModificacion { get; set; }
+        public DateTime? reci_FechaModificacion { get; set; }
+        public bool? reci_Estado { get; set; }
 
-        public virtual TbEmpleados Empl { get; set; }
-        public virtual TbUsuarios ReciUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios ReciUsuarioModificacionNavigation { get; set; }
+        public virtual tbEmpleados empl { get; set; }
+        public virtual tbUsuarios reci_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios reci_UsuarioModificacionNavigation { get; set; }
     }
 }

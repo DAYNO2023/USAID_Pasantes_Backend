@@ -6,42 +6,42 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbEmpleados
+    public partial class tbEmpleados
     {
-        public TbEmpleados()
+        public tbEmpleados()
         {
-            TbComponentesPorRegionalPorEmpleado = new HashSet<TbComponentesPorRegionalPorEmpleado>();
-            TbEmpleadosPorActividad = new HashSet<TbEmpleadosPorActividad>();
-            TbRecibos = new HashSet<TbRecibos>();
+            tbComponentesPorRegionalPorEmpleado = new HashSet<tbComponentesPorRegionalPorEmpleado>();
+            tbEmpleadosPorActividad = new HashSet<tbEmpleadosPorActividad>();
+            tbRecibos = new HashSet<tbRecibos>();
         }
 
-        public int EmplId { get; set; }
-        public string EmplImagen { get; set; }
-        public string EmplDni { get; set; }
-        public string EmplNombres { get; set; }
-        public string EmplApellidos { get; set; }
-        public string EmplTelefono { get; set; }
-        public string EmplCorreo { get; set; }
-        public string EmplSexo { get; set; }
-        public int PustId { get; set; }
-        public int TisaId { get; set; }
-        public int CiviId { get; set; }
-        public string MuniId { get; set; }
-        public bool EmplEsContador { get; set; }
-        public int? EmplUsuarioCreacion { get; set; }
-        public DateTime? EmplFechaCreacion { get; set; }
-        public int? EmplUsuarioModificacion { get; set; }
-        public DateTime? EmplFechaModificacion { get; set; }
-        public bool? EmplEstado { get; set; }
+        public int empl_Id { get; set; }
+        public string empl_Imagen { get; set; }
+        public string empl_DNI { get; set; }
+        public string empl_Nombres { get; set; }
+        public string empl_Apellidos { get; set; }
+        public string empl_Telefono { get; set; }
+        public string empl_Correo { get; set; }
+        public string empl_Sexo { get; set; }
+        public int pust_Id { get; set; }
+        public int tisa_Id { get; set; }
+        public int civi_Id { get; set; }
+        public string muni_Id { get; set; }
+        public bool empl_EsContador { get; set; }
+        public int? empl_UsuarioCreacion { get; set; }
+        public DateTime? empl_FechaCreacion { get; set; }
+        public int? empl_UsuarioModificacion { get; set; }
+        public DateTime? empl_FechaModificacion { get; set; }
+        public bool? empl_Estado { get; set; }
 
-        public virtual TbEstadosCiviles Civi { get; set; }
-        public virtual TbUsuarios EmplUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios EmplUsuarioModificacionNavigation { get; set; }
-        public virtual TbMunicipios Muni { get; set; }
-        public virtual TbPuestos Pust { get; set; }
-        public virtual TbTipoSangre Tisa { get; set; }
-        public virtual ICollection<TbComponentesPorRegionalPorEmpleado> TbComponentesPorRegionalPorEmpleado { get; set; }
-        public virtual ICollection<TbEmpleadosPorActividad> TbEmpleadosPorActividad { get; set; }
-        public virtual ICollection<TbRecibos> TbRecibos { get; set; }
+        public virtual tbEstadosCiviles civi { get; set; }
+        public virtual tbUsuarios empl_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios empl_UsuarioModificacionNavigation { get; set; }
+        public virtual tbMunicipios muni { get; set; }
+        public virtual tbPuestos pust { get; set; }
+        public virtual tbTipoSangre tisa { get; set; }
+        public virtual ICollection<tbComponentesPorRegionalPorEmpleado> tbComponentesPorRegionalPorEmpleado { get; set; }
+        public virtual ICollection<tbEmpleadosPorActividad> tbEmpleadosPorActividad { get; set; }
+        public virtual ICollection<tbRecibos> tbRecibos { get; set; }
     }
 }

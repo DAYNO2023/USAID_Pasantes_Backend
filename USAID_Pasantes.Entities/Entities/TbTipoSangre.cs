@@ -6,25 +6,25 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbTipoSangre
+    public partial class tbTipoSangre
     {
-        public TbTipoSangre()
+        public tbTipoSangre()
         {
-            TbEmpleados = new HashSet<TbEmpleados>();
-            TbOptantes = new HashSet<TbOptantes>();
+            tbEmpleados = new HashSet<tbEmpleados>();
+            tbOptantes = new HashSet<tbOptantes>();
         }
 
-        public int TisaId { get; set; }
-        public string TisaDescripcion { get; set; }
-        public int? TisaUsuarioCreacion { get; set; }
-        public DateTime? TisaFechaCreacion { get; set; }
-        public int? TisaUsuarioModificacion { get; set; }
-        public DateTime? TisaFechamodificacion { get; set; }
-        public bool? TisaEstado { get; set; }
+        public int tisa_Id { get; set; }
+        public string tisa_Descripcion { get; set; }
+        public int? tisa_UsuarioCreacion { get; set; }
+        public DateTime? tisa_FechaCreacion { get; set; }
+        public int? tisa_UsuarioModificacion { get; set; }
+        public DateTime? tisa_Fechamodificacion { get; set; }
+        public bool? tisa_Estado { get; set; }
 
-        public virtual TbUsuarios TisaUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios TisaUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbEmpleados> TbEmpleados { get; set; }
-        public virtual ICollection<TbOptantes> TbOptantes { get; set; }
+        public virtual tbUsuarios tisa_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios tisa_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbEmpleados> tbEmpleados { get; set; }
+        public virtual ICollection<tbOptantes> tbOptantes { get; set; }
     }
 }

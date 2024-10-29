@@ -6,15 +6,15 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbComponentesPorRegionalPorEmpleado
+    public partial class tbComponentesPorRegionalPorEmpleado
     {
-        public int CoreId { get; set; }
-        public int CompId { get; set; }
-        public int RecoId { get; set; }
-        public int EmplId { get; set; }
+        public int core_Id { get; set; }
+        public int comp_Id { get; set; }
+        public int reco_Id { get; set; }
+        public int empl_Id { get; set; }
 
-        public virtual TbComponentes Comp { get; set; }
-        public virtual TbEmpleados Empl { get; set; }
-        public virtual TbRegionalCorporativa Reco { get; set; }
+        public virtual tbComponentes comp { get; set; }
+        public virtual tbEmpleados empl { get; set; }
+        public virtual tbRegionalCorporativa reco { get; set; }
     }
 }

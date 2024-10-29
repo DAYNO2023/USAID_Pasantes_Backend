@@ -6,61 +6,61 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbOptantes
+    public partial class tbOptantes
     {
-        public TbOptantes()
+        public tbOptantes()
         {
-            TbActividadesPorOptante = new HashSet<TbActividadesPorOptante>();
-            TbBeneficiosPorOptante = new HashSet<TbBeneficiosPorOptante>();
-            TbDocumentosOptantes = new HashSet<TbDocumentosOptantes>();
-            TbHojaTiempoPorOptante = new HashSet<TbHojaTiempoPorOptante>();
-            TbRecibosPorOptante = new HashSet<TbRecibosPorOptante>();
-            TbRespuestasPorOptante = new HashSet<TbRespuestasPorOptante>();
+            tbActividadesPorOptante = new HashSet<tbActividadesPorOptante>();
+            tbBeneficiosPorOptante = new HashSet<tbBeneficiosPorOptante>();
+            tbDocumentosOptantes = new HashSet<tbDocumentosOptantes>();
+            tbHojaTiempoPorOptante = new HashSet<tbHojaTiempoPorOptante>();
+            tbRecibosPorOptante = new HashSet<tbRecibosPorOptante>();
+            tbRespuestasPorOptante = new HashSet<tbRespuestasPorOptante>();
         }
 
-        public int OptaId { get; set; }
-        public string OptaImagen { get; set; }
-        public string OptaDni { get; set; }
-        public string OptaPrimerNombre { get; set; }
-        public string OptaSegundoNombre { get; set; }
-        public string OptaPrimerApellido { get; set; }
-        public string OptaSegundoApellido { get; set; }
-        public string OptaSexo { get; set; }
-        public string OptaDireccion { get; set; }
-        public string OptaCorreoElectronico { get; set; }
-        public string OptaTelefono1 { get; set; }
-        public string OptaTelefono2 { get; set; }
-        public DateTime? OptaFechaInicio { get; set; }
-        public DateTime? OptaFechaFin { get; set; }
-        public string OptaObservacion { get; set; }
-        public int? CompId { get; set; }
-        public int CiviId { get; set; }
-        public int TisaId { get; set; }
-        public string MuniId { get; set; }
-        public int CafrId { get; set; }
-        public int? BancId { get; set; }
-        public bool? OptaTipoPago { get; set; }
-        public string OptaCuentaBancaria { get; set; }
-        public bool OptaOptanteAceptado { get; set; }
-        public int? OptaUsuarioCreacion { get; set; }
-        public DateTime? OptaFechaCreacion { get; set; }
-        public int? OptaUsuarioModificacion { get; set; }
-        public DateTime? OptaFechamodificacion { get; set; }
-        public bool? OptaEstado { get; set; }
+        public int opta_Id { get; set; }
+        public string opta_Imagen { get; set; }
+        public string opta_DNI { get; set; }
+        public string opta_PrimerNombre { get; set; }
+        public string opta_SegundoNombre { get; set; }
+        public string opta_PrimerApellido { get; set; }
+        public string opta_SegundoApellido { get; set; }
+        public string opta_Sexo { get; set; }
+        public string opta_Direccion { get; set; }
+        public string opta_CorreoElectronico { get; set; }
+        public string opta_Telefono1 { get; set; }
+        public string opta_Telefono2 { get; set; }
+        public DateTime? opta_FechaInicio { get; set; }
+        public DateTime? opta_FechaFin { get; set; }
+        public string opta_Observacion { get; set; }
+        public int? comp_Id { get; set; }
+        public int civi_Id { get; set; }
+        public int tisa_Id { get; set; }
+        public string muni_Id { get; set; }
+        public int cafr_Id { get; set; }
+        public int? banc_Id { get; set; }
+        public bool? opta_TipoPago { get; set; }
+        public string opta_CuentaBancaria { get; set; }
+        public bool opta_OptanteAceptado { get; set; }
+        public int? opta_UsuarioCreacion { get; set; }
+        public DateTime? opta_FechaCreacion { get; set; }
+        public int? opta_UsuarioModificacion { get; set; }
+        public DateTime? opta_Fechamodificacion { get; set; }
+        public bool? opta_Estado { get; set; }
 
-        public virtual TbBancos Banc { get; set; }
-        public virtual TbCarreraPorFacultadPorRegional Cafr { get; set; }
-        public virtual TbEstadosCiviles Civi { get; set; }
-        public virtual TbComponentes Comp { get; set; }
-        public virtual TbMunicipios Muni { get; set; }
-        public virtual TbUsuarios OptaUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios OptaUsuarioModificacionNavigation { get; set; }
-        public virtual TbTipoSangre Tisa { get; set; }
-        public virtual ICollection<TbActividadesPorOptante> TbActividadesPorOptante { get; set; }
-        public virtual ICollection<TbBeneficiosPorOptante> TbBeneficiosPorOptante { get; set; }
-        public virtual ICollection<TbDocumentosOptantes> TbDocumentosOptantes { get; set; }
-        public virtual ICollection<TbHojaTiempoPorOptante> TbHojaTiempoPorOptante { get; set; }
-        public virtual ICollection<TbRecibosPorOptante> TbRecibosPorOptante { get; set; }
-        public virtual ICollection<TbRespuestasPorOptante> TbRespuestasPorOptante { get; set; }
+        public virtual tbBancos banc { get; set; }
+        public virtual tbCarreraPorFacultadPorRegional cafr { get; set; }
+        public virtual tbEstadosCiviles civi { get; set; }
+        public virtual tbComponentes comp { get; set; }
+        public virtual tbMunicipios muni { get; set; }
+        public virtual tbUsuarios opta_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios opta_UsuarioModificacionNavigation { get; set; }
+        public virtual tbTipoSangre tisa { get; set; }
+        public virtual ICollection<tbActividadesPorOptante> tbActividadesPorOptante { get; set; }
+        public virtual ICollection<tbBeneficiosPorOptante> tbBeneficiosPorOptante { get; set; }
+        public virtual ICollection<tbDocumentosOptantes> tbDocumentosOptantes { get; set; }
+        public virtual ICollection<tbHojaTiempoPorOptante> tbHojaTiempoPorOptante { get; set; }
+        public virtual ICollection<tbRecibosPorOptante> tbRecibosPorOptante { get; set; }
+        public virtual ICollection<tbRespuestasPorOptante> tbRespuestasPorOptante { get; set; }
     }
 }

@@ -6,23 +6,23 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbCarreras
+    public partial class tbCarreras
     {
-        public TbCarreras()
+        public tbCarreras()
         {
-            TbCarreraPorFacultadPorRegional = new HashSet<TbCarreraPorFacultadPorRegional>();
+            tbCarreraPorFacultadPorRegional = new HashSet<tbCarreraPorFacultadPorRegional>();
         }
 
-        public int CarrId { get; set; }
-        public string CarrDescripcionCarrera { get; set; }
-        public int? CarrUsuarioCreacion { get; set; }
-        public DateTime? CarrFechaCreacion { get; set; }
-        public int? CarrUsuarioModificacion { get; set; }
-        public DateTime? CarrFechaModificacion { get; set; }
-        public bool? CarrEstado { get; set; }
+        public int carr_Id { get; set; }
+        public string carr_DescripcionCarrera { get; set; }
+        public int? carr_UsuarioCreacion { get; set; }
+        public DateTime? carr_FechaCreacion { get; set; }
+        public int? carr_UsuarioModificacion { get; set; }
+        public DateTime? carr_FechaModificacion { get; set; }
+        public bool? carr_Estado { get; set; }
 
-        public virtual TbUsuarios CarrUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios CarrUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbCarreraPorFacultadPorRegional> TbCarreraPorFacultadPorRegional { get; set; }
+        public virtual tbUsuarios carr_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios carr_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbCarreraPorFacultadPorRegional> tbCarreraPorFacultadPorRegional { get; set; }
     }
 }

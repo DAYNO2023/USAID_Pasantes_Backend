@@ -6,28 +6,28 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbCuestionarios
+    public partial class tbCuestionarios
     {
-        public TbCuestionarios()
+        public tbCuestionarios()
         {
-            TbPreguntasPorCuestionario = new HashSet<TbPreguntasPorCuestionario>();
+            tbPreguntasPorCuestionario = new HashSet<tbPreguntasPorCuestionario>();
         }
 
-        public int CuesId { get; set; }
-        public string CuesNombreCuestionario { get; set; }
-        public string CuesDescripcionCuestionario { get; set; }
-        public bool CuesEsCalificado { get; set; }
-        public decimal? CuesPuntuacion { get; set; }
-        public bool CuesCuestionarioProgramado { get; set; }
-        public DateTime? CuesFechaHoraProgramado { get; set; }
-        public int CuesUsuarioCreacion { get; set; }
-        public DateTime? CuesFechaCreacion { get; set; }
-        public int CuesUsuarioModificacion { get; set; }
-        public DateTime? CuesFechaModificacion { get; set; }
-        public bool? CuesEstado { get; set; }
+        public int cues_Id { get; set; }
+        public string cues_NombreCuestionario { get; set; }
+        public string cues_DescripcionCuestionario { get; set; }
+        public bool cues_EsCalificado { get; set; }
+        public decimal? cues_Puntuacion { get; set; }
+        public bool cues_CuestionarioProgramado { get; set; }
+        public DateTime? cues_FechaHoraProgramado { get; set; }
+        public int cues_UsuarioCreacion { get; set; }
+        public DateTime? cues_FechaCreacion { get; set; }
+        public int cues_UsuarioModificacion { get; set; }
+        public DateTime? cues_FechaModificacion { get; set; }
+        public bool? cues_Estado { get; set; }
 
-        public virtual TbUsuarios CuesUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios CuesUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbPreguntasPorCuestionario> TbPreguntasPorCuestionario { get; set; }
+        public virtual tbUsuarios cues_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios cues_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbPreguntasPorCuestionario> tbPreguntasPorCuestionario { get; set; }
     }
 }

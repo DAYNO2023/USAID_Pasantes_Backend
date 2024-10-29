@@ -6,37 +6,37 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbActividades
+    public partial class tbActividades
     {
-        public TbActividades()
+        public tbActividades()
         {
-            TbActividadesPorOptante = new HashSet<TbActividadesPorOptante>();
-            TbEmpleadosPorActividad = new HashSet<TbEmpleadosPorActividad>();
-            TbForosPorActividad = new HashSet<TbForosPorActividad>();
+            tbActividadesPorOptante = new HashSet<tbActividadesPorOptante>();
+            tbEmpleadosPorActividad = new HashSet<tbEmpleadosPorActividad>();
+            tbForosPorActividad = new HashSet<tbForosPorActividad>();
         }
 
-        public int ActiId { get; set; }
-        public int? CompId { get; set; }
-        public string MuniId { get; set; }
-        public bool ActiPresencialOvirtual { get; set; }
-        public string ActiNombreActividad { get; set; }
-        public string ActiDescripcionActividad { get; set; }
-        public TimeSpan? ActiHoras { get; set; }
-        public DateTime ActiFechaInicio { get; set; }
-        public DateTime? ActiFechaFinal { get; set; }
-        public string ActiDireccionExacta { get; set; }
-        public int? ActiUsuarioCreacion { get; set; }
-        public DateTime? ActiFechaCreacion { get; set; }
-        public int? ActiUsuarioModificacion { get; set; }
-        public DateTime? ActiFechaModificacion { get; set; }
-        public bool? ActiEstado { get; set; }
+        public int acti_Id { get; set; }
+        public int? comp_Id { get; set; }
+        public string muni_Id { get; set; }
+        public bool acti_PresencialOVirtual { get; set; }
+        public string acti_NombreActividad { get; set; }
+        public string acti_DescripcionActividad { get; set; }
+        public TimeSpan? acti_Horas { get; set; }
+        public DateTime acti_FechaInicio { get; set; }
+        public DateTime? acti_FechaFinal { get; set; }
+        public string acti_DireccionExacta { get; set; }
+        public int? acti_UsuarioCreacion { get; set; }
+        public DateTime? acti_FechaCreacion { get; set; }
+        public int? acti_UsuarioModificacion { get; set; }
+        public DateTime? acti_FechaModificacion { get; set; }
+        public bool? acti_Estado { get; set; }
 
-        public virtual TbUsuarios ActiUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios ActiUsuarioModificacionNavigation { get; set; }
-        public virtual TbComponentes Comp { get; set; }
-        public virtual TbMunicipios Muni { get; set; }
-        public virtual ICollection<TbActividadesPorOptante> TbActividadesPorOptante { get; set; }
-        public virtual ICollection<TbEmpleadosPorActividad> TbEmpleadosPorActividad { get; set; }
-        public virtual ICollection<TbForosPorActividad> TbForosPorActividad { get; set; }
+        public virtual tbUsuarios acti_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios acti_UsuarioModificacionNavigation { get; set; }
+        public virtual tbComponentes comp { get; set; }
+        public virtual tbMunicipios muni { get; set; }
+        public virtual ICollection<tbActividadesPorOptante> tbActividadesPorOptante { get; set; }
+        public virtual ICollection<tbEmpleadosPorActividad> tbEmpleadosPorActividad { get; set; }
+        public virtual ICollection<tbForosPorActividad> tbForosPorActividad { get; set; }
     }
 }

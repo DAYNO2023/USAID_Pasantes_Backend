@@ -6,19 +6,19 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbDocumentos
+    public partial class tbDocumentos
     {
-        public int DocuId { get; set; }
-        public int TidoId { get; set; }
-        public string DocuDescripcion { get; set; }
-        public int? DocuUsuarioCreacion { get; set; }
-        public DateTime? DocuFechaCreacion { get; set; }
-        public int? DocuUsuarioModificacion { get; set; }
-        public DateTime? DocuFechaModificacion { get; set; }
-        public bool? DocuEstado { get; set; }
+        public int docu_Id { get; set; }
+        public int tido_Id { get; set; }
+        public string docu_Descripcion { get; set; }
+        public int? docu_UsuarioCreacion { get; set; }
+        public DateTime? docu_FechaCreacion { get; set; }
+        public int? docu_UsuarioModificacion { get; set; }
+        public DateTime? docu_FechaModificacion { get; set; }
+        public bool? docu_Estado { get; set; }
 
-        public virtual TbUsuarios DocuUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios DocuUsuarioModificacionNavigation { get; set; }
-        public virtual TbTipoDocumento Tido { get; set; }
+        public virtual tbUsuarios docu_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios docu_UsuarioModificacionNavigation { get; set; }
+        public virtual tbTipoDocumento tido { get; set; }
     }
 }

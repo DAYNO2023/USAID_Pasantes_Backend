@@ -6,22 +6,22 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbHojaTiempoPorOptanteBitacora
+    public partial class tbHojaTiempoPorOptanteBitacora
     {
-        public string HotoAccion { get; set; }
-        public int? HotoId { get; set; }
-        public int? HotiId { get; set; }
-        public int? OptaId { get; set; }
-        public decimal? HotoHorasTotalesRealizadas { get; set; }
-        public string OtoComentario { get; set; }
-        public DateTime? HotoFechaHoraEntrega { get; set; }
-        public bool? HotiAprobada { get; set; }
-        public int? HotoUsuarioCreacion { get; set; }
-        public DateTime? HotoFechaCreacion { get; set; }
-        public int? HotoUsuarioModificacion { get; set; }
-        public DateTime? HotoFechaModificacion { get; set; }
-        public int? HotoUsuarioEliminado { get; set; }
-        public DateTime? HotoFechaEliminado { get; set; }
-        public bool? HotoEstado { get; set; }
+        public string hoto_Accion { get; set; }
+        public int? hoto_Id { get; set; }
+        public int? hoti_Id { get; set; }
+        public int? opta_Id { get; set; }
+        public decimal? hoto_HorasTotalesRealizadas { get; set; }
+        public string oto_Comentario { get; set; }
+        public DateTime? hoto_FechaHoraEntrega { get; set; }
+        public bool? hoti_Aprobada { get; set; }
+        public int? hoto_UsuarioCreacion { get; set; }
+        public DateTime? hoto_FechaCreacion { get; set; }
+        public int? hoto_UsuarioModificacion { get; set; }
+        public DateTime? hoto_FechaModificacion { get; set; }
+        public int? hoto_UsuarioEliminado { get; set; }
+        public DateTime? hoto_FechaEliminado { get; set; }
+        public bool? hoto_Estado { get; set; }
     }
 }

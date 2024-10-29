@@ -6,21 +6,21 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbDocumentosOptantes
+    public partial class tbDocumentosOptantes
     {
-        public int DoopId { get; set; }
-        public int TidoId { get; set; }
-        public string DoopDescripcion { get; set; }
-        public int? DoopUsuarioCreacion { get; set; }
-        public DateTime? DoopFechaCreacion { get; set; }
-        public int? DoopUsuarioModificacion { get; set; }
-        public DateTime? DoopFechaModificacion { get; set; }
-        public bool? DoopEstado { get; set; }
-        public int OptaId { get; set; }
+        public int doop_Id { get; set; }
+        public int tido_Id { get; set; }
+        public string doop_Descripcion { get; set; }
+        public int? doop_UsuarioCreacion { get; set; }
+        public DateTime? doop_FechaCreacion { get; set; }
+        public int? doop_UsuarioModificacion { get; set; }
+        public DateTime? doop_FechaModificacion { get; set; }
+        public bool? doop_Estado { get; set; }
+        public int opta_Id { get; set; }
 
-        public virtual TbUsuarios DoopUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios DoopUsuarioModificacionNavigation { get; set; }
-        public virtual TbOptantes Opta { get; set; }
-        public virtual TbTipoDocumento Tido { get; set; }
+        public virtual tbUsuarios doop_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios doop_UsuarioModificacionNavigation { get; set; }
+        public virtual tbOptantes opta { get; set; }
+        public virtual tbTipoDocumento tido { get; set; }
     }
 }

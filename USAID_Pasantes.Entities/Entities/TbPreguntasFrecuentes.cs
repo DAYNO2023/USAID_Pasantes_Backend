@@ -6,18 +6,18 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbPreguntasFrecuentes
+    public partial class tbPreguntasFrecuentes
     {
-        public int PrfrId { get; set; }
-        public string PrfrPregunta { get; set; }
-        public string PrfrRespuesta { get; set; }
-        public int? PrfrUsuarioCreacion { get; set; }
-        public DateTime? PrfrFechaCreacion { get; set; }
-        public int? PrfrUsuarioModificacion { get; set; }
-        public DateTime? PrfrFechaModificacion { get; set; }
-        public bool? PrfrEstado { get; set; }
+        public int prfr_Id { get; set; }
+        public string prfr_Pregunta { get; set; }
+        public string prfr_Respuesta { get; set; }
+        public int? prfr_UsuarioCreacion { get; set; }
+        public DateTime? prfr_FechaCreacion { get; set; }
+        public int? prfr_UsuarioModificacion { get; set; }
+        public DateTime? prfr_FechaModificacion { get; set; }
+        public bool? prfr_Estado { get; set; }
 
-        public virtual TbUsuarios PrfrUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios PrfrUsuarioModificacionNavigation { get; set; }
+        public virtual tbUsuarios prfr_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios prfr_UsuarioModificacionNavigation { get; set; }
     }
 }

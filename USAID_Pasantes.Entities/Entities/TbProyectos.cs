@@ -6,26 +6,26 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbProyectos
+    public partial class tbProyectos
     {
-        public TbProyectos()
+        public tbProyectos()
         {
-            TbComponentes = new HashSet<TbComponentes>();
+            tbComponentes = new HashSet<tbComponentes>();
         }
 
-        public int PrytId { get; set; }
-        public string PrytDescripcionProyecto { get; set; }
-        public decimal? PrytHorasProceso { get; set; }
-        public int EmprId { get; set; }
-        public int? PrytUsuarioCreacion { get; set; }
-        public DateTime? PrytFechaCreacion { get; set; }
-        public int? PrytUsuarioModificacion { get; set; }
-        public DateTime? PrytFechaModificacion { get; set; }
-        public bool? PrytEstado { get; set; }
+        public int pryt_Id { get; set; }
+        public string pryt_DescripcionProyecto { get; set; }
+        public decimal? pryt_HorasProceso { get; set; }
+        public int empr_Id { get; set; }
+        public int? pryt_UsuarioCreacion { get; set; }
+        public DateTime? pryt_FechaCreacion { get; set; }
+        public int? pryt_UsuarioModificacion { get; set; }
+        public DateTime? pryt_FechaModificacion { get; set; }
+        public bool? pryt_Estado { get; set; }
 
-        public virtual TbEmpresas Empr { get; set; }
-        public virtual TbUsuarios PrytUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios PrytUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbComponentes> TbComponentes { get; set; }
+        public virtual tbEmpresas empr { get; set; }
+        public virtual tbUsuarios pryt_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios pryt_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbComponentes> tbComponentes { get; set; }
     }
 }

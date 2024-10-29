@@ -6,23 +6,23 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbRoles
+    public partial class tbRoles
     {
-        public TbRoles()
+        public tbRoles()
         {
-            TbModulosPorRoles = new HashSet<TbModulosPorRoles>();
+            tbModulosPorRoles = new HashSet<tbModulosPorRoles>();
         }
 
-        public int RoleId { get; set; }
-        public string RoleDescripcionRol { get; set; }
-        public int? RoleUsuarioCreacion { get; set; }
-        public DateTime? RoleFechaCreacion { get; set; }
-        public int? RoleUsuarioModificacion { get; set; }
-        public DateTime? RoleFechaModificacion { get; set; }
-        public bool? RoleEstado { get; set; }
+        public int role_Id { get; set; }
+        public string role_DescripcionRol { get; set; }
+        public int? role_UsuarioCreacion { get; set; }
+        public DateTime? role_FechaCreacion { get; set; }
+        public int? role_UsuarioModificacion { get; set; }
+        public DateTime? role_FechaModificacion { get; set; }
+        public bool? role_Estado { get; set; }
 
-        public virtual TbUsuarios RoleUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios RoleUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbModulosPorRoles> TbModulosPorRoles { get; set; }
+        public virtual tbUsuarios role_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios role_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbModulosPorRoles> tbModulosPorRoles { get; set; }
     }
 }

@@ -6,23 +6,23 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbFacultades
+    public partial class tbFacultades
     {
-        public TbFacultades()
+        public tbFacultades()
         {
-            TbFacultadPorRegional = new HashSet<TbFacultadPorRegional>();
+            tbFacultadPorRegional = new HashSet<tbFacultadPorRegional>();
         }
 
-        public int FacuId { get; set; }
-        public string FacuDesripcionFacultad { get; set; }
-        public int? FacuUsuarioCreacion { get; set; }
-        public DateTime? FacuFechaCreacion { get; set; }
-        public int? FacuUsuarioModificacion { get; set; }
-        public DateTime? FacuFechaModificacion { get; set; }
-        public bool? FacuEstado { get; set; }
+        public int facu_Id { get; set; }
+        public string facu_DesripcionFacultad { get; set; }
+        public int? facu_UsuarioCreacion { get; set; }
+        public DateTime? facu_FechaCreacion { get; set; }
+        public int? facu_UsuarioModificacion { get; set; }
+        public DateTime? facu_FechaModificacion { get; set; }
+        public bool? facu_Estado { get; set; }
 
-        public virtual TbUsuarios FacuUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios FacuUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbFacultadPorRegional> TbFacultadPorRegional { get; set; }
+        public virtual tbUsuarios facu_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios facu_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbFacultadPorRegional> tbFacultadPorRegional { get; set; }
     }
 }

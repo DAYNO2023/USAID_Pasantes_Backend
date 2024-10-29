@@ -6,27 +6,27 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbForosPorActividad
+    public partial class tbForosPorActividad
     {
-        public int FoacId { get; set; }
-        public int ForoId { get; set; }
-        public int? ActiId { get; set; }
-        public int? CompId { get; set; }
-        public bool FoacForoProgramado { get; set; }
-        public bool? FoacOtorgaHoras { get; set; }
-        public string FoacDescripcion { get; set; }
-        public TimeSpan? FoacHoras { get; set; }
-        public DateTime? FoacFechaHoraProgramado { get; set; }
-        public int? FoacUsuarioCreacion { get; set; }
-        public DateTime? FoacFechaCreacion { get; set; }
-        public int? FoacUsuarioModificacion { get; set; }
-        public DateTime? FoacFechaModificacion { get; set; }
-        public bool? FoacEstado { get; set; }
+        public int foac_Id { get; set; }
+        public int foro_Id { get; set; }
+        public int? acti_Id { get; set; }
+        public int? comp_Id { get; set; }
+        public bool foac_ForoProgramado { get; set; }
+        public bool? foac_OtorgaHoras { get; set; }
+        public string foac_Descripcion { get; set; }
+        public TimeSpan? foac_Horas { get; set; }
+        public DateTime? foac_FechaHoraProgramado { get; set; }
+        public int? foac_UsuarioCreacion { get; set; }
+        public DateTime? foac_FechaCreacion { get; set; }
+        public int? foac_UsuarioModificacion { get; set; }
+        public DateTime? foac_FechaModificacion { get; set; }
+        public bool? foac_Estado { get; set; }
 
-        public virtual TbActividades Acti { get; set; }
-        public virtual TbComponentes Comp { get; set; }
-        public virtual TbUsuarios FoacUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios FoacUsuarioModificacionNavigation { get; set; }
-        public virtual TbForos Foro { get; set; }
+        public virtual tbActividades acti { get; set; }
+        public virtual tbComponentes comp { get; set; }
+        public virtual tbUsuarios foac_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios foac_UsuarioModificacionNavigation { get; set; }
+        public virtual tbForos foro { get; set; }
     }
 }

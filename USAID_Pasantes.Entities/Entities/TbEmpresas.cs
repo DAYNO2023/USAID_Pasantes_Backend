@@ -6,28 +6,28 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbEmpresas
+    public partial class tbEmpresas
     {
-        public TbEmpresas()
+        public tbEmpresas()
         {
-            TbProyectos = new HashSet<TbProyectos>();
+            tbProyectos = new HashSet<tbProyectos>();
         }
 
-        public int EmprId { get; set; }
-        public string MuniId { get; set; }
-        public string EmprLogo { get; set; }
-        public string EmprDescripcionEmpresa { get; set; }
-        public string EmprSiglas { get; set; }
-        public string EmprDireccionExacta { get; set; }
-        public int? EmprUsuarioCreacion { get; set; }
-        public DateTime? EmprFechaCreacion { get; set; }
-        public int? EmprUsuarioModificacion { get; set; }
-        public DateTime? EmprFechaModificacion { get; set; }
-        public bool? EmprEstado { get; set; }
+        public int empr_Id { get; set; }
+        public string muni_Id { get; set; }
+        public string empr_Logo { get; set; }
+        public string empr_DescripcionEmpresa { get; set; }
+        public string empr_Siglas { get; set; }
+        public string empr_DireccionExacta { get; set; }
+        public int? empr_UsuarioCreacion { get; set; }
+        public DateTime? empr_FechaCreacion { get; set; }
+        public int? empr_UsuarioModificacion { get; set; }
+        public DateTime? empr_FechaModificacion { get; set; }
+        public bool? empr_Estado { get; set; }
 
-        public virtual TbUsuarios EmprUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios EmprUsuarioModificacionNavigation { get; set; }
-        public virtual TbMunicipios Muni { get; set; }
-        public virtual ICollection<TbProyectos> TbProyectos { get; set; }
+        public virtual tbUsuarios empr_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios empr_UsuarioModificacionNavigation { get; set; }
+        public virtual tbMunicipios muni { get; set; }
+        public virtual ICollection<tbProyectos> tbProyectos { get; set; }
     }
 }

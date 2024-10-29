@@ -6,24 +6,24 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbModulos
+    public partial class tbModulos
     {
-        public TbModulos()
+        public tbModulos()
         {
-            TbModulosPorRoles = new HashSet<TbModulosPorRoles>();
+            tbModulosPorRoles = new HashSet<tbModulosPorRoles>();
         }
 
-        public int ModuId { get; set; }
-        public string ModuDescripcionModulo { get; set; }
-        public string ModuUrlModulo { get; set; }
-        public int? ModuUsuarioCreacion { get; set; }
-        public DateTime? ModuFechaCreacion { get; set; }
-        public int? ModuUsuarioModificacion { get; set; }
-        public DateTime? ModuFechaModificacion { get; set; }
-        public bool? ModuEstado { get; set; }
+        public int modu_Id { get; set; }
+        public string modu_DescripcionModulo { get; set; }
+        public string modu_UrlModulo { get; set; }
+        public int? modu_UsuarioCreacion { get; set; }
+        public DateTime? modu_FechaCreacion { get; set; }
+        public int? modu_UsuarioModificacion { get; set; }
+        public DateTime? modu_FechaModificacion { get; set; }
+        public bool? modu_Estado { get; set; }
 
-        public virtual TbUsuarios ModuUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios ModuUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbModulosPorRoles> TbModulosPorRoles { get; set; }
+        public virtual tbUsuarios modu_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios modu_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbModulosPorRoles> tbModulosPorRoles { get; set; }
     }
 }

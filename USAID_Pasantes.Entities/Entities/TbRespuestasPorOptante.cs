@@ -6,15 +6,15 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbRespuestasPorOptante
+    public partial class tbRespuestasPorOptante
     {
-        public int CupaId { get; set; }
-        public int OpprId { get; set; }
-        public int OptaId { get; set; }
-        public string CupaRespuesta { get; set; }
-        public DateTime CupaFechaRealizado { get; set; }
+        public int cupa_Id { get; set; }
+        public int oppr_Id { get; set; }
+        public int opta_Id { get; set; }
+        public string cupa_respuesta { get; set; }
+        public DateTime cupa_FechaRealizado { get; set; }
 
-        public virtual TbOpcionesPorPregunta Oppr { get; set; }
-        public virtual TbOptantes Opta { get; set; }
+        public virtual tbOpcionesPorPregunta oppr { get; set; }
+        public virtual tbOptantes opta { get; set; }
     }
 }

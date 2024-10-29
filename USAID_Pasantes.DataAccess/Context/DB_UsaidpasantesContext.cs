@@ -3,7 +3,6 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using USAID_Pasantes.DataAccess;
-using USAID_Pasantes.Entities.Entities;
 
 #nullable disable
 
@@ -20,2750 +19,1919 @@ namespace USAID_Pasantes.DataAccess.Context
         {
         }
 
-        public virtual DbSet<TbActividades> TbActividades { get; set; }
-        public virtual DbSet<TbActividadesPorOptante> TbActividadesPorOptante { get; set; }
-        public virtual DbSet<TbBancos> TbBancos { get; set; }
-        public virtual DbSet<TbBeneficios> TbBeneficios { get; set; }
-        public virtual DbSet<TbBeneficiosPorOptante> TbBeneficiosPorOptante { get; set; }
-        public virtual DbSet<TbCarreraPorFacultadPorRegional> TbCarreraPorFacultadPorRegional { get; set; }
-        public virtual DbSet<TbCarreras> TbCarreras { get; set; }
-        public virtual DbSet<TbComponentes> TbComponentes { get; set; }
-        public virtual DbSet<TbComponentesPorRegionalPorEmpleado> TbComponentesPorRegionalPorEmpleado { get; set; }
-        public virtual DbSet<TbCuestionarios> TbCuestionarios { get; set; }
-        public virtual DbSet<TbDepartamentos> TbDepartamentos { get; set; }
-        public virtual DbSet<TbDiscusiones> TbDiscusiones { get; set; }
-        public virtual DbSet<TbDocumentos> TbDocumentos { get; set; }
-        public virtual DbSet<TbDocumentosImagenesPorDiscusion> TbDocumentosImagenesPorDiscusion { get; set; }
-        public virtual DbSet<TbDocumentosOptantes> TbDocumentosOptantes { get; set; }
-        public virtual DbSet<TbEmpleados> TbEmpleados { get; set; }
-        public virtual DbSet<TbEmpleadosPorActividad> TbEmpleadosPorActividad { get; set; }
-        public virtual DbSet<TbEmpresas> TbEmpresas { get; set; }
-        public virtual DbSet<TbEstadosCiviles> TbEstadosCiviles { get; set; }
-        public virtual DbSet<TbFacultadPorRegional> TbFacultadPorRegional { get; set; }
-        public virtual DbSet<TbFacultades> TbFacultades { get; set; }
-        public virtual DbSet<TbForos> TbForos { get; set; }
-        public virtual DbSet<TbForosPorActividad> TbForosPorActividad { get; set; }
-        public virtual DbSet<TbForosPorEmpleados> TbForosPorEmpleados { get; set; }
-        public virtual DbSet<TbHojaTiempo> TbHojaTiempo { get; set; }
-        public virtual DbSet<TbHojaTiempoPorOptante> TbHojaTiempoPorOptante { get; set; }
-        public virtual DbSet<TbHojaTiempoPorOptanteBitacora> TbHojaTiempoPorOptanteBitacora { get; set; }
-        public virtual DbSet<TbModulos> TbModulos { get; set; }
-        public virtual DbSet<TbModulosPorRoles> TbModulosPorRoles { get; set; }
-        public virtual DbSet<TbMunicipios> TbMunicipios { get; set; }
-        public virtual DbSet<TbNotificaciones> TbNotificaciones { get; set; }
-        public virtual DbSet<TbNotificacionesPorUsuario> TbNotificacionesPorUsuario { get; set; }
-        public virtual DbSet<TbOpcionesPorPregunta> TbOpcionesPorPregunta { get; set; }
-        public virtual DbSet<TbOptantes> TbOptantes { get; set; }
-        public virtual DbSet<TbOptantesBitacora> TbOptantesBitacora { get; set; }
-        public virtual DbSet<TbPreguntasFrecuentes> TbPreguntasFrecuentes { get; set; }
-        public virtual DbSet<TbPreguntasPorCuestionario> TbPreguntasPorCuestionario { get; set; }
-        public virtual DbSet<TbProyectos> TbProyectos { get; set; }
-        public virtual DbSet<TbPuestos> TbPuestos { get; set; }
-        public virtual DbSet<TbRecibos> TbRecibos { get; set; }
-        public virtual DbSet<TbRecibosPorOptante> TbRecibosPorOptante { get; set; }
-        public virtual DbSet<TbRegionalCorporativa> TbRegionalCorporativa { get; set; }
-        public virtual DbSet<TbRegionales> TbRegionales { get; set; }
-        public virtual DbSet<TbRespuestasPorOptante> TbRespuestasPorOptante { get; set; }
-        public virtual DbSet<TbRoles> TbRoles { get; set; }
-        public virtual DbSet<TbTipoDocumento> TbTipoDocumento { get; set; }
-        public virtual DbSet<TbTipoSangre> TbTipoSangre { get; set; }
-        public virtual DbSet<TbTokens> TbTokens { get; set; }
-        public virtual DbSet<TbUniversidades> TbUniversidades { get; set; }
-        public virtual DbSet<TbUsuarios> TbUsuarios { get; set; }
+        public virtual DbSet<tbActividades> tbActividades { get; set; }
+        public virtual DbSet<tbActividadesPorOptante> tbActividadesPorOptante { get; set; }
+        public virtual DbSet<tbBancos> tbBancos { get; set; }
+        public virtual DbSet<tbBeneficios> tbBeneficios { get; set; }
+        public virtual DbSet<tbBeneficiosPorOptante> tbBeneficiosPorOptante { get; set; }
+        public virtual DbSet<tbCarreraPorFacultadPorRegional> tbCarreraPorFacultadPorRegional { get; set; }
+        public virtual DbSet<tbCarreras> tbCarreras { get; set; }
+        public virtual DbSet<tbComponentes> tbComponentes { get; set; }
+        public virtual DbSet<tbComponentesPorRegionalPorEmpleado> tbComponentesPorRegionalPorEmpleado { get; set; }
+        public virtual DbSet<tbCuestionarios> tbCuestionarios { get; set; }
+        public virtual DbSet<tbDepartamentos> tbDepartamentos { get; set; }
+        public virtual DbSet<tbDiscusiones> tbDiscusiones { get; set; }
+        public virtual DbSet<tbDocumentos> tbDocumentos { get; set; }
+        public virtual DbSet<tbDocumentosImagenesPorDiscusion> tbDocumentosImagenesPorDiscusion { get; set; }
+        public virtual DbSet<tbDocumentosOptantes> tbDocumentosOptantes { get; set; }
+        public virtual DbSet<tbEmpleados> tbEmpleados { get; set; }
+        public virtual DbSet<tbEmpleadosPorActividad> tbEmpleadosPorActividad { get; set; }
+        public virtual DbSet<tbEmpresas> tbEmpresas { get; set; }
+        public virtual DbSet<tbEstadosCiviles> tbEstadosCiviles { get; set; }
+        public virtual DbSet<tbFacultadPorRegional> tbFacultadPorRegional { get; set; }
+        public virtual DbSet<tbFacultades> tbFacultades { get; set; }
+        public virtual DbSet<tbForos> tbForos { get; set; }
+        public virtual DbSet<tbForosPorActividad> tbForosPorActividad { get; set; }
+        public virtual DbSet<tbForosPorEmpleados> tbForosPorEmpleados { get; set; }
+        public virtual DbSet<tbHojaTiempo> tbHojaTiempo { get; set; }
+        public virtual DbSet<tbHojaTiempoPorOptante> tbHojaTiempoPorOptante { get; set; }
+        public virtual DbSet<tbHojaTiempoPorOptanteBitacora> tbHojaTiempoPorOptanteBitacora { get; set; }
+        public virtual DbSet<tbModulos> tbModulos { get; set; }
+        public virtual DbSet<tbModulosPorRoles> tbModulosPorRoles { get; set; }
+        public virtual DbSet<tbMunicipios> tbMunicipios { get; set; }
+        public virtual DbSet<tbNotificaciones> tbNotificaciones { get; set; }
+        public virtual DbSet<tbNotificacionesPorUsuario> tbNotificacionesPorUsuario { get; set; }
+        public virtual DbSet<tbOpcionesPorPregunta> tbOpcionesPorPregunta { get; set; }
+        public virtual DbSet<tbOptantes> tbOptantes { get; set; }
+        public virtual DbSet<tbOptantesBitacora> tbOptantesBitacora { get; set; }
+        public virtual DbSet<tbPreguntasFrecuentes> tbPreguntasFrecuentes { get; set; }
+        public virtual DbSet<tbPreguntasPorCuestionario> tbPreguntasPorCuestionario { get; set; }
+        public virtual DbSet<tbProyectos> tbProyectos { get; set; }
+        public virtual DbSet<tbPuestos> tbPuestos { get; set; }
+        public virtual DbSet<tbRecibos> tbRecibos { get; set; }
+        public virtual DbSet<tbRecibosPorOptante> tbRecibosPorOptante { get; set; }
+        public virtual DbSet<tbRegionalCorporativa> tbRegionalCorporativa { get; set; }
+        public virtual DbSet<tbRegionales> tbRegionales { get; set; }
+        public virtual DbSet<tbRespuestasPorOptante> tbRespuestasPorOptante { get; set; }
+        public virtual DbSet<tbRoles> tbRoles { get; set; }
+        public virtual DbSet<tbTipoDocumento> tbTipoDocumento { get; set; }
+        public virtual DbSet<tbTipoSangre> tbTipoSangre { get; set; }
+        public virtual DbSet<tbTokens> tbTokens { get; set; }
+        public virtual DbSet<tbUniversidades> tbUniversidades { get; set; }
+        public virtual DbSet<tbUsuarios> tbUsuarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
-            modelBuilder.Entity<TbActividades>(entity =>
+            modelBuilder.Entity<tbActividades>(entity =>
             {
-                entity.HasKey(e => e.ActiId)
+                entity.HasKey(e => e.acti_Id)
                     .HasName("PK__tbActivi__9B1042C3AD6B5218");
 
                 entity.ToTable("tbActividades", "Gest");
 
-                entity.Property(e => e.ActiId).HasColumnName("acti_Id");
-
-                entity.Property(e => e.ActiDescripcionActividad)
+                entity.Property(e => e.acti_DescripcionActividad)
                     .IsRequired()
                     .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("acti_DescripcionActividad");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.ActiDireccionExacta)
+                entity.Property(e => e.acti_DireccionExacta)
                     .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("acti_DireccionExacta");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.ActiEstado)
-                    .HasColumnName("acti_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.acti_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.ActiFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("acti_FechaCreacion");
+                entity.Property(e => e.acti_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.ActiFechaFinal)
-                    .HasColumnType("date")
-                    .HasColumnName("acti_FechaFinal");
+                entity.Property(e => e.acti_FechaFinal).HasColumnType("date");
 
-                entity.Property(e => e.ActiFechaInicio)
-                    .HasColumnType("date")
-                    .HasColumnName("acti_FechaInicio");
+                entity.Property(e => e.acti_FechaInicio).HasColumnType("date");
 
-                entity.Property(e => e.ActiFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("acti_FechaModificacion");
+                entity.Property(e => e.acti_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.ActiHoras).HasColumnName("acti_Horas");
-
-                entity.Property(e => e.ActiNombreActividad)
+                entity.Property(e => e.acti_NombreActividad)
                     .IsRequired()
                     .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("acti_NombreActividad");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.ActiPresencialOvirtual).HasColumnName("acti_PresencialOVirtual");
-
-                entity.Property(e => e.ActiUsuarioCreacion).HasColumnName("acti_UsuarioCreacion");
-
-                entity.Property(e => e.ActiUsuarioModificacion).HasColumnName("acti_UsuarioModificacion");
-
-                entity.Property(e => e.CompId).HasColumnName("comp_Id");
-
-                entity.Property(e => e.MuniId)
+                entity.Property(e => e.muni_Id)
                     .HasMaxLength(4)
-                    .IsUnicode(false)
-                    .HasColumnName("muni_Id");
+                    .IsUnicode(false);
 
-                entity.HasOne(d => d.ActiUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbActividadesActiUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.ActiUsuarioCreacion)
+                entity.HasOne(d => d.acti_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbActividadesacti_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.acti_UsuarioCreacion)
                     .HasConstraintName("FK_tbActividades_Accs_tbUsuarios_acti_UsuarioCreacion");
 
-                entity.HasOne(d => d.ActiUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbActividadesActiUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.ActiUsuarioModificacion)
+                entity.HasOne(d => d.acti_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbActividadesacti_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.acti_UsuarioModificacion)
                     .HasConstraintName("FK_tbActividades_Accs_tbUsuarios_acti_UsuarioModificacion");
 
-                entity.HasOne(d => d.Comp)
-                    .WithMany(p => p.TbActividades)
-                    .HasForeignKey(d => d.CompId);
+                entity.HasOne(d => d.comp)
+                    .WithMany(p => p.tbActividades)
+                    .HasForeignKey(d => d.comp_Id);
 
-                entity.HasOne(d => d.Muni)
-                    .WithMany(p => p.TbActividades)
-                    .HasForeignKey(d => d.MuniId)
+                entity.HasOne(d => d.muni)
+                    .WithMany(p => p.tbActividades)
+                    .HasForeignKey(d => d.muni_Id)
                     .HasConstraintName("FK_tbActividades_Gral_tbMunicipios_muni_Id");
             });
 
-            modelBuilder.Entity<TbActividadesPorOptante>(entity =>
+            modelBuilder.Entity<tbActividadesPorOptante>(entity =>
             {
-                entity.HasKey(e => e.AcpeId)
+                entity.HasKey(e => e.acpe_Id)
                     .HasName("PK__tbActivi__8F690CFF17883CFA");
 
                 entity.ToTable("tbActividadesPorOptante", "Gest");
 
-                entity.Property(e => e.AcpeId).HasColumnName("acpe_Id");
+                entity.Property(e => e.acpe_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.AcpeEstado)
-                    .HasColumnName("acpe_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.acpe_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.AcpeFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("acpe_FechaCreacion");
+                entity.Property(e => e.acpe_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.AcpeFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("acpe_FechaModificacion");
-
-                entity.Property(e => e.AcpeHorasCumplidas).HasColumnName("acpe_HorasCumplidas");
-
-                entity.Property(e => e.AcpeObservacion)
+                entity.Property(e => e.acpe_Observacion)
                     .HasMaxLength(200)
-                    .IsUnicode(false)
-                    .HasColumnName("acpe_Observacion");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.AcpeUsuarioCreacion).HasColumnName("acpe_UsuarioCreacion");
-
-                entity.Property(e => e.AcpeUsuarioModificacion).HasColumnName("acpe_UsuarioModificacion");
-
-                entity.Property(e => e.ActiId).HasColumnName("acti_Id");
-
-                entity.Property(e => e.OptaId).HasColumnName("opta_Id");
-
-                entity.HasOne(d => d.AcpeUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbActividadesPorOptanteAcpeUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.AcpeUsuarioCreacion)
+                entity.HasOne(d => d.acpe_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbActividadesPorOptanteacpe_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.acpe_UsuarioCreacion)
                     .HasConstraintName("FK_tbActividadPorOptante_Accs_tbUsuarios_acpe_UsuarioCreacion");
 
-                entity.HasOne(d => d.AcpeUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbActividadesPorOptanteAcpeUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.AcpeUsuarioModificacion)
+                entity.HasOne(d => d.acpe_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbActividadesPorOptanteacpe_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.acpe_UsuarioModificacion)
                     .HasConstraintName("FK_tbActividadPorOptante_Accs_tbUsuarios_acpe_UsuarioModificacion");
 
-                entity.HasOne(d => d.Acti)
-                    .WithMany(p => p.TbActividadesPorOptante)
-                    .HasForeignKey(d => d.ActiId)
+                entity.HasOne(d => d.acti)
+                    .WithMany(p => p.tbActividadesPorOptante)
+                    .HasForeignKey(d => d.acti_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbActividadPorOptante_tbActividades_acti_Id");
 
-                entity.HasOne(d => d.Opta)
-                    .WithMany(p => p.TbActividadesPorOptante)
-                    .HasForeignKey(d => d.OptaId)
+                entity.HasOne(d => d.opta)
+                    .WithMany(p => p.tbActividadesPorOptante)
+                    .HasForeignKey(d => d.opta_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbActividadPorOptante_tbOptantes_opta_Id");
             });
 
-            modelBuilder.Entity<TbBancos>(entity =>
+            modelBuilder.Entity<tbBancos>(entity =>
             {
-                entity.HasKey(e => e.BancId);
+                entity.HasKey(e => e.banc_Id);
 
                 entity.ToTable("tbBancos", "Gral");
 
-                entity.HasIndex(e => e.BancDescripcion, "UQ_banc_Descripcion")
+                entity.HasIndex(e => e.banc_Descripcion, "UQ_banc_Descripcion")
                     .IsUnique();
 
-                entity.Property(e => e.BancId).HasColumnName("banc_Id");
-
-                entity.Property(e => e.BancDescripcion)
+                entity.Property(e => e.banc_Descripcion)
                     .IsRequired()
                     .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .HasColumnName("banc_Descripcion");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.BancEstado).HasColumnName("banc_Estado");
+                entity.Property(e => e.banc_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.BancFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("banc_FechaCreacion");
+                entity.Property(e => e.banc_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.BancFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("banc_FechaModificacion");
-
-                entity.Property(e => e.BancUsuarioCreacion).HasColumnName("banc_UsuarioCreacion");
-
-                entity.Property(e => e.BancUsuarioModificacion).HasColumnName("banc_UsuarioModificacion");
-
-                entity.HasOne(d => d.BancUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbBancosBancUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.BancUsuarioCreacion)
+                entity.HasOne(d => d.banc_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbBancosbanc_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.banc_UsuarioCreacion)
                     .HasConstraintName("FK_tbBancos_Accs_tbUsuarios_banc_UsuarioCreacion");
 
-                entity.HasOne(d => d.BancUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbBancosBancUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.BancUsuarioModificacion)
+                entity.HasOne(d => d.banc_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbBancosbanc_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.banc_UsuarioModificacion)
                     .HasConstraintName("FK_tbBancos_Accs_tbUsuarios_banc_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbBeneficios>(entity =>
+            modelBuilder.Entity<tbBeneficios>(entity =>
             {
-                entity.HasKey(e => e.BeneId)
+                entity.HasKey(e => e.bene_Id)
                     .HasName("PK__tbBenefi__3DC63B52DD27B6DE");
 
                 entity.ToTable("tbBeneficios", "Gest");
 
-                entity.Property(e => e.BeneId).HasColumnName("bene_Id");
+                entity.Property(e => e.bene_Cantidad).HasColumnType("money");
 
-                entity.Property(e => e.BeneCantidad)
-                    .HasColumnType("money")
-                    .HasColumnName("bene_Cantidad");
-
-                entity.Property(e => e.BeneDescripcionBeneficio)
+                entity.Property(e => e.bene_DescripcionBeneficio)
                     .IsRequired()
                     .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .HasColumnName("bene_DescripcionBeneficio");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.BeneEstado)
-                    .HasColumnName("bene_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.bene_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.BeneFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("bene_FechaCreacion");
+                entity.Property(e => e.bene_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.BeneFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("bene_FechaModificacion");
+                entity.Property(e => e.bene_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.BeneNombreBeneficio)
+                entity.Property(e => e.bene_NombreBeneficio)
                     .IsRequired()
                     .HasMaxLength(30)
-                    .IsUnicode(false)
-                    .HasColumnName("bene_NombreBeneficio");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.BeneUsuarioCreacion).HasColumnName("bene_UsuarioCreacion");
-
-                entity.Property(e => e.BeneUsuarioModificacion).HasColumnName("bene_UsuarioModificacion");
-
-                entity.HasOne(d => d.BeneUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbBeneficiosBeneUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.BeneUsuarioCreacion)
+                entity.HasOne(d => d.bene_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbBeneficiosbene_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.bene_UsuarioCreacion)
                     .HasConstraintName("FK_tbBeneficios_Accs_tbUsuarios_bene_UsuarioCreacion");
 
-                entity.HasOne(d => d.BeneUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbBeneficiosBeneUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.BeneUsuarioModificacion)
+                entity.HasOne(d => d.bene_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbBeneficiosbene_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.bene_UsuarioModificacion)
                     .HasConstraintName("FK_tbBeneficios_Accs_tbUsuarios_bene_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbBeneficiosPorOptante>(entity =>
+            modelBuilder.Entity<tbBeneficiosPorOptante>(entity =>
             {
-                entity.HasKey(e => e.BepeId)
+                entity.HasKey(e => e.bepe_Id)
                     .HasName("PK__tbBenefi__F99C73D6EA60BDE8");
 
                 entity.ToTable("tbBeneficiosPorOptante", "Gest");
 
-                entity.Property(e => e.BepeId).HasColumnName("bepe_Id");
-
-                entity.Property(e => e.BeneId).HasColumnName("bene_Id");
-
-                entity.Property(e => e.OptaId).HasColumnName("opta_Id");
-
-                entity.HasOne(d => d.Bene)
-                    .WithMany(p => p.TbBeneficiosPorOptante)
-                    .HasForeignKey(d => d.BeneId)
+                entity.HasOne(d => d.bene)
+                    .WithMany(p => p.tbBeneficiosPorOptante)
+                    .HasForeignKey(d => d.bene_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbBeneficioPorOptante_tbBeneficios_bene_Id");
 
-                entity.HasOne(d => d.Opta)
-                    .WithMany(p => p.TbBeneficiosPorOptante)
-                    .HasForeignKey(d => d.OptaId)
+                entity.HasOne(d => d.opta)
+                    .WithMany(p => p.tbBeneficiosPorOptante)
+                    .HasForeignKey(d => d.opta_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbBeneficioPorOptante_tbOptantes_opta_Id");
             });
 
-            modelBuilder.Entity<TbCarreraPorFacultadPorRegional>(entity =>
+            modelBuilder.Entity<tbCarreraPorFacultadPorRegional>(entity =>
             {
-                entity.HasKey(e => e.CafrId)
+                entity.HasKey(e => e.cafr_Id)
                     .HasName("PK__tbCarrer__8AA093B45B128080");
 
                 entity.ToTable("tbCarreraPorFacultadPorRegional", "Gral");
 
-                entity.Property(e => e.CafrId).HasColumnName("cafr_Id");
-
-                entity.Property(e => e.CarrId).HasColumnName("carr_Id");
-
-                entity.Property(e => e.FareId).HasColumnName("fare_Id");
-
-                entity.HasOne(d => d.Carr)
-                    .WithMany(p => p.TbCarreraPorFacultadPorRegional)
-                    .HasForeignKey(d => d.CarrId)
+                entity.HasOne(d => d.carr)
+                    .WithMany(p => p.tbCarreraPorFacultadPorRegional)
+                    .HasForeignKey(d => d.carr_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbCarreraPorFaculatadPorReginal_tbCarreras_carr_Id");
 
-                entity.HasOne(d => d.Fare)
-                    .WithMany(p => p.TbCarreraPorFacultadPorRegional)
-                    .HasForeignKey(d => d.FareId)
+                entity.HasOne(d => d.fare)
+                    .WithMany(p => p.tbCarreraPorFacultadPorRegional)
+                    .HasForeignKey(d => d.fare_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbCarreraPorFaculatadPorReginal_tbFacultadPorRegional_fare_Id");
             });
 
-            modelBuilder.Entity<TbCarreras>(entity =>
+            modelBuilder.Entity<tbCarreras>(entity =>
             {
-                entity.HasKey(e => e.CarrId)
+                entity.HasKey(e => e.carr_Id)
                     .HasName("PK__tbCarrer__7ED01DB1F4AEFC5F");
 
                 entity.ToTable("tbCarreras", "Gral");
 
-                entity.HasIndex(e => e.CarrDescripcionCarrera, "UQ__tbCarrer__C7EE739BE5A07328")
+                entity.HasIndex(e => e.carr_DescripcionCarrera, "UQ__tbCarrer__C7EE739BE5A07328")
                     .IsUnique();
 
-                entity.Property(e => e.CarrId).HasColumnName("carr_Id");
-
-                entity.Property(e => e.CarrDescripcionCarrera)
+                entity.Property(e => e.carr_DescripcionCarrera)
                     .IsRequired()
                     .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .HasColumnName("carr_DescripcionCarrera");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.CarrEstado)
-                    .HasColumnName("carr_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.carr_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.CarrFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("carr_FechaCreacion");
+                entity.Property(e => e.carr_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.CarrFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("carr_FechaModificacion");
+                entity.Property(e => e.carr_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.CarrUsuarioCreacion).HasColumnName("carr_UsuarioCreacion");
-
-                entity.Property(e => e.CarrUsuarioModificacion).HasColumnName("carr_UsuarioModificacion");
-
-                entity.HasOne(d => d.CarrUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbCarrerasCarrUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.CarrUsuarioCreacion)
+                entity.HasOne(d => d.carr_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbCarrerascarr_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.carr_UsuarioCreacion)
                     .HasConstraintName("FK_tbCarreras_Accs_tbUsuarios_carr_UsuarioCreacion");
 
-                entity.HasOne(d => d.CarrUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbCarrerasCarrUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.CarrUsuarioModificacion)
+                entity.HasOne(d => d.carr_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbCarrerascarr_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.carr_UsuarioModificacion)
                     .HasConstraintName("FK_tbCarreras_Accs_tbUsuarios_carr_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbComponentes>(entity =>
+            modelBuilder.Entity<tbComponentes>(entity =>
             {
-                entity.HasKey(e => e.CompId)
+                entity.HasKey(e => e.comp_Id)
                     .HasName("PK__tbCompon__531157F598460F30");
 
                 entity.ToTable("tbComponentes", "Gest");
 
-                entity.HasIndex(e => e.CompNombreComponente, "UQ__tbCompon__918F2BC481C11832")
+                entity.HasIndex(e => e.comp_NombreComponente, "UQ__tbCompon__918F2BC481C11832")
                     .IsUnique();
 
-                entity.Property(e => e.CompId).HasColumnName("comp_Id");
-
-                entity.Property(e => e.CompComponenteFinalizado).HasColumnName("comp_ComponenteFinalizado");
-
-                entity.Property(e => e.CompDescripcionComponente)
+                entity.Property(e => e.comp_DescripcionComponente)
                     .IsRequired()
-                    .IsUnicode(false)
-                    .HasColumnName("comp_DescripcionComponente");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.CompEstado)
-                    .HasColumnName("comp_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.comp_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.CompFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("comp_FechaCreacion");
+                entity.Property(e => e.comp_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.CompFechaFin)
-                    .HasColumnType("date")
-                    .HasColumnName("comp_FechaFin");
+                entity.Property(e => e.comp_FechaFin).HasColumnType("date");
 
-                entity.Property(e => e.CompFechaInicio)
-                    .HasColumnType("date")
-                    .HasColumnName("comp_FechaInicio");
+                entity.Property(e => e.comp_FechaInicio).HasColumnType("date");
 
-                entity.Property(e => e.CompFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("comp_FechaModificacion");
+                entity.Property(e => e.comp_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.CompHorasAsignadas).HasColumnName("comp_HorasAsignadas");
-
-                entity.Property(e => e.CompHorasCumplidas).HasColumnName("comp_HorasCumplidas");
-
-                entity.Property(e => e.CompNombreComponente)
+                entity.Property(e => e.comp_NombreComponente)
                     .IsRequired()
                     .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("comp_NombreComponente");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.CompObservacion)
-                    .IsUnicode(false)
-                    .HasColumnName("comp_Observacion");
+                entity.Property(e => e.comp_Observacion).IsUnicode(false);
 
-                entity.Property(e => e.CompUsuarioCreacion).HasColumnName("comp_UsuarioCreacion");
-
-                entity.Property(e => e.CompUsuarioModificacion).HasColumnName("comp_UsuarioModificacion");
-
-                entity.Property(e => e.PrytId).HasColumnName("pryt_Id");
-
-                entity.HasOne(d => d.CompUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbComponentesCompUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.CompUsuarioCreacion)
+                entity.HasOne(d => d.comp_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbComponentescomp_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.comp_UsuarioCreacion)
                     .HasConstraintName("FK_tbComponentes_Accs_tbUsuarios_comp_UsuarioCreacion");
 
-                entity.HasOne(d => d.CompUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbComponentesCompUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.CompUsuarioModificacion)
+                entity.HasOne(d => d.comp_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbComponentescomp_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.comp_UsuarioModificacion)
                     .HasConstraintName("FK_tbComponentes_Accs_tbUsuarios_comp_UsuarioModificacion");
 
-                entity.HasOne(d => d.Pryt)
-                    .WithMany(p => p.TbComponentes)
-                    .HasForeignKey(d => d.PrytId)
+                entity.HasOne(d => d.pryt)
+                    .WithMany(p => p.tbComponentes)
+                    .HasForeignKey(d => d.pryt_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
-            modelBuilder.Entity<TbComponentesPorRegionalPorEmpleado>(entity =>
+            modelBuilder.Entity<tbComponentesPorRegionalPorEmpleado>(entity =>
             {
-                entity.HasKey(e => e.CoreId)
+                entity.HasKey(e => e.core_Id)
                     .HasName("PK__tbCompon__5268D43D1D3FC0B6");
 
                 entity.ToTable("tbComponentesPorRegionalPorEmpleado", "Gest");
 
-                entity.Property(e => e.CoreId).HasColumnName("core_Id");
-
-                entity.Property(e => e.CompId).HasColumnName("comp_Id");
-
-                entity.Property(e => e.EmplId).HasColumnName("empl_Id");
-
-                entity.Property(e => e.RecoId).HasColumnName("reco_Id");
-
-                entity.HasOne(d => d.Comp)
-                    .WithMany(p => p.TbComponentesPorRegionalPorEmpleado)
-                    .HasForeignKey(d => d.CompId)
+                entity.HasOne(d => d.comp)
+                    .WithMany(p => p.tbComponentesPorRegionalPorEmpleado)
+                    .HasForeignKey(d => d.comp_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbComponentesPorRegional_Gest_tbComponentes_comp_Id");
 
-                entity.HasOne(d => d.Empl)
-                    .WithMany(p => p.TbComponentesPorRegionalPorEmpleado)
-                    .HasForeignKey(d => d.EmplId)
+                entity.HasOne(d => d.empl)
+                    .WithMany(p => p.tbComponentesPorRegionalPorEmpleado)
+                    .HasForeignKey(d => d.empl_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbComponentesPorRegional_Gral_tbEmpleados_empl_Id");
 
-                entity.HasOne(d => d.Reco)
-                    .WithMany(p => p.TbComponentesPorRegionalPorEmpleado)
-                    .HasForeignKey(d => d.RecoId)
+                entity.HasOne(d => d.reco)
+                    .WithMany(p => p.tbComponentesPorRegionalPorEmpleado)
+                    .HasForeignKey(d => d.reco_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbComponentesPorRegional_Gral_tbRegionalCorporativa_reco_Id");
             });
 
-            modelBuilder.Entity<TbCuestionarios>(entity =>
+            modelBuilder.Entity<tbCuestionarios>(entity =>
             {
-                entity.HasKey(e => e.CuesId)
+                entity.HasKey(e => e.cues_Id)
                     .HasName("PK__tbCuesti__03016624BB9C0C1C");
 
                 entity.ToTable("tbCuestionarios", "Gest");
 
-                entity.Property(e => e.CuesId).HasColumnName("cues_Id");
-
-                entity.Property(e => e.CuesCuestionarioProgramado).HasColumnName("cues_CuestionarioProgramado");
-
-                entity.Property(e => e.CuesDescripcionCuestionario)
+                entity.Property(e => e.cues_DescripcionCuestionario)
                     .IsRequired()
-                    .IsUnicode(false)
-                    .HasColumnName("cues_DescripcionCuestionario");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.CuesEsCalificado).HasColumnName("cues_EsCalificado");
+                entity.Property(e => e.cues_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.CuesEstado)
-                    .HasColumnName("cues_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.cues_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.CuesFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("cues_FechaCreacion");
+                entity.Property(e => e.cues_FechaHoraProgramado).HasColumnType("datetime");
 
-                entity.Property(e => e.CuesFechaHoraProgramado)
-                    .HasColumnType("datetime")
-                    .HasColumnName("cues_FechaHoraProgramado");
+                entity.Property(e => e.cues_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.CuesFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("cues_FechaModificacion");
-
-                entity.Property(e => e.CuesNombreCuestionario)
+                entity.Property(e => e.cues_NombreCuestionario)
                     .IsRequired()
                     .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("cues_NombreCuestionario");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.CuesPuntuacion)
-                    .HasColumnType("decimal(2, 1)")
-                    .HasColumnName("cues_Puntuacion");
+                entity.Property(e => e.cues_Puntuacion).HasColumnType("decimal(2, 1)");
 
-                entity.Property(e => e.CuesUsuarioCreacion).HasColumnName("cues_UsuarioCreacion");
-
-                entity.Property(e => e.CuesUsuarioModificacion).HasColumnName("cues_UsuarioModificacion");
-
-                entity.HasOne(d => d.CuesUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbCuestionariosCuesUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.CuesUsuarioCreacion)
+                entity.HasOne(d => d.cues_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbCuestionarioscues_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.cues_UsuarioCreacion)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbCuestionarios_Accs_tbUsuarios_cues_UsuarioCreacion");
 
-                entity.HasOne(d => d.CuesUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbCuestionariosCuesUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.CuesUsuarioModificacion)
+                entity.HasOne(d => d.cues_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbCuestionarioscues_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.cues_UsuarioModificacion)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbCuestionarios_Accs_tbUsuarios_cues_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbDepartamentos>(entity =>
+            modelBuilder.Entity<tbDepartamentos>(entity =>
             {
-                entity.HasKey(e => e.DepaId)
+                entity.HasKey(e => e.depa_Id)
                     .HasName("PK__tbDepart__E3F3B11E0E3B1F82");
 
                 entity.ToTable("tbDepartamentos", "Gral");
 
-                entity.HasIndex(e => e.DepaDescripcionDepartamento, "UQ__tbDepart__EED74EF8B26E942E")
+                entity.HasIndex(e => e.depa_DescripcionDepartamento, "UQ__tbDepart__EED74EF8B26E942E")
                     .IsUnique();
 
-                entity.HasIndex(e => e.DepaDescripcionDepartamento, "UQ_depa_DescripcionDepartamento")
+                entity.HasIndex(e => e.depa_DescripcionDepartamento, "UQ_depa_DescripcionDepartamento")
                     .IsUnique();
 
-                entity.Property(e => e.DepaId)
+                entity.Property(e => e.depa_Id)
                     .HasMaxLength(2)
-                    .IsUnicode(false)
-                    .HasColumnName("depa_Id");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.DepaDescripcionDepartamento)
+                entity.Property(e => e.depa_DescripcionDepartamento)
                     .IsRequired()
                     .HasMaxLength(30)
-                    .IsUnicode(false)
-                    .HasColumnName("depa_DescripcionDepartamento");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.DepaEstado)
-                    .HasColumnName("depa_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.depa_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.DepaFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("depa_FechaCreacion");
+                entity.Property(e => e.depa_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.DepaFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("depa_FechaModificacion");
+                entity.Property(e => e.depa_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.DepaUsuarioCreacion).HasColumnName("depa_UsuarioCreacion");
-
-                entity.Property(e => e.DepaUsuarioModificacion).HasColumnName("depa_UsuarioModificacion");
-
-                entity.HasOne(d => d.DepaUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbDepartamentosDepaUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.DepaUsuarioCreacion)
+                entity.HasOne(d => d.depa_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbDepartamentosdepa_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.depa_UsuarioCreacion)
                     .HasConstraintName("FK_tbDepartamentos_Accs_tbUsuarios_depa_UsuarioCreacion");
 
-                entity.HasOne(d => d.DepaUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbDepartamentosDepaUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.DepaUsuarioModificacion)
+                entity.HasOne(d => d.depa_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbDepartamentosdepa_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.depa_UsuarioModificacion)
                     .HasConstraintName("FK_tbDepartamentos_Accs_tbUsuarios_depa_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbDiscusiones>(entity =>
+            modelBuilder.Entity<tbDiscusiones>(entity =>
             {
-                entity.HasKey(e => e.DiscId)
+                entity.HasKey(e => e.disc_Id)
                     .HasName("PK__tbDiscus__0AC3326B27F0BF58");
 
                 entity.ToTable("tbDiscusiones", "Comm");
 
-                entity.Property(e => e.DiscId).HasColumnName("disc_Id");
-
-                entity.Property(e => e.DiscAsunto)
+                entity.Property(e => e.disc_Asunto)
                     .IsRequired()
                     .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("disc_Asunto");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.DiscEsOptante).HasColumnName("disc_EsOptante");
+                entity.Property(e => e.disc_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.DiscEstado)
-                    .HasColumnName("disc_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.disc_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.DiscFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("disc_FechaCreacion");
+                entity.Property(e => e.disc_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.DiscFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("disc_FechaModificacion");
+                entity.Property(e => e.disc_Horas).HasColumnType("decimal(18, 0)");
 
-                entity.Property(e => e.DiscHoras)
-                    .HasColumnType("decimal(18, 0)")
-                    .HasColumnName("disc_Horas");
-
-                entity.Property(e => e.DiscMensaje)
+                entity.Property(e => e.disc_Mensaje)
                     .IsRequired()
-                    .IsUnicode(false)
-                    .HasColumnName("disc_Mensaje");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.DiscUsuarioCreacion).HasColumnName("disc_UsuarioCreacion");
-
-                entity.Property(e => e.DiscUsuarioModificacion).HasColumnName("disc_UsuarioModificacion");
-
-                entity.Property(e => e.FafeId).HasColumnName("fafe_Id");
-
-                entity.Property(e => e.OpemId).HasColumnName("opem_Id");
-
-                entity.HasOne(d => d.DiscUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbDiscusionesDiscUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.DiscUsuarioCreacion)
+                entity.HasOne(d => d.disc_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbDiscusionesdisc_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.disc_UsuarioCreacion)
                     .HasConstraintName("FK_tbDiscusiones_Accs_tbUsuarios_disc_UsuarioCreacion");
 
-                entity.HasOne(d => d.DiscUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbDiscusionesDiscUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.DiscUsuarioModificacion)
+                entity.HasOne(d => d.disc_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbDiscusionesdisc_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.disc_UsuarioModificacion)
                     .HasConstraintName("FK_tbDiscusiones_Accs_tbUsuarios_disc_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbDocumentos>(entity =>
+            modelBuilder.Entity<tbDocumentos>(entity =>
             {
-                entity.HasKey(e => e.DocuId)
+                entity.HasKey(e => e.docu_Id)
                     .HasName("PK__tbDocume__7C2F03F8BA7574B0");
 
                 entity.ToTable("tbDocumentos", "Gest");
 
-                entity.HasIndex(e => e.DocuDescripcion, "UQ__tbDocume__9055BBD41CAF4DF0")
+                entity.HasIndex(e => e.docu_Descripcion, "UQ__tbDocume__9055BBD41CAF4DF0")
                     .IsUnique();
 
-                entity.Property(e => e.DocuId).HasColumnName("docu_Id");
-
-                entity.Property(e => e.DocuDescripcion)
+                entity.Property(e => e.docu_Descripcion)
                     .IsRequired()
                     .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("docu_Descripcion");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.DocuEstado)
-                    .HasColumnName("docu_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.docu_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.DocuFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("docu_FechaCreacion");
+                entity.Property(e => e.docu_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.DocuFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("docu_FechaModificacion");
+                entity.Property(e => e.docu_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.DocuUsuarioCreacion).HasColumnName("docu_UsuarioCreacion");
-
-                entity.Property(e => e.DocuUsuarioModificacion).HasColumnName("docu_UsuarioModificacion");
-
-                entity.Property(e => e.TidoId).HasColumnName("tido_Id");
-
-                entity.HasOne(d => d.DocuUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbDocumentosDocuUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.DocuUsuarioCreacion)
+                entity.HasOne(d => d.docu_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbDocumentosdocu_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.docu_UsuarioCreacion)
                     .HasConstraintName("FK_tbDocumentos_Accs_tbUsuarios_docu_UsuarioCreacion");
 
-                entity.HasOne(d => d.DocuUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbDocumentosDocuUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.DocuUsuarioModificacion)
+                entity.HasOne(d => d.docu_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbDocumentosdocu_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.docu_UsuarioModificacion)
                     .HasConstraintName("FK_tbDocumentos_Accs_tbUsuarios_docu_UsuarioModificacion");
 
-                entity.HasOne(d => d.Tido)
-                    .WithMany(p => p.TbDocumentos)
-                    .HasForeignKey(d => d.TidoId)
+                entity.HasOne(d => d.tido)
+                    .WithMany(p => p.tbDocumentos)
+                    .HasForeignKey(d => d.tido_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbDocumentos_Gral_tbTipoDocumento_tido_Id");
             });
 
-            modelBuilder.Entity<TbDocumentosImagenesPorDiscusion>(entity =>
+            modelBuilder.Entity<tbDocumentosImagenesPorDiscusion>(entity =>
             {
-                entity.HasKey(e => e.DidiId)
+                entity.HasKey(e => e.didi_Id)
                     .HasName("PK__tbDocume__589485ABEED73160");
 
                 entity.ToTable("tbDocumentosImagenesPorDiscusion", "Comm");
 
-                entity.Property(e => e.DidiId).HasColumnName("didi_Id");
-
-                entity.Property(e => e.DidiDocumentoOimagen)
+                entity.Property(e => e.didi_DocumentoOImagen)
                     .IsRequired()
-                    .IsUnicode(false)
-                    .HasColumnName("didi_DocumentoOImagen");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.DiscId).HasColumnName("disc_Id");
-
-                entity.HasOne(d => d.Disc)
-                    .WithMany(p => p.TbDocumentosImagenesPorDiscusion)
-                    .HasForeignKey(d => d.DiscId)
+                entity.HasOne(d => d.disc)
+                    .WithMany(p => p.tbDocumentosImagenesPorDiscusion)
+                    .HasForeignKey(d => d.disc_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
-            modelBuilder.Entity<TbDocumentosOptantes>(entity =>
+            modelBuilder.Entity<tbDocumentosOptantes>(entity =>
             {
-                entity.HasKey(e => e.DoopId)
+                entity.HasKey(e => e.doop_Id)
                     .HasName("PK__tbDocume__093F6F16A10E2932");
 
                 entity.ToTable("tbDocumentosOptantes", "Gest");
 
-                entity.HasIndex(e => e.DoopDescripcion, "UQ__tbDocume__E25017672BD1A582")
+                entity.HasIndex(e => e.doop_Descripcion, "UQ__tbDocume__E25017672BD1A582")
                     .IsUnique();
 
-                entity.Property(e => e.DoopId).HasColumnName("doop_Id");
-
-                entity.Property(e => e.DoopDescripcion)
+                entity.Property(e => e.doop_Descripcion)
                     .IsRequired()
                     .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("doop_Descripcion");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.DoopEstado)
-                    .HasColumnName("doop_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.doop_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.DoopFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("doop_FechaCreacion");
+                entity.Property(e => e.doop_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.DoopFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("doop_FechaModificacion");
+                entity.Property(e => e.doop_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.DoopUsuarioCreacion).HasColumnName("doop_UsuarioCreacion");
-
-                entity.Property(e => e.DoopUsuarioModificacion).HasColumnName("doop_UsuarioModificacion");
-
-                entity.Property(e => e.OptaId).HasColumnName("opta_Id");
-
-                entity.Property(e => e.TidoId).HasColumnName("tido_Id");
-
-                entity.HasOne(d => d.DoopUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbDocumentosOptantesDoopUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.DoopUsuarioCreacion)
+                entity.HasOne(d => d.doop_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbDocumentosOptantesdoop_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.doop_UsuarioCreacion)
                     .HasConstraintName("FK_tbDocumentosOptantes_Accs_tbUsuarios_doop_UsuarioCreacion");
 
-                entity.HasOne(d => d.DoopUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbDocumentosOptantesDoopUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.DoopUsuarioModificacion)
+                entity.HasOne(d => d.doop_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbDocumentosOptantesdoop_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.doop_UsuarioModificacion)
                     .HasConstraintName("FK_tbDocumentosOptantes_Accs_tbUsuarios_doop_UsuarioModificacion");
 
-                entity.HasOne(d => d.Opta)
-                    .WithMany(p => p.TbDocumentosOptantes)
-                    .HasForeignKey(d => d.OptaId)
+                entity.HasOne(d => d.opta)
+                    .WithMany(p => p.tbDocumentosOptantes)
+                    .HasForeignKey(d => d.opta_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
 
-                entity.HasOne(d => d.Tido)
-                    .WithMany(p => p.TbDocumentosOptantes)
-                    .HasForeignKey(d => d.TidoId)
+                entity.HasOne(d => d.tido)
+                    .WithMany(p => p.tbDocumentosOptantes)
+                    .HasForeignKey(d => d.tido_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbDocumentosOptantes_Gral_tbTipoDocumento_tido_Id");
             });
 
-            modelBuilder.Entity<TbEmpleados>(entity =>
+            modelBuilder.Entity<tbEmpleados>(entity =>
             {
-                entity.HasKey(e => e.EmplId)
+                entity.HasKey(e => e.empl_Id)
                     .HasName("PK__tbEmplea__4772AE31151CA207");
 
                 entity.ToTable("tbEmpleados", "Gral");
 
-                entity.HasIndex(e => e.EmplDni, "UQ_empl_DNI")
+                entity.HasIndex(e => e.empl_DNI, "UQ_empl_DNI")
                     .IsUnique();
 
-                entity.Property(e => e.EmplId).HasColumnName("empl_Id");
-
-                entity.Property(e => e.CiviId).HasColumnName("civi_Id");
-
-                entity.Property(e => e.EmplApellidos)
+                entity.Property(e => e.empl_Apellidos)
                     .IsRequired()
                     .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("empl_Apellidos");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.EmplCorreo)
+                entity.Property(e => e.empl_Correo)
                     .IsRequired()
                     .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("empl_Correo");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.EmplDni)
+                entity.Property(e => e.empl_DNI)
                     .IsRequired()
                     .HasMaxLength(13)
-                    .IsUnicode(false)
-                    .HasColumnName("empl_DNI");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.EmplEsContador).HasColumnName("empl_EsContador");
+                entity.Property(e => e.empl_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.EmplEstado).HasColumnName("empl_Estado");
+                entity.Property(e => e.empl_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.EmplFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("empl_FechaCreacion");
-
-                entity.Property(e => e.EmplFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("empl_FechaModificacion");
-
-                entity.Property(e => e.EmplImagen)
+                entity.Property(e => e.empl_Imagen)
                     .IsRequired()
-                    .IsUnicode(false)
-                    .HasColumnName("empl_Imagen");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.EmplNombres)
+                entity.Property(e => e.empl_Nombres)
                     .IsRequired()
                     .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("empl_Nombres");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.EmplSexo)
+                entity.Property(e => e.empl_Sexo)
                     .IsRequired()
                     .HasMaxLength(1)
                     .IsUnicode(false)
-                    .HasColumnName("empl_Sexo")
                     .IsFixedLength(true);
 
-                entity.Property(e => e.EmplTelefono)
+                entity.Property(e => e.empl_Telefono)
                     .IsRequired()
                     .HasMaxLength(13)
-                    .IsUnicode(false)
-                    .HasColumnName("empl_Telefono");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.EmplUsuarioCreacion).HasColumnName("empl_UsuarioCreacion");
-
-                entity.Property(e => e.EmplUsuarioModificacion).HasColumnName("empl_UsuarioModificacion");
-
-                entity.Property(e => e.MuniId)
+                entity.Property(e => e.muni_Id)
                     .IsRequired()
                     .HasMaxLength(4)
-                    .IsUnicode(false)
-                    .HasColumnName("muni_Id");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.PustId).HasColumnName("pust_Id");
-
-                entity.Property(e => e.TisaId).HasColumnName("tisa_Id");
-
-                entity.HasOne(d => d.Civi)
-                    .WithMany(p => p.TbEmpleados)
-                    .HasForeignKey(d => d.CiviId)
+                entity.HasOne(d => d.civi)
+                    .WithMany(p => p.tbEmpleados)
+                    .HasForeignKey(d => d.civi_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
 
-                entity.HasOne(d => d.EmplUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbEmpleadosEmplUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.EmplUsuarioCreacion)
+                entity.HasOne(d => d.empl_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbEmpleadosempl_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.empl_UsuarioCreacion)
                     .HasConstraintName("FK_tbEmpleados_Accs_tbUsuarios_empl_UsuarioCreacion");
 
-                entity.HasOne(d => d.EmplUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbEmpleadosEmplUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.EmplUsuarioModificacion)
+                entity.HasOne(d => d.empl_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbEmpleadosempl_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.empl_UsuarioModificacion)
                     .HasConstraintName("FK_tbEmpleados_Accs_tbUsuarios_empl_UsuarioModificacion");
 
-                entity.HasOne(d => d.Muni)
-                    .WithMany(p => p.TbEmpleados)
-                    .HasForeignKey(d => d.MuniId)
+                entity.HasOne(d => d.muni)
+                    .WithMany(p => p.tbEmpleados)
+                    .HasForeignKey(d => d.muni_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
 
-                entity.HasOne(d => d.Pust)
-                    .WithMany(p => p.TbEmpleados)
-                    .HasForeignKey(d => d.PustId)
+                entity.HasOne(d => d.pust)
+                    .WithMany(p => p.tbEmpleados)
+                    .HasForeignKey(d => d.pust_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
 
-                entity.HasOne(d => d.Tisa)
-                    .WithMany(p => p.TbEmpleados)
-                    .HasForeignKey(d => d.TisaId)
+                entity.HasOne(d => d.tisa)
+                    .WithMany(p => p.tbEmpleados)
+                    .HasForeignKey(d => d.tisa_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
-            modelBuilder.Entity<TbEmpleadosPorActividad>(entity =>
+            modelBuilder.Entity<tbEmpleadosPorActividad>(entity =>
             {
-                entity.HasKey(e => e.EmacId)
+                entity.HasKey(e => e.emac_Id)
                     .HasName("PK__tbEmplea__BCCA90A4AC372A95");
 
                 entity.ToTable("tbEmpleadosPorActividad", "Gest");
 
-                entity.Property(e => e.EmacId).HasColumnName("emac_Id");
-
-                entity.Property(e => e.ActiId).HasColumnName("acti_Id");
-
-                entity.Property(e => e.EmplId).HasColumnName("empl_Id");
-
-                entity.HasOne(d => d.Acti)
-                    .WithMany(p => p.TbEmpleadosPorActividad)
-                    .HasForeignKey(d => d.ActiId)
+                entity.HasOne(d => d.acti)
+                    .WithMany(p => p.tbEmpleadosPorActividad)
+                    .HasForeignKey(d => d.acti_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
 
-                entity.HasOne(d => d.Empl)
-                    .WithMany(p => p.TbEmpleadosPorActividad)
-                    .HasForeignKey(d => d.EmplId)
+                entity.HasOne(d => d.empl)
+                    .WithMany(p => p.tbEmpleadosPorActividad)
+                    .HasForeignKey(d => d.empl_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbEmpleadosPorActividad_Gral_tbEmpleados_empl_Id");
             });
 
-            modelBuilder.Entity<TbEmpresas>(entity =>
+            modelBuilder.Entity<tbEmpresas>(entity =>
             {
-                entity.HasKey(e => e.EmprId)
+                entity.HasKey(e => e.empr_Id)
                     .HasName("PK__tbEmpres__7D468F0B69F083C0");
 
                 entity.ToTable("tbEmpresas", "Gest");
 
-                entity.HasIndex(e => e.EmprSiglas, "UQ__tbEmpres__182F21D73DCE6C28")
+                entity.HasIndex(e => e.empr_Siglas, "UQ__tbEmpres__182F21D73DCE6C28")
                     .IsUnique();
 
-                entity.HasIndex(e => e.EmprDescripcionEmpresa, "UQ__tbEmpres__DF23A0AC236CB952")
+                entity.HasIndex(e => e.empr_DescripcionEmpresa, "UQ__tbEmpres__DF23A0AC236CB952")
                     .IsUnique();
 
-                entity.Property(e => e.EmprId).HasColumnName("empr_Id");
-
-                entity.Property(e => e.EmprDescripcionEmpresa)
+                entity.Property(e => e.empr_DescripcionEmpresa)
                     .IsRequired()
                     .HasMaxLength(30)
-                    .IsUnicode(false)
-                    .HasColumnName("empr_DescripcionEmpresa");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.EmprDireccionExacta)
+                entity.Property(e => e.empr_DireccionExacta)
                     .IsRequired()
-                    .IsUnicode(false)
-                    .HasColumnName("empr_DireccionExacta");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.EmprEstado)
-                    .HasColumnName("empr_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.empr_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.EmprFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("empr_FechaCreacion");
+                entity.Property(e => e.empr_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.EmprFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("empr_FechaModificacion");
+                entity.Property(e => e.empr_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.EmprLogo)
+                entity.Property(e => e.empr_Logo)
                     .HasMaxLength(150)
-                    .IsUnicode(false)
-                    .HasColumnName("empr_Logo");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.EmprSiglas)
+                entity.Property(e => e.empr_Siglas)
                     .HasMaxLength(10)
-                    .IsUnicode(false)
-                    .HasColumnName("empr_Siglas");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.EmprUsuarioCreacion).HasColumnName("empr_UsuarioCreacion");
-
-                entity.Property(e => e.EmprUsuarioModificacion).HasColumnName("empr_UsuarioModificacion");
-
-                entity.Property(e => e.MuniId)
+                entity.Property(e => e.muni_Id)
                     .IsRequired()
                     .HasMaxLength(4)
-                    .IsUnicode(false)
-                    .HasColumnName("muni_Id");
+                    .IsUnicode(false);
 
-                entity.HasOne(d => d.EmprUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbEmpresasEmprUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.EmprUsuarioCreacion)
+                entity.HasOne(d => d.empr_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbEmpresasempr_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.empr_UsuarioCreacion)
                     .HasConstraintName("FK_tbEmpresas_Accs_tbUsuarios_empr_UsuarioCreacion");
 
-                entity.HasOne(d => d.EmprUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbEmpresasEmprUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.EmprUsuarioModificacion)
+                entity.HasOne(d => d.empr_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbEmpresasempr_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.empr_UsuarioModificacion)
                     .HasConstraintName("FK_tbEmpresas_Accs_tbUsuarios_empr_UsuarioModificacion");
 
-                entity.HasOne(d => d.Muni)
-                    .WithMany(p => p.TbEmpresas)
-                    .HasForeignKey(d => d.MuniId)
+                entity.HasOne(d => d.muni)
+                    .WithMany(p => p.tbEmpresas)
+                    .HasForeignKey(d => d.muni_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbEmpresas_Gral_tbMunicipios_muni_Id");
             });
 
-            modelBuilder.Entity<TbEstadosCiviles>(entity =>
+            modelBuilder.Entity<tbEstadosCiviles>(entity =>
             {
-                entity.HasKey(e => e.CiviId)
+                entity.HasKey(e => e.civi_Id)
                     .HasName("PK__tbEstado__748BC9DC0BA51B64");
 
                 entity.ToTable("tbEstadosCiviles", "Gral");
 
-                entity.HasIndex(e => e.CiviDescripcionEstadoCivil, "UQ__tbEstado__2DAB6DA8E67DF73B")
+                entity.HasIndex(e => e.civi_DescripcionEstadoCivil, "UQ__tbEstado__2DAB6DA8E67DF73B")
                     .IsUnique();
 
-                entity.Property(e => e.CiviId).HasColumnName("civi_Id");
-
-                entity.Property(e => e.CiviDescripcionEstadoCivil)
+                entity.Property(e => e.civi_DescripcionEstadoCivil)
                     .IsRequired()
                     .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("civi_DescripcionEstadoCivil");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.CiviEstado)
-                    .HasColumnName("civi_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.civi_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.CiviFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("civi_FechaCreacion");
+                entity.Property(e => e.civi_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.CiviFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("civi_FechaModificacion");
+                entity.Property(e => e.civi_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.CiviUsuarioCreacion).HasColumnName("civi_UsuarioCreacion");
-
-                entity.Property(e => e.CiviUsuarioModificacion).HasColumnName("civi_UsuarioModificacion");
-
-                entity.HasOne(d => d.CiviUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbEstadosCivilesCiviUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.CiviUsuarioCreacion)
+                entity.HasOne(d => d.civi_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbEstadosCivilescivi_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.civi_UsuarioCreacion)
                     .HasConstraintName("FK_tbEstadosCiviles_Accs_tbUsuarios_civi_UsuarioCreacion");
 
-                entity.HasOne(d => d.CiviUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbEstadosCivilesCiviUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.CiviUsuarioModificacion)
+                entity.HasOne(d => d.civi_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbEstadosCivilescivi_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.civi_UsuarioModificacion)
                     .HasConstraintName("FK_tbEstadosCiviles_Accs_tbUsuarios_civi_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbFacultadPorRegional>(entity =>
+            modelBuilder.Entity<tbFacultadPorRegional>(entity =>
             {
-                entity.HasKey(e => e.FareId)
+                entity.HasKey(e => e.fare_Id)
                     .HasName("PK__tbFacult__8E0B3BB5E1C53A5B");
 
                 entity.ToTable("tbFacultadPorRegional", "Gral");
 
-                entity.Property(e => e.FareId).HasColumnName("fare_Id");
-
-                entity.Property(e => e.FacuId).HasColumnName("facu_Id");
-
-                entity.Property(e => e.RegiId).HasColumnName("regi_Id");
-
-                entity.HasOne(d => d.Facu)
-                    .WithMany(p => p.TbFacultadPorRegional)
-                    .HasForeignKey(d => d.FacuId)
+                entity.HasOne(d => d.facu)
+                    .WithMany(p => p.tbFacultadPorRegional)
+                    .HasForeignKey(d => d.facu_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
 
-                entity.HasOne(d => d.Regi)
-                    .WithMany(p => p.TbFacultadPorRegional)
-                    .HasForeignKey(d => d.RegiId)
+                entity.HasOne(d => d.regi)
+                    .WithMany(p => p.tbFacultadPorRegional)
+                    .HasForeignKey(d => d.regi_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
-            modelBuilder.Entity<TbFacultades>(entity =>
+            modelBuilder.Entity<tbFacultades>(entity =>
             {
-                entity.HasKey(e => e.FacuId)
+                entity.HasKey(e => e.facu_Id)
                     .HasName("PK__tbFacult__28EB048012269032");
 
                 entity.ToTable("tbFacultades", "Gral");
 
-                entity.HasIndex(e => e.FacuDesripcionFacultad, "UQ_tbFacultades_facu_DesripcionFacultad")
+                entity.HasIndex(e => e.facu_DesripcionFacultad, "UQ_tbFacultades_facu_DesripcionFacultad")
                     .IsUnique();
 
-                entity.Property(e => e.FacuId).HasColumnName("facu_Id");
-
-                entity.Property(e => e.FacuDesripcionFacultad)
+                entity.Property(e => e.facu_DesripcionFacultad)
                     .IsRequired()
                     .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("facu_DesripcionFacultad");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.FacuEstado)
-                    .HasColumnName("facu_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.facu_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.FacuFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("facu_FechaCreacion");
+                entity.Property(e => e.facu_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.FacuFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("facu_FechaModificacion");
+                entity.Property(e => e.facu_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.FacuUsuarioCreacion).HasColumnName("facu_UsuarioCreacion");
-
-                entity.Property(e => e.FacuUsuarioModificacion).HasColumnName("facu_UsuarioModificacion");
-
-                entity.HasOne(d => d.FacuUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbFacultadesFacuUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.FacuUsuarioCreacion)
+                entity.HasOne(d => d.facu_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbFacultadesfacu_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.facu_UsuarioCreacion)
                     .HasConstraintName("FK_tbFacultades_Accs_tbUsuarios_facu_UsuarioCreacion");
 
-                entity.HasOne(d => d.FacuUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbFacultadesFacuUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.FacuUsuarioModificacion)
+                entity.HasOne(d => d.facu_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbFacultadesfacu_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.facu_UsuarioModificacion)
                     .HasConstraintName("FK_tbFacultades_Accs_tbUsuarios_facu_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbForos>(entity =>
+            modelBuilder.Entity<tbForos>(entity =>
             {
-                entity.HasKey(e => e.ForoId)
+                entity.HasKey(e => e.foro_Id)
                     .HasName("PK__tbForos__6C73713F0E4F8A77");
 
                 entity.ToTable("tbForos", "Comm");
 
-                entity.Property(e => e.ForoId).HasColumnName("foro_Id");
+                entity.Property(e => e.foro_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.ForoEsNacional).HasColumnName("foro_EsNacional");
+                entity.Property(e => e.foro_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.ForoEsParaEmpleados).HasColumnName("foro_EsParaEmpleados");
+                entity.Property(e => e.foro_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.ForoEstado)
-                    .HasColumnName("foro_Estado")
-                    .HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.ForoFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("foro_FechaCreacion");
-
-                entity.Property(e => e.ForoFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("foro_FechaModificacion");
-
-                entity.Property(e => e.ForoTitulo)
+                entity.Property(e => e.foro_Titulo)
                     .IsRequired()
                     .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("foro_Titulo");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.ForoUsuarioCreacion).HasColumnName("foro_UsuarioCreacion");
-
-                entity.Property(e => e.ForoUsuarioModificacion).HasColumnName("foro_UsuarioModificacion");
-
-                entity.HasOne(d => d.ForoUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbForosForoUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.ForoUsuarioCreacion)
+                entity.HasOne(d => d.foro_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbForosforo_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.foro_UsuarioCreacion)
                     .HasConstraintName("FK_tbForos_Accs_tbUsuarios_foro_UsuarioCreacion");
 
-                entity.HasOne(d => d.ForoUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbForosForoUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.ForoUsuarioModificacion)
+                entity.HasOne(d => d.foro_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbForosforo_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.foro_UsuarioModificacion)
                     .HasConstraintName("FK_tbForos_Accs_tbUsuarios_foro_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbForosPorActividad>(entity =>
+            modelBuilder.Entity<tbForosPorActividad>(entity =>
             {
-                entity.HasKey(e => e.FoacId)
+                entity.HasKey(e => e.foac_Id)
                     .HasName("PK__tbForosP__02075A0B75F42DF8");
 
                 entity.ToTable("tbForosPorActividad", "Comm");
 
-                entity.Property(e => e.FoacId).HasColumnName("foac_Id");
-
-                entity.Property(e => e.ActiId).HasColumnName("acti_Id");
-
-                entity.Property(e => e.CompId).HasColumnName("comp_Id");
-
-                entity.Property(e => e.FoacDescripcion)
+                entity.Property(e => e.foac_Descripcion)
                     .IsRequired()
-                    .IsUnicode(false)
-                    .HasColumnName("foac_Descripcion");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.FoacEstado)
-                    .HasColumnName("foac_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.foac_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.FoacFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("foac_FechaCreacion");
+                entity.Property(e => e.foac_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.FoacFechaHoraProgramado)
-                    .HasColumnType("datetime")
-                    .HasColumnName("foac_FechaHoraProgramado");
+                entity.Property(e => e.foac_FechaHoraProgramado).HasColumnType("datetime");
 
-                entity.Property(e => e.FoacFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("foac_FechaModificacion");
+                entity.Property(e => e.foac_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.FoacForoProgramado).HasColumnName("foac_ForoProgramado");
+                entity.HasOne(d => d.acti)
+                    .WithMany(p => p.tbForosPorActividad)
+                    .HasForeignKey(d => d.acti_Id);
 
-                entity.Property(e => e.FoacHoras).HasColumnName("foac_Horas");
-
-                entity.Property(e => e.FoacOtorgaHoras).HasColumnName("foac_OtorgaHoras");
-
-                entity.Property(e => e.FoacUsuarioCreacion).HasColumnName("foac_UsuarioCreacion");
-
-                entity.Property(e => e.FoacUsuarioModificacion).HasColumnName("foac_UsuarioModificacion");
-
-                entity.Property(e => e.ForoId).HasColumnName("foro_Id");
-
-                entity.HasOne(d => d.Acti)
-                    .WithMany(p => p.TbForosPorActividad)
-                    .HasForeignKey(d => d.ActiId);
-
-                entity.HasOne(d => d.Comp)
-                    .WithMany(p => p.TbForosPorActividad)
-                    .HasForeignKey(d => d.CompId)
+                entity.HasOne(d => d.comp)
+                    .WithMany(p => p.tbForosPorActividad)
+                    .HasForeignKey(d => d.comp_Id)
                     .HasConstraintName("FK_tbForosPorActividad_Gest_tbComponentes_comp_Id");
 
-                entity.HasOne(d => d.FoacUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbForosPorActividadFoacUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.FoacUsuarioCreacion)
+                entity.HasOne(d => d.foac_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbForosPorActividadfoac_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.foac_UsuarioCreacion)
                     .HasConstraintName("FK_tbForosPorActividad_Accs_tbUsuarios_foac_UsuarioCreacion");
 
-                entity.HasOne(d => d.FoacUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbForosPorActividadFoacUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.FoacUsuarioModificacion)
+                entity.HasOne(d => d.foac_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbForosPorActividadfoac_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.foac_UsuarioModificacion)
                     .HasConstraintName("FK_tbForosPorActividad_Accs_tbUsuarios_foac_UsuarioModificacion");
 
-                entity.HasOne(d => d.Foro)
-                    .WithMany(p => p.TbForosPorActividad)
-                    .HasForeignKey(d => d.ForoId)
+                entity.HasOne(d => d.foro)
+                    .WithMany(p => p.tbForosPorActividad)
+                    .HasForeignKey(d => d.foro_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
-            modelBuilder.Entity<TbForosPorEmpleados>(entity =>
+            modelBuilder.Entity<tbForosPorEmpleados>(entity =>
             {
-                entity.HasKey(e => e.FoemId);
+                entity.HasKey(e => e.foem_Id);
 
                 entity.ToTable("tbForosPorEmpleados", "Comm");
 
-                entity.Property(e => e.FoemId).HasColumnName("foem_Id");
-
-                entity.Property(e => e.FoemDescripcion)
+                entity.Property(e => e.foem_Descripcion)
                     .IsRequired()
-                    .IsUnicode(false)
-                    .HasColumnName("foem_Descripcion");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.FoemEstado).HasColumnName("foem_Estado");
+                entity.Property(e => e.foem_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.FoemFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("foem_FechaCreacion");
+                entity.Property(e => e.foem_FechaHoraProgramado).HasColumnType("datetime");
 
-                entity.Property(e => e.FoemFechaHoraProgramado)
-                    .HasColumnType("datetime")
-                    .HasColumnName("foem_FechaHoraProgramado");
+                entity.Property(e => e.foem_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.FoemFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("foem_FechaModificacion");
-
-                entity.Property(e => e.FoemForoProgramado).HasColumnName("foem_ForoProgramado");
-
-                entity.Property(e => e.FoemUsuarioCreacion).HasColumnName("foem_UsuarioCreacion");
-
-                entity.Property(e => e.FoemUsuarioModificacion).HasColumnName("foem_UsuarioModificacion");
-
-                entity.Property(e => e.ForoId).HasColumnName("foro_Id");
-
-                entity.HasOne(d => d.FoemUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbForosPorEmpleadosFoemUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.FoemUsuarioCreacion)
+                entity.HasOne(d => d.foem_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbForosPorEmpleadosfoem_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.foem_UsuarioCreacion)
                     .HasConstraintName("FK_tbForosPorEmpleados_Accs_tbUsuarios_foem_UsuarioCreacion");
 
-                entity.HasOne(d => d.FoemUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbForosPorEmpleadosFoemUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.FoemUsuarioModificacion)
+                entity.HasOne(d => d.foem_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbForosPorEmpleadosfoem_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.foem_UsuarioModificacion)
                     .HasConstraintName("FK_tbForosPorEmpleados_Accs_tbUsuarios_foem_UsuarioModificacion");
 
-                entity.HasOne(d => d.Foro)
-                    .WithMany(p => p.TbForosPorEmpleados)
-                    .HasForeignKey(d => d.ForoId)
+                entity.HasOne(d => d.foro)
+                    .WithMany(p => p.tbForosPorEmpleados)
+                    .HasForeignKey(d => d.foro_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
-            modelBuilder.Entity<TbHojaTiempo>(entity =>
+            modelBuilder.Entity<tbHojaTiempo>(entity =>
             {
-                entity.HasKey(e => e.HotiId)
+                entity.HasKey(e => e.hoti_Id)
                     .HasName("PK__tbHojaTi__3277BDB03DCAE14C");
 
                 entity.ToTable("tbHojaTiempo", "Gest");
 
-                entity.Property(e => e.HotiId).HasColumnName("hoti_Id");
+                entity.Property(e => e.hoti_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.CompId).HasColumnName("comp_Id");
+                entity.Property(e => e.hoti_FechaHoraEntregaLimite).HasColumnType("datetime");
 
-                entity.Property(e => e.HotiEstado).HasColumnName("hoti_Estado");
+                entity.Property(e => e.hoti_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.HotiFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("hoti_FechaCreacion");
+                entity.Property(e => e.hoti_PeriodoFinal).HasColumnType("date");
 
-                entity.Property(e => e.HotiFechaHoraEntregaLimite)
-                    .HasColumnType("datetime")
-                    .HasColumnName("hoti_FechaHoraEntregaLimite");
+                entity.Property(e => e.hoti_PeriodoInicio).HasColumnType("date");
 
-                entity.Property(e => e.HotiFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("hoti_FechaModificacion");
-
-                entity.Property(e => e.HotiHorasMinimas).HasColumnName("hoti_HorasMinimas");
-
-                entity.Property(e => e.HotiPeriodoFinal)
-                    .HasColumnType("date")
-                    .HasColumnName("hoti_PeriodoFinal");
-
-                entity.Property(e => e.HotiPeriodoInicio)
-                    .HasColumnType("date")
-                    .HasColumnName("hoti_PeriodoInicio");
-
-                entity.Property(e => e.HotiUsuarioCreacion).HasColumnName("hoti_UsuarioCreacion");
-
-                entity.Property(e => e.HotiUsuarioModificacion).HasColumnName("hoti_UsuarioModificacion");
-
-                entity.HasOne(d => d.Comp)
-                    .WithMany(p => p.TbHojaTiempo)
-                    .HasForeignKey(d => d.CompId)
+                entity.HasOne(d => d.comp)
+                    .WithMany(p => p.tbHojaTiempo)
+                    .HasForeignKey(d => d.comp_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbHojaTiempo_Gest_tbComponentes_comp_Id");
 
-                entity.HasOne(d => d.HotiUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbHojaTiempoHotiUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.HotiUsuarioCreacion)
+                entity.HasOne(d => d.hoti_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbHojaTiempohoti_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.hoti_UsuarioCreacion)
                     .HasConstraintName("FK_tbHojaTiempo_Accs_tbUsuarios_hoti_UsuarioCreacion");
 
-                entity.HasOne(d => d.HotiUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbHojaTiempoHotiUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.HotiUsuarioModificacion)
+                entity.HasOne(d => d.hoti_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbHojaTiempohoti_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.hoti_UsuarioModificacion)
                     .HasConstraintName("FK_tbHojaTiempo_Accs_tbUsuarios_hoti_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbHojaTiempoPorOptante>(entity =>
+            modelBuilder.Entity<tbHojaTiempoPorOptante>(entity =>
             {
-                entity.HasKey(e => e.HotoId)
+                entity.HasKey(e => e.hoto_Id)
                     .HasName("PK__tbHojaTi__62F07577EA6814A5");
 
                 entity.ToTable("tbHojaTiempoPorOptante", "Gest");
 
-                entity.Property(e => e.HotoId).HasColumnName("hoto_Id");
-
-                entity.Property(e => e.HotiAprobada).HasColumnName("hoti_Aprobada");
-
-                entity.Property(e => e.HotiId).HasColumnName("hoti_Id");
-
-                entity.Property(e => e.HotoComentario)
+                entity.Property(e => e.hoto_Comentario)
                     .HasMaxLength(250)
-                    .IsUnicode(false)
-                    .HasColumnName("hoto_Comentario");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.HotoEstado).HasColumnName("hoto_Estado");
+                entity.Property(e => e.hoto_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.HotoFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("hoto_FechaCreacion");
+                entity.Property(e => e.hoto_FechaHoraEntrega).HasColumnType("datetime");
 
-                entity.Property(e => e.HotoFechaHoraEntrega)
-                    .HasColumnType("datetime")
-                    .HasColumnName("hoto_FechaHoraEntrega");
+                entity.Property(e => e.hoto_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.HotoFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("hoto_FechaModificacion");
+                entity.Property(e => e.hoto_HorasTotalesRealizadas).HasColumnType("decimal(18, 0)");
 
-                entity.Property(e => e.HotoHorasTotalesRealizadas)
-                    .HasColumnType("decimal(18, 0)")
-                    .HasColumnName("hoto_HorasTotalesRealizadas");
-
-                entity.Property(e => e.HotoUsuarioCreacion).HasColumnName("hoto_UsuarioCreacion");
-
-                entity.Property(e => e.HotoUsuarioModificacion).HasColumnName("hoto_UsuarioModificacion");
-
-                entity.Property(e => e.OptaId).HasColumnName("opta_Id");
-
-                entity.HasOne(d => d.Hoti)
-                    .WithMany(p => p.TbHojaTiempoPorOptante)
-                    .HasForeignKey(d => d.HotiId)
+                entity.HasOne(d => d.hoti)
+                    .WithMany(p => p.tbHojaTiempoPorOptante)
+                    .HasForeignKey(d => d.hoti_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbHojaTiempoPorOptante_Gest_tbHojaTiempo_hoti_Id");
 
-                entity.HasOne(d => d.HotoUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbHojaTiempoPorOptanteHotoUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.HotoUsuarioCreacion)
+                entity.HasOne(d => d.hoto_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbHojaTiempoPorOptantehoto_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.hoto_UsuarioCreacion)
                     .HasConstraintName("FK_tbHojaTiempoPorOptante_Accs_tbUsuarios_hoto_UsuarioCreacion");
 
-                entity.HasOne(d => d.HotoUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbHojaTiempoPorOptanteHotoUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.HotoUsuarioModificacion)
+                entity.HasOne(d => d.hoto_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbHojaTiempoPorOptantehoto_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.hoto_UsuarioModificacion)
                     .HasConstraintName("FK_tbHojaTiempoPorOptante_Accs_tbUsuarios_hoto_UsuarioModificacion");
 
-                entity.HasOne(d => d.Opta)
-                    .WithMany(p => p.TbHojaTiempoPorOptante)
-                    .HasForeignKey(d => d.OptaId)
+                entity.HasOne(d => d.opta)
+                    .WithMany(p => p.tbHojaTiempoPorOptante)
+                    .HasForeignKey(d => d.opta_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbHojaTiempoPorOptante_Gest_tbOptantes_opta_Id");
             });
 
-            modelBuilder.Entity<TbHojaTiempoPorOptanteBitacora>(entity =>
+            modelBuilder.Entity<tbHojaTiempoPorOptanteBitacora>(entity =>
             {
                 entity.HasNoKey();
 
                 entity.ToTable("tbHojaTiempoPorOptanteBitacora", "Gest");
 
-                entity.Property(e => e.HotiAprobada).HasColumnName("hoti_Aprobada");
-
-                entity.Property(e => e.HotiId).HasColumnName("hoti_Id");
-
-                entity.Property(e => e.HotoAccion)
+                entity.Property(e => e.hoto_Accion)
                     .HasMaxLength(1)
                     .IsUnicode(false)
-                    .HasColumnName("hoto_Accion")
                     .IsFixedLength(true);
 
-                entity.Property(e => e.HotoEstado).HasColumnName("hoto_Estado");
+                entity.Property(e => e.hoto_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.HotoFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("hoto_FechaCreacion");
+                entity.Property(e => e.hoto_FechaEliminado).HasColumnType("datetime");
 
-                entity.Property(e => e.HotoFechaEliminado)
-                    .HasColumnType("datetime")
-                    .HasColumnName("hoto_FechaEliminado");
+                entity.Property(e => e.hoto_FechaHoraEntrega).HasColumnType("datetime");
 
-                entity.Property(e => e.HotoFechaHoraEntrega)
-                    .HasColumnType("datetime")
-                    .HasColumnName("hoto_FechaHoraEntrega");
+                entity.Property(e => e.hoto_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.HotoFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("hoto_FechaModificacion");
+                entity.Property(e => e.hoto_HorasTotalesRealizadas).HasColumnType("decimal(18, 0)");
 
-                entity.Property(e => e.HotoHorasTotalesRealizadas)
-                    .HasColumnType("decimal(18, 0)")
-                    .HasColumnName("hoto_HorasTotalesRealizadas");
-
-                entity.Property(e => e.HotoId).HasColumnName("hoto_Id");
-
-                entity.Property(e => e.HotoUsuarioCreacion).HasColumnName("hoto_UsuarioCreacion");
-
-                entity.Property(e => e.HotoUsuarioEliminado).HasColumnName("hoto_UsuarioEliminado");
-
-                entity.Property(e => e.HotoUsuarioModificacion).HasColumnName("hoto_UsuarioModificacion");
-
-                entity.Property(e => e.OptaId).HasColumnName("opta_Id");
-
-                entity.Property(e => e.OtoComentario)
+                entity.Property(e => e.oto_Comentario)
                     .HasMaxLength(250)
-                    .IsUnicode(false)
-                    .HasColumnName("oto_Comentario");
+                    .IsUnicode(false);
             });
 
-            modelBuilder.Entity<TbModulos>(entity =>
+            modelBuilder.Entity<tbModulos>(entity =>
             {
-                entity.HasKey(e => e.ModuId)
+                entity.HasKey(e => e.modu_Id)
                     .HasName("PK__tbModulo__6F3FB45DA2109B01");
 
                 entity.ToTable("tbModulos", "Accs");
 
-                entity.HasIndex(e => e.ModuUrlModulo, "UQ__tbModulo__3061E23DA7E88771")
+                entity.HasIndex(e => e.modu_UrlModulo, "UQ__tbModulo__3061E23DA7E88771")
                     .IsUnique();
 
-                entity.HasIndex(e => e.ModuDescripcionModulo, "UQ__tbModulo__846D0391369F2D2B")
+                entity.HasIndex(e => e.modu_DescripcionModulo, "UQ__tbModulo__846D0391369F2D2B")
                     .IsUnique();
 
-                entity.HasIndex(e => e.ModuDescripcionModulo, "UQ_tbModulos_modu_DescripcionModulo")
+                entity.HasIndex(e => e.modu_DescripcionModulo, "UQ_tbModulos_modu_DescripcionModulo")
                     .IsUnique();
 
-                entity.Property(e => e.ModuId).HasColumnName("modu_Id");
-
-                entity.Property(e => e.ModuDescripcionModulo)
+                entity.Property(e => e.modu_DescripcionModulo)
                     .IsRequired()
                     .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("modu_DescripcionModulo");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.ModuEstado)
-                    .HasColumnName("modu_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.modu_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.ModuFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("modu_FechaCreacion");
+                entity.Property(e => e.modu_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.ModuFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("modu_FechaModificacion");
+                entity.Property(e => e.modu_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.ModuUrlModulo)
+                entity.Property(e => e.modu_UrlModulo)
                     .IsRequired()
                     .HasMaxLength(255)
-                    .IsUnicode(false)
-                    .HasColumnName("modu_UrlModulo");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.ModuUsuarioCreacion).HasColumnName("modu_UsuarioCreacion");
-
-                entity.Property(e => e.ModuUsuarioModificacion).HasColumnName("modu_UsuarioModificacion");
-
-                entity.HasOne(d => d.ModuUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbModulosModuUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.ModuUsuarioCreacion)
+                entity.HasOne(d => d.modu_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbModulosmodu_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.modu_UsuarioCreacion)
                     .HasConstraintName("FK_tbModulos_Accs_tbUsuarios_modu_UsuarioCreacion");
 
-                entity.HasOne(d => d.ModuUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbModulosModuUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.ModuUsuarioModificacion)
+                entity.HasOne(d => d.modu_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbModulosmodu_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.modu_UsuarioModificacion)
                     .HasConstraintName("FK_tbModulos_Accs_tbUsuarios_modu_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbModulosPorRoles>(entity =>
+            modelBuilder.Entity<tbModulosPorRoles>(entity =>
             {
-                entity.HasKey(e => e.MoroId)
+                entity.HasKey(e => e.moro_Id)
                     .HasName("PK__tbModulo__FB7C532B195A4C56");
 
                 entity.ToTable("tbModulosPorRoles", "Accs");
 
-                entity.Property(e => e.MoroId).HasColumnName("moro_Id");
-
-                entity.Property(e => e.ModuId).HasColumnName("modu_Id");
-
-                entity.Property(e => e.RoleId).HasColumnName("role_Id");
-
-                entity.HasOne(d => d.Modu)
-                    .WithMany(p => p.TbModulosPorRoles)
-                    .HasForeignKey(d => d.ModuId)
+                entity.HasOne(d => d.modu)
+                    .WithMany(p => p.tbModulosPorRoles)
+                    .HasForeignKey(d => d.modu_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
 
-                entity.HasOne(d => d.Role)
-                    .WithMany(p => p.TbModulosPorRoles)
-                    .HasForeignKey(d => d.RoleId)
+                entity.HasOne(d => d.role)
+                    .WithMany(p => p.tbModulosPorRoles)
+                    .HasForeignKey(d => d.role_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
-            modelBuilder.Entity<TbMunicipios>(entity =>
+            modelBuilder.Entity<tbMunicipios>(entity =>
             {
-                entity.HasKey(e => e.MuniId)
+                entity.HasKey(e => e.muni_Id)
                     .HasName("PK_tbMunicipios_muni_Id");
 
                 entity.ToTable("tbMunicipios", "Gral");
 
-                entity.HasIndex(e => e.MuniDescripcionMunicipio, "UQ__tbMunici__34A349564A3D2700")
+                entity.HasIndex(e => e.muni_DescripcionMunicipio, "UQ__tbMunici__34A349564A3D2700")
                     .IsUnique();
 
-                entity.Property(e => e.MuniId)
+                entity.Property(e => e.muni_Id)
                     .HasMaxLength(4)
-                    .IsUnicode(false)
-                    .HasColumnName("muni_Id");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.DepaId)
+                entity.Property(e => e.depa_Id)
                     .IsRequired()
                     .HasMaxLength(2)
-                    .IsUnicode(false)
-                    .HasColumnName("depa_Id");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.MuniDescripcionMunicipio)
+                entity.Property(e => e.muni_DescripcionMunicipio)
                     .IsRequired()
                     .HasMaxLength(30)
-                    .IsUnicode(false)
-                    .HasColumnName("muni_DescripcionMunicipio");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.MuniEstado)
-                    .HasColumnName("muni_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.muni_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.MuniFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("muni_FechaCreacion");
+                entity.Property(e => e.muni_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.MuniFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("muni_FechaModificacion");
+                entity.Property(e => e.muni_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.MuniUsuarioCreacion).HasColumnName("muni_UsuarioCreacion");
-
-                entity.Property(e => e.MuniUsuarioModificacion).HasColumnName("muni_UsuarioModificacion");
-
-                entity.HasOne(d => d.Depa)
-                    .WithMany(p => p.TbMunicipios)
-                    .HasForeignKey(d => d.DepaId)
+                entity.HasOne(d => d.depa)
+                    .WithMany(p => p.tbMunicipios)
+                    .HasForeignKey(d => d.depa_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
 
-                entity.HasOne(d => d.MuniUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbMunicipiosMuniUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.MuniUsuarioCreacion)
+                entity.HasOne(d => d.muni_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbMunicipiosmuni_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.muni_UsuarioCreacion)
                     .HasConstraintName("FK_tbMunicipios_Accs_tbUsuarios_muni_UsuarioCreacion");
 
-                entity.HasOne(d => d.MuniUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbMunicipiosMuniUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.MuniUsuarioModificacion)
+                entity.HasOne(d => d.muni_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbMunicipiosmuni_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.muni_UsuarioModificacion)
                     .HasConstraintName("FK_tbMunicipios_Accs_tbUsuarios_muni_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbNotificaciones>(entity =>
+            modelBuilder.Entity<tbNotificaciones>(entity =>
             {
-                entity.HasKey(e => e.NotiId);
+                entity.HasKey(e => e.noti_Id);
 
                 entity.ToTable("tbNotificaciones", "Comm");
 
-                entity.Property(e => e.NotiId).HasColumnName("noti_Id");
-
-                entity.Property(e => e.NotiDescripcion)
+                entity.Property(e => e.noti_Descripcion)
                     .IsRequired()
-                    .IsUnicode(false)
-                    .HasColumnName("noti_Descripcion");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.NotiEstado).HasColumnName("noti_Estado");
+                entity.Property(e => e.noti_Fecha).HasColumnType("datetime");
 
-                entity.Property(e => e.NotiFecha)
-                    .HasColumnType("datetime")
-                    .HasColumnName("noti_Fecha");
+                entity.Property(e => e.noti_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.NotiFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("noti_FechaCreacion");
+                entity.Property(e => e.noti_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.NotiFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("noti_FechaModificacion");
-
-                entity.Property(e => e.NotiRuta)
+                entity.Property(e => e.noti_Ruta)
                     .IsRequired()
                     .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("noti_Ruta");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.NotiUsuarioCreacion).HasColumnName("noti_UsuarioCreacion");
-
-                entity.Property(e => e.NotiUsuarioModificacion).HasColumnName("noti_UsuarioModificacion");
-
-                entity.HasOne(d => d.NotiUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbNotificacionesNotiUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.NotiUsuarioCreacion)
+                entity.HasOne(d => d.noti_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbNotificacionesnoti_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.noti_UsuarioCreacion)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbNotificaciones_Accs_tbUsuarios_noti_UsuarioCreacion");
 
-                entity.HasOne(d => d.NotiUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbNotificacionesNotiUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.NotiUsuarioModificacion)
+                entity.HasOne(d => d.noti_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbNotificacionesnoti_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.noti_UsuarioModificacion)
                     .HasConstraintName("FK_tbNotificaciones_Accs_tbUsuarios_noti_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbNotificacionesPorUsuario>(entity =>
+            modelBuilder.Entity<tbNotificacionesPorUsuario>(entity =>
             {
-                entity.HasKey(e => e.NapuId);
+                entity.HasKey(e => e.napu_Id);
 
                 entity.ToTable("tbNotificacionesPorUsuario", "Comm");
 
-                entity.Property(e => e.NapuId).HasColumnName("napu_Id");
+                entity.Property(e => e.napu_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.NapuAlertaOnoti).HasColumnName("napu_AlertaOnoti");
+                entity.Property(e => e.napu_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.NapuAlertaOnotiId).HasColumnName("napu_AlertaONoti_Id");
-
-                entity.Property(e => e.NapuEstado).HasColumnName("napu_Estado");
-
-                entity.Property(e => e.NapuFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("napu_FechaCreacion");
-
-                entity.Property(e => e.NapuFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("napu_FechaModificacion");
-
-                entity.Property(e => e.NapuLeida).HasColumnName("napu_Leida");
-
-                entity.Property(e => e.NapuRuta)
+                entity.Property(e => e.napu_Ruta)
                     .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("napu_Ruta");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.NapuUsuarioCreacion).HasColumnName("napu_UsuarioCreacion");
-
-                entity.Property(e => e.NapuUsuarioModificacion).HasColumnName("napu_UsuarioModificacion");
-
-                entity.Property(e => e.UsuaId).HasColumnName("usua_Id");
-
-                entity.HasOne(d => d.NapuUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbNotificacionesPorUsuarioNapuUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.NapuUsuarioCreacion)
+                entity.HasOne(d => d.napu_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbNotificacionesPorUsuarionapu_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.napu_UsuarioCreacion)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbNotificacionesPorUsuario_Accs_tbUsuarios_napu_UsuarioCreacion");
 
-                entity.HasOne(d => d.NapuUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbNotificacionesPorUsuarioNapuUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.NapuUsuarioModificacion)
+                entity.HasOne(d => d.napu_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbNotificacionesPorUsuarionapu_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.napu_UsuarioModificacion)
                     .HasConstraintName("FK_tbNotificacionesPorUsuario_Accs_tbUsuarios_napu_UsuarioModificacion");
 
-                entity.HasOne(d => d.Usua)
-                    .WithMany(p => p.TbNotificacionesPorUsuarioUsua)
-                    .HasForeignKey(d => d.UsuaId)
+                entity.HasOne(d => d.usua)
+                    .WithMany(p => p.tbNotificacionesPorUsuariousua)
+                    .HasForeignKey(d => d.usua_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbNotificacionesPorUsuario_Accs_tbUsuarios_usua_Id");
             });
 
-            modelBuilder.Entity<TbOpcionesPorPregunta>(entity =>
+            modelBuilder.Entity<tbOpcionesPorPregunta>(entity =>
             {
-                entity.HasKey(e => e.OpprId)
+                entity.HasKey(e => e.oppr_Id)
                     .HasName("PK__tbOpcion__32A5707FE194FF8D");
 
                 entity.ToTable("tbOpcionesPorPregunta", "Gest");
 
-                entity.Property(e => e.OpprId).HasColumnName("oppr_Id");
-
-                entity.Property(e => e.OpprEsRespuesta).HasColumnName("oppr_EsRespuesta");
-
-                entity.Property(e => e.OpprNombreOpcion)
+                entity.Property(e => e.oppr_NombreOpcion)
                     .IsRequired()
-                    .IsUnicode(false)
-                    .HasColumnName("oppr_NombreOpcion");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.PrcuId).HasColumnName("prcu_Id");
-
-                entity.HasOne(d => d.Prcu)
-                    .WithMany(p => p.TbOpcionesPorPregunta)
-                    .HasForeignKey(d => d.PrcuId)
+                entity.HasOne(d => d.prcu)
+                    .WithMany(p => p.tbOpcionesPorPregunta)
+                    .HasForeignKey(d => d.prcu_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
-            modelBuilder.Entity<TbOptantes>(entity =>
+            modelBuilder.Entity<tbOptantes>(entity =>
             {
-                entity.HasKey(e => e.OptaId)
+                entity.HasKey(e => e.opta_Id)
                     .HasName("PK__tbOptant__791B3329B02BB7FE");
 
                 entity.ToTable("tbOptantes", "Gest");
 
-                entity.HasIndex(e => e.OptaDni, "UQ__tbOptant__659E8FD0D910C988")
+                entity.HasIndex(e => e.opta_DNI, "UQ__tbOptant__659E8FD0D910C988")
                     .IsUnique();
 
-                entity.HasIndex(e => e.OptaCorreoElectronico, "UQ__tbOptant__EE5007D46B9DBF17")
+                entity.HasIndex(e => e.opta_CorreoElectronico, "UQ__tbOptant__EE5007D46B9DBF17")
                     .IsUnique();
 
-                entity.Property(e => e.OptaId).HasColumnName("opta_Id");
-
-                entity.Property(e => e.BancId).HasColumnName("banc_Id");
-
-                entity.Property(e => e.CafrId).HasColumnName("cafr_Id");
-
-                entity.Property(e => e.CiviId).HasColumnName("civi_Id");
-
-                entity.Property(e => e.CompId).HasColumnName("comp_Id");
-
-                entity.Property(e => e.MuniId)
+                entity.Property(e => e.muni_Id)
                     .IsRequired()
                     .HasMaxLength(4)
-                    .IsUnicode(false)
-                    .HasColumnName("muni_Id");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaCorreoElectronico)
+                entity.Property(e => e.opta_CorreoElectronico)
                     .IsRequired()
                     .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_CorreoElectronico");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaCuentaBancaria)
+                entity.Property(e => e.opta_CuentaBancaria)
                     .HasMaxLength(30)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_CuentaBancaria");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaDireccion)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_Direccion");
-
-                entity.Property(e => e.OptaDni)
+                entity.Property(e => e.opta_DNI)
                     .IsRequired()
                     .HasMaxLength(15)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_DNI");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaEstado)
-                    .HasColumnName("opta_Estado")
-                    .HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.OptaFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("opta_FechaCreacion");
-
-                entity.Property(e => e.OptaFechaFin)
-                    .HasColumnType("date")
-                    .HasColumnName("opta_FechaFin");
-
-                entity.Property(e => e.OptaFechaInicio)
-                    .HasColumnType("date")
-                    .HasColumnName("opta_FechaInicio");
-
-                entity.Property(e => e.OptaFechamodificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("opta_Fechamodificacion");
-
-                entity.Property(e => e.OptaImagen)
+                entity.Property(e => e.opta_Direccion)
                     .IsRequired()
-                    .IsUnicode(false)
-                    .HasColumnName("opta_Imagen");
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaObservacion)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_Observacion");
+                entity.Property(e => e.opta_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.OptaOptanteAceptado).HasColumnName("opta_OptanteAceptado");
+                entity.Property(e => e.opta_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.OptaPrimerApellido)
+                entity.Property(e => e.opta_FechaFin).HasColumnType("date");
+
+                entity.Property(e => e.opta_FechaInicio).HasColumnType("date");
+
+                entity.Property(e => e.opta_Fechamodificacion).HasColumnType("datetime");
+
+                entity.Property(e => e.opta_Imagen)
+                    .IsRequired()
+                    .IsUnicode(false);
+
+                entity.Property(e => e.opta_Observacion).IsUnicode(false);
+
+                entity.Property(e => e.opta_PrimerApellido)
                     .IsRequired()
                     .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_PrimerApellido");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaPrimerNombre)
+                entity.Property(e => e.opta_PrimerNombre)
                     .IsRequired()
                     .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_PrimerNombre");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaSegundoApellido)
+                entity.Property(e => e.opta_SegundoApellido)
                     .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_SegundoApellido");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaSegundoNombre)
+                entity.Property(e => e.opta_SegundoNombre)
                     .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_SegundoNombre");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaSexo)
+                entity.Property(e => e.opta_Sexo)
                     .IsRequired()
                     .HasMaxLength(1)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_Sexo");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaTelefono1)
+                entity.Property(e => e.opta_Telefono1)
                     .IsRequired()
                     .HasMaxLength(9)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_Telefono1");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaTelefono2)
+                entity.Property(e => e.opta_Telefono2)
                     .HasMaxLength(9)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_Telefono2");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaTipoPago).HasColumnName("opta_TipoPago");
-
-                entity.Property(e => e.OptaUsuarioCreacion).HasColumnName("opta_UsuarioCreacion");
-
-                entity.Property(e => e.OptaUsuarioModificacion).HasColumnName("opta_UsuarioModificacion");
-
-                entity.Property(e => e.TisaId).HasColumnName("tisa_Id");
-
-                entity.HasOne(d => d.Banc)
-                    .WithMany(p => p.TbOptantes)
-                    .HasForeignKey(d => d.BancId)
+                entity.HasOne(d => d.banc)
+                    .WithMany(p => p.tbOptantes)
+                    .HasForeignKey(d => d.banc_Id)
                     .HasConstraintName("FK_tbOptantes_Gral_tbBancos_banc_Id");
 
-                entity.HasOne(d => d.Cafr)
-                    .WithMany(p => p.TbOptantes)
-                    .HasForeignKey(d => d.CafrId)
+                entity.HasOne(d => d.cafr)
+                    .WithMany(p => p.tbOptantes)
+                    .HasForeignKey(d => d.cafr_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbOptantes_Gral_tbCarreraPorFacultadPorRegional_cafr_Id");
 
-                entity.HasOne(d => d.Civi)
-                    .WithMany(p => p.TbOptantes)
-                    .HasForeignKey(d => d.CiviId)
+                entity.HasOne(d => d.civi)
+                    .WithMany(p => p.tbOptantes)
+                    .HasForeignKey(d => d.civi_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbOptantes_Gral_tbEstadosCiviles_civi_Id");
 
-                entity.HasOne(d => d.Comp)
-                    .WithMany(p => p.TbOptantes)
-                    .HasForeignKey(d => d.CompId);
+                entity.HasOne(d => d.comp)
+                    .WithMany(p => p.tbOptantes)
+                    .HasForeignKey(d => d.comp_Id);
 
-                entity.HasOne(d => d.Muni)
-                    .WithMany(p => p.TbOptantes)
-                    .HasForeignKey(d => d.MuniId)
+                entity.HasOne(d => d.muni)
+                    .WithMany(p => p.tbOptantes)
+                    .HasForeignKey(d => d.muni_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbOptantes_Gral_tbMunicipios_muni_Id");
 
-                entity.HasOne(d => d.OptaUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbOptantesOptaUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.OptaUsuarioCreacion)
+                entity.HasOne(d => d.opta_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbOptantesopta_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.opta_UsuarioCreacion)
                     .HasConstraintName("FK_tbOptantes_Accs_tbUsuarios_opta_UsuarioCreacion");
 
-                entity.HasOne(d => d.OptaUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbOptantesOptaUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.OptaUsuarioModificacion)
+                entity.HasOne(d => d.opta_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbOptantesopta_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.opta_UsuarioModificacion)
                     .HasConstraintName("FK_tbOptantes_Accs_tbUsuarios_opta_UsuarioModificacion");
 
-                entity.HasOne(d => d.Tisa)
-                    .WithMany(p => p.TbOptantes)
-                    .HasForeignKey(d => d.TisaId)
+                entity.HasOne(d => d.tisa)
+                    .WithMany(p => p.tbOptantes)
+                    .HasForeignKey(d => d.tisa_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbOptantes_Gral_tbTipoSangre_tisa_Id");
             });
 
-            modelBuilder.Entity<TbOptantesBitacora>(entity =>
+            modelBuilder.Entity<tbOptantesBitacora>(entity =>
             {
                 entity.HasNoKey();
 
                 entity.ToTable("tbOptantesBitacora", "Gest");
 
-                entity.Property(e => e.BancId).HasColumnName("banc_Id");
-
-                entity.Property(e => e.CafrId).HasColumnName("cafr_Id");
-
-                entity.Property(e => e.CiviId).HasColumnName("civi_Id");
-
-                entity.Property(e => e.CompId).HasColumnName("comp_Id");
-
-                entity.Property(e => e.MuniId)
+                entity.Property(e => e.muni_Id)
                     .HasMaxLength(4)
-                    .IsUnicode(false)
-                    .HasColumnName("muni_Id");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaAccion)
+                entity.Property(e => e.opta_Accion)
                     .HasMaxLength(1)
                     .IsUnicode(false)
-                    .HasColumnName("opta_Accion")
                     .IsFixedLength(true);
 
-                entity.Property(e => e.OptaCorreoElectronico)
+                entity.Property(e => e.opta_CorreoElectronico)
                     .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_CorreoElectronico");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaCuentaBancaria)
+                entity.Property(e => e.opta_CuentaBancaria)
                     .HasMaxLength(30)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_CuentaBancaria");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaDireccion)
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_Direccion");
-
-                entity.Property(e => e.OptaDni)
+                entity.Property(e => e.opta_DNI)
                     .HasMaxLength(15)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_DNI");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaEstado).HasColumnName("opta_Estado");
+                entity.Property(e => e.opta_Direccion)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("opta_FechaCreacion");
+                entity.Property(e => e.opta_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.OptaFechaEliminado)
-                    .HasColumnType("datetime")
-                    .HasColumnName("opta_FechaEliminado");
+                entity.Property(e => e.opta_FechaEliminado).HasColumnType("datetime");
 
-                entity.Property(e => e.OptaFechaFin)
-                    .HasColumnType("date")
-                    .HasColumnName("opta_FechaFin");
+                entity.Property(e => e.opta_FechaFin).HasColumnType("date");
 
-                entity.Property(e => e.OptaFechaInicio)
-                    .HasColumnType("date")
-                    .HasColumnName("opta_FechaInicio");
+                entity.Property(e => e.opta_FechaInicio).HasColumnType("date");
 
-                entity.Property(e => e.OptaFechamodificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("opta_Fechamodificacion");
+                entity.Property(e => e.opta_Fechamodificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.OptaId).HasColumnName("opta_Id");
+                entity.Property(e => e.opta_Imagen).IsUnicode(false);
 
-                entity.Property(e => e.OptaImagen)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_Imagen");
+                entity.Property(e => e.opta_Observacion).IsUnicode(false);
 
-                entity.Property(e => e.OptaObservacion)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_Observacion");
-
-                entity.Property(e => e.OptaOptanteAceptado).HasColumnName("opta_OptanteAceptado");
-
-                entity.Property(e => e.OptaPrimerApellido)
+                entity.Property(e => e.opta_PrimerApellido)
                     .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_PrimerApellido");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaPrimerNombre)
+                entity.Property(e => e.opta_PrimerNombre)
                     .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_PrimerNombre");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaSegundoApellido)
+                entity.Property(e => e.opta_SegundoApellido)
                     .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_SegundoApellido");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaSegundoNombre)
+                entity.Property(e => e.opta_SegundoNombre)
                     .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_SegundoNombre");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaSexo)
+                entity.Property(e => e.opta_Sexo)
                     .HasMaxLength(1)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_Sexo");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaTelefono1)
+                entity.Property(e => e.opta_Telefono1)
                     .HasMaxLength(9)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_Telefono1");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.OptaTelefono2)
+                entity.Property(e => e.opta_Telefono2)
                     .HasMaxLength(9)
-                    .IsUnicode(false)
-                    .HasColumnName("opta_Telefono2");
-
-                entity.Property(e => e.OptaTipoPago).HasColumnName("opta_TipoPago");
-
-                entity.Property(e => e.OptaUsuarioCreacion).HasColumnName("opta_UsuarioCreacion");
-
-                entity.Property(e => e.OptaUsuarioEliminado).HasColumnName("opta_UsuarioEliminado");
-
-                entity.Property(e => e.OptaUsuarioModificacion).HasColumnName("opta_UsuarioModificacion");
-
-                entity.Property(e => e.TisaId).HasColumnName("tisa_Id");
+                    .IsUnicode(false);
             });
 
-            modelBuilder.Entity<TbPreguntasFrecuentes>(entity =>
+            modelBuilder.Entity<tbPreguntasFrecuentes>(entity =>
             {
-                entity.HasKey(e => e.PrfrId)
+                entity.HasKey(e => e.prfr_Id)
                     .HasName("PK__tbPregun__B5C22C499239DC28");
 
                 entity.ToTable("tbPreguntasFrecuentes", "Comm");
 
-                entity.HasIndex(e => e.PrfrPregunta, "UQ_tbPreguntasFrecuentes_prfr_Pregunta")
+                entity.HasIndex(e => e.prfr_Pregunta, "UQ_tbPreguntasFrecuentes_prfr_Pregunta")
                     .IsUnique();
 
-                entity.Property(e => e.PrfrId).HasColumnName("prfr_Id");
+                entity.Property(e => e.prfr_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.PrfrEstado).HasColumnName("prfr_Estado");
+                entity.Property(e => e.prfr_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.PrfrFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("prfr_FechaCreacion");
-
-                entity.Property(e => e.PrfrFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("prfr_FechaModificacion");
-
-                entity.Property(e => e.PrfrPregunta)
+                entity.Property(e => e.prfr_Pregunta)
                     .IsRequired()
                     .HasMaxLength(200)
-                    .IsUnicode(false)
-                    .HasColumnName("prfr_Pregunta");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.PrfrRespuesta)
+                entity.Property(e => e.prfr_Respuesta)
                     .IsRequired()
-                    .IsUnicode(false)
-                    .HasColumnName("prfr_Respuesta");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.PrfrUsuarioCreacion).HasColumnName("prfr_UsuarioCreacion");
-
-                entity.Property(e => e.PrfrUsuarioModificacion).HasColumnName("prfr_UsuarioModificacion");
-
-                entity.HasOne(d => d.PrfrUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbPreguntasFrecuentesPrfrUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.PrfrUsuarioCreacion)
+                entity.HasOne(d => d.prfr_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbPreguntasFrecuentesprfr_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.prfr_UsuarioCreacion)
                     .HasConstraintName("FK_tbPreguntasFrecuentes_Accs_tbUsuarios_prfr_UsuarioCreacion");
 
-                entity.HasOne(d => d.PrfrUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbPreguntasFrecuentesPrfrUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.PrfrUsuarioModificacion)
+                entity.HasOne(d => d.prfr_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbPreguntasFrecuentesprfr_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.prfr_UsuarioModificacion)
                     .HasConstraintName("FK_tbPreguntasFrecuentes_Accs_tbUsuarios_prfr_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbPreguntasPorCuestionario>(entity =>
+            modelBuilder.Entity<tbPreguntasPorCuestionario>(entity =>
             {
-                entity.HasKey(e => e.PrcuId)
+                entity.HasKey(e => e.prcu_Id)
                     .HasName("PK__tbPregun__32C2967A884DB2F3");
 
                 entity.ToTable("tbPreguntasPorCuestionario", "Gest");
 
-                entity.Property(e => e.PrcuId).HasColumnName("prcu_Id");
-
-                entity.Property(e => e.CuesId).HasColumnName("cues_Id");
-
-                entity.Property(e => e.PrcuEsRespuestaBreve).HasColumnName("prcu_EsRespuestaBreve");
-
-                entity.Property(e => e.PrcuPregunta)
+                entity.Property(e => e.prcu_Pregunta)
                     .IsRequired()
-                    .IsUnicode(false)
-                    .HasColumnName("prcu_Pregunta");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.PrcuPuntuacion)
-                    .HasColumnType("decimal(2, 1)")
-                    .HasColumnName("prcu_Puntuacion");
+                entity.Property(e => e.prcu_Puntuacion).HasColumnType("decimal(2, 1)");
 
-                entity.HasOne(d => d.Cues)
-                    .WithMany(p => p.TbPreguntasPorCuestionario)
-                    .HasForeignKey(d => d.CuesId)
+                entity.HasOne(d => d.cues)
+                    .WithMany(p => p.tbPreguntasPorCuestionario)
+                    .HasForeignKey(d => d.cues_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
-            modelBuilder.Entity<TbProyectos>(entity =>
+            modelBuilder.Entity<tbProyectos>(entity =>
             {
-                entity.HasKey(e => e.PrytId)
+                entity.HasKey(e => e.pryt_Id)
                     .HasName("PK__tbProyec__3AB3C03AB5B93CC9");
 
                 entity.ToTable("tbProyectos", "Gest");
 
-                entity.HasIndex(e => e.PrytDescripcionProyecto, "UQ__tbProyec__7ECE41F76EDD43EA")
+                entity.HasIndex(e => e.pryt_DescripcionProyecto, "UQ__tbProyec__7ECE41F76EDD43EA")
                     .IsUnique();
 
-                entity.Property(e => e.PrytId).HasColumnName("pryt_Id");
-
-                entity.Property(e => e.EmprId).HasColumnName("empr_Id");
-
-                entity.Property(e => e.PrytDescripcionProyecto)
+                entity.Property(e => e.pryt_DescripcionProyecto)
                     .IsRequired()
                     .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .HasColumnName("pryt_DescripcionProyecto");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.PrytEstado)
-                    .HasColumnName("pryt_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.pryt_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.PrytFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("pryt_FechaCreacion");
+                entity.Property(e => e.pryt_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.PrytFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("pryt_FechaModificacion");
+                entity.Property(e => e.pryt_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.PrytHorasProceso)
-                    .HasColumnType("decimal(18, 0)")
-                    .HasColumnName("pryt_HorasProceso");
+                entity.Property(e => e.pryt_HorasProceso).HasColumnType("decimal(18, 0)");
 
-                entity.Property(e => e.PrytUsuarioCreacion).HasColumnName("pryt_UsuarioCreacion");
-
-                entity.Property(e => e.PrytUsuarioModificacion).HasColumnName("pryt_UsuarioModificacion");
-
-                entity.HasOne(d => d.Empr)
-                    .WithMany(p => p.TbProyectos)
-                    .HasForeignKey(d => d.EmprId)
+                entity.HasOne(d => d.empr)
+                    .WithMany(p => p.tbProyectos)
+                    .HasForeignKey(d => d.empr_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
 
-                entity.HasOne(d => d.PrytUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbProyectosPrytUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.PrytUsuarioCreacion)
+                entity.HasOne(d => d.pryt_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbProyectospryt_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.pryt_UsuarioCreacion)
                     .HasConstraintName("FK_tbProyectos_Accs_tbUsuarios_pryt_UsuarioCreacion");
 
-                entity.HasOne(d => d.PrytUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbProyectosPrytUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.PrytUsuarioModificacion)
+                entity.HasOne(d => d.pryt_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbProyectospryt_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.pryt_UsuarioModificacion)
                     .HasConstraintName("FK_tbProyectos_Accs_tbUsuarios_pryt_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbPuestos>(entity =>
+            modelBuilder.Entity<tbPuestos>(entity =>
             {
-                entity.HasKey(e => e.PustId)
+                entity.HasKey(e => e.pust_Id)
                     .HasName("PK__tbPuesto__671B89653E55E08E");
 
                 entity.ToTable("tbPuestos", "Gral");
 
-                entity.HasIndex(e => e.PustDescripcionPuesto, "UQ__tbPuesto__927C93499CD7F6E4")
+                entity.HasIndex(e => e.pust_DescripcionPuesto, "UQ__tbPuesto__927C93499CD7F6E4")
                     .IsUnique();
 
-                entity.Property(e => e.PustId).HasColumnName("pust_Id");
-
-                entity.Property(e => e.PustDescripcionPuesto)
+                entity.Property(e => e.pust_DescripcionPuesto)
                     .IsRequired()
                     .HasMaxLength(30)
-                    .IsUnicode(false)
-                    .HasColumnName("pust_DescripcionPuesto");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.PustEstado)
-                    .HasColumnName("pust_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.pust_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.PustFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("pust_FechaCreacion");
+                entity.Property(e => e.pust_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.PustFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("pust_FechaModificacion");
+                entity.Property(e => e.pust_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.PustUsuarioCreacion).HasColumnName("pust_UsuarioCreacion");
-
-                entity.Property(e => e.PustUsuarioModificacion).HasColumnName("pust_UsuarioModificacion");
-
-                entity.HasOne(d => d.PustUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbPuestosPustUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.PustUsuarioCreacion)
+                entity.HasOne(d => d.pust_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbPuestospust_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.pust_UsuarioCreacion)
                     .HasConstraintName("FK_tbPuestos_Accs_tbUsuarios_pust_UsuarioCreacion");
 
-                entity.HasOne(d => d.PustUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbPuestosPustUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.PustUsuarioModificacion)
+                entity.HasOne(d => d.pust_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbPuestospust_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.pust_UsuarioModificacion)
                     .HasConstraintName("FK_tbPuestos_Accs_tbUsuarios_pust_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbRecibos>(entity =>
+            modelBuilder.Entity<tbRecibos>(entity =>
             {
-                entity.HasKey(e => e.ReciId)
+                entity.HasKey(e => e.reci_Id)
                     .HasName("PK__tbRecibo__50EBEE7EC10E9DF5");
 
                 entity.ToTable("tbRecibos", "Gest");
 
-                entity.Property(e => e.ReciId).HasColumnName("reci_Id");
+                entity.Property(e => e.reci_Certificacion).IsUnicode(false);
 
-                entity.Property(e => e.EmplId).HasColumnName("empl_Id");
+                entity.Property(e => e.reci_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.ReciCertificacion)
-                    .IsUnicode(false)
-                    .HasColumnName("reci_Certificacion");
+                entity.Property(e => e.reci_FechaHoraLimite).HasColumnType("datetime");
 
-                entity.Property(e => e.ReciEstado).HasColumnName("reci_Estado");
+                entity.Property(e => e.reci_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.ReciFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("reci_FechaCreacion");
-
-                entity.Property(e => e.ReciFechaHoraLimite)
-                    .HasColumnType("datetime")
-                    .HasColumnName("reci_FechaHoraLimite");
-
-                entity.Property(e => e.ReciFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("reci_FechaModificacion");
-
-                entity.Property(e => e.ReciPara)
+                entity.Property(e => e.reci_Para)
                     .IsRequired()
                     .HasMaxLength(255)
-                    .IsUnicode(false)
-                    .HasColumnName("reci_Para");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.ReciPeriodoFinal)
-                    .HasColumnType("date")
-                    .HasColumnName("reci_PeriodoFinal");
+                entity.Property(e => e.reci_PeriodoFinal).HasColumnType("date");
 
-                entity.Property(e => e.ReciPeriodoInicio)
-                    .HasColumnType("date")
-                    .HasColumnName("reci_PeriodoInicio");
+                entity.Property(e => e.reci_PeriodoInicio).HasColumnType("date");
 
-                entity.Property(e => e.ReciUsuarioCreacion).HasColumnName("reci_UsuarioCreacion");
-
-                entity.Property(e => e.ReciUsuarioModificacion).HasColumnName("reci_UsuarioModificacion");
-
-                entity.HasOne(d => d.Empl)
-                    .WithMany(p => p.TbRecibos)
-                    .HasForeignKey(d => d.EmplId)
+                entity.HasOne(d => d.empl)
+                    .WithMany(p => p.tbRecibos)
+                    .HasForeignKey(d => d.empl_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbRecibos_Gral_tbEmpleados_empl_Id");
 
-                entity.HasOne(d => d.ReciUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbRecibosReciUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.ReciUsuarioCreacion)
+                entity.HasOne(d => d.reci_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbRecibosreci_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.reci_UsuarioCreacion)
                     .HasConstraintName("FK_tbRecibos_Accs_tbUsuarios_reci_UsuarioCreacion");
 
-                entity.HasOne(d => d.ReciUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbRecibosReciUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.ReciUsuarioModificacion)
+                entity.HasOne(d => d.reci_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbRecibosreci_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.reci_UsuarioModificacion)
                     .HasConstraintName("FK_tbRecibos_Accs_tbUsuarios_reci_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbRecibosPorOptante>(entity =>
+            modelBuilder.Entity<tbRecibosPorOptante>(entity =>
             {
-                entity.HasKey(e => e.ReopId)
+                entity.HasKey(e => e.reop_Id)
                     .HasName("PK__tbRecibo__16161EE90A5E9CF2");
 
                 entity.ToTable("tbRecibosPorOptante", "Gest");
 
-                entity.Property(e => e.ReopId).HasColumnName("reop_Id");
-
-                entity.Property(e => e.OptaId).HasColumnName("opta_Id");
-
-                entity.Property(e => e.ReopDescripcion)
+                entity.Property(e => e.reop_Descripcion)
                     .IsRequired()
                     .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("reop_Descripcion");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.ReopHorasTotalesRealizadas)
-                    .HasColumnType("decimal(2, 1)")
-                    .HasColumnName("reop_HorasTotalesRealizadas");
+                entity.Property(e => e.reop_HorasTotalesRealizadas).HasColumnType("decimal(2, 1)");
 
-                entity.Property(e => e.ReopPrecioUnitario)
-                    .HasColumnType("decimal(18, 0)")
-                    .HasColumnName("reop_PrecioUnitario");
+                entity.Property(e => e.reop_PrecioUnitario).HasColumnType("decimal(18, 0)");
 
-                entity.Property(e => e.ReopTotal)
-                    .HasColumnType("decimal(6, 2)")
-                    .HasColumnName("reop_Total");
+                entity.Property(e => e.reop_Total).HasColumnType("decimal(6, 2)");
 
-                entity.HasOne(d => d.Opta)
-                    .WithMany(p => p.TbRecibosPorOptante)
-                    .HasForeignKey(d => d.OptaId)
+                entity.HasOne(d => d.opta)
+                    .WithMany(p => p.tbRecibosPorOptante)
+                    .HasForeignKey(d => d.opta_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbRecibosPorPasante_tbOptantes_opta_Id");
             });
 
-            modelBuilder.Entity<TbRegionalCorporativa>(entity =>
+            modelBuilder.Entity<tbRegionalCorporativa>(entity =>
             {
-                entity.HasKey(e => e.RecoId)
+                entity.HasKey(e => e.reco_Id)
                     .HasName("PK__tbRegion__BA2965898F77D29B");
 
                 entity.ToTable("tbRegionalCorporativa", "Gral");
 
-                entity.HasIndex(e => e.RecoNombreRegionalCorportiva, "UQ_tbRegionalCorporativa_reco_NombreRegionalCorportiva")
+                entity.HasIndex(e => e.reco_NombreRegionalCorportiva, "UQ_tbRegionalCorporativa_reco_NombreRegionalCorportiva")
                     .IsUnique();
 
-                entity.Property(e => e.RecoId).HasColumnName("reco_Id");
-
-                entity.Property(e => e.MuniId)
+                entity.Property(e => e.muni_Id)
                     .IsRequired()
                     .HasMaxLength(4)
-                    .IsUnicode(false)
-                    .HasColumnName("muni_Id");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.RecoDireccionExacta)
+                entity.Property(e => e.reco_DireccionExacta)
                     .IsRequired()
                     .HasMaxLength(200)
-                    .IsUnicode(false)
-                    .HasColumnName("reco_DireccionExacta");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.RecoEstado).HasColumnName("reco_Estado");
+                entity.Property(e => e.reco_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.RecoFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("reco_FechaCreacion");
+                entity.Property(e => e.reco_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.RecoFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("reco_FechaModificacion");
-
-                entity.Property(e => e.RecoNombreRegionalCorportiva)
+                entity.Property(e => e.reco_NombreRegionalCorportiva)
                     .IsRequired()
                     .HasMaxLength(150)
-                    .IsUnicode(false)
-                    .HasColumnName("reco_NombreRegionalCorportiva");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.RecoUsuarioCreacion).HasColumnName("reco_UsuarioCreacion");
-
-                entity.Property(e => e.RecoUsuarioModificacion).HasColumnName("reco_UsuarioModificacion");
-
-                entity.HasOne(d => d.Muni)
-                    .WithMany(p => p.TbRegionalCorporativa)
-                    .HasForeignKey(d => d.MuniId)
+                entity.HasOne(d => d.muni)
+                    .WithMany(p => p.tbRegionalCorporativa)
+                    .HasForeignKey(d => d.muni_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
 
-                entity.HasOne(d => d.RecoUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbRegionalCorporativaRecoUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.RecoUsuarioCreacion)
+                entity.HasOne(d => d.reco_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbRegionalCorporativareco_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.reco_UsuarioCreacion)
                     .HasConstraintName("FK_tbRegionalCorporativa_Accs_tbUsuarios_reco_UsuarioCreacion");
 
-                entity.HasOne(d => d.RecoUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbRegionalCorporativaRecoUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.RecoUsuarioModificacion)
+                entity.HasOne(d => d.reco_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbRegionalCorporativareco_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.reco_UsuarioModificacion)
                     .HasConstraintName("FK_tbRegionalCorporativa_Accs_tbUsuarios_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbRegionales>(entity =>
+            modelBuilder.Entity<tbRegionales>(entity =>
             {
-                entity.HasKey(e => e.RegiId)
+                entity.HasKey(e => e.regi_Id)
                     .HasName("PK__tbRegion__3E6FBD3079B8FB14");
 
                 entity.ToTable("tbRegionales", "Gral");
 
-                entity.HasIndex(e => e.RegiAbreviatura, "UQ__tbRegion__B4C8C711BB9CBBE6")
+                entity.HasIndex(e => e.regi_Abreviatura, "UQ__tbRegion__B4C8C711BB9CBBE6")
                     .IsUnique();
 
-                entity.HasIndex(e => e.RegiDescripcionRegional, "UQ__tbRegion__EE1F886844309BA4")
+                entity.HasIndex(e => e.regi_DescripcionRegional, "UQ__tbRegion__EE1F886844309BA4")
                     .IsUnique();
 
-                entity.Property(e => e.RegiId).HasColumnName("regi_Id");
-
-                entity.Property(e => e.MuniId)
+                entity.Property(e => e.muni_Id)
                     .IsRequired()
                     .HasMaxLength(4)
-                    .IsUnicode(false)
-                    .HasColumnName("muni_Id");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.RegiAbreviatura)
+                entity.Property(e => e.regi_Abreviatura)
                     .HasMaxLength(5)
-                    .IsUnicode(false)
-                    .HasColumnName("regi_Abreviatura");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.RegiDescripcionRegional)
+                entity.Property(e => e.regi_DescripcionRegional)
                     .IsRequired()
                     .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .HasColumnName("regi_DescripcionRegional");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.RegiEstado)
-                    .HasColumnName("regi_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.regi_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.RegiFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("regi_FechaCreacion");
+                entity.Property(e => e.regi_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.RegiFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("regi_FechaModificacion");
+                entity.Property(e => e.regi_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.RegiUsuarioCreacion).HasColumnName("regi_UsuarioCreacion");
-
-                entity.Property(e => e.RegiUsuarioModificacion).HasColumnName("regi_UsuarioModificacion");
-
-                entity.Property(e => e.UnivId).HasColumnName("univ_Id");
-
-                entity.HasOne(d => d.Muni)
-                    .WithMany(p => p.TbRegionales)
-                    .HasForeignKey(d => d.MuniId)
+                entity.HasOne(d => d.muni)
+                    .WithMany(p => p.tbRegionales)
+                    .HasForeignKey(d => d.muni_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
 
-                entity.HasOne(d => d.RegiUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbRegionalesRegiUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.RegiUsuarioCreacion)
+                entity.HasOne(d => d.regi_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbRegionalesregi_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.regi_UsuarioCreacion)
                     .HasConstraintName("FK_tbRegionales_Accs_tbUsuarios_regi_UsuarioCreacion");
 
-                entity.HasOne(d => d.RegiUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbRegionalesRegiUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.RegiUsuarioModificacion)
+                entity.HasOne(d => d.regi_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbRegionalesregi_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.regi_UsuarioModificacion)
                     .HasConstraintName("FK_tbRegionales_Accs_tbUsuarios_regi_UsuarioModificacion");
 
-                entity.HasOne(d => d.Univ)
-                    .WithMany(p => p.TbRegionales)
-                    .HasForeignKey(d => d.UnivId)
+                entity.HasOne(d => d.univ)
+                    .WithMany(p => p.tbRegionales)
+                    .HasForeignKey(d => d.univ_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
-            modelBuilder.Entity<TbRespuestasPorOptante>(entity =>
+            modelBuilder.Entity<tbRespuestasPorOptante>(entity =>
             {
-                entity.HasKey(e => e.CupaId)
+                entity.HasKey(e => e.cupa_Id)
                     .HasName("PK__tbRespue__3D4003BCCD05A9C7");
 
                 entity.ToTable("tbRespuestasPorOptante", "Gest");
 
-                entity.Property(e => e.CupaId).HasColumnName("cupa_Id");
+                entity.Property(e => e.cupa_FechaRealizado).HasColumnType("datetime");
 
-                entity.Property(e => e.CupaFechaRealizado)
-                    .HasColumnType("datetime")
-                    .HasColumnName("cupa_FechaRealizado");
+                entity.Property(e => e.cupa_respuesta).IsUnicode(false);
 
-                entity.Property(e => e.CupaRespuesta)
-                    .IsUnicode(false)
-                    .HasColumnName("cupa_respuesta");
-
-                entity.Property(e => e.OpprId).HasColumnName("oppr_Id");
-
-                entity.Property(e => e.OptaId).HasColumnName("opta_Id");
-
-                entity.HasOne(d => d.Oppr)
-                    .WithMany(p => p.TbRespuestasPorOptante)
-                    .HasForeignKey(d => d.OpprId)
+                entity.HasOne(d => d.oppr)
+                    .WithMany(p => p.tbRespuestasPorOptante)
+                    .HasForeignKey(d => d.oppr_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbRespuestasPorPasante_tbOpcionesPorPregunta_oppr_Id");
 
-                entity.HasOne(d => d.Opta)
-                    .WithMany(p => p.TbRespuestasPorOptante)
-                    .HasForeignKey(d => d.OptaId)
+                entity.HasOne(d => d.opta)
+                    .WithMany(p => p.tbRespuestasPorOptante)
+                    .HasForeignKey(d => d.opta_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbRespuestasPorPasante_tbOptantes_opta_Id");
             });
 
-            modelBuilder.Entity<TbRoles>(entity =>
+            modelBuilder.Entity<tbRoles>(entity =>
             {
-                entity.HasKey(e => e.RoleId)
+                entity.HasKey(e => e.role_Id)
                     .HasName("PK__tbRoles__760F99A40BCF89F6");
 
                 entity.ToTable("tbRoles", "Accs");
 
-                entity.HasIndex(e => e.RoleDescripcionRol, "UQ__tbRoles__AC38D9C2C93A68A2")
+                entity.HasIndex(e => e.role_DescripcionRol, "UQ__tbRoles__AC38D9C2C93A68A2")
                     .IsUnique();
 
-                entity.HasIndex(e => e.RoleDescripcionRol, "UQ_tbRoles_role_DescripcionRol")
+                entity.HasIndex(e => e.role_DescripcionRol, "UQ_tbRoles_role_DescripcionRol")
                     .IsUnique();
 
-                entity.Property(e => e.RoleId).HasColumnName("role_Id");
-
-                entity.Property(e => e.RoleDescripcionRol)
+                entity.Property(e => e.role_DescripcionRol)
                     .IsRequired()
                     .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("role_DescripcionRol");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.RoleEstado)
-                    .HasColumnName("role_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.role_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.RoleFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("role_FechaCreacion");
+                entity.Property(e => e.role_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.RoleFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("role_FechaModificacion");
+                entity.Property(e => e.role_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.RoleUsuarioCreacion).HasColumnName("role_UsuarioCreacion");
+                entity.HasOne(d => d.role_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbRolesrole_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.role_UsuarioCreacion);
 
-                entity.Property(e => e.RoleUsuarioModificacion).HasColumnName("role_UsuarioModificacion");
-
-                entity.HasOne(d => d.RoleUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbRolesRoleUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.RoleUsuarioCreacion);
-
-                entity.HasOne(d => d.RoleUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbRolesRoleUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.RoleUsuarioModificacion);
+                entity.HasOne(d => d.role_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbRolesrole_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.role_UsuarioModificacion);
             });
 
-            modelBuilder.Entity<TbTipoDocumento>(entity =>
+            modelBuilder.Entity<tbTipoDocumento>(entity =>
             {
-                entity.HasKey(e => e.TidoId)
+                entity.HasKey(e => e.tido_Id)
                     .HasName("PK__tbTipoDo__96BB82D2B107F041");
 
                 entity.ToTable("tbTipoDocumento", "Gral");
 
-                entity.HasIndex(e => e.TidoDescripcion, "UQ__tbTipoDo__10806C99CC6C583C")
+                entity.HasIndex(e => e.tido_Descripcion, "UQ__tbTipoDo__10806C99CC6C583C")
                     .IsUnique();
 
-                entity.Property(e => e.TidoId).HasColumnName("tido_Id");
-
-                entity.Property(e => e.TidoDescripcion)
+                entity.Property(e => e.tido_Descripcion)
                     .IsRequired()
                     .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("tido_Descripcion");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.TidoEstado)
-                    .HasColumnName("tido_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.tido_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.TidoFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("tido_FechaCreacion");
+                entity.Property(e => e.tido_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.TidoFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("tido_FechaModificacion");
+                entity.Property(e => e.tido_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.TidoUsuarioCreacion).HasColumnName("tido_UsuarioCreacion");
-
-                entity.Property(e => e.TidoUsuarioModificacion).HasColumnName("tido_UsuarioModificacion");
-
-                entity.HasOne(d => d.TidoUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbTipoDocumentoTidoUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.TidoUsuarioCreacion)
+                entity.HasOne(d => d.tido_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbTipoDocumentotido_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.tido_UsuarioCreacion)
                     .HasConstraintName("FK_tbTipoDocumento_Accs_tbUsuarios_tido_UsuarioCreacion");
 
-                entity.HasOne(d => d.TidoUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbTipoDocumentoTidoUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.TidoUsuarioModificacion)
+                entity.HasOne(d => d.tido_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbTipoDocumentotido_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.tido_UsuarioModificacion)
                     .HasConstraintName("FK_tbTipoDocumento_Accs_tbUsuarios_tido_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbTipoSangre>(entity =>
+            modelBuilder.Entity<tbTipoSangre>(entity =>
             {
-                entity.HasKey(e => e.TisaId)
+                entity.HasKey(e => e.tisa_Id)
                     .HasName("PK__tbTipoSa__A56FCB2B1CB5F284");
 
                 entity.ToTable("tbTipoSangre", "Gral");
 
-                entity.HasIndex(e => e.TisaDescripcion, "UQ_tbTipoSangre_tisa_Descripcion")
+                entity.HasIndex(e => e.tisa_Descripcion, "UQ_tbTipoSangre_tisa_Descripcion")
                     .IsUnique();
 
-                entity.Property(e => e.TisaId).HasColumnName("tisa_Id");
-
-                entity.Property(e => e.TisaDescripcion)
+                entity.Property(e => e.tisa_Descripcion)
                     .HasMaxLength(5)
-                    .IsUnicode(false)
-                    .HasColumnName("tisa_Descripcion");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.TisaEstado).HasColumnName("tisa_Estado");
+                entity.Property(e => e.tisa_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.TisaFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("tisa_FechaCreacion");
+                entity.Property(e => e.tisa_Fechamodificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.TisaFechamodificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("tisa_Fechamodificacion");
-
-                entity.Property(e => e.TisaUsuarioCreacion).HasColumnName("tisa_UsuarioCreacion");
-
-                entity.Property(e => e.TisaUsuarioModificacion).HasColumnName("tisa_UsuarioModificacion");
-
-                entity.HasOne(d => d.TisaUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbTipoSangreTisaUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.TisaUsuarioCreacion)
+                entity.HasOne(d => d.tisa_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbTipoSangretisa_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.tisa_UsuarioCreacion)
                     .HasConstraintName("FK_tbTipoSangre_Accs_tbUsuarios_tisa_UsuarioCreacion");
 
-                entity.HasOne(d => d.TisaUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbTipoSangreTisaUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.TisaUsuarioModificacion)
+                entity.HasOne(d => d.tisa_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbTipoSangretisa_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.tisa_UsuarioModificacion)
                     .HasConstraintName("FK_tbTipoSangre_Accs_tbUsuarios_tisa_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbTokens>(entity =>
+            modelBuilder.Entity<tbTokens>(entity =>
             {
-                entity.HasKey(e => e.ToknId);
+                entity.HasKey(e => e.tokn_Id);
 
                 entity.ToTable("tbTokens", "Comm");
 
-                entity.Property(e => e.ToknId).HasColumnName("tokn_Id");
-
-                entity.Property(e => e.ToknJsonToken)
+                entity.Property(e => e.tokn_JsonToken)
                     .IsRequired()
-                    .IsUnicode(false)
-                    .HasColumnName("tokn_JsonToken");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.ToknSesionWeb).HasColumnName("tokn_SesionWeb");
-
-                entity.Property(e => e.UsuaId).HasColumnName("usua_Id");
-
-                entity.HasOne(d => d.Usua)
-                    .WithMany(p => p.TbTokens)
-                    .HasForeignKey(d => d.UsuaId)
+                entity.HasOne(d => d.usua)
+                    .WithMany(p => p.tbTokens)
+                    .HasForeignKey(d => d.usua_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbTokens_Accs_tbUsuarios_usua_Id");
             });
 
-            modelBuilder.Entity<TbUniversidades>(entity =>
+            modelBuilder.Entity<tbUniversidades>(entity =>
             {
-                entity.HasKey(e => e.UnivId)
+                entity.HasKey(e => e.univ_Id)
                     .HasName("PK__tbUniver__A2187E09169D0807");
 
                 entity.ToTable("tbUniversidades", "Gral");
 
-                entity.HasIndex(e => e.UnivDescripcionUniversidad, "UQ__tbUniver__5983CA8A66D84324")
+                entity.HasIndex(e => e.univ_DescripcionUniversidad, "UQ__tbUniver__5983CA8A66D84324")
                     .IsUnique();
 
-                entity.HasIndex(e => e.UnivAbreviatura, "UQ__tbUniver__C90F8EAA505E7389")
+                entity.HasIndex(e => e.univ_Abreviatura, "UQ__tbUniver__C90F8EAA505E7389")
                     .IsUnique();
 
-                entity.Property(e => e.UnivId).HasColumnName("univ_Id");
-
-                entity.Property(e => e.UnivAbreviatura)
+                entity.Property(e => e.univ_Abreviatura)
                     .HasMaxLength(5)
-                    .IsUnicode(false)
-                    .HasColumnName("univ_Abreviatura");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.UnivDescripcionUniversidad)
+                entity.Property(e => e.univ_DescripcionUniversidad)
                     .IsRequired()
                     .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("univ_DescripcionUniversidad");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.UnivEstado)
-                    .HasColumnName("univ_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.univ_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.UnivFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("univ_FechaCreacion");
+                entity.Property(e => e.univ_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.UnivFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("univ_FechaModificacion");
+                entity.Property(e => e.univ_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.UnivUsuarioCreacion).HasColumnName("univ_UsuarioCreacion");
-
-                entity.Property(e => e.UnivUsuarioModificacion).HasColumnName("univ_UsuarioModificacion");
-
-                entity.HasOne(d => d.UnivUsuarioCreacionNavigation)
-                    .WithMany(p => p.TbUniversidadesUnivUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.UnivUsuarioCreacion)
+                entity.HasOne(d => d.univ_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbUniversidadesuniv_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.univ_UsuarioCreacion)
                     .HasConstraintName("FK_tbUniversidades_Accs_tbUsuarios_univ_UsuarioCreacion");
 
-                entity.HasOne(d => d.UnivUsuarioModificacionNavigation)
-                    .WithMany(p => p.TbUniversidadesUnivUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.UnivUsuarioModificacion)
+                entity.HasOne(d => d.univ_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbUniversidadesuniv_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.univ_UsuarioModificacion)
                     .HasConstraintName("FK_tbUniversidades_Accs_tbUsuarios_univ_UsuarioModificacion");
             });
 
-            modelBuilder.Entity<TbUsuarios>(entity =>
+            modelBuilder.Entity<tbUsuarios>(entity =>
             {
-                entity.HasKey(e => e.UsuaId)
+                entity.HasKey(e => e.usua_Id)
                     .HasName("PK__tbUsuari__E863C8EE50DC118D");
 
                 entity.ToTable("tbUsuarios", "Accs");
 
-                entity.HasIndex(e => e.UsuaUsuario, "UQ__tbUsuari__9ED44AB45D2A9E8B")
+                entity.HasIndex(e => e.usua_Usuario, "UQ__tbUsuari__9ED44AB45D2A9E8B")
                     .IsUnique();
 
-                entity.HasIndex(e => e.UsuaUsuario, "UQ_usua_Usuario")
+                entity.HasIndex(e => e.usua_Usuario, "UQ_usua_Usuario")
                     .IsUnique();
 
-                entity.Property(e => e.UsuaId).HasColumnName("usua_Id");
-
-                entity.Property(e => e.EmopId).HasColumnName("emop_Id");
-
-                entity.Property(e => e.RoleId).HasColumnName("role_Id");
-
-                entity.Property(e => e.UsuaAdministrador).HasColumnName("usua_Administrador");
-
-                entity.Property(e => e.UsuaContraseña)
+                entity.Property(e => e.usua_Contraseña)
                     .IsRequired()
-                    .IsUnicode(false)
-                    .HasColumnName("usua_Contraseña");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.UsuaEsOptante).HasColumnName("usua_EsOptante");
+                entity.Property(e => e.usua_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.UsuaEstado)
-                    .HasColumnName("usua_Estado")
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.usua_FechaCreacion).HasColumnType("datetime");
 
-                entity.Property(e => e.UsuaFechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("usua_FechaCreacion");
+                entity.Property(e => e.usua_FechaModificacion).HasColumnType("datetime");
 
-                entity.Property(e => e.UsuaFechaModificacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("usua_FechaModificacion");
-
-                entity.Property(e => e.UsuaUsuario)
+                entity.Property(e => e.usua_Usuario)
                     .IsRequired()
                     .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .HasColumnName("usua_Usuario");
+                    .IsUnicode(false);
 
-                entity.Property(e => e.UsuaUsuarioCreacion).HasColumnName("usua_UsuarioCreacion");
-
-                entity.Property(e => e.UsuaUsuarioModificacion).HasColumnName("usua_UsuarioModificacion");
-
-                entity.HasOne(d => d.UsuaUsuarioCreacionNavigation)
-                    .WithMany(p => p.InverseUsuaUsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.UsuaUsuarioCreacion)
+                entity.HasOne(d => d.usua_UsuarioCreacionNavigation)
+                    .WithMany(p => p.Inverseusua_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.usua_UsuarioCreacion)
                     .HasConstraintName("FK_tbUsuarios_usua_UsuarioCreacion");
 
-                entity.HasOne(d => d.UsuaUsuarioModificacionNavigation)
-                    .WithMany(p => p.InverseUsuaUsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.UsuaUsuarioModificacion)
+                entity.HasOne(d => d.usua_UsuarioModificacionNavigation)
+                    .WithMany(p => p.Inverseusua_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.usua_UsuarioModificacion)
                     .HasConstraintName("FK_tbUsuarios_usua_UsuarioModificacion");
             });
 

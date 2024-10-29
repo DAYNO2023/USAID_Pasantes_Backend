@@ -6,13 +6,13 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbEmpleadosPorActividad
+    public partial class tbEmpleadosPorActividad
     {
-        public int EmacId { get; set; }
-        public int EmplId { get; set; }
-        public int ActiId { get; set; }
+        public int emac_Id { get; set; }
+        public int empl_Id { get; set; }
+        public int acti_Id { get; set; }
 
-        public virtual TbActividades Acti { get; set; }
-        public virtual TbEmpleados Empl { get; set; }
+        public virtual tbActividades acti { get; set; }
+        public virtual tbEmpleados empl { get; set; }
     }
 }

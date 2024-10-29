@@ -6,20 +6,20 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbPreguntasPorCuestionario
+    public partial class tbPreguntasPorCuestionario
     {
-        public TbPreguntasPorCuestionario()
+        public tbPreguntasPorCuestionario()
         {
-            TbOpcionesPorPregunta = new HashSet<TbOpcionesPorPregunta>();
+            tbOpcionesPorPregunta = new HashSet<tbOpcionesPorPregunta>();
         }
 
-        public int PrcuId { get; set; }
-        public int CuesId { get; set; }
-        public bool PrcuEsRespuestaBreve { get; set; }
-        public string PrcuPregunta { get; set; }
-        public decimal? PrcuPuntuacion { get; set; }
+        public int prcu_Id { get; set; }
+        public int cues_Id { get; set; }
+        public bool prcu_EsRespuestaBreve { get; set; }
+        public string prcu_Pregunta { get; set; }
+        public decimal? prcu_Puntuacion { get; set; }
 
-        public virtual TbCuestionarios Cues { get; set; }
-        public virtual ICollection<TbOpcionesPorPregunta> TbOpcionesPorPregunta { get; set; }
+        public virtual tbCuestionarios cues { get; set; }
+        public virtual ICollection<tbOpcionesPorPregunta> tbOpcionesPorPregunta { get; set; }
     }
 }

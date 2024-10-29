@@ -6,13 +6,13 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbBeneficiosPorOptante
+    public partial class tbBeneficiosPorOptante
     {
-        public int BepeId { get; set; }
-        public int BeneId { get; set; }
-        public int OptaId { get; set; }
+        public int bepe_Id { get; set; }
+        public int bene_Id { get; set; }
+        public int opta_Id { get; set; }
 
-        public virtual TbBeneficios Bene { get; set; }
-        public virtual TbOptantes Opta { get; set; }
+        public virtual tbBeneficios bene { get; set; }
+        public virtual tbOptantes opta { get; set; }
     }
 }

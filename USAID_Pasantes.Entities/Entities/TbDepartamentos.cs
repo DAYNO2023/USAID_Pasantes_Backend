@@ -6,23 +6,23 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbDepartamentos
+    public partial class tbDepartamentos
     {
-        public TbDepartamentos()
+        public tbDepartamentos()
         {
-            TbMunicipios = new HashSet<TbMunicipios>();
+            tbMunicipios = new HashSet<tbMunicipios>();
         }
 
-        public string DepaId { get; set; }
-        public string DepaDescripcionDepartamento { get; set; }
-        public int? DepaUsuarioCreacion { get; set; }
-        public DateTime? DepaFechaCreacion { get; set; }
-        public int? DepaUsuarioModificacion { get; set; }
-        public DateTime? DepaFechaModificacion { get; set; }
-        public bool? DepaEstado { get; set; }
+        public string depa_Id { get; set; }
+        public string depa_DescripcionDepartamento { get; set; }
+        public int? depa_UsuarioCreacion { get; set; }
+        public DateTime? depa_FechaCreacion { get; set; }
+        public int? depa_UsuarioModificacion { get; set; }
+        public DateTime? depa_FechaModificacion { get; set; }
+        public bool? depa_Estado { get; set; }
 
-        public virtual TbUsuarios DepaUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios DepaUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbMunicipios> TbMunicipios { get; set; }
+        public virtual tbUsuarios depa_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios depa_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbMunicipios> tbMunicipios { get; set; }
     }
 }

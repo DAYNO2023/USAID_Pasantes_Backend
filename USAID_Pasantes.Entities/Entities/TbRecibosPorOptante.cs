@@ -6,15 +6,15 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbRecibosPorOptante
+    public partial class tbRecibosPorOptante
     {
-        public int ReopId { get; set; }
-        public int OptaId { get; set; }
-        public string ReopDescripcion { get; set; }
-        public decimal ReopHorasTotalesRealizadas { get; set; }
-        public decimal? ReopPrecioUnitario { get; set; }
-        public decimal ReopTotal { get; set; }
+        public int reop_Id { get; set; }
+        public int opta_Id { get; set; }
+        public string reop_Descripcion { get; set; }
+        public decimal reop_HorasTotalesRealizadas { get; set; }
+        public decimal? reop_PrecioUnitario { get; set; }
+        public decimal reop_Total { get; set; }
 
-        public virtual TbOptantes Opta { get; set; }
+        public virtual tbOptantes opta { get; set; }
     }
 }

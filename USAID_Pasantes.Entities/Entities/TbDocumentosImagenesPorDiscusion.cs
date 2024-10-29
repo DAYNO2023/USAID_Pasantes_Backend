@@ -6,12 +6,12 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbDocumentosImagenesPorDiscusion
+    public partial class tbDocumentosImagenesPorDiscusion
     {
-        public int DidiId { get; set; }
-        public int DiscId { get; set; }
-        public string DidiDocumentoOimagen { get; set; }
+        public int didi_Id { get; set; }
+        public int disc_Id { get; set; }
+        public string didi_DocumentoOImagen { get; set; }
 
-        public virtual TbDiscusiones Disc { get; set; }
+        public virtual tbDiscusiones disc { get; set; }
     }
 }

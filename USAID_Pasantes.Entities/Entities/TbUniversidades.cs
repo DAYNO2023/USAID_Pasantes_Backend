@@ -6,24 +6,24 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbUniversidades
+    public partial class tbUniversidades
     {
-        public TbUniversidades()
+        public tbUniversidades()
         {
-            TbRegionales = new HashSet<TbRegionales>();
+            tbRegionales = new HashSet<tbRegionales>();
         }
 
-        public int UnivId { get; set; }
-        public string UnivDescripcionUniversidad { get; set; }
-        public string UnivAbreviatura { get; set; }
-        public int? UnivUsuarioCreacion { get; set; }
-        public DateTime? UnivFechaCreacion { get; set; }
-        public int? UnivUsuarioModificacion { get; set; }
-        public DateTime? UnivFechaModificacion { get; set; }
-        public bool? UnivEstado { get; set; }
+        public int univ_Id { get; set; }
+        public string univ_DescripcionUniversidad { get; set; }
+        public string univ_Abreviatura { get; set; }
+        public int? univ_UsuarioCreacion { get; set; }
+        public DateTime? univ_FechaCreacion { get; set; }
+        public int? univ_UsuarioModificacion { get; set; }
+        public DateTime? univ_FechaModificacion { get; set; }
+        public bool? univ_Estado { get; set; }
 
-        public virtual TbUsuarios UnivUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios UnivUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbRegionales> TbRegionales { get; set; }
+        public virtual tbUsuarios univ_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios univ_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbRegionales> tbRegionales { get; set; }
     }
 }

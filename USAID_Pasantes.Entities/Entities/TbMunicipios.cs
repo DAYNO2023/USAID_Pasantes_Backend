@@ -6,35 +6,35 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbMunicipios
+    public partial class tbMunicipios
     {
-        public TbMunicipios()
+        public tbMunicipios()
         {
-            TbActividades = new HashSet<TbActividades>();
-            TbEmpleados = new HashSet<TbEmpleados>();
-            TbEmpresas = new HashSet<TbEmpresas>();
-            TbOptantes = new HashSet<TbOptantes>();
-            TbRegionalCorporativa = new HashSet<TbRegionalCorporativa>();
-            TbRegionales = new HashSet<TbRegionales>();
+            tbActividades = new HashSet<tbActividades>();
+            tbEmpleados = new HashSet<tbEmpleados>();
+            tbEmpresas = new HashSet<tbEmpresas>();
+            tbOptantes = new HashSet<tbOptantes>();
+            tbRegionalCorporativa = new HashSet<tbRegionalCorporativa>();
+            tbRegionales = new HashSet<tbRegionales>();
         }
 
-        public string MuniId { get; set; }
-        public string DepaId { get; set; }
-        public string MuniDescripcionMunicipio { get; set; }
-        public int? MuniUsuarioCreacion { get; set; }
-        public DateTime? MuniFechaCreacion { get; set; }
-        public int? MuniUsuarioModificacion { get; set; }
-        public DateTime? MuniFechaModificacion { get; set; }
-        public bool? MuniEstado { get; set; }
+        public string muni_Id { get; set; }
+        public string depa_Id { get; set; }
+        public string muni_DescripcionMunicipio { get; set; }
+        public int? muni_UsuarioCreacion { get; set; }
+        public DateTime? muni_FechaCreacion { get; set; }
+        public int? muni_UsuarioModificacion { get; set; }
+        public DateTime? muni_FechaModificacion { get; set; }
+        public bool? muni_Estado { get; set; }
 
-        public virtual TbDepartamentos Depa { get; set; }
-        public virtual TbUsuarios MuniUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios MuniUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbActividades> TbActividades { get; set; }
-        public virtual ICollection<TbEmpleados> TbEmpleados { get; set; }
-        public virtual ICollection<TbEmpresas> TbEmpresas { get; set; }
-        public virtual ICollection<TbOptantes> TbOptantes { get; set; }
-        public virtual ICollection<TbRegionalCorporativa> TbRegionalCorporativa { get; set; }
-        public virtual ICollection<TbRegionales> TbRegionales { get; set; }
+        public virtual tbDepartamentos depa { get; set; }
+        public virtual tbUsuarios muni_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios muni_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbActividades> tbActividades { get; set; }
+        public virtual ICollection<tbEmpleados> tbEmpleados { get; set; }
+        public virtual ICollection<tbEmpresas> tbEmpresas { get; set; }
+        public virtual ICollection<tbOptantes> tbOptantes { get; set; }
+        public virtual ICollection<tbRegionalCorporativa> tbRegionalCorporativa { get; set; }
+        public virtual ICollection<tbRegionales> tbRegionales { get; set; }
     }
 }

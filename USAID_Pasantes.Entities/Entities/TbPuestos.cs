@@ -6,23 +6,23 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbPuestos
+    public partial class tbPuestos
     {
-        public TbPuestos()
+        public tbPuestos()
         {
-            TbEmpleados = new HashSet<TbEmpleados>();
+            tbEmpleados = new HashSet<tbEmpleados>();
         }
 
-        public int PustId { get; set; }
-        public string PustDescripcionPuesto { get; set; }
-        public int? PustUsuarioCreacion { get; set; }
-        public DateTime? PustFechaCreacion { get; set; }
-        public int? PustUsuarioModificacion { get; set; }
-        public DateTime? PustFechaModificacion { get; set; }
-        public bool? PustEstado { get; set; }
+        public int pust_Id { get; set; }
+        public string pust_DescripcionPuesto { get; set; }
+        public int? pust_UsuarioCreacion { get; set; }
+        public DateTime? pust_FechaCreacion { get; set; }
+        public int? pust_UsuarioModificacion { get; set; }
+        public DateTime? pust_FechaModificacion { get; set; }
+        public bool? pust_Estado { get; set; }
 
-        public virtual TbUsuarios PustUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios PustUsuarioModificacionNavigation { get; set; }
-        public virtual ICollection<TbEmpleados> TbEmpleados { get; set; }
+        public virtual tbUsuarios pust_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios pust_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbEmpleados> tbEmpleados { get; set; }
     }
 }

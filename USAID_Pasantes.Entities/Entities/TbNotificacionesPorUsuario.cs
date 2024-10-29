@@ -6,22 +6,22 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbNotificacionesPorUsuario
+    public partial class tbNotificacionesPorUsuario
     {
-        public int NapuId { get; set; }
-        public int UsuaId { get; set; }
-        public bool NapuAlertaOnoti { get; set; }
-        public int NapuAlertaOnotiId { get; set; }
-        public string NapuRuta { get; set; }
-        public bool NapuLeida { get; set; }
-        public int NapuUsuarioCreacion { get; set; }
-        public DateTime NapuFechaCreacion { get; set; }
-        public int? NapuUsuarioModificacion { get; set; }
-        public DateTime? NapuFechaModificacion { get; set; }
-        public bool NapuEstado { get; set; }
+        public int napu_Id { get; set; }
+        public int usua_Id { get; set; }
+        public bool napu_AlertaOnoti { get; set; }
+        public int napu_AlertaONoti_Id { get; set; }
+        public string napu_Ruta { get; set; }
+        public bool napu_Leida { get; set; }
+        public int napu_UsuarioCreacion { get; set; }
+        public DateTime napu_FechaCreacion { get; set; }
+        public int? napu_UsuarioModificacion { get; set; }
+        public DateTime? napu_FechaModificacion { get; set; }
+        public bool napu_Estado { get; set; }
 
-        public virtual TbUsuarios NapuUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios NapuUsuarioModificacionNavigation { get; set; }
-        public virtual TbUsuarios Usua { get; set; }
+        public virtual tbUsuarios napu_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios napu_UsuarioModificacionNavigation { get; set; }
+        public virtual tbUsuarios usua { get; set; }
     }
 }

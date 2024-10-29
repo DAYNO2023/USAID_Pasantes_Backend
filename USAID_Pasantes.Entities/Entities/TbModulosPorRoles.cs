@@ -6,13 +6,13 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbModulosPorRoles
+    public partial class tbModulosPorRoles
     {
-        public int MoroId { get; set; }
-        public int ModuId { get; set; }
-        public int RoleId { get; set; }
+        public int moro_Id { get; set; }
+        public int modu_Id { get; set; }
+        public int role_Id { get; set; }
 
-        public virtual TbModulos Modu { get; set; }
-        public virtual TbRoles Role { get; set; }
+        public virtual tbModulos modu { get; set; }
+        public virtual tbRoles role { get; set; }
     }
 }

@@ -6,13 +6,13 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbTokens
+    public partial class tbTokens
     {
-        public int ToknId { get; set; }
-        public int UsuaId { get; set; }
-        public string ToknJsonToken { get; set; }
-        public bool? ToknSesionWeb { get; set; }
+        public int tokn_Id { get; set; }
+        public int usua_Id { get; set; }
+        public string tokn_JsonToken { get; set; }
+        public bool? tokn_SesionWeb { get; set; }
 
-        public virtual TbUsuarios Usua { get; set; }
+        public virtual tbUsuarios usua { get; set; }
     }
 }

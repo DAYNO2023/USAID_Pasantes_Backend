@@ -6,40 +6,40 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbComponentes
+    public partial class tbComponentes
     {
-        public TbComponentes()
+        public tbComponentes()
         {
-            TbActividades = new HashSet<TbActividades>();
-            TbComponentesPorRegionalPorEmpleado = new HashSet<TbComponentesPorRegionalPorEmpleado>();
-            TbForosPorActividad = new HashSet<TbForosPorActividad>();
-            TbHojaTiempo = new HashSet<TbHojaTiempo>();
-            TbOptantes = new HashSet<TbOptantes>();
+            tbActividades = new HashSet<tbActividades>();
+            tbComponentesPorRegionalPorEmpleado = new HashSet<tbComponentesPorRegionalPorEmpleado>();
+            tbForosPorActividad = new HashSet<tbForosPorActividad>();
+            tbHojaTiempo = new HashSet<tbHojaTiempo>();
+            tbOptantes = new HashSet<tbOptantes>();
         }
 
-        public int CompId { get; set; }
-        public int PrytId { get; set; }
-        public string CompNombreComponente { get; set; }
-        public string CompDescripcionComponente { get; set; }
-        public TimeSpan CompHorasAsignadas { get; set; }
-        public TimeSpan? CompHorasCumplidas { get; set; }
-        public DateTime CompFechaInicio { get; set; }
-        public DateTime CompFechaFin { get; set; }
-        public string CompObservacion { get; set; }
-        public bool? CompComponenteFinalizado { get; set; }
-        public int? CompUsuarioCreacion { get; set; }
-        public DateTime? CompFechaCreacion { get; set; }
-        public int? CompUsuarioModificacion { get; set; }
-        public DateTime? CompFechaModificacion { get; set; }
-        public bool? CompEstado { get; set; }
+        public int comp_Id { get; set; }
+        public int pryt_Id { get; set; }
+        public string comp_NombreComponente { get; set; }
+        public string comp_DescripcionComponente { get; set; }
+        public TimeSpan comp_HorasAsignadas { get; set; }
+        public TimeSpan? comp_HorasCumplidas { get; set; }
+        public DateTime comp_FechaInicio { get; set; }
+        public DateTime comp_FechaFin { get; set; }
+        public string comp_Observacion { get; set; }
+        public bool? comp_ComponenteFinalizado { get; set; }
+        public int? comp_UsuarioCreacion { get; set; }
+        public DateTime? comp_FechaCreacion { get; set; }
+        public int? comp_UsuarioModificacion { get; set; }
+        public DateTime? comp_FechaModificacion { get; set; }
+        public bool? comp_Estado { get; set; }
 
-        public virtual TbUsuarios CompUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios CompUsuarioModificacionNavigation { get; set; }
-        public virtual TbProyectos Pryt { get; set; }
-        public virtual ICollection<TbActividades> TbActividades { get; set; }
-        public virtual ICollection<TbComponentesPorRegionalPorEmpleado> TbComponentesPorRegionalPorEmpleado { get; set; }
-        public virtual ICollection<TbForosPorActividad> TbForosPorActividad { get; set; }
-        public virtual ICollection<TbHojaTiempo> TbHojaTiempo { get; set; }
-        public virtual ICollection<TbOptantes> TbOptantes { get; set; }
+        public virtual tbUsuarios comp_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios comp_UsuarioModificacionNavigation { get; set; }
+        public virtual tbProyectos pryt { get; set; }
+        public virtual ICollection<tbActividades> tbActividades { get; set; }
+        public virtual ICollection<tbComponentesPorRegionalPorEmpleado> tbComponentesPorRegionalPorEmpleado { get; set; }
+        public virtual ICollection<tbForosPorActividad> tbForosPorActividad { get; set; }
+        public virtual ICollection<tbHojaTiempo> tbHojaTiempo { get; set; }
+        public virtual ICollection<tbOptantes> tbOptantes { get; set; }
     }
 }

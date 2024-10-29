@@ -6,22 +6,22 @@ using System.Collections.Generic;
 
 namespace USAID_Pasantes.Entities.Entities
 {
-    public partial class TbActividadesPorOptante
+    public partial class tbActividadesPorOptante
     {
-        public int AcpeId { get; set; }
-        public int ActiId { get; set; }
-        public int OptaId { get; set; }
-        public int? AcpeHorasCumplidas { get; set; }
-        public string AcpeObservacion { get; set; }
-        public int? AcpeUsuarioCreacion { get; set; }
-        public DateTime? AcpeFechaCreacion { get; set; }
-        public int? AcpeUsuarioModificacion { get; set; }
-        public DateTime? AcpeFechaModificacion { get; set; }
-        public bool? AcpeEstado { get; set; }
+        public int acpe_Id { get; set; }
+        public int acti_Id { get; set; }
+        public int opta_Id { get; set; }
+        public int? acpe_HorasCumplidas { get; set; }
+        public string acpe_Observacion { get; set; }
+        public int? acpe_UsuarioCreacion { get; set; }
+        public DateTime? acpe_FechaCreacion { get; set; }
+        public int? acpe_UsuarioModificacion { get; set; }
+        public DateTime? acpe_FechaModificacion { get; set; }
+        public bool? acpe_Estado { get; set; }
 
-        public virtual TbUsuarios AcpeUsuarioCreacionNavigation { get; set; }
-        public virtual TbUsuarios AcpeUsuarioModificacionNavigation { get; set; }
-        public virtual TbActividades Acti { get; set; }
-        public virtual TbOptantes Opta { get; set; }
+        public virtual tbUsuarios acpe_UsuarioCreacionNavigation { get; set; }
+        public virtual tbUsuarios acpe_UsuarioModificacionNavigation { get; set; }
+        public virtual tbActividades acti { get; set; }
+        public virtual tbOptantes opta { get; set; }
     }
 }
