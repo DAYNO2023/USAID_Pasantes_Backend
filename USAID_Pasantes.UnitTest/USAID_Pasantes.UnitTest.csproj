@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3920E8ED-4536-40F4-A323-7B302672FF87}</ProjectGuid>
+    <ProjectGuid>{D36C05C9-2E6A-49B3-BB92-8CA8F5FA56EC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>USAID_Pasantes.UnitTest</RootNamespace>
@@ -54,12 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\USAID_Pasantes.BusinessLogic\USAID_Pasantes.BusinessLogic.csproj">
-      <Project>{a7b4b49a-9b8f-4bfe-9bdc-bd966a7c5516}</Project>
-      <Name>USAID_Pasantes.BusinessLogic</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
