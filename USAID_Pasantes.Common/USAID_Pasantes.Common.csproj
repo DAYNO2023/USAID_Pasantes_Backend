@@ -8,8 +8,4 @@
     <ProjectReference Include="..\USAID_Pasantes.Entities\USAID_Pasantes.Entities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
 </Project>
