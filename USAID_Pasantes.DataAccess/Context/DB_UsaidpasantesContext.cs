@@ -262,6 +262,10 @@ namespace USAID_Pasantes.DataAccess.Context
 
                 entity.ToTable("tbCarreraPorFacultadPorRegional", "Gral");
 
+                entity.Property(e => e.cafr_DescripcionCarreraEspecifico)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
                 entity.HasOne(d => d.carr)
                     .WithMany(p => p.tbCarreraPorFacultadPorRegional)
                     .HasForeignKey(d => d.carr_Id)

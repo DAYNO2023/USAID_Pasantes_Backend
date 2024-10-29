@@ -16,6 +16,7 @@ namespace USAID_Pasantes.Entities.Entities
         public int cafr_Id { get; set; }
         public int fare_Id { get; set; }
         public int carr_Id { get; set; }
+        public string cafr_DescripcionCarreraEspecifico { get; set; }
 
         public virtual tbCarreras carr { get; set; }
         public virtual tbFacultadPorRegional fare { get; set; }
