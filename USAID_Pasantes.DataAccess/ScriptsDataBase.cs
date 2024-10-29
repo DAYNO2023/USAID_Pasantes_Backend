@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace USAID_Pasantes.DataAccess
 {
-    class ScriptsDataBase
+    public class ScriptsDataBase
     {
+
     }
 }
