@@ -56,10 +56,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\USAID_Pasantes.API\USAID_Pasantes.API.csproj">
-      <Project>{eb6770cc-376b-4ad5-9a89-7fd321dd7619}</Project>
-      <Name>USAID_Pasantes.API</Name>
-    </ProjectReference>
     <ProjectReference Include="..\USAID_Pasantes.BusinessLogic\USAID_Pasantes.BusinessLogic.csproj">
       <Project>{a7b4b49a-9b8f-4bfe-9bdc-bd966a7c5516}</Project>
       <Name>USAID_Pasantes.BusinessLogic</Name>
