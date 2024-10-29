@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using USAID_Pasantes.DataAccess;
+using USAID_Pasantes.Entities.Entities;
 
 #nullable disable
 
@@ -201,7 +202,7 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbBeneficios>(entity =>
             {
                 entity.HasKey(e => e.bene_Id)
-                    .HasName("PK__tbBenefi__3DC63B52DD27B6DE");
+                    .HasName("PK__tbBenefi__3DC63B52652D42A6");
 
                 entity.ToTable("tbBeneficios", "Gest");
 
@@ -237,7 +238,7 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbBeneficiosPorOptante>(entity =>
             {
                 entity.HasKey(e => e.bepe_Id)
-                    .HasName("PK__tbBenefi__F99C73D6EA60BDE8");
+                    .HasName("PK__tbBenefi__F99C73D6AF0638F6");
 
                 entity.ToTable("tbBeneficiosPorOptante", "Gest");
 
@@ -257,7 +258,7 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbCarreraPorFacultadPorRegional>(entity =>
             {
                 entity.HasKey(e => e.cafr_Id)
-                    .HasName("PK__tbCarrer__8AA093B45B128080");
+                    .HasName("PK__tbCarrer__8AA093B4BE67C4F4");
 
                 entity.ToTable("tbCarreraPorFacultadPorRegional", "Gral");
 
@@ -277,11 +278,11 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbCarreras>(entity =>
             {
                 entity.HasKey(e => e.carr_Id)
-                    .HasName("PK__tbCarrer__7ED01DB1F4AEFC5F");
+                    .HasName("PK__tbCarrer__7ED01DB18E2AF83F");
 
                 entity.ToTable("tbCarreras", "Gral");
 
-                entity.HasIndex(e => e.carr_DescripcionCarrera, "UQ__tbCarrer__C7EE739BE5A07328")
+                entity.HasIndex(e => e.carr_DescripcionCarrera, "UQ__tbCarrer__C7EE739B9767C6B9")
                     .IsUnique();
 
                 entity.Property(e => e.carr_DescripcionCarrera)
@@ -356,7 +357,7 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbComponentesPorRegionalPorEmpleado>(entity =>
             {
                 entity.HasKey(e => e.core_Id)
-                    .HasName("PK__tbCompon__5268D43D1D3FC0B6");
+                    .HasName("PK__tbCompon__5268D43D2E5F987B");
 
                 entity.ToTable("tbComponentesPorRegionalPorEmpleado", "Gest");
 
@@ -382,7 +383,7 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbCuestionarios>(entity =>
             {
                 entity.HasKey(e => e.cues_Id)
-                    .HasName("PK__tbCuesti__03016624BB9C0C1C");
+                    .HasName("PK__tbCuesti__030166244F729E86");
 
                 entity.ToTable("tbCuestionarios", "Gest");
 
@@ -421,11 +422,11 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbDepartamentos>(entity =>
             {
                 entity.HasKey(e => e.depa_Id)
-                    .HasName("PK__tbDepart__E3F3B11E0E3B1F82");
+                    .HasName("PK__tbDepart__E3F3B11E0F4E34BD");
 
                 entity.ToTable("tbDepartamentos", "Gral");
 
-                entity.HasIndex(e => e.depa_DescripcionDepartamento, "UQ__tbDepart__EED74EF8B26E942E")
+                entity.HasIndex(e => e.depa_DescripcionDepartamento, "UQ__tbDepart__EED74EF8DCF891DF")
                     .IsUnique();
 
                 entity.HasIndex(e => e.depa_DescripcionDepartamento, "UQ_depa_DescripcionDepartamento")
@@ -462,7 +463,7 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.disc_Id)
                     .HasName("PK__tbDiscus__0AC3326B27F0BF58");
 
-                entity.ToTable("tbDiscusiones", "Comm");
+                entity.ToTable("tbDiscusiones", "Comn");
 
                 entity.Property(e => e.disc_Asunto)
                     .IsRequired()
@@ -535,7 +536,7 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.didi_Id)
                     .HasName("PK__tbDocume__589485ABEED73160");
 
-                entity.ToTable("tbDocumentosImagenesPorDiscusion", "Comm");
+                entity.ToTable("tbDocumentosImagenesPorDiscusion", "Comn");
 
                 entity.Property(e => e.didi_DocumentoOImagen)
                     .IsRequired()
@@ -678,7 +679,7 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbEmpleadosPorActividad>(entity =>
             {
                 entity.HasKey(e => e.emac_Id)
-                    .HasName("PK__tbEmplea__BCCA90A4AC372A95");
+                    .HasName("PK__tbEmplea__BCCA90A48A839F2F");
 
                 entity.ToTable("tbEmpleadosPorActividad", "Gest");
 
@@ -755,11 +756,11 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbEstadosCiviles>(entity =>
             {
                 entity.HasKey(e => e.civi_Id)
-                    .HasName("PK__tbEstado__748BC9DC0BA51B64");
+                    .HasName("PK__tbEstado__748BC9DCEE517576");
 
                 entity.ToTable("tbEstadosCiviles", "Gral");
 
-                entity.HasIndex(e => e.civi_DescripcionEstadoCivil, "UQ__tbEstado__2DAB6DA8E67DF73B")
+                entity.HasIndex(e => e.civi_DescripcionEstadoCivil, "UQ__tbEstado__2DAB6DA82038D3F7")
                     .IsUnique();
 
                 entity.Property(e => e.civi_DescripcionEstadoCivil)
@@ -787,7 +788,7 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbFacultadPorRegional>(entity =>
             {
                 entity.HasKey(e => e.fare_Id)
-                    .HasName("PK__tbFacult__8E0B3BB5E1C53A5B");
+                    .HasName("PK__tbFacult__8E0B3BB5DB9E90EC");
 
                 entity.ToTable("tbFacultadPorRegional", "Gral");
 
@@ -805,7 +806,7 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbFacultades>(entity =>
             {
                 entity.HasKey(e => e.facu_Id)
-                    .HasName("PK__tbFacult__28EB048012269032");
+                    .HasName("PK__tbFacult__28EB0480C348E7DA");
 
                 entity.ToTable("tbFacultades", "Gral");
 
@@ -839,7 +840,7 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.foro_Id)
                     .HasName("PK__tbForos__6C73713F0E4F8A77");
 
-                entity.ToTable("tbForos", "Comm");
+                entity.ToTable("tbForos", "Comn");
 
                 entity.Property(e => e.foro_Estado).HasDefaultValueSql("((1))");
 
@@ -868,7 +869,7 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.foac_Id)
                     .HasName("PK__tbForosP__02075A0B75F42DF8");
 
-                entity.ToTable("tbForosPorActividad", "Comm");
+                entity.ToTable("tbForosPorActividad", "Comn");
 
                 entity.Property(e => e.foac_Descripcion)
                     .IsRequired()
@@ -911,7 +912,7 @@ namespace USAID_Pasantes.DataAccess.Context
             {
                 entity.HasKey(e => e.foem_Id);
 
-                entity.ToTable("tbForosPorEmpleados", "Comm");
+                entity.ToTable("tbForosPorEmpleados", "Comn");
 
                 entity.Property(e => e.foem_Descripcion)
                     .IsRequired()
@@ -942,7 +943,7 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbHojaTiempo>(entity =>
             {
                 entity.HasKey(e => e.hoti_Id)
-                    .HasName("PK__tbHojaTi__3277BDB03DCAE14C");
+                    .HasName("PK__tbHojaTi__3277BDB04EFFB62B");
 
                 entity.ToTable("tbHojaTiempo", "Gest");
 
@@ -976,7 +977,7 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbHojaTiempoPorOptante>(entity =>
             {
                 entity.HasKey(e => e.hoto_Id)
-                    .HasName("PK__tbHojaTi__62F07577EA6814A5");
+                    .HasName("PK__tbHojaTi__62F07577705BC180");
 
                 entity.ToTable("tbHojaTiempoPorOptante", "Gest");
 
@@ -1087,7 +1088,7 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbModulosPorRoles>(entity =>
             {
                 entity.HasKey(e => e.moro_Id)
-                    .HasName("PK__tbModulo__FB7C532B195A4C56");
+                    .HasName("PK__tbModulo__FB7C532B738D1034");
 
                 entity.ToTable("tbModulosPorRoles", "Accs");
 
@@ -1152,7 +1153,7 @@ namespace USAID_Pasantes.DataAccess.Context
             {
                 entity.HasKey(e => e.noti_Id);
 
-                entity.ToTable("tbNotificaciones", "Comm");
+                entity.ToTable("tbNotificaciones", "Comn");
 
                 entity.Property(e => e.noti_Descripcion)
                     .IsRequired()
@@ -1185,7 +1186,7 @@ namespace USAID_Pasantes.DataAccess.Context
             {
                 entity.HasKey(e => e.napu_Id);
 
-                entity.ToTable("tbNotificacionesPorUsuario", "Comm");
+                entity.ToTable("tbNotificacionesPorUsuario", "Comn");
 
                 entity.Property(e => e.napu_FechaCreacion).HasColumnType("datetime");
 
@@ -1436,9 +1437,9 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbPreguntasFrecuentes>(entity =>
             {
                 entity.HasKey(e => e.prfr_Id)
-                    .HasName("PK__tbPregun__B5C22C499239DC28");
+                    .HasName("PK__tbPregun__B5C22C49D4FAE55D");
 
-                entity.ToTable("tbPreguntasFrecuentes", "Comm");
+                entity.ToTable("tbPreguntasFrecuentes", "Comn");
 
                 entity.HasIndex(e => e.prfr_Pregunta, "UQ_tbPreguntasFrecuentes_prfr_Pregunta")
                     .IsUnique();
@@ -1470,7 +1471,7 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbPreguntasPorCuestionario>(entity =>
             {
                 entity.HasKey(e => e.prcu_Id)
-                    .HasName("PK__tbPregun__32C2967A884DB2F3");
+                    .HasName("PK__tbPregun__32C2967A404E6C4D");
 
                 entity.ToTable("tbPreguntasPorCuestionario", "Gest");
 
@@ -1528,11 +1529,11 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbPuestos>(entity =>
             {
                 entity.HasKey(e => e.pust_Id)
-                    .HasName("PK__tbPuesto__671B89653E55E08E");
+                    .HasName("PK__tbPuesto__671B89655FDDB46A");
 
                 entity.ToTable("tbPuestos", "Gral");
 
-                entity.HasIndex(e => e.pust_DescripcionPuesto, "UQ__tbPuesto__927C93499CD7F6E4")
+                entity.HasIndex(e => e.pust_DescripcionPuesto, "UQ__tbPuesto__927C9349E17D565A")
                     .IsUnique();
 
                 entity.Property(e => e.pust_DescripcionPuesto)
@@ -1601,7 +1602,7 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbRecibosPorOptante>(entity =>
             {
                 entity.HasKey(e => e.reop_Id)
-                    .HasName("PK__tbRecibo__16161EE90A5E9CF2");
+                    .HasName("PK__tbRecibo__16161EE9E210BD4E");
 
                 entity.ToTable("tbRecibosPorOptante", "Gest");
 
@@ -1725,7 +1726,7 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbRespuestasPorOptante>(entity =>
             {
                 entity.HasKey(e => e.cupa_Id)
-                    .HasName("PK__tbRespue__3D4003BCCD05A9C7");
+                    .HasName("PK__tbRespue__3D4003BC0D4A0D21");
 
                 entity.ToTable("tbRespuestasPorOptante", "Gest");
 
@@ -1749,11 +1750,11 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbRoles>(entity =>
             {
                 entity.HasKey(e => e.role_Id)
-                    .HasName("PK__tbRoles__760F99A40BCF89F6");
+                    .HasName("PK__tbRoles__760F99A4EA2481A1");
 
                 entity.ToTable("tbRoles", "Accs");
 
-                entity.HasIndex(e => e.role_DescripcionRol, "UQ__tbRoles__AC38D9C2C93A68A2")
+                entity.HasIndex(e => e.role_DescripcionRol, "UQ__tbRoles__AC38D9C21860C3A8")
                     .IsUnique();
 
                 entity.HasIndex(e => e.role_DescripcionRol, "UQ_tbRoles_role_DescripcionRol")
@@ -1782,11 +1783,11 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbTipoDocumento>(entity =>
             {
                 entity.HasKey(e => e.tido_Id)
-                    .HasName("PK__tbTipoDo__96BB82D2B107F041");
+                    .HasName("PK__tbTipoDo__96BB82D20850804F");
 
                 entity.ToTable("tbTipoDocumento", "Gral");
 
-                entity.HasIndex(e => e.tido_Descripcion, "UQ__tbTipoDo__10806C99CC6C583C")
+                entity.HasIndex(e => e.tido_Descripcion, "UQ__tbTipoDo__10806C995A6DB941")
                     .IsUnique();
 
                 entity.Property(e => e.tido_Descripcion)
@@ -1814,7 +1815,7 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbTipoSangre>(entity =>
             {
                 entity.HasKey(e => e.tisa_Id)
-                    .HasName("PK__tbTipoSa__A56FCB2B1CB5F284");
+                    .HasName("PK__tbTipoSa__A56FCB2B7A51C404");
 
                 entity.ToTable("tbTipoSangre", "Gral");
 
@@ -1844,7 +1845,7 @@ namespace USAID_Pasantes.DataAccess.Context
             {
                 entity.HasKey(e => e.tokn_Id);
 
-                entity.ToTable("tbTokens", "Comm");
+                entity.ToTable("tbTokens", "Comn");
 
                 entity.Property(e => e.tokn_JsonToken)
                     .IsRequired()
@@ -1860,14 +1861,14 @@ namespace USAID_Pasantes.DataAccess.Context
             modelBuilder.Entity<tbUniversidades>(entity =>
             {
                 entity.HasKey(e => e.univ_Id)
-                    .HasName("PK__tbUniver__A2187E09169D0807");
+                    .HasName("PK__tbUniver__A2187E09605E4449");
 
                 entity.ToTable("tbUniversidades", "Gral");
 
-                entity.HasIndex(e => e.univ_DescripcionUniversidad, "UQ__tbUniver__5983CA8A66D84324")
+                entity.HasIndex(e => e.univ_DescripcionUniversidad, "UQ__tbUniver__5983CA8A334C9D0D")
                     .IsUnique();
 
-                entity.HasIndex(e => e.univ_Abreviatura, "UQ__tbUniver__C90F8EAA505E7389")
+                entity.HasIndex(e => e.univ_Abreviatura, "UQ__tbUniver__C90F8EAAB2A7DB44")
                     .IsUnique();
 
                 entity.Property(e => e.univ_Abreviatura)

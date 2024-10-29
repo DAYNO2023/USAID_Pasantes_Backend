@@ -30,39 +30,39 @@
          "ObjectType": 0
       },
       {
-         "Name": "[Comm].[tbDiscusiones]",
+         "Name": "[Comn].[tbDiscusiones]",
          "ObjectType": 0
       },
       {
-         "Name": "[Comm].[tbDocumentosImagenesPorDiscusion]",
+         "Name": "[Comn].[tbDocumentosImagenesPorDiscusion]",
          "ObjectType": 0
       },
       {
-         "Name": "[Comm].[tbForos]",
+         "Name": "[Comn].[tbForos]",
          "ObjectType": 0
       },
       {
-         "Name": "[Comm].[tbForosPorActividad]",
+         "Name": "[Comn].[tbForosPorActividad]",
          "ObjectType": 0
       },
       {
-         "Name": "[Comm].[tbForosPorEmpleados]",
+         "Name": "[Comn].[tbForosPorEmpleados]",
          "ObjectType": 0
       },
       {
-         "Name": "[Comm].[tbNotificaciones]",
+         "Name": "[Comn].[tbNotificaciones]",
          "ObjectType": 0
       },
       {
-         "Name": "[Comm].[tbNotificacionesPorUsuario]",
+         "Name": "[Comn].[tbNotificacionesPorUsuario]",
          "ObjectType": 0
       },
       {
-         "Name": "[Comm].[tbPreguntasFrecuentes]",
+         "Name": "[Comn].[tbPreguntasFrecuentes]",
          "ObjectType": 0
       },
       {
-         "Name": "[Comm].[tbTokens]",
+         "Name": "[Comn].[tbTokens]",
          "ObjectType": 0
       },
       {
