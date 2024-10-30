@@ -47,7 +47,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
         /// <summary>
         /// Inserta un nuevo estado civil en la base de datos.
         /// </summary>
-        /// <param name="item">Los detalles del estdo civil que se desea agregar.</param>
+        /// <param name="item">Los detalles del estado civil que se desea agregar.</param>
         /// <returns>El estado de la operación de inserción.</returns>
         public virtual RequestStatus Insert(tbEstadosCiviles item)
         {
@@ -75,14 +75,12 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             RequestStatus result = new RequestStatus();
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
-                // Definición de los parámetros para el procedimiento almacenado.
                 var parameter = new DynamicParameters();
                 parameter.Add("@civi_Id", item.civi_Id);
                 parameter.Add("@civi_DescripcionEstadoCivil", item.civi_DescripcionEstadoCivil);
                 parameter.Add("@civi_UsuarioModificacion", item.civi_UsuarioModificacion);
                 parameter.Add("@civi_FechaModificacion", item.civi_FechaModificacion);
 
-                // Ejecución del procedimiento almacenado para actualizar el proceso de venta.
                 var answer = db.QueryFirst<int>(ScriptsDataBase.ActualizarEstadoCivil, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
