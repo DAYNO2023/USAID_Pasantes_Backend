@@ -12,10 +12,4 @@
     <ProjectReference Include="..\USAID_Pasantes.DataAccess\USAID_Pasantes.DataAccess.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\ServicesGestion\" />
-    <Folder Include="Services\ServicesComunicacion\" />
-    <Folder Include="Services\ServicesAcceso\" />
-  </ItemGroup>
-
 </Project>
