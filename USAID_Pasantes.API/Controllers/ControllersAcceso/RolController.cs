@@ -83,5 +83,9 @@ namespace USAID_Pasantes.API.Controllers.ControllersAcceso
                 return View();
             }
         }
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }
