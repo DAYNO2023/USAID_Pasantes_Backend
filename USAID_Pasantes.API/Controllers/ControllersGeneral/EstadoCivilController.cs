@@ -16,6 +16,11 @@ namespace USAID_Pasantes.API.Controllers.ControllersGeneral
     {
         private readonly EstadoCivilService _estadocivilService;
         private readonly IMapper _mapper;
+        /// <summary>
+        /// Constructor del controlador de Estado Civil que inicializa el servicio y el mapeador.
+        /// </summary>
+        /// <param name="estadocivilService">Instancia del servicio de estados civiles.</param>
+        /// <param name="mapper">Instancia del mapeador para conversiones de modelos.</param>
         public EstadoCivilController(EstadoCivilService estadocivilService, IMapper mapper)
         {
             _estadocivilService = estadocivilService;
@@ -23,6 +28,10 @@ namespace USAID_Pasantes.API.Controllers.ControllersGeneral
         }
 
 
+        /// <summary>
+        /// Obtiene una lista de todos los estados civiles.
+        /// </summary>
+        /// <returns>Lista de estados civiles disponibles.</returns>
         [HttpGet("Listar")]
         public IActionResult ListarEstadosCiviles()
         {
@@ -30,6 +39,11 @@ namespace USAID_Pasantes.API.Controllers.ControllersGeneral
             return Ok(response.Data);
         }
 
+        /// <summary>
+        /// Busca un estado civil por su ID.
+        /// </summary>
+        /// <param name="id">ID del estado civil a buscar.</param>
+        /// <returns>El estado civil encontrado.</returns>
         [HttpGet("Buscar/{id}")]
         public IActionResult BuscarEstadoCivil(int id)
         {
@@ -37,6 +51,11 @@ namespace USAID_Pasantes.API.Controllers.ControllersGeneral
             return Ok(response.Data);
         }
 
+        /// <summary>
+        /// Inserta un nuevo estado civil.
+        /// </summary>
+        /// <param name="estadoscivilesViewModel">Modelo de vista con los detalles del estado civil a insertar.</param>
+        /// <returns>Resultado de la operación de inserción.</returns>
         [HttpPost("Insertar")]
         public IActionResult Create(EstadosCivilesViewModel estadoscivilesViewModel)
         {
@@ -45,7 +64,13 @@ namespace USAID_Pasantes.API.Controllers.ControllersGeneral
             return Ok(response); 
         }
 
+        /// <summary>
+        /// Actualiza un estado civil existente.
+        /// </summary>
+        /// <param name="estadoscivilesViewModel">Modelo de vista con los datos actualizados del estado civil.</param>
+        /// <returns>Resultado de la operación de actualización.</returns>
         [HttpPut("Actualizar")]
+
         public IActionResult Update(EstadosCivilesViewModel estadoscivilesViewModel)
         {
             var modelo = _mapper.Map<EstadosCivilesViewModel, tbEstadosCiviles>(estadoscivilesViewModel); 
@@ -53,6 +78,11 @@ namespace USAID_Pasantes.API.Controllers.ControllersGeneral
             return Ok(response); 
         }
 
+        /// <summary>
+        /// Elimina un estado civil por su ID.
+        /// </summary>
+        /// <param name="id">ID del estado civil a eliminar.</param>
+        /// <returns>Resultado de la operación de eliminación.</returns>
         [HttpDelete("Eliminar")]
         public IActionResult Delete(int id)
         {

@@ -13,7 +13,7 @@ namespace USAID_Pasantes.Entities.Entities
             tbEmpleados = new HashSet<tbEmpleados>();
             tbOptantes = new HashSet<tbOptantes>();
         }
-
+        public int codigo { get; set; }
         public int civi_Id { get; set; }
         public string civi_DescripcionEstadoCivil { get; set; }
         public int? civi_UsuarioCreacion { get; set; }
