@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\ControllersAcceso\" />
     <Folder Include="Controllers\ControllersComunicacion\" />
     <Folder Include="Controllers\ControllersGestion\" />
     <Folder Include="wwwroot\" />
@@ -31,5 +30,7 @@
     <ProjectReference Include="..\USAID_Pasantes.BusinessLogic\USAID_Pasantes.BusinessLogic.csproj" />
     <ProjectReference Include="..\USAID_Pasantes.Common\USAID_Pasantes.Common.csproj" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

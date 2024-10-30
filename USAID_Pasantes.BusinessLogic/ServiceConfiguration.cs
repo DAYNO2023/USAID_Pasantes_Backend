@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using USAID_Pasantes.BusinessLogic.Services.ServicesAcceso;
 using USAID_Pasantes.BusinessLogic.Services.ServicesGeneral;
+using USAID_Pasantes.DataAccess.Repositories.RepositoriesAcceso;
 using USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral;
 
 namespace USAID_Pasantes.BusinessLogic
@@ -16,6 +18,8 @@ namespace USAID_Pasantes.BusinessLogic
             USAID_Pasantes.DataAccess.USAID_Pasantes.BuildConnectionString(connection);
 
             #region Acceso
+            service.AddScoped<ModuloRepository>();
+            service.AddScoped<ModuloPorRolRepository>();
             #endregion
 
             #region Comunicacion
@@ -30,9 +34,14 @@ namespace USAID_Pasantes.BusinessLogic
         }
         public static void BusinessLogic(this IServiceCollection service)
         {
+            #region Acceso
+            service.AddScoped<ModuloService>();
+            service.AddScoped<ModuloPorRolService>();
+            #endregion
             #region General
             service.AddScoped<EstadoCivilService>();
             #endregion
+
         }
     }
 }

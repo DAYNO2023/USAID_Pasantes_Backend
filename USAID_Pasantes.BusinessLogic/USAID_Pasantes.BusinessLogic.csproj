@@ -15,7 +15,6 @@
   <ItemGroup>
     <Folder Include="Services\ServicesGestion\" />
     <Folder Include="Services\ServicesComunicacion\" />
-    <Folder Include="Services\ServicesAcceso\" />
   </ItemGroup>
 
 </Project>
