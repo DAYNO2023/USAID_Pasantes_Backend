@@ -17,6 +17,7 @@ using USAID_Pasantes.API.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using USAID_Pasantes.BusinessLogic;
 
 namespace USAID_Pasantes.API
 {
@@ -44,8 +45,8 @@ namespace USAID_Pasantes.API
                                       .AllowAnyMethod());
             });
 
-            //services.DataAcces(Configuration.GetConnectionString("ConexionSIGESCPROC"));
-            //services.BusinessLogic();
+            services.DataAcces(Configuration.GetConnectionString("ConexionUSAID_Pasantes"));
+            services.BusinessLogic();
             services.AddAutoMapper(x => x.AddProfile<MappingProfileExtensions>(), AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllers();
             services.AddSignalR();

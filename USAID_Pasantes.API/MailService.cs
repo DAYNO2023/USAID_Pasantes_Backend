@@ -43,7 +43,7 @@ namespace USAID_Pasantes.API
                         mailClient.Connect(_mailSettings.Server, _mailSettings.Port, SecureSocketOptions.StartTls);
 
                         //cambiar al correo de SYONIX con una llave corespondiente
-                        mailClient.Authenticate("ahm.sigesproc@gmail.com", "hfzi qdel xvit crng");
+                        mailClient.Authenticate("syonixhn@gmail.com", "dohn dkcg kato ybkk");
                         mailClient.Send(emailMessage);
                         mailClient.Disconnect(true);
                     }
