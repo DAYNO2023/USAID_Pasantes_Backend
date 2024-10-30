@@ -11,7 +11,7 @@ namespace USAID_Pasantes.DataAccess
         #region General
 
         #region Estado Civil
-        public static string ListarEstadosCiviles = "[Gral].[SP_ListarEstadosCiviles]";
+        public static string ListarEstadosCiviles = "[Gral].[SP_EstadosCiviles_Listar]";
         public static string BuscarEstadoCivil = "[Gral].[SP_EstadoCivil_Buscar]";
         public static string InsertarEstadoCivil = "[Gral].[SP_EstadoCivil_Insertar]";
         public static string ActualizarEstadoCivil = "[Gral].[SP_EstadoCivil_Actualizar]";
