@@ -47,6 +47,14 @@ namespace USAID_Pasantes.DataAccess
 
         #endregion
 
+        #region Rol
+        public static string ListarRol = "[Accs].[SP_Roles_Listar]";
+        public static string BuscarRol = "[Accs].[SP_Rol_Buscar]";
+        public static string InsertarRol = "[Accs].[SP_Rol_Insertar]";
+        public static string ActualizarRol = "[Accs].[SP_Rol_Actualizar]";
+        public static string EliminarRol = "[Accs].[SP_Rol_Eliminar]";
+        #endregion
+
         #endregion
     }
 }
