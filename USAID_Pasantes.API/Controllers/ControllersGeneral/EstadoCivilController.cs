@@ -24,7 +24,7 @@ namespace USAID_Pasantes.API.Controllers.ControllersGeneral
 
 
         [HttpGet("Listar")]
-        public IActionResult ListarEstadoCivil()
+        public IActionResult ListarEstadosCiviles()
         {
             var response = _estadocivilService.ListarEstadosCiviles();
             return Ok(response.Data);
