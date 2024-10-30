@@ -13,7 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <Folder Include="Services\ServicesGestion\" />
+    <Folder Include="Services\ServicesComunicacion\" />
+    <Folder Include="Services\ServicesAcceso\" />
   </ItemGroup>
 
 </Project>

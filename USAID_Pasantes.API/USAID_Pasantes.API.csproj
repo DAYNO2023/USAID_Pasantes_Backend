@@ -21,6 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\ControllersAcceso\" />
+    <Folder Include="Controllers\ControllersComunicacion\" />
+    <Folder Include="Controllers\ControllersGestion\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
