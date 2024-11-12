@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace USAID_Pasantes.Common.Models.ModelsGeneral
 {
-    public class FacultadPorRegional
+    public class FacultadPorRegionalViewModel
     {
         public int fare_Id { get; set; }
         public int facu_Id { get; set; }
