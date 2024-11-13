@@ -38,7 +38,7 @@ namespace USAID_Pasantes.API.Controllers.ControllersGeneral
         [HttpPost("Insertar")]
         public IActionResult Create(CarreraPorFacultadPorRegionalViewModel carreraPorFacultadPorRegionalViewModel)
         {
-            var modelo = _mapper.Map<CarreraPorFacultadPorRegionalViewModel, tbEstadosCiviles>(carreraPorFacultadPorRegionalViewModel);
+            var modelo = _mapper.Map<CarreraPorFacultadPorRegionalViewModel, tbCarreraPorFacultadPorRegional>(carreraPorFacultadPorRegionalViewModel);
             var response = _carreraPorFacultadPorRegionalService.InsertarCarreraPorFacultadPorRegional(modelo);
             return Ok(response);
         }
