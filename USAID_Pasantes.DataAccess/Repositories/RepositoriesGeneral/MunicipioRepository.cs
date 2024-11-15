@@ -19,7 +19,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@muni_Id", id);
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.EliminarMunicipio, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
@@ -33,7 +33,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@muni_Id", id);
-                result = db.QueryFirst<tbMunicipios>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                result = db.QueryFirst<tbMunicipios>(ScriptsDataBase.BuscarMunicipio, parameter, commandType: CommandType.StoredProcedure);
                 return result;
             }
         }
@@ -50,7 +50,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 parameter.Add("@muni_FechaCreacion", item.muni_FechaCreacion);
 
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.InsertarMunicipio, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
@@ -61,7 +61,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             List<tbMunicipios> result = new List<tbMunicipios>();
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
-                result = db.Query<tbMunicipios>(ScriptsDataBase., commandType: CommandType.Text).ToList();
+                result = db.Query<tbMunicipios>(ScriptsDataBase.ListarMunicipios, commandType: CommandType.Text).ToList();
                 return result;
             }
         }
@@ -78,7 +78,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 parameter.Add("@muni_UsuarioModificacion", item.muni_UsuarioModificacion);
                 parameter.Add("@muni_FechaModificacion", item.muni_FechaModificacion);
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.ActualizarMunicipio, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }

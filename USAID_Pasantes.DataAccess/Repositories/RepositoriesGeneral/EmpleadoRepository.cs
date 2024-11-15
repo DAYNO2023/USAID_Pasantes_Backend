@@ -19,7 +19,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@empl_Id", id);
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.EliminarEmpleado, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
@@ -33,7 +33,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@empl_Id", id);
-                result = db.QueryFirst<tbEmpleados>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                result = db.QueryFirst<tbEmpleados>(ScriptsDataBase.BuscarEmpleado, parameter, commandType: CommandType.StoredProcedure);
                 return result;
             }
         }
@@ -57,7 +57,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 parameter.Add("@empl_FechaCreacion", item.empl_FechaCreacion);
                 
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.InsertarEmpleado, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
@@ -68,7 +68,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             List<tbEmpleados> result = new List<tbEmpleados>();
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
-                result = db.Query<tbEmpleados>(ScriptsDataBase., commandType: CommandType.Text).ToList();
+                result = db.Query<tbEmpleados>(ScriptsDataBase.ListarEmpleados, commandType: CommandType.Text).ToList();
                 return result;
             }
         }
@@ -92,7 +92,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 parameter.Add("@empl_UsuarioModificacion", item.empl_UsuarioModificacion);
                 parameter.Add("@empl_FechaModificacion", item.empl_FechaModificacion);
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.ActualizarEmpleado, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }

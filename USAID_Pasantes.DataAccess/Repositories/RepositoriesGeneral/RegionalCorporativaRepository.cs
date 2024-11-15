@@ -19,7 +19,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@reco_Id", id);
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.EliminarRegionalCorporativa, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
@@ -33,7 +33,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@reco_Id", id);
-                result = db.QueryFirst<tbRegionalCorporativa>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                result = db.QueryFirst<tbRegionalCorporativa>(ScriptsDataBase.BuscarRegionalCorporativa, parameter, commandType: CommandType.StoredProcedure);
                 return result;
             }
             throw new NotImplementedException();
@@ -52,7 +52,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 parameter.Add("@reco_FechaCreacion", item.reco_FechaCreacion);
 
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.InsertarRegionalCorporativa, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
@@ -63,7 +63,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             List<tbRegionalCorporativa> result = new List<tbRegionalCorporativa>();
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
-                result = db.Query<tbRegionalCorporativa>(ScriptsDataBase., commandType: CommandType.Text).ToList();
+                result = db.Query<tbRegionalCorporativa>(ScriptsDataBase.ListarRegionalCorporativas, commandType: CommandType.Text).ToList();
                 return result;
             }
         }
@@ -81,7 +81,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 parameter.Add("@reco_UsuarioModificacion", item.reco_UsuarioModificacion);
                 parameter.Add("@reco_FechaModificacion", item.reco_FechaModificacion);
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.ActualizarRegionalCorporativa, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }

@@ -19,7 +19,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@depa_Id", id);
-                var answer = db.QueryFirst<int>(ScriptsDataBase.EliminarEstadoCivil, parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.EliminarDepartamento, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
@@ -33,7 +33,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@depa_Id", id);
-                result = db.QueryFirst<tbDepartamentos>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                result = db.QueryFirst<tbDepartamentos>(ScriptsDataBase.BuscarDepartamento, parameter, commandType: CommandType.StoredProcedure);
                 return result;
             }
         }
@@ -49,7 +49,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 parameter.Add("@depa_FechaCreacion", item.depa_FechaCreacion);
 
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.InsertarDepartamento, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
@@ -60,7 +60,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             List<tbDepartamentos> result = new List<tbDepartamentos>();
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
-                result = db.Query<tbDepartamentos>(ScriptsDataBase., commandType: CommandType.Text).ToList();
+                result = db.Query<tbDepartamentos>(ScriptsDataBase.ListarDepartamentos, commandType: CommandType.Text).ToList();
                 return result;
             }
         }
@@ -76,7 +76,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 parameter.Add("@depa_UsuarioModificacion", item.depa_UsuarioModificacion);
                 parameter.Add("@depa_FechaModificacion", item.depa_FechaModificacion);
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.ActualizarDepartamento, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }

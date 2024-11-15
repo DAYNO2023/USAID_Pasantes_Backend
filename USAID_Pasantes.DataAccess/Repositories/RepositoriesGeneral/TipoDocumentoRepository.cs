@@ -19,7 +19,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@tido_Id", id);
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.EliminarTipoDocumento, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
@@ -33,7 +33,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@tido_Id", id);
-                result = db.QueryFirst<tbTipoDocumento>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                result = db.QueryFirst<tbTipoDocumento>(ScriptsDataBase.BuscarTipoDocumento, parameter, commandType: CommandType.StoredProcedure);
                 return result;
             }
         }
@@ -48,7 +48,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 parameter.Add("@tido_UsuarioCreacion", item.tido_UsuarioCreacion);
                 parameter.Add("@tido_FechaCreacion", item.tido_FechaCreacion);
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.InsertarTipoDocumento, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
@@ -59,7 +59,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             List<tbTipoDocumento> result = new List<tbTipoDocumento>();
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
-                result = db.Query<tbTipoDocumento>(ScriptsDataBase., commandType: CommandType.Text).ToList();
+                result = db.Query<tbTipoDocumento>(ScriptsDataBase.ListarTipoDocumentos, commandType: CommandType.Text).ToList();
                 return result;
             }
         }
@@ -75,7 +75,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 parameter.Add("@tido_UsuarioModificacion", item.tido_UsuarioModificacion);
                 parameter.Add("@tido_FechaModificacion", item.tido_FechaModificacion);
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.ActualizarTipoDocumento, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }

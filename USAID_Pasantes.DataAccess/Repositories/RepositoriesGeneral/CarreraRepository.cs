@@ -19,7 +19,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@carr_Id", id);
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.EliminarCarrera, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
@@ -33,7 +33,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@carr_Id", id);
-                result = db.QueryFirst<tbCarreras>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                result = db.QueryFirst<tbCarreras>(ScriptsDataBase.BuscarCarrera, parameter, commandType: CommandType.StoredProcedure);
                 return result;
             }
         }
@@ -48,7 +48,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 parameter.Add("@carr_UsuarioCreacion", item.carr_UsuarioCreacion);
                 parameter.Add("@carr_FechaCreacion", item.carr_FechaCreacion);
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.InsertarCarrera, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
@@ -59,7 +59,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             List<tbCarreras> result = new List<tbCarreras>();
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
-                result = db.Query<tbCarreras>(ScriptsDataBase., commandType: CommandType.Text).ToList();
+                result = db.Query<tbCarreras>(ScriptsDataBase.ListarCarreras, commandType: CommandType.Text).ToList();
                 return result;
             }
         }
@@ -75,7 +75,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 parameter.Add("@carr_UsuarioCreacion", item.carr_UsuarioCreacion);
                 parameter.Add("@carr_FechaCreacion", item.carr_FechaCreacion);
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.ActualizarCarrera, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }

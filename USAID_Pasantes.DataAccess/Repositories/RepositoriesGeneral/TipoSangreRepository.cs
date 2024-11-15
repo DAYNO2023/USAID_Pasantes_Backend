@@ -19,7 +19,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@tisa_Id", id);
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.EliminarTipoSangre, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
@@ -33,7 +33,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@tisa_Id", id);
-                result = db.QueryFirst<tbTipoSangre>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                result = db.QueryFirst<tbTipoSangre>(ScriptsDataBase.BuscarTipoSangre, parameter, commandType: CommandType.StoredProcedure);
                 return result;
             }
         }
@@ -48,7 +48,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 parameter.Add("@tisa_UsuarioCreacion", item.tisa_UsuarioCreacion);
                 parameter.Add("@tisa_FechaCreacion", item.tisa_FechaCreacion);
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.InsertarTipoSangre, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
@@ -59,7 +59,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             List<tbTipoSangre> result = new List<tbTipoSangre>();
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
-                result = db.Query<tbTipoSangre>(ScriptsDataBase., commandType: CommandType.Text).ToList();
+                result = db.Query<tbTipoSangre>(ScriptsDataBase.ListarTipoSangres, commandType: CommandType.Text).ToList();
                 return result;
             }
         }
@@ -75,7 +75,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 parameter.Add("@tisa_UsuarioModificacion", item.tisa_UsuarioModificacion);
                 parameter.Add("@tisa_Fechamodificacion", item.tisa_Fechamodificacion);
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.ActualizarTipoSangre, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }

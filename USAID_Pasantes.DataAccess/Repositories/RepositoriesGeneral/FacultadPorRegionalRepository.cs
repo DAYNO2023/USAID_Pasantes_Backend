@@ -19,7 +19,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@fare_Id", id);
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.EliminarFacultadPorRegional, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
@@ -33,7 +33,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@fare_Id", id);
-                result = db.QueryFirst<tbFacultadPorRegional>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                result = db.QueryFirst<tbFacultadPorRegional>(ScriptsDataBase.BuscarFacultadPorRegional, parameter, commandType: CommandType.StoredProcedure);
                 return result;
             }
         }
@@ -47,7 +47,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 parameter.Add("@facu_Id", item.facu_Id);
                 parameter.Add("@regi_Id", item.regi_Id);
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.InsertarFacultadPorRegional, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
@@ -58,7 +58,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
             List<tbFacultadPorRegional> result = new List<tbFacultadPorRegional>();
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
-                result = db.Query<tbFacultadPorRegional>(ScriptsDataBase., commandType: CommandType.Text).ToList();
+                result = db.Query<tbFacultadPorRegional>(ScriptsDataBase.ListarFacultadPorRegional, commandType: CommandType.Text).ToList();
                 return result;
             }
         }
@@ -73,7 +73,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 parameter.Add("@facu_Id", item.facu_Id);
                 parameter.Add("@regi_Id", item.regi_Id);
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase., parameter, commandType: CommandType.StoredProcedure);
+                var answer = db.QueryFirst<int>(ScriptsDataBase.ActualizarFacultadPorRegional, parameter, commandType: CommandType.StoredProcedure);
                 result.CodeStatus = answer;
                 return result;
             }
