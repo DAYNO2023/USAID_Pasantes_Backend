@@ -6,8 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using USAID_Pasantes.BusinessLogic.Services.ServicesAcceso;
 using USAID_Pasantes.BusinessLogic.Services.ServicesGeneral;
+using USAID_Pasantes.BusinessLogic.Services.ServicesComunicacion;
+using USAID_Pasantes.BusinessLogic.Services.ServicesGestion;
 using USAID_Pasantes.DataAccess.Repositories.RepositoriesAcceso;
 using USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral;
+using USAID_Pasantes.DataAccess.Repositories.RepositoriesGestion;
 
 namespace USAID_Pasantes.BusinessLogic
 {
@@ -31,6 +34,7 @@ namespace USAID_Pasantes.BusinessLogic
             #endregion
 
             #region Gestion
+            service.AddScoped<BeneficioRepository>();
             #endregion
         }
         public static void BusinessLogic(this IServiceCollection service)
@@ -40,10 +44,14 @@ namespace USAID_Pasantes.BusinessLogic
             service.AddScoped<ModuloPorRolService>();
             service.AddScoped<RolService>();
             #endregion
+
             #region General
             service.AddScoped<EstadoCivilService>();
             #endregion
 
+            #region Gestion
+            service.AddScoped<BeneficioService>();
+            #endregion
         }
     }
 }

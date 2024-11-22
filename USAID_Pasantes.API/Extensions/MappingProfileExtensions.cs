@@ -43,6 +43,10 @@ namespace USAID_Pasantes.API.Extensions
             #region General
             CreateMap<EstadosCivilesViewModel, tbEstadosCiviles>().ReverseMap();
             #endregion
+
+            #region Gestión
+            CreateMap<BeneficioViewModel, tbBeneficios>().ReverseMap();
+            #endregion
         }
 
     }
