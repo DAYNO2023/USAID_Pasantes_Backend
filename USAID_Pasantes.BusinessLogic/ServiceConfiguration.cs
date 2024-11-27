@@ -24,6 +24,7 @@ namespace USAID_Pasantes.BusinessLogic
             service.AddScoped<ModuloRepository>();
             service.AddScoped<ModuloPorRolRepository>();
             service.AddScoped<RolRepository>();
+            service.AddScoped<LoginRepository>();
             #endregion
 
             #region Comunicacion
@@ -31,6 +32,20 @@ namespace USAID_Pasantes.BusinessLogic
 
             #region General
             service.AddScoped<EstadoCivilRepository>();
+            service.AddScoped<BancoRepository>();
+            service.AddScoped<CarreraPorFacultadPorRegionalRepository>();
+            service.AddScoped<CarreraRepository>();
+            service.AddScoped<DepartamentoRepository>();
+            service.AddScoped<EmpleadoRepository>();
+            service.AddScoped<FacultadPorRegionalRepository>();
+            service.AddScoped<FacultadRepository>();
+            service.AddScoped<MunicipioRepository>();
+            service.AddScoped<PuestoRepository>();
+            service.AddScoped<RegionalCorporativaRepository>();
+            service.AddScoped<RegionalRepository>();
+            service.AddScoped<TipoDocumentoRepository>();
+            service.AddScoped<TipoSangreRepository>();
+            service.AddScoped<UniversidadRepository>();
             #endregion
 
             #region Gestion
@@ -43,10 +58,25 @@ namespace USAID_Pasantes.BusinessLogic
             service.AddScoped<ModuloService>();
             service.AddScoped<ModuloPorRolService>();
             service.AddScoped<RolService>();
+            service.AddScoped<LoginService>();
             #endregion
 
             #region General
             service.AddScoped<EstadoCivilService>();
+            service.AddScoped<BancoRepository>();
+            service.AddScoped<CarreraPorFacultadPorRegionalService>();
+            service.AddScoped<CarreraService>();
+            service.AddScoped<DepartamentoService>();
+            service.AddScoped<EmpleadoService>();
+            service.AddScoped<FacultadPorRegionalService>();
+            service.AddScoped<FacultadService>();
+            service.AddScoped<MunicipioService>();
+            service.AddScoped<PuestoService>();
+            service.AddScoped<RegionalCorporativaService>();
+            service.AddScoped<RegionalService>();
+            service.AddScoped<TipoDocumentoService>();
+            service.AddScoped<TipoSangreService>();
+            service.AddScoped<UniversidadService>();
             #endregion
 
             #region Gestion
