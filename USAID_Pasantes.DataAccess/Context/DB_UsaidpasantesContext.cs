@@ -3,7 +3,6 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using USAID_Pasantes.DataAccess;
-using USAID_Pasantes.Entities.Entities;
 
 #nullable disable
 
@@ -80,35 +79,15 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.acti_Id)
                     .HasName("PK__tbActivi__9B1042C3AD6B5218");
 
-                entity.ToTable("tbActividades", "Gest");
+                entity.Property(e => e.acti_DescripcionActividad).IsUnicode(false);
 
-                entity.Property(e => e.acti_DescripcionActividad)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.acti_DireccionExacta)
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
+                entity.Property(e => e.acti_DireccionExacta).IsUnicode(false);
 
                 entity.Property(e => e.acti_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.acti_FechaCreacion).HasColumnType("datetime");
+                entity.Property(e => e.acti_NombreActividad).IsUnicode(false);
 
-                entity.Property(e => e.acti_FechaFinal).HasColumnType("date");
-
-                entity.Property(e => e.acti_FechaInicio).HasColumnType("date");
-
-                entity.Property(e => e.acti_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.acti_NombreActividad)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.muni_Id)
-                    .HasMaxLength(4)
-                    .IsUnicode(false);
+                entity.Property(e => e.muni_Id).IsUnicode(false);
 
                 entity.HasOne(d => d.acti_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbActividadesacti_UsuarioCreacionNavigation)
@@ -119,10 +98,6 @@ namespace USAID_Pasantes.DataAccess.Context
                     .WithMany(p => p.tbActividadesacti_UsuarioModificacionNavigation)
                     .HasForeignKey(d => d.acti_UsuarioModificacion)
                     .HasConstraintName("FK_tbActividades_Accs_tbUsuarios_acti_UsuarioModificacion");
-
-                entity.HasOne(d => d.comp)
-                    .WithMany(p => p.tbActividades)
-                    .HasForeignKey(d => d.comp_Id);
 
                 entity.HasOne(d => d.muni)
                     .WithMany(p => p.tbActividades)
@@ -135,17 +110,9 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.acpe_Id)
                     .HasName("PK__tbActivi__8F690CFF17883CFA");
 
-                entity.ToTable("tbActividadesPorOptante", "Gest");
-
                 entity.Property(e => e.acpe_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.acpe_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.acpe_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.acpe_Observacion)
-                    .HasMaxLength(200)
-                    .IsUnicode(false);
+                entity.Property(e => e.acpe_Observacion).IsUnicode(false);
 
                 entity.HasOne(d => d.acpe_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbActividadesPorOptanteacpe_UsuarioCreacionNavigation)
@@ -172,21 +139,7 @@ namespace USAID_Pasantes.DataAccess.Context
 
             modelBuilder.Entity<tbBancos>(entity =>
             {
-                entity.HasKey(e => e.banc_Id);
-
-                entity.ToTable("tbBancos", "Gral");
-
-                entity.HasIndex(e => e.banc_Descripcion, "UQ_banc_Descripcion")
-                    .IsUnique();
-
-                entity.Property(e => e.banc_Descripcion)
-                    .IsRequired()
-                    .HasMaxLength(60)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.banc_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.banc_FechaModificacion).HasColumnType("datetime");
+                entity.Property(e => e.banc_Descripcion).IsUnicode(false);
 
                 entity.HasOne(d => d.banc_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbBancosbanc_UsuarioCreacionNavigation)
@@ -204,25 +157,11 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.bene_Id)
                     .HasName("PK__tbBenefi__3DC63B52652D42A6");
 
-                entity.ToTable("tbBeneficios", "Gest");
-
-                entity.Property(e => e.bene_Cantidad).HasColumnType("money");
-
-                entity.Property(e => e.bene_DescripcionBeneficio)
-                    .IsRequired()
-                    .HasMaxLength(60)
-                    .IsUnicode(false);
+                entity.Property(e => e.bene_DescripcionBeneficio).IsUnicode(false);
 
                 entity.Property(e => e.bene_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.bene_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.bene_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.bene_NombreBeneficio)
-                    .IsRequired()
-                    .HasMaxLength(30)
-                    .IsUnicode(false);
+                entity.Property(e => e.bene_NombreBeneficio).IsUnicode(false);
 
                 entity.HasOne(d => d.bene_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbBeneficiosbene_UsuarioCreacionNavigation)
@@ -239,8 +178,6 @@ namespace USAID_Pasantes.DataAccess.Context
             {
                 entity.HasKey(e => e.bepe_Id)
                     .HasName("PK__tbBenefi__F99C73D6AF0638F6");
-
-                entity.ToTable("tbBeneficiosPorOptante", "Gest");
 
                 entity.HasOne(d => d.bene)
                     .WithMany(p => p.tbBeneficiosPorOptante)
@@ -260,11 +197,7 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.cafr_Id)
                     .HasName("PK__tbCarrer__8AA093B4BE67C4F4");
 
-                entity.ToTable("tbCarreraPorFacultadPorRegional", "Gral");
-
-                entity.Property(e => e.cafr_DescripcionCarreraEspecifico)
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
+                entity.Property(e => e.cafr_DescripcionCarreraEspecifico).IsUnicode(false);
 
                 entity.HasOne(d => d.carr)
                     .WithMany(p => p.tbCarreraPorFacultadPorRegional)
@@ -284,21 +217,9 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.carr_Id)
                     .HasName("PK__tbCarrer__7ED01DB18E2AF83F");
 
-                entity.ToTable("tbCarreras", "Gral");
-
-                entity.HasIndex(e => e.carr_DescripcionCarrera, "UQ__tbCarrer__C7EE739B9767C6B9")
-                    .IsUnique();
-
-                entity.Property(e => e.carr_DescripcionCarrera)
-                    .IsRequired()
-                    .HasMaxLength(60)
-                    .IsUnicode(false);
+                entity.Property(e => e.carr_DescripcionCarrera).IsUnicode(false);
 
                 entity.Property(e => e.carr_Estado).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.carr_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.carr_FechaModificacion).HasColumnType("datetime");
 
                 entity.HasOne(d => d.carr_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbCarrerascarr_UsuarioCreacionNavigation)
@@ -316,29 +237,11 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.comp_Id)
                     .HasName("PK__tbCompon__531157F598460F30");
 
-                entity.ToTable("tbComponentes", "Gest");
-
-                entity.HasIndex(e => e.comp_NombreComponente, "UQ__tbCompon__918F2BC481C11832")
-                    .IsUnique();
-
-                entity.Property(e => e.comp_DescripcionComponente)
-                    .IsRequired()
-                    .IsUnicode(false);
+                entity.Property(e => e.comp_DescripcionComponente).IsUnicode(false);
 
                 entity.Property(e => e.comp_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.comp_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.comp_FechaFin).HasColumnType("date");
-
-                entity.Property(e => e.comp_FechaInicio).HasColumnType("date");
-
-                entity.Property(e => e.comp_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.comp_NombreComponente)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
+                entity.Property(e => e.comp_NombreComponente).IsUnicode(false);
 
                 entity.Property(e => e.comp_Observacion).IsUnicode(false);
 
@@ -362,8 +265,6 @@ namespace USAID_Pasantes.DataAccess.Context
             {
                 entity.HasKey(e => e.core_Id)
                     .HasName("PK__tbCompon__5268D43D2E5F987B");
-
-                entity.ToTable("tbComponentesPorRegionalPorEmpleado", "Gest");
 
                 entity.HasOne(d => d.comp)
                     .WithMany(p => p.tbComponentesPorRegionalPorEmpleado)
@@ -389,26 +290,11 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.cues_Id)
                     .HasName("PK__tbCuesti__030166244F729E86");
 
-                entity.ToTable("tbCuestionarios", "Gest");
-
-                entity.Property(e => e.cues_DescripcionCuestionario)
-                    .IsRequired()
-                    .IsUnicode(false);
+                entity.Property(e => e.cues_DescripcionCuestionario).IsUnicode(false);
 
                 entity.Property(e => e.cues_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.cues_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.cues_FechaHoraProgramado).HasColumnType("datetime");
-
-                entity.Property(e => e.cues_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.cues_NombreCuestionario)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.cues_Puntuacion).HasColumnType("decimal(2, 1)");
+                entity.Property(e => e.cues_NombreCuestionario).IsUnicode(false);
 
                 entity.HasOne(d => d.cues_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbCuestionarioscues_UsuarioCreacionNavigation)
@@ -428,28 +314,11 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.depa_Id)
                     .HasName("PK__tbDepart__E3F3B11E0F4E34BD");
 
-                entity.ToTable("tbDepartamentos", "Gral");
+                entity.Property(e => e.depa_Id).IsUnicode(false);
 
-                entity.HasIndex(e => e.depa_DescripcionDepartamento, "UQ__tbDepart__EED74EF8DCF891DF")
-                    .IsUnique();
-
-                entity.HasIndex(e => e.depa_DescripcionDepartamento, "UQ_depa_DescripcionDepartamento")
-                    .IsUnique();
-
-                entity.Property(e => e.depa_Id)
-                    .HasMaxLength(2)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.depa_DescripcionDepartamento)
-                    .IsRequired()
-                    .HasMaxLength(30)
-                    .IsUnicode(false);
+                entity.Property(e => e.depa_DescripcionDepartamento).IsUnicode(false);
 
                 entity.Property(e => e.depa_Estado).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.depa_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.depa_FechaModificacion).HasColumnType("datetime");
 
                 entity.HasOne(d => d.depa_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbDepartamentosdepa_UsuarioCreacionNavigation)
@@ -467,24 +336,11 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.disc_Id)
                     .HasName("PK__tbDiscus__0AC3326B27F0BF58");
 
-                entity.ToTable("tbDiscusiones", "Comn");
-
-                entity.Property(e => e.disc_Asunto)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
+                entity.Property(e => e.disc_Asunto).IsUnicode(false);
 
                 entity.Property(e => e.disc_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.disc_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.disc_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.disc_Horas).HasColumnType("decimal(18, 0)");
-
-                entity.Property(e => e.disc_Mensaje)
-                    .IsRequired()
-                    .IsUnicode(false);
+                entity.Property(e => e.disc_Mensaje).IsUnicode(false);
 
                 entity.HasOne(d => d.disc_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbDiscusionesdisc_UsuarioCreacionNavigation)
@@ -502,21 +358,9 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.docu_Id)
                     .HasName("PK__tbDocume__7C2F03F8BA7574B0");
 
-                entity.ToTable("tbDocumentos", "Gest");
-
-                entity.HasIndex(e => e.docu_Descripcion, "UQ__tbDocume__9055BBD41CAF4DF0")
-                    .IsUnique();
-
-                entity.Property(e => e.docu_Descripcion)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
+                entity.Property(e => e.docu_Descripcion).IsUnicode(false);
 
                 entity.Property(e => e.docu_Estado).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.docu_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.docu_FechaModificacion).HasColumnType("datetime");
 
                 entity.HasOne(d => d.docu_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbDocumentosdocu_UsuarioCreacionNavigation)
@@ -540,11 +384,7 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.didi_Id)
                     .HasName("PK__tbDocume__589485ABEED73160");
 
-                entity.ToTable("tbDocumentosImagenesPorDiscusion", "Comn");
-
-                entity.Property(e => e.didi_DocumentoOImagen)
-                    .IsRequired()
-                    .IsUnicode(false);
+                entity.Property(e => e.didi_DocumentoOImagen).IsUnicode(false);
 
                 entity.HasOne(d => d.disc)
                     .WithMany(p => p.tbDocumentosImagenesPorDiscusion)
@@ -557,21 +397,9 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.doop_Id)
                     .HasName("PK__tbDocume__093F6F16A10E2932");
 
-                entity.ToTable("tbDocumentosOptantes", "Gest");
-
-                entity.HasIndex(e => e.doop_Descripcion, "UQ__tbDocume__E25017672BD1A582")
-                    .IsUnique();
-
-                entity.Property(e => e.doop_Descripcion)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
+                entity.Property(e => e.doop_Descripcion).IsUnicode(false);
 
                 entity.Property(e => e.doop_Estado).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.doop_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.doop_FechaModificacion).HasColumnType("datetime");
 
                 entity.HasOne(d => d.doop_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbDocumentosOptantesdoop_UsuarioCreacionNavigation)
@@ -600,54 +428,23 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.empl_Id)
                     .HasName("PK__tbEmplea__4772AE31151CA207");
 
-                entity.ToTable("tbEmpleados", "Gral");
+                entity.Property(e => e.empl_Apellidos).IsUnicode(false);
 
-                entity.HasIndex(e => e.empl_DNI, "UQ_empl_DNI")
-                    .IsUnique();
+                entity.Property(e => e.empl_Correo).IsUnicode(false);
 
-                entity.Property(e => e.empl_Apellidos)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
+                entity.Property(e => e.empl_DNI).IsUnicode(false);
 
-                entity.Property(e => e.empl_Correo)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
+                entity.Property(e => e.empl_Imagen).IsUnicode(false);
 
-                entity.Property(e => e.empl_DNI)
-                    .IsRequired()
-                    .HasMaxLength(13)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.empl_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.empl_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.empl_Imagen)
-                    .IsRequired()
-                    .IsUnicode(false);
-
-                entity.Property(e => e.empl_Nombres)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
+                entity.Property(e => e.empl_Nombres).IsUnicode(false);
 
                 entity.Property(e => e.empl_Sexo)
-                    .IsRequired()
-                    .HasMaxLength(1)
                     .IsUnicode(false)
                     .IsFixedLength(true);
 
-                entity.Property(e => e.empl_Telefono)
-                    .IsRequired()
-                    .HasMaxLength(13)
-                    .IsUnicode(false);
+                entity.Property(e => e.empl_Telefono).IsUnicode(false);
 
-                entity.Property(e => e.muni_Id)
-                    .IsRequired()
-                    .HasMaxLength(4)
-                    .IsUnicode(false);
+                entity.Property(e => e.muni_Id).IsUnicode(false);
 
                 entity.HasOne(d => d.civi)
                     .WithMany(p => p.tbEmpleados)
@@ -685,8 +482,6 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.emac_Id)
                     .HasName("PK__tbEmplea__BCCA90A48A839F2F");
 
-                entity.ToTable("tbEmpleadosPorActividad", "Gest");
-
                 entity.HasOne(d => d.acti)
                     .WithMany(p => p.tbEmpleadosPorActividad)
                     .HasForeignKey(d => d.acti_Id)
@@ -704,41 +499,17 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.empr_Id)
                     .HasName("PK__tbEmpres__7D468F0B69F083C0");
 
-                entity.ToTable("tbEmpresas", "Gest");
+                entity.Property(e => e.empr_DescripcionEmpresa).IsUnicode(false);
 
-                entity.HasIndex(e => e.empr_Siglas, "UQ__tbEmpres__182F21D73DCE6C28")
-                    .IsUnique();
-
-                entity.HasIndex(e => e.empr_DescripcionEmpresa, "UQ__tbEmpres__DF23A0AC236CB952")
-                    .IsUnique();
-
-                entity.Property(e => e.empr_DescripcionEmpresa)
-                    .IsRequired()
-                    .HasMaxLength(30)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.empr_DireccionExacta)
-                    .IsRequired()
-                    .IsUnicode(false);
+                entity.Property(e => e.empr_DireccionExacta).IsUnicode(false);
 
                 entity.Property(e => e.empr_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.empr_FechaCreacion).HasColumnType("datetime");
+                entity.Property(e => e.empr_Logo).IsUnicode(false);
 
-                entity.Property(e => e.empr_FechaModificacion).HasColumnType("datetime");
+                entity.Property(e => e.empr_Siglas).IsUnicode(false);
 
-                entity.Property(e => e.empr_Logo)
-                    .HasMaxLength(150)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.empr_Siglas)
-                    .HasMaxLength(10)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.muni_Id)
-                    .IsRequired()
-                    .HasMaxLength(4)
-                    .IsUnicode(false);
+                entity.Property(e => e.muni_Id).IsUnicode(false);
 
                 entity.HasOne(d => d.empr_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbEmpresasempr_UsuarioCreacionNavigation)
@@ -762,21 +533,9 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.civi_Id)
                     .HasName("PK__tbEstado__748BC9DCEE517576");
 
-                entity.ToTable("tbEstadosCiviles", "Gral");
-
-                entity.HasIndex(e => e.civi_DescripcionEstadoCivil, "UQ__tbEstado__2DAB6DA82038D3F7")
-                    .IsUnique();
-
-                entity.Property(e => e.civi_DescripcionEstadoCivil)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
+                entity.Property(e => e.civi_DescripcionEstadoCivil).IsUnicode(false);
 
                 entity.Property(e => e.civi_Estado).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.civi_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.civi_FechaModificacion).HasColumnType("datetime");
 
                 entity.HasOne(d => d.civi_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbEstadosCivilescivi_UsuarioCreacionNavigation)
@@ -794,8 +553,6 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.fare_Id)
                     .HasName("PK__tbFacult__8E0B3BB5DB9E90EC");
 
-                entity.ToTable("tbFacultadPorRegional", "Gral");
-
                 entity.HasOne(d => d.facu)
                     .WithMany(p => p.tbFacultadPorRegional)
                     .HasForeignKey(d => d.facu_Id)
@@ -812,21 +569,9 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.facu_Id)
                     .HasName("PK__tbFacult__28EB0480C348E7DA");
 
-                entity.ToTable("tbFacultades", "Gral");
-
-                entity.HasIndex(e => e.facu_DesripcionFacultad, "UQ_tbFacultades_facu_DesripcionFacultad")
-                    .IsUnique();
-
-                entity.Property(e => e.facu_DesripcionFacultad)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
+                entity.Property(e => e.facu_DesripcionFacultad).IsUnicode(false);
 
                 entity.Property(e => e.facu_Estado).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.facu_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.facu_FechaModificacion).HasColumnType("datetime");
 
                 entity.HasOne(d => d.facu_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbFacultadesfacu_UsuarioCreacionNavigation)
@@ -844,18 +589,9 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.foro_Id)
                     .HasName("PK__tbForos__6C73713F0E4F8A77");
 
-                entity.ToTable("tbForos", "Comn");
-
                 entity.Property(e => e.foro_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.foro_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.foro_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.foro_Titulo)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
+                entity.Property(e => e.foro_Titulo).IsUnicode(false);
 
                 entity.HasOne(d => d.foro_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbForosforo_UsuarioCreacionNavigation)
@@ -873,23 +609,9 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.foac_Id)
                     .HasName("PK__tbForosP__02075A0B75F42DF8");
 
-                entity.ToTable("tbForosPorActividad", "Comn");
-
-                entity.Property(e => e.foac_Descripcion)
-                    .IsRequired()
-                    .IsUnicode(false);
+                entity.Property(e => e.foac_Descripcion).IsUnicode(false);
 
                 entity.Property(e => e.foac_Estado).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.foac_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.foac_FechaHoraProgramado).HasColumnType("datetime");
-
-                entity.Property(e => e.foac_FechaModificacion).HasColumnType("datetime");
-
-                entity.HasOne(d => d.acti)
-                    .WithMany(p => p.tbForosPorActividad)
-                    .HasForeignKey(d => d.acti_Id);
 
                 entity.HasOne(d => d.comp)
                     .WithMany(p => p.tbForosPorActividad)
@@ -914,19 +636,7 @@ namespace USAID_Pasantes.DataAccess.Context
 
             modelBuilder.Entity<tbForosPorEmpleados>(entity =>
             {
-                entity.HasKey(e => e.foem_Id);
-
-                entity.ToTable("tbForosPorEmpleados", "Comn");
-
-                entity.Property(e => e.foem_Descripcion)
-                    .IsRequired()
-                    .IsUnicode(false);
-
-                entity.Property(e => e.foem_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.foem_FechaHoraProgramado).HasColumnType("datetime");
-
-                entity.Property(e => e.foem_FechaModificacion).HasColumnType("datetime");
+                entity.Property(e => e.foem_Descripcion).IsUnicode(false);
 
                 entity.HasOne(d => d.foem_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbForosPorEmpleadosfoem_UsuarioCreacionNavigation)
@@ -948,18 +658,6 @@ namespace USAID_Pasantes.DataAccess.Context
             {
                 entity.HasKey(e => e.hoti_Id)
                     .HasName("PK__tbHojaTi__3277BDB04EFFB62B");
-
-                entity.ToTable("tbHojaTiempo", "Gest");
-
-                entity.Property(e => e.hoti_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.hoti_FechaHoraEntregaLimite).HasColumnType("datetime");
-
-                entity.Property(e => e.hoti_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.hoti_PeriodoFinal).HasColumnType("date");
-
-                entity.Property(e => e.hoti_PeriodoInicio).HasColumnType("date");
 
                 entity.HasOne(d => d.comp)
                     .WithMany(p => p.tbHojaTiempo)
@@ -983,19 +681,7 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.hoto_Id)
                     .HasName("PK__tbHojaTi__62F07577705BC180");
 
-                entity.ToTable("tbHojaTiempoPorOptante", "Gest");
-
-                entity.Property(e => e.hoto_Comentario)
-                    .HasMaxLength(250)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.hoto_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.hoto_FechaHoraEntrega).HasColumnType("datetime");
-
-                entity.Property(e => e.hoto_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.hoto_HorasTotalesRealizadas).HasColumnType("decimal(18, 0)");
+                entity.Property(e => e.hoto_Comentario).IsUnicode(false);
 
                 entity.HasOne(d => d.hoti)
                     .WithMany(p => p.tbHojaTiempoPorOptante)
@@ -1022,28 +708,11 @@ namespace USAID_Pasantes.DataAccess.Context
 
             modelBuilder.Entity<tbHojaTiempoPorOptanteBitacora>(entity =>
             {
-                entity.HasNoKey();
-
-                entity.ToTable("tbHojaTiempoPorOptanteBitacora", "Gest");
-
                 entity.Property(e => e.hoto_Accion)
-                    .HasMaxLength(1)
                     .IsUnicode(false)
                     .IsFixedLength(true);
 
-                entity.Property(e => e.hoto_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.hoto_FechaEliminado).HasColumnType("datetime");
-
-                entity.Property(e => e.hoto_FechaHoraEntrega).HasColumnType("datetime");
-
-                entity.Property(e => e.hoto_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.hoto_HorasTotalesRealizadas).HasColumnType("decimal(18, 0)");
-
-                entity.Property(e => e.oto_Comentario)
-                    .HasMaxLength(250)
-                    .IsUnicode(false);
+                entity.Property(e => e.oto_Comentario).IsUnicode(false);
             });
 
             modelBuilder.Entity<tbModulos>(entity =>
@@ -1051,32 +720,17 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.modu_Id)
                     .HasName("PK__tbModulo__6F3FB45DA2109B01");
 
-                entity.ToTable("tbModulos", "Accs");
+                entity.Property(e => e.modu_Categoria).IsUnicode(false);
 
-                entity.HasIndex(e => e.modu_UrlModulo, "UQ__tbModulo__3061E23DA7E88771")
-                    .IsUnique();
-
-                entity.HasIndex(e => e.modu_DescripcionModulo, "UQ__tbModulo__846D0391369F2D2B")
-                    .IsUnique();
-
-                entity.HasIndex(e => e.modu_DescripcionModulo, "UQ_tbModulos_modu_DescripcionModulo")
-                    .IsUnique();
-
-                entity.Property(e => e.modu_DescripcionModulo)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.modu_DescripcionModulo).IsUnicode(false);
 
                 entity.Property(e => e.modu_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.modu_FechaCreacion).HasColumnType("datetime");
+                entity.Property(e => e.modu_Subcategoria).IsUnicode(false);
 
-                entity.Property(e => e.modu_FechaModificacion).HasColumnType("datetime");
+                entity.Property(e => e.modu_Titulo).IsUnicode(false);
 
-                entity.Property(e => e.modu_UrlModulo)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .IsUnicode(false);
+                entity.Property(e => e.modu_UrlModulo).IsUnicode(false);
 
                 entity.HasOne(d => d.modu_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbModulosmodu_UsuarioCreacionNavigation)
@@ -1094,8 +748,6 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.moro_Id)
                     .HasName("PK__tbModulo__FB7C532B738D1034");
 
-                entity.ToTable("tbModulosPorRoles", "Accs");
-
                 entity.HasOne(d => d.modu)
                     .WithMany(p => p.tbModulosPorRoles)
                     .HasForeignKey(d => d.modu_Id)
@@ -1112,30 +764,13 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.muni_Id)
                     .HasName("PK_tbMunicipios_muni_Id");
 
-                entity.ToTable("tbMunicipios", "Gral");
+                entity.Property(e => e.muni_Id).IsUnicode(false);
 
-                entity.HasIndex(e => e.muni_DescripcionMunicipio, "UQ__tbMunici__34A349564A3D2700")
-                    .IsUnique();
+                entity.Property(e => e.depa_Id).IsUnicode(false);
 
-                entity.Property(e => e.muni_Id)
-                    .HasMaxLength(4)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.depa_Id)
-                    .IsRequired()
-                    .HasMaxLength(2)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.muni_DescripcionMunicipio)
-                    .IsRequired()
-                    .HasMaxLength(30)
-                    .IsUnicode(false);
+                entity.Property(e => e.muni_DescripcionMunicipio).IsUnicode(false);
 
                 entity.Property(e => e.muni_Estado).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.muni_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.muni_FechaModificacion).HasColumnType("datetime");
 
                 entity.HasOne(d => d.depa)
                     .WithMany(p => p.tbMunicipios)
@@ -1155,24 +790,9 @@ namespace USAID_Pasantes.DataAccess.Context
 
             modelBuilder.Entity<tbNotificaciones>(entity =>
             {
-                entity.HasKey(e => e.noti_Id);
+                entity.Property(e => e.noti_Descripcion).IsUnicode(false);
 
-                entity.ToTable("tbNotificaciones", "Comn");
-
-                entity.Property(e => e.noti_Descripcion)
-                    .IsRequired()
-                    .IsUnicode(false);
-
-                entity.Property(e => e.noti_Fecha).HasColumnType("datetime");
-
-                entity.Property(e => e.noti_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.noti_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.noti_Ruta)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.noti_Ruta).IsUnicode(false);
 
                 entity.HasOne(d => d.noti_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbNotificacionesnoti_UsuarioCreacionNavigation)
@@ -1188,17 +808,7 @@ namespace USAID_Pasantes.DataAccess.Context
 
             modelBuilder.Entity<tbNotificacionesPorUsuario>(entity =>
             {
-                entity.HasKey(e => e.napu_Id);
-
-                entity.ToTable("tbNotificacionesPorUsuario", "Comn");
-
-                entity.Property(e => e.napu_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.napu_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.napu_Ruta)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.napu_Ruta).IsUnicode(false);
 
                 entity.HasOne(d => d.napu_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbNotificacionesPorUsuarionapu_UsuarioCreacionNavigation)
@@ -1223,11 +833,7 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.oppr_Id)
                     .HasName("PK__tbOpcion__32A5707FE194FF8D");
 
-                entity.ToTable("tbOpcionesPorPregunta", "Gest");
-
-                entity.Property(e => e.oppr_NombreOpcion)
-                    .IsRequired()
-                    .IsUnicode(false);
+                entity.Property(e => e.oppr_NombreOpcion).IsUnicode(false);
 
                 entity.HasOne(d => d.prcu)
                     .WithMany(p => p.tbOpcionesPorPregunta)
@@ -1240,85 +846,31 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.opta_Id)
                     .HasName("PK__tbOptant__791B3329B02BB7FE");
 
-                entity.ToTable("tbOptantes", "Gest");
+                entity.Property(e => e.muni_Id).IsUnicode(false);
 
-                entity.HasIndex(e => e.opta_DNI, "UQ__tbOptant__659E8FD0D910C988")
-                    .IsUnique();
+                entity.Property(e => e.opta_Apellidos).IsUnicode(false);
 
-                entity.HasIndex(e => e.opta_CorreoElectronico, "UQ__tbOptant__EE5007D46B9DBF17")
-                    .IsUnique();
+                entity.Property(e => e.opta_CorreoElectronico).IsUnicode(false);
 
-                entity.Property(e => e.muni_Id)
-                    .IsRequired()
-                    .HasMaxLength(4)
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_CuentaBancaria).IsUnicode(false);
 
-                entity.Property(e => e.opta_CorreoElectronico)
-                    .IsRequired()
-                    .HasMaxLength(60)
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_DNI).IsUnicode(false);
 
-                entity.Property(e => e.opta_CuentaBancaria)
-                    .HasMaxLength(30)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.opta_DNI)
-                    .IsRequired()
-                    .HasMaxLength(15)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.opta_Direccion)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_Direccion).IsUnicode(false);
 
                 entity.Property(e => e.opta_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.opta_FechaCreacion).HasColumnType("datetime");
+                entity.Property(e => e.opta_Imagen).IsUnicode(false);
 
-                entity.Property(e => e.opta_FechaFin).HasColumnType("date");
-
-                entity.Property(e => e.opta_FechaInicio).HasColumnType("date");
-
-                entity.Property(e => e.opta_Fechamodificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.opta_Imagen)
-                    .IsRequired()
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_Nombres).IsUnicode(false);
 
                 entity.Property(e => e.opta_Observacion).IsUnicode(false);
 
-                entity.Property(e => e.opta_PrimerApellido)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_Sexo).IsUnicode(false);
 
-                entity.Property(e => e.opta_PrimerNombre)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_Telefono1).IsUnicode(false);
 
-                entity.Property(e => e.opta_SegundoApellido)
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.opta_SegundoNombre)
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.opta_Sexo)
-                    .IsRequired()
-                    .HasMaxLength(1)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.opta_Telefono1)
-                    .IsRequired()
-                    .HasMaxLength(9)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.opta_Telefono2)
-                    .HasMaxLength(9)
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_Telefono2).IsUnicode(false);
 
                 entity.HasOne(d => d.banc)
                     .WithMany(p => p.tbOptantes)
@@ -1336,10 +888,6 @@ namespace USAID_Pasantes.DataAccess.Context
                     .HasForeignKey(d => d.civi_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbOptantes_Gral_tbEstadosCiviles_civi_Id");
-
-                entity.HasOne(d => d.comp)
-                    .WithMany(p => p.tbOptantes)
-                    .HasForeignKey(d => d.comp_Id);
 
                 entity.HasOne(d => d.muni)
                     .WithMany(p => p.tbOptantes)
@@ -1366,76 +914,37 @@ namespace USAID_Pasantes.DataAccess.Context
 
             modelBuilder.Entity<tbOptantesBitacora>(entity =>
             {
-                entity.HasNoKey();
-
-                entity.ToTable("tbOptantesBitacora", "Gest");
-
-                entity.Property(e => e.muni_Id)
-                    .HasMaxLength(4)
-                    .IsUnicode(false);
+                entity.Property(e => e.muni_Id).IsUnicode(false);
 
                 entity.Property(e => e.opta_Accion)
-                    .HasMaxLength(1)
                     .IsUnicode(false)
                     .IsFixedLength(true);
 
-                entity.Property(e => e.opta_CorreoElectronico)
-                    .HasMaxLength(60)
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_CorreoElectronico).IsUnicode(false);
 
-                entity.Property(e => e.opta_CuentaBancaria)
-                    .HasMaxLength(30)
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_CuentaBancaria).IsUnicode(false);
 
-                entity.Property(e => e.opta_DNI)
-                    .HasMaxLength(15)
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_DNI).IsUnicode(false);
 
-                entity.Property(e => e.opta_Direccion)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.opta_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.opta_FechaEliminado).HasColumnType("datetime");
-
-                entity.Property(e => e.opta_FechaFin).HasColumnType("date");
-
-                entity.Property(e => e.opta_FechaInicio).HasColumnType("date");
-
-                entity.Property(e => e.opta_Fechamodificacion).HasColumnType("datetime");
+                entity.Property(e => e.opta_Direccion).IsUnicode(false);
 
                 entity.Property(e => e.opta_Imagen).IsUnicode(false);
 
                 entity.Property(e => e.opta_Observacion).IsUnicode(false);
 
-                entity.Property(e => e.opta_PrimerApellido)
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_PrimerApellido).IsUnicode(false);
 
-                entity.Property(e => e.opta_PrimerNombre)
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_PrimerNombre).IsUnicode(false);
 
-                entity.Property(e => e.opta_SegundoApellido)
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_SegundoApellido).IsUnicode(false);
 
-                entity.Property(e => e.opta_SegundoNombre)
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_SegundoNombre).IsUnicode(false);
 
-                entity.Property(e => e.opta_Sexo)
-                    .HasMaxLength(1)
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_Sexo).IsUnicode(false);
 
-                entity.Property(e => e.opta_Telefono1)
-                    .HasMaxLength(9)
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_Telefono1).IsUnicode(false);
 
-                entity.Property(e => e.opta_Telefono2)
-                    .HasMaxLength(9)
-                    .IsUnicode(false);
+                entity.Property(e => e.opta_Telefono2).IsUnicode(false);
             });
 
             modelBuilder.Entity<tbPreguntasFrecuentes>(entity =>
@@ -1443,23 +952,9 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.prfr_Id)
                     .HasName("PK__tbPregun__B5C22C49D4FAE55D");
 
-                entity.ToTable("tbPreguntasFrecuentes", "Comn");
+                entity.Property(e => e.prfr_Pregunta).IsUnicode(false);
 
-                entity.HasIndex(e => e.prfr_Pregunta, "UQ_tbPreguntasFrecuentes_prfr_Pregunta")
-                    .IsUnique();
-
-                entity.Property(e => e.prfr_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.prfr_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.prfr_Pregunta)
-                    .IsRequired()
-                    .HasMaxLength(200)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.prfr_Respuesta)
-                    .IsRequired()
-                    .IsUnicode(false);
+                entity.Property(e => e.prfr_Respuesta).IsUnicode(false);
 
                 entity.HasOne(d => d.prfr_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbPreguntasFrecuentesprfr_UsuarioCreacionNavigation)
@@ -1477,13 +972,7 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.prcu_Id)
                     .HasName("PK__tbPregun__32C2967A404E6C4D");
 
-                entity.ToTable("tbPreguntasPorCuestionario", "Gest");
-
-                entity.Property(e => e.prcu_Pregunta)
-                    .IsRequired()
-                    .IsUnicode(false);
-
-                entity.Property(e => e.prcu_Puntuacion).HasColumnType("decimal(2, 1)");
+                entity.Property(e => e.prcu_Pregunta).IsUnicode(false);
 
                 entity.HasOne(d => d.cues)
                     .WithMany(p => p.tbPreguntasPorCuestionario)
@@ -1496,23 +985,9 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.pryt_Id)
                     .HasName("PK__tbProyec__3AB3C03AB5B93CC9");
 
-                entity.ToTable("tbProyectos", "Gest");
-
-                entity.HasIndex(e => e.pryt_DescripcionProyecto, "UQ__tbProyec__7ECE41F76EDD43EA")
-                    .IsUnique();
-
-                entity.Property(e => e.pryt_DescripcionProyecto)
-                    .IsRequired()
-                    .HasMaxLength(60)
-                    .IsUnicode(false);
+                entity.Property(e => e.pryt_DescripcionProyecto).IsUnicode(false);
 
                 entity.Property(e => e.pryt_Estado).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.pryt_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.pryt_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.pryt_HorasProceso).HasColumnType("decimal(18, 0)");
 
                 entity.HasOne(d => d.empr)
                     .WithMany(p => p.tbProyectos)
@@ -1535,21 +1010,9 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.pust_Id)
                     .HasName("PK__tbPuesto__671B89655FDDB46A");
 
-                entity.ToTable("tbPuestos", "Gral");
-
-                entity.HasIndex(e => e.pust_DescripcionPuesto, "UQ__tbPuesto__927C9349E17D565A")
-                    .IsUnique();
-
-                entity.Property(e => e.pust_DescripcionPuesto)
-                    .IsRequired()
-                    .HasMaxLength(30)
-                    .IsUnicode(false);
+                entity.Property(e => e.pust_DescripcionPuesto).IsUnicode(false);
 
                 entity.Property(e => e.pust_Estado).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.pust_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.pust_FechaModificacion).HasColumnType("datetime");
 
                 entity.HasOne(d => d.pust_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbPuestospust_UsuarioCreacionNavigation)
@@ -1567,24 +1030,9 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.reci_Id)
                     .HasName("PK__tbRecibo__50EBEE7EC10E9DF5");
 
-                entity.ToTable("tbRecibos", "Gest");
-
                 entity.Property(e => e.reci_Certificacion).IsUnicode(false);
 
-                entity.Property(e => e.reci_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.reci_FechaHoraLimite).HasColumnType("datetime");
-
-                entity.Property(e => e.reci_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.reci_Para)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.reci_PeriodoFinal).HasColumnType("date");
-
-                entity.Property(e => e.reci_PeriodoInicio).HasColumnType("date");
+                entity.Property(e => e.reci_Para).IsUnicode(false);
 
                 entity.HasOne(d => d.empl)
                     .WithMany(p => p.tbRecibos)
@@ -1608,18 +1056,7 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.reop_Id)
                     .HasName("PK__tbRecibo__16161EE9E210BD4E");
 
-                entity.ToTable("tbRecibosPorOptante", "Gest");
-
-                entity.Property(e => e.reop_Descripcion)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.reop_HorasTotalesRealizadas).HasColumnType("decimal(2, 1)");
-
-                entity.Property(e => e.reop_PrecioUnitario).HasColumnType("decimal(18, 0)");
-
-                entity.Property(e => e.reop_Total).HasColumnType("decimal(6, 2)");
+                entity.Property(e => e.reop_Descripcion).IsUnicode(false);
 
                 entity.HasOne(d => d.opta)
                     .WithMany(p => p.tbRecibosPorOptante)
@@ -1633,29 +1070,11 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.reco_Id)
                     .HasName("PK__tbRegion__BA2965898F77D29B");
 
-                entity.ToTable("tbRegionalCorporativa", "Gral");
+                entity.Property(e => e.muni_Id).IsUnicode(false);
 
-                entity.HasIndex(e => e.reco_NombreRegionalCorportiva, "UQ_tbRegionalCorporativa_reco_NombreRegionalCorportiva")
-                    .IsUnique();
+                entity.Property(e => e.reco_DireccionExacta).IsUnicode(false);
 
-                entity.Property(e => e.muni_Id)
-                    .IsRequired()
-                    .HasMaxLength(4)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.reco_DireccionExacta)
-                    .IsRequired()
-                    .HasMaxLength(200)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.reco_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.reco_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.reco_NombreRegionalCorportiva)
-                    .IsRequired()
-                    .HasMaxLength(150)
-                    .IsUnicode(false);
+                entity.Property(e => e.reco_NombreRegionalCorportiva).IsUnicode(false);
 
                 entity.HasOne(d => d.muni)
                     .WithMany(p => p.tbRegionalCorporativa)
@@ -1678,33 +1097,13 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.regi_Id)
                     .HasName("PK__tbRegion__3E6FBD3079B8FB14");
 
-                entity.ToTable("tbRegionales", "Gral");
+                entity.Property(e => e.muni_Id).IsUnicode(false);
 
-                entity.HasIndex(e => e.regi_Abreviatura, "UQ__tbRegion__B4C8C711BB9CBBE6")
-                    .IsUnique();
+                entity.Property(e => e.regi_Abreviatura).IsUnicode(false);
 
-                entity.HasIndex(e => e.regi_DescripcionRegional, "UQ__tbRegion__EE1F886844309BA4")
-                    .IsUnique();
-
-                entity.Property(e => e.muni_Id)
-                    .IsRequired()
-                    .HasMaxLength(4)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.regi_Abreviatura)
-                    .HasMaxLength(5)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.regi_DescripcionRegional)
-                    .IsRequired()
-                    .HasMaxLength(60)
-                    .IsUnicode(false);
+                entity.Property(e => e.regi_DescripcionRegional).IsUnicode(false);
 
                 entity.Property(e => e.regi_Estado).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.regi_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.regi_FechaModificacion).HasColumnType("datetime");
 
                 entity.HasOne(d => d.muni)
                     .WithMany(p => p.tbRegionales)
@@ -1732,10 +1131,6 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.cupa_Id)
                     .HasName("PK__tbRespue__3D4003BC0D4A0D21");
 
-                entity.ToTable("tbRespuestasPorOptante", "Gest");
-
-                entity.Property(e => e.cupa_FechaRealizado).HasColumnType("datetime");
-
                 entity.Property(e => e.cupa_respuesta).IsUnicode(false);
 
                 entity.HasOne(d => d.oppr)
@@ -1756,32 +1151,9 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.role_Id)
                     .HasName("PK__tbRoles__760F99A4EA2481A1");
 
-                entity.ToTable("tbRoles", "Accs");
-
-                entity.HasIndex(e => e.role_DescripcionRol, "UQ__tbRoles__AC38D9C21860C3A8")
-                    .IsUnique();
-
-                entity.HasIndex(e => e.role_DescripcionRol, "UQ_tbRoles_role_DescripcionRol")
-                    .IsUnique();
-
-                entity.Property(e => e.role_DescripcionRol)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
+                entity.Property(e => e.role_DescripcionRol).IsUnicode(false);
 
                 entity.Property(e => e.role_Estado).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.role_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.role_FechaModificacion).HasColumnType("datetime");
-
-                entity.HasOne(d => d.role_UsuarioCreacionNavigation)
-                    .WithMany(p => p.tbRolesrole_UsuarioCreacionNavigation)
-                    .HasForeignKey(d => d.role_UsuarioCreacion);
-
-                entity.HasOne(d => d.role_UsuarioModificacionNavigation)
-                    .WithMany(p => p.tbRolesrole_UsuarioModificacionNavigation)
-                    .HasForeignKey(d => d.role_UsuarioModificacion);
             });
 
             modelBuilder.Entity<tbTipoDocumento>(entity =>
@@ -1789,21 +1161,9 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.tido_Id)
                     .HasName("PK__tbTipoDo__96BB82D20850804F");
 
-                entity.ToTable("tbTipoDocumento", "Gral");
-
-                entity.HasIndex(e => e.tido_Descripcion, "UQ__tbTipoDo__10806C995A6DB941")
-                    .IsUnique();
-
-                entity.Property(e => e.tido_Descripcion)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
+                entity.Property(e => e.tido_Descripcion).IsUnicode(false);
 
                 entity.Property(e => e.tido_Estado).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.tido_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.tido_FechaModificacion).HasColumnType("datetime");
 
                 entity.HasOne(d => d.tido_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbTipoDocumentotido_UsuarioCreacionNavigation)
@@ -1821,18 +1181,7 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.tisa_Id)
                     .HasName("PK__tbTipoSa__A56FCB2B7A51C404");
 
-                entity.ToTable("tbTipoSangre", "Gral");
-
-                entity.HasIndex(e => e.tisa_Descripcion, "UQ_tbTipoSangre_tisa_Descripcion")
-                    .IsUnique();
-
-                entity.Property(e => e.tisa_Descripcion)
-                    .HasMaxLength(5)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.tisa_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.tisa_Fechamodificacion).HasColumnType("datetime");
+                entity.Property(e => e.tisa_Descripcion).IsUnicode(false);
 
                 entity.HasOne(d => d.tisa_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbTipoSangretisa_UsuarioCreacionNavigation)
@@ -1847,13 +1196,7 @@ namespace USAID_Pasantes.DataAccess.Context
 
             modelBuilder.Entity<tbTokens>(entity =>
             {
-                entity.HasKey(e => e.tokn_Id);
-
-                entity.ToTable("tbTokens", "Comn");
-
-                entity.Property(e => e.tokn_JsonToken)
-                    .IsRequired()
-                    .IsUnicode(false);
+                entity.Property(e => e.tokn_JsonToken).IsUnicode(false);
 
                 entity.HasOne(d => d.usua)
                     .WithMany(p => p.tbTokens)
@@ -1867,28 +1210,11 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.univ_Id)
                     .HasName("PK__tbUniver__A2187E09605E4449");
 
-                entity.ToTable("tbUniversidades", "Gral");
+                entity.Property(e => e.univ_Abreviatura).IsUnicode(false);
 
-                entity.HasIndex(e => e.univ_DescripcionUniversidad, "UQ__tbUniver__5983CA8A334C9D0D")
-                    .IsUnique();
-
-                entity.HasIndex(e => e.univ_Abreviatura, "UQ__tbUniver__C90F8EAAB2A7DB44")
-                    .IsUnique();
-
-                entity.Property(e => e.univ_Abreviatura)
-                    .HasMaxLength(5)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.univ_DescripcionUniversidad)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
+                entity.Property(e => e.univ_DescripcionUniversidad).IsUnicode(false);
 
                 entity.Property(e => e.univ_Estado).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.univ_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.univ_FechaModificacion).HasColumnType("datetime");
 
                 entity.HasOne(d => d.univ_UsuarioCreacionNavigation)
                     .WithMany(p => p.tbUniversidadesuniv_UsuarioCreacionNavigation)
@@ -1906,28 +1232,11 @@ namespace USAID_Pasantes.DataAccess.Context
                 entity.HasKey(e => e.usua_Id)
                     .HasName("PK__tbUsuari__E863C8EE50DC118D");
 
-                entity.ToTable("tbUsuarios", "Accs");
-
-                entity.HasIndex(e => e.usua_Usuario, "UQ__tbUsuari__9ED44AB45D2A9E8B")
-                    .IsUnique();
-
-                entity.HasIndex(e => e.usua_Usuario, "UQ_usua_Usuario")
-                    .IsUnique();
-
-                entity.Property(e => e.usua_Contraseña)
-                    .IsRequired()
-                    .IsUnicode(false);
+                entity.Property(e => e.usua_Clave).IsUnicode(false);
 
                 entity.Property(e => e.usua_Estado).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.usua_FechaCreacion).HasColumnType("datetime");
-
-                entity.Property(e => e.usua_FechaModificacion).HasColumnType("datetime");
-
-                entity.Property(e => e.usua_Usuario)
-                    .IsRequired()
-                    .HasMaxLength(60)
-                    .IsUnicode(false);
+                entity.Property(e => e.usua_Usuario).IsUnicode(false);
 
                 entity.HasOne(d => d.usua_UsuarioCreacionNavigation)
                     .WithMany(p => p.Inverseusua_UsuarioCreacionNavigation)
