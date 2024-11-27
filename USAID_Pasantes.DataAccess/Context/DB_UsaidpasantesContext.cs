@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using USAID_Pasantes.DataAccess;
+using USAID_Pasantes.Entities.Entities;
 
 #nullable disable
 
