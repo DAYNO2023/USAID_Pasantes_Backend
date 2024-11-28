@@ -124,11 +124,11 @@ namespace USAID_Pasantes.DataAccess
         #endregion
 
         #region Tipo Sangre
-        public static string ListarTipoSangres = "";
-        public static string BuscarTipoSangre = "";
-        public static string InsertarTipoSangre = "";
-        public static string ActualizarTipoSangre = "";
-        public static string EliminarTipoSangre = "";
+        public static string ListarTipoSangres = "Gral.SP_TiposSangre_Listar";
+        public static string BuscarTipoSangre = "Gral.SP_TipoSangre_Buscar";
+        public static string InsertarTipoSangre = "Gral.SP_TipoSangre_Insertar";
+        public static string ActualizarTipoSangre = "Gral.SP_TipoSangre_Actualizar";
+        public static string EliminarTipoSangre = "Gral.SP_TipoSangre_Eliminar";
         #endregion
 
         #region Universidad
@@ -150,7 +150,16 @@ namespace USAID_Pasantes.DataAccess
            public static string InsertarBeneficio = "[Gest].[SP_Beneficio_Insertar]";
            public static string ActualizarBeneficio = "[Gest].[SP_Beneficio_Actualizar]";
            public static string EliminarBeneficio = "[Gest].[SP_Beneficio_Eliminar]";
-          #endregion
+        #endregion
+
+        #region Optante
+        public static string ListarOptantes = "";
+        public static string RegistrarOptante = "[Gest].[SP_Optante_Registrar]";
+        public static string BuscarOptante = "";
+        public static string InsertarOptante = "";
+        public static string ActualizarOptante = "";
+        public static string EliminarOptante = "";
+        #endregion
 
         #endregion
 

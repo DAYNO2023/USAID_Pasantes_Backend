@@ -11,10 +11,9 @@ namespace USAID_Pasantes.Common.Models.ModelsGestion
         public int opta_Id { get; set; }
         public string opta_Imagen { get; set; }
         public string opta_DNI { get; set; }
-        public string opta_PrimerNombre { get; set; }
-        public string opta_SegundoNombre { get; set; }
-        public string opta_PrimerApellido { get; set; }
-        public string opta_SegundoApellido { get; set; }
+        public string opta_Nombres { get; set; }
+        public string opta_Apellidos { get; set; }
+        public DateTime opta_FechaNacimiento { get; set; }
         public string opta_Sexo { get; set; }
         public string opta_Direccion { get; set; }
         public string opta_CorreoElectronico { get; set; }
@@ -35,7 +34,7 @@ namespace USAID_Pasantes.Common.Models.ModelsGestion
         public int? opta_UsuarioCreacion { get; set; }
         public DateTime? opta_FechaCreacion { get; set; }
         public int? opta_UsuarioModificacion { get; set; }
-        public DateTime? opta_Fechamodificacion { get; set; }
+        public DateTime? opta_FechaModificacion { get; set; }
         public bool? opta_Estado { get; set; }
     }
 }

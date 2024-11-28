@@ -24,7 +24,7 @@ namespace USAID_Pasantes.BusinessLogic
             service.AddScoped<ModuloRepository>();
             service.AddScoped<ModuloPorRolRepository>();
             service.AddScoped<RolRepository>();
-            service.AddScoped<LoginRepository>();
+            //service.AddScoped<LoginRepository>();
             #endregion
 
             #region Comunicacion
@@ -50,6 +50,7 @@ namespace USAID_Pasantes.BusinessLogic
 
             #region Gestion
             service.AddScoped<BeneficioRepository>();
+            service.AddScoped<OptanteRepository>();
             #endregion
         }
         public static void BusinessLogic(this IServiceCollection service)
@@ -58,7 +59,7 @@ namespace USAID_Pasantes.BusinessLogic
             service.AddScoped<ModuloService>();
             service.AddScoped<ModuloPorRolService>();
             service.AddScoped<RolService>();
-            service.AddScoped<LoginService>();
+            //service.AddScoped<LoginService>();
             #endregion
 
             #region General
@@ -81,6 +82,7 @@ namespace USAID_Pasantes.BusinessLogic
 
             #region Gestion
             service.AddScoped<BeneficioService>();
+            service.AddScoped<OptanteService>();
             #endregion
         }
     }
