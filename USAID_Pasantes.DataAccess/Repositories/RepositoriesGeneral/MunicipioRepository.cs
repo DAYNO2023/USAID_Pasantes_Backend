@@ -12,6 +12,22 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
 {
     public class MunicipioRepository : IRepository<tbMunicipios>
     {
+        /// <summary>
+        /// Obtiene una lista de los municipios por el departamento.
+        /// </summary>
+        /// <returns>Lista de municipios disponibles.</returns>
+        public virtual IEnumerable<tbMunicipios> ListByDepartment(int? id)
+        {
+            List<tbMunicipios> result = new List<tbMunicipios>();
+            using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
+            {
+                var parameter = new DynamicParameters();
+                parameter.Add("@depa_Id", id);
+                result = db.Query<tbMunicipios>(ScriptsDataBase.ListarMunicipiosPorDepartamento, parameter, commandType: CommandType.StoredProcedure).ToList();
+                return result;
+            }
+        }
+
         public RequestStatus Delete(int? id)
         {
             RequestStatus result = new RequestStatus();
