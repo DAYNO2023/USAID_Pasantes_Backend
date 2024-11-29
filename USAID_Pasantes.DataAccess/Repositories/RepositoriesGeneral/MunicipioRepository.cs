@@ -16,7 +16,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
         /// Obtiene una lista de los municipios por el departamento.
         /// </summary>
         /// <returns>Lista de municipios disponibles.</returns>
-        public virtual IEnumerable<tbMunicipios> ListByDepartment(int? id)
+        public virtual IEnumerable<tbMunicipios> ListByDepartment(string? id)
         {
             List<tbMunicipios> result = new List<tbMunicipios>();
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))

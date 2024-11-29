@@ -14,6 +14,7 @@ namespace USAID_Pasantes.Entities.Entities
         }
 
         public int carr_Id { get; set; }
+        public int cafr_Id { get; set; }
         public string carr_DescripcionCarrera { get; set; }
         public int? carr_UsuarioCreacion { get; set; }
         public DateTime? carr_FechaCreacion { get; set; }

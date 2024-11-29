@@ -32,7 +32,7 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesGeneral
             }
         }
 
-        public ServiceResult ListarMunicipiosPorDepartamento(int id)
+        public ServiceResult ListarMunicipiosPorDepartamento(string id)
         {
             var result = new ServiceResult();
             try

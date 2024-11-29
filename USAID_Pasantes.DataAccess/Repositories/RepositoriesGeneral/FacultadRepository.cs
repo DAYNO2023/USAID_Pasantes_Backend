@@ -16,14 +16,14 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
         /// Obtiene una lista de las facultades por la regional.
         /// </summary>
         /// <returns>Lista de facultades disponibles.</returns>
-        public virtual IEnumerable<tbRegionales> ListByRegional(int? id)
+        public virtual IEnumerable<tbFacultades> ListByRegional(int? id)
         {
-            List<tbRegionales> result = new List<tbRegionales>();
+            List<tbFacultades> result = new List<tbFacultades>();
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
                 var parameter = new DynamicParameters();
                 parameter.Add("@regi_Id", id);
-                result = db.Query<tbRegionales>(ScriptsDataBase.ListarFacultadesPorRegional, parameter, commandType: CommandType.StoredProcedure).ToList();
+                result = db.Query<tbFacultades>(ScriptsDataBase.ListarFacultadesPorRegional, parameter, commandType: CommandType.StoredProcedure).ToList();
                 return result;
             }
         }
