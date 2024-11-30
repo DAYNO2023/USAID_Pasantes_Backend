@@ -14,7 +14,7 @@ namespace USAID_Pasantes.Common.Models.ModelsAcceso
         public bool usua_Administrador { get; set; }
         public bool usua_EsOptante { get; set; }
         public string usua_Usuario { get; set; }
-        public string usua_Contraseña { get; set; }
+        public string usua_Clave { get; set; }
         public int? usua_UsuarioCreacion { get; set; }
         public DateTime? usua_FechaCreacion { get; set; }
         public int? usua_UsuarioModificacion { get; set; }

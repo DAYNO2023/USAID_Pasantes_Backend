@@ -150,11 +150,20 @@ namespace USAID_Pasantes.DataAccess
            public static string InsertarBeneficio = "[Gest].[SP_Beneficio_Insertar]";
            public static string ActualizarBeneficio = "[Gest].[SP_Beneficio_Actualizar]";
            public static string EliminarBeneficio = "[Gest].[SP_Beneficio_Eliminar]";
-          #endregion
+        #endregion
 
         #endregion
 
         #region Acceso
+
+        #region Login
+        public static string IniciarSesion = "[Accs].[SP_Usuario_InicioSesion]";
+        public static string InsertarCodigoVerificacion = "[Accs].[SP_Usuario_IngresarCodigoRestablecer]";
+        public static string VerificarCodigoReestablecer = "[Accs].[SP_Usuario_VerificarCodigoRestablecer]";
+        public static string Buscar_Usuario = "[Acce].[SP_Usuario_Buscar]";
+        public static string Reestablecer_Usuario = "[Accs].[SP_Usuario_Reestablecer]";
+
+        #endregion
 
         #region Modulos
         public static string ListarModulos = "[Accs].[SP_Modulos_Listar]";

@@ -1698,12 +1698,12 @@ namespace USAID_Pasantes.DataAccess.Context
                     .IsUnicode(false);
 
                 entity.Property(e => e.regi_Abreviatura)
-                    .HasMaxLength(5)
+                    .HasMaxLength(10)
                     .IsUnicode(false);
 
                 entity.Property(e => e.regi_DescripcionRegional)
                     .IsRequired()
-                    .HasMaxLength(60)
+                    .HasMaxLength(80)
                     .IsUnicode(false);
 
                 entity.Property(e => e.regi_Estado).HasDefaultValueSql("((1))");
