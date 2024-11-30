@@ -104,8 +104,5 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
                 return result;
             }
         }
-
-
-
     }
 }

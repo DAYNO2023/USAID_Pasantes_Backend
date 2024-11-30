@@ -29,6 +29,17 @@ namespace USAID_Pasantes.API.Controllers.ControllersGeneral
             return Ok(response.Data);
         }
 
+        /// <summary>
+        /// Obtiene una lista de todas las regionales por la universidad seleccionada.
+        /// </summary>
+        /// <returns>Lista de regionales disponibles.</returns>
+        [HttpGet("ListarPorUniversidad/{id}")]
+        public IActionResult ListarRegionalesPorUniversidad(int id)
+        {
+            var response = _regionalService.ListarRegionalesPorUniversidad(id);
+            return Ok(response.Data);
+        }
+
         [HttpGet("Buscar/{id}")]
         public IActionResult BuscarRegional(int id)
         {

@@ -32,6 +32,24 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesGeneral
             }
         }
 
+        /// <summary>
+        /// Obtiene una lista de todas las facultades por la regional seleccionada.
+        /// </summary>
+        /// <returns>Resultado de la operación con la lista de facultades.</returns>
+        public ServiceResult ListarFacultadesPorRegional(int id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _facultadRepository.ListByRegional(id);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
         public ServiceResult BuscarFacultad(int id)
         {
             var result = new ServiceResult();

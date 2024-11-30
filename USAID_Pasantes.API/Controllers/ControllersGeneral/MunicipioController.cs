@@ -28,6 +28,13 @@ namespace USAID_Pasantes.API.Controllers.ControllersGeneral
             return Ok(response.Data);
         }
 
+        [HttpGet("ListarPorDepartamento/{id}")]
+        public IActionResult ListarMunicipiosPorDepartamento(string id)
+        {
+            var response = _municipioService.ListarMunicipiosPorDepartamento(id);
+            return Ok(response.Data);
+        }
+        
         [HttpGet("Buscar/{id}")]
         public IActionResult BuscarMunicipio(int id)
         {

@@ -13,7 +13,7 @@ namespace USAID_Pasantes.Entities.Entities
             tbEmpleados = new HashSet<tbEmpleados>();
             tbOptantes = new HashSet<tbOptantes>();
         }
-
+        public int codigo { get; set; }
         public int tisa_Id { get; set; }
         public string tisa_Descripcion { get; set; }
         public int? tisa_UsuarioCreacion { get; set; }

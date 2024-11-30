@@ -32,6 +32,24 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesGeneral
             }
         }
 
+        /// <summary>
+        /// Obtiene una lista de todas las regionales por la universidad seleccionada.
+        /// </summary>
+        /// <returns>Resultado de la operación con la lista de regionales.</returns>
+        public ServiceResult ListarRegionalesPorUniversidad(int id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _regionalRepository.ListByUniversity(id);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
         public ServiceResult BuscarRegional(int id)
         {
             var result = new ServiceResult();

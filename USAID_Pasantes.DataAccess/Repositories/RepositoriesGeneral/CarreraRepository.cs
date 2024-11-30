@@ -12,6 +12,22 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGeneral
 {
     public class CarreraRepository : IRepository<tbCarreras>
     {
+
+        /// <summary>
+        /// Obtiene una lista de las carrreras por la facultad por regional.
+        /// </summary>
+        /// <returns>Lista de carreras disponibles.</returns>
+        public virtual IEnumerable<tbCarreras> ListByFaculty(int? id)
+        {
+            List<tbCarreras> result = new List<tbCarreras>();
+            using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
+            {
+                var parameter = new DynamicParameters();
+                parameter.Add("@fare_Id", id);
+                result = db.Query<tbCarreras>(ScriptsDataBase.ListarCarrerasPorFacultadPorRegional, parameter, commandType: CommandType.StoredProcedure).ToList();
+                return result;
+            }
+        }
         public RequestStatus Delete(int? id)
         {
             RequestStatus result = new RequestStatus();

@@ -14,6 +14,7 @@ namespace USAID_Pasantes.Entities.Entities
         }
 
         public int facu_Id { get; set; }
+        public int fare_Id { get; set; }
         public string facu_DesripcionFacultad { get; set; }
         public int? facu_UsuarioCreacion { get; set; }
         public DateTime? facu_FechaCreacion { get; set; }

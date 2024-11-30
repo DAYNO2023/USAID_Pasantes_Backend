@@ -22,6 +22,17 @@ namespace USAID_Pasantes.API.Controllers.ControllersGeneral
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Obtiene una lista de todas las carreras por la facultad por regional seleccionada.
+        /// </summary>
+        /// <returns>Lista de carreras disponibles.</returns>
+        [HttpGet("ListarPorFacultad/{id}")]
+        public IActionResult ListarCarrerasPorFacultad(int id)
+        {
+            var response = _carreraService.ListarCarrerasPorFacultad(id);
+            return Ok(response.Data);
+        }
+
         [HttpGet("Listar")]
         public IActionResult ListarCarreras()
         {

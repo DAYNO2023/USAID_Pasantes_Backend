@@ -32,6 +32,24 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesGeneral
             }
         }
 
+        /// <summary>
+        /// Obtiene una lista de todas las carreras por la facultad por regional seleccionada.
+        /// </summary>
+        /// <returns>Resultado de la operación con la lista de carreras.</returns>
+        public ServiceResult ListarCarrerasPorFacultad(int id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _carreraRepository.ListByFaculty(id);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
         public ServiceResult BuscarCarrera(int id)
         {
             var result = new ServiceResult();

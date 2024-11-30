@@ -29,6 +29,17 @@ namespace USAID_Pasantes.API.Controllers.ControllersGeneral
             return Ok(response.Data);
         }
 
+        /// <summary>
+        /// Obtiene una lista de todas las facultades por la regional seleccionada.
+        /// </summary>
+        /// <returns>Lista de facultades disponibles.</returns>
+        [HttpGet("ListarPorRegional/{id}")]
+        public IActionResult ListarFacultadesPorRegional(int id)
+        {
+            var response = _FacultadService.ListarFacultadesPorRegional(id);
+            return Ok(response.Data);
+        }
+
         [HttpGet("Buscar/{id}")]
         public IActionResult BuscarFacultad(int id)
         {

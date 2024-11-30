@@ -32,6 +32,20 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesGeneral
             }
         }
 
+        public ServiceResult ListarMunicipiosPorDepartamento(string id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _municipioRepository.ListByDepartment(id);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+        
         public ServiceResult BuscarMunicipio(int id)
         {
             var result = new ServiceResult();
