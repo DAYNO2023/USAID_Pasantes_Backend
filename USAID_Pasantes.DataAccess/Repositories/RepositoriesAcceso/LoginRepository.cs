@@ -56,7 +56,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesAcceso
                         return new
                         {
                             Usuario = usuarioData,
-                            Optante = optanteData.Any() ? optanteData : null,
+                            Optante_o_empleado = optanteData.Any() ? optanteData : null,
                             Modulos = modulos
                         };
                     }
