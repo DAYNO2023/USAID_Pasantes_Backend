@@ -24,7 +24,7 @@ namespace USAID_Pasantes.BusinessLogic
             service.AddScoped<ModuloRepository>();
             service.AddScoped<ModuloPorRolRepository>();
             service.AddScoped<RolRepository>();
-            //service.AddScoped<LoginRepository>();
+            service.AddScoped<LoginRepository>();
             #endregion
 
             #region Comunicacion
@@ -59,7 +59,7 @@ namespace USAID_Pasantes.BusinessLogic
             service.AddScoped<ModuloService>();
             service.AddScoped<ModuloPorRolService>();
             service.AddScoped<RolService>();
-            //service.AddScoped<LoginService>();
+            service.AddScoped<LoginService>();
             #endregion
 
             #region General
