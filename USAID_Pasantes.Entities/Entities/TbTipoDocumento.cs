@@ -11,7 +11,6 @@ namespace USAID_Pasantes.Entities.Entities
         public tbTipoDocumento()
         {
             tbDocumentos = new HashSet<tbDocumentos>();
-            tbDocumentosOptantes = new HashSet<tbDocumentosOptantes>();
         }
 
         public int tido_Id { get; set; }
@@ -25,6 +24,5 @@ namespace USAID_Pasantes.Entities.Entities
         public virtual tbUsuarios tido_UsuarioCreacionNavigation { get; set; }
         public virtual tbUsuarios tido_UsuarioModificacionNavigation { get; set; }
         public virtual ICollection<tbDocumentos> tbDocumentos { get; set; }
-        public virtual ICollection<tbDocumentosOptantes> tbDocumentosOptantes { get; set; }
     }
 }

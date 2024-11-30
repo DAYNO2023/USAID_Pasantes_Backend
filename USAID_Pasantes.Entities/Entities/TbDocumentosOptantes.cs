@@ -9,7 +9,7 @@ namespace USAID_Pasantes.Entities.Entities
     public partial class tbDocumentosOptantes
     {
         public int doop_Id { get; set; }
-        public int tido_Id { get; set; }
+        public int dopr_Id { get; set; }
         public int opta_Id { get; set; }
         public string doop_Descripcion { get; set; }
         public int? doop_UsuarioCreacion { get; set; }
@@ -20,7 +20,7 @@ namespace USAID_Pasantes.Entities.Entities
 
         public virtual tbUsuarios doop_UsuarioCreacionNavigation { get; set; }
         public virtual tbUsuarios doop_UsuarioModificacionNavigation { get; set; }
+        public virtual tbDocumentosProyectos dopr { get; set; }
         public virtual tbOptantes opta { get; set; }
-        public virtual tbTipoDocumento tido { get; set; }
     }
 }

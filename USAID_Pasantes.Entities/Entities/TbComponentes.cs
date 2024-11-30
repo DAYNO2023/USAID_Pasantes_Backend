@@ -14,7 +14,6 @@ namespace USAID_Pasantes.Entities.Entities
             tbComponentesPorRegionalPorEmpleado = new HashSet<tbComponentesPorRegionalPorEmpleado>();
             tbForosPorActividad = new HashSet<tbForosPorActividad>();
             tbHojaTiempo = new HashSet<tbHojaTiempo>();
-            tbOptantes = new HashSet<tbOptantes>();
         }
 
         public int comp_Id { get; set; }
@@ -40,6 +39,5 @@ namespace USAID_Pasantes.Entities.Entities
         public virtual ICollection<tbComponentesPorRegionalPorEmpleado> tbComponentesPorRegionalPorEmpleado { get; set; }
         public virtual ICollection<tbForosPorActividad> tbForosPorActividad { get; set; }
         public virtual ICollection<tbHojaTiempo> tbHojaTiempo { get; set; }
-        public virtual ICollection<tbOptantes> tbOptantes { get; set; }
     }
 }

@@ -102,6 +102,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Gest].[tbDocumentosProyectos]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Gest].[tbEmpleadosPorActividad]",
          "ObjectType": 0
       },

@@ -35,6 +35,7 @@ namespace USAID_Pasantes.DataAccess.Context
         public virtual DbSet<tbDocumentos> tbDocumentos { get; set; }
         public virtual DbSet<tbDocumentosImagenesPorDiscusion> tbDocumentosImagenesPorDiscusion { get; set; }
         public virtual DbSet<tbDocumentosOptantes> tbDocumentosOptantes { get; set; }
+        public virtual DbSet<tbDocumentosProyectos> tbDocumentosProyectos { get; set; }
         public virtual DbSet<tbEmpleados> tbEmpleados { get; set; }
         public virtual DbSet<tbEmpleadosPorActividad> tbEmpleadosPorActividad { get; set; }
         public virtual DbSet<tbEmpresas> tbEmpresas { get; set; }
@@ -583,16 +584,54 @@ namespace USAID_Pasantes.DataAccess.Context
                     .HasForeignKey(d => d.doop_UsuarioModificacion)
                     .HasConstraintName("FK_tbDocumentosOptantes_Accs_tbUsuarios_doop_UsuarioModificacion");
 
+                entity.HasOne(d => d.dopr)
+                    .WithMany(p => p.tbDocumentosOptantes)
+                    .HasForeignKey(d => d.dopr_Id)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_tbDocumentosProyectos_tbDocumentosOptantes_dopr_Id");
+
                 entity.HasOne(d => d.opta)
                     .WithMany(p => p.tbDocumentosOptantes)
                     .HasForeignKey(d => d.opta_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull);
+            });
 
-                entity.HasOne(d => d.tido)
-                    .WithMany(p => p.tbDocumentosOptantes)
-                    .HasForeignKey(d => d.tido_Id)
+            modelBuilder.Entity<tbDocumentosProyectos>(entity =>
+            {
+                entity.HasKey(e => e.dopr_Id)
+                    .HasName("PK__tbDocume__23E43FFE8B733281");
+
+                entity.ToTable("tbDocumentosProyectos", "Gest");
+
+                entity.Property(e => e.dopr_Descripcion)
+                    .IsRequired()
+                    .IsUnicode(false);
+
+                entity.Property(e => e.dopr_Documento)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.dopr_FechaCreacion).HasColumnType("datetime");
+
+                entity.Property(e => e.dopr_FechaModificacion).HasColumnType("datetime");
+
+                entity.HasOne(d => d.dopr_UsuarioCreacionNavigation)
+                    .WithMany(p => p.tbDocumentosProyectosdopr_UsuarioCreacionNavigation)
+                    .HasForeignKey(d => d.dopr_UsuarioCreacion)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_tbDocumentosOptantes_Gral_tbTipoDocumento_tido_Id");
+                    .HasConstraintName("FK_tbDocumentosProyectos_Accs_tbUsuarios_doem_UsuarioCreacion");
+
+                entity.HasOne(d => d.dopr_UsuarioModificacionNavigation)
+                    .WithMany(p => p.tbDocumentosProyectosdopr_UsuarioModificacionNavigation)
+                    .HasForeignKey(d => d.dopr_UsuarioModificacion)
+                    .HasConstraintName("FK_tbDocumentosProyectos_Accs_tbUsuarios_doem_UsuarioModificacion");
+
+                entity.HasOne(d => d.pryt)
+                    .WithMany(p => p.tbDocumentosProyectos)
+                    .HasForeignKey(d => d.pryt_Id)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_tbDocumentosProyectos_tbProyecto_pryt_Id");
             });
 
             modelBuilder.Entity<tbEmpleados>(entity =>
@@ -1342,10 +1381,6 @@ namespace USAID_Pasantes.DataAccess.Context
                     .HasForeignKey(d => d.civi_Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbOptantes_Gral_tbEstadosCiviles_civi_Id");
-
-                entity.HasOne(d => d.comp)
-                    .WithMany(p => p.tbOptantes)
-                    .HasForeignKey(d => d.comp_Id);
 
                 entity.HasOne(d => d.muni)
                     .WithMany(p => p.tbOptantes)

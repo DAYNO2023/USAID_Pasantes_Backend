@@ -32,15 +32,15 @@ namespace USAID_Pasantes.Entities.Entities
         public DateTime? opta_FechaInicio { get; set; }
         public DateTime? opta_FechaFin { get; set; }
         public string opta_Observacion { get; set; }
-        public int? comp_Id { get; set; }
         public int civi_Id { get; set; }
         public int tisa_Id { get; set; }
         public string muni_Id { get; set; }
         public int cafr_Id { get; set; }
         public int? banc_Id { get; set; }
+        public int? prco_Id { get; set; }
+        public bool opta_OptanteAceptado { get; set; }
         public bool? opta_TipoPago { get; set; }
         public string opta_CuentaBancaria { get; set; }
-        public bool opta_OptanteAceptado { get; set; }
         public int? opta_UsuarioCreacion { get; set; }
         public DateTime? opta_FechaCreacion { get; set; }
         public int? opta_UsuarioModificacion { get; set; }
@@ -50,7 +50,6 @@ namespace USAID_Pasantes.Entities.Entities
         public virtual tbBancos banc { get; set; }
         public virtual tbCarreraPorFacultadPorRegional cafr { get; set; }
         public virtual tbEstadosCiviles civi { get; set; }
-        public virtual tbComponentes comp { get; set; }
         public virtual tbMunicipios muni { get; set; }
         public virtual tbUsuarios opta_UsuarioCreacionNavigation { get; set; }
         public virtual tbUsuarios opta_UsuarioModificacionNavigation { get; set; }

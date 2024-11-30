@@ -32,6 +32,8 @@ namespace USAID_Pasantes.Entities.Entities
             tbDiscusionesdisc_UsuarioModificacionNavigation = new HashSet<tbDiscusiones>();
             tbDocumentosOptantesdoop_UsuarioCreacionNavigation = new HashSet<tbDocumentosOptantes>();
             tbDocumentosOptantesdoop_UsuarioModificacionNavigation = new HashSet<tbDocumentosOptantes>();
+            tbDocumentosProyectosdopr_UsuarioCreacionNavigation = new HashSet<tbDocumentosProyectos>();
+            tbDocumentosProyectosdopr_UsuarioModificacionNavigation = new HashSet<tbDocumentosProyectos>();
             tbDocumentosdocu_UsuarioCreacionNavigation = new HashSet<tbDocumentos>();
             tbDocumentosdocu_UsuarioModificacionNavigation = new HashSet<tbDocumentos>();
             tbEmpleadosempl_UsuarioCreacionNavigation = new HashSet<tbEmpleados>();
@@ -124,6 +126,8 @@ namespace USAID_Pasantes.Entities.Entities
         public virtual ICollection<tbDiscusiones> tbDiscusionesdisc_UsuarioModificacionNavigation { get; set; }
         public virtual ICollection<tbDocumentosOptantes> tbDocumentosOptantesdoop_UsuarioCreacionNavigation { get; set; }
         public virtual ICollection<tbDocumentosOptantes> tbDocumentosOptantesdoop_UsuarioModificacionNavigation { get; set; }
+        public virtual ICollection<tbDocumentosProyectos> tbDocumentosProyectosdopr_UsuarioCreacionNavigation { get; set; }
+        public virtual ICollection<tbDocumentosProyectos> tbDocumentosProyectosdopr_UsuarioModificacionNavigation { get; set; }
         public virtual ICollection<tbDocumentos> tbDocumentosdocu_UsuarioCreacionNavigation { get; set; }
         public virtual ICollection<tbDocumentos> tbDocumentosdocu_UsuarioModificacionNavigation { get; set; }
         public virtual ICollection<tbEmpleados> tbEmpleadosempl_UsuarioCreacionNavigation { get; set; }

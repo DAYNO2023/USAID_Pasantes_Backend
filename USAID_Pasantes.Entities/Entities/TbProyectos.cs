@@ -11,6 +11,7 @@ namespace USAID_Pasantes.Entities.Entities
         public tbProyectos()
         {
             tbComponentes = new HashSet<tbComponentes>();
+            tbDocumentosProyectos = new HashSet<tbDocumentosProyectos>();
         }
 
         public int pryt_Id { get; set; }
@@ -27,5 +28,6 @@ namespace USAID_Pasantes.Entities.Entities
         public virtual tbUsuarios pryt_UsuarioCreacionNavigation { get; set; }
         public virtual tbUsuarios pryt_UsuarioModificacionNavigation { get; set; }
         public virtual ICollection<tbComponentes> tbComponentes { get; set; }
+        public virtual ICollection<tbDocumentosProyectos> tbDocumentosProyectos { get; set; }
     }
 }
