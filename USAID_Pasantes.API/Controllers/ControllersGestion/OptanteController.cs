@@ -16,15 +16,17 @@ namespace USAID_Pasantes.API.Controllers.ControllersGestion
     {
         private readonly OptanteService _optanteService;
         private readonly IMapper _mapper;
+        private readonly IMailService _mailService;
         /// <summary>
         /// Constructor del controlador de Optante que inicializa el servicio y el mapeador.
         /// </summary>
         /// <param name="optanteService">Instancia del servicio de optantes.</param>
         /// <param name="mapper">Instancia del mapeador para conversiones de modelos.</param>
-        public OptanteController(OptanteService optanteService, IMapper mapper)
+        public OptanteController(OptanteService optanteService, IMapper mapper, IMailService mailService)
         {
             _optanteService = optanteService;
             _mapper = mapper;
+            _mailService = mailService;
         }
 
 
@@ -38,6 +40,52 @@ namespace USAID_Pasantes.API.Controllers.ControllersGestion
             var response = _optanteService.ListarOptantes();
             return Ok(response.Data);
         }
+
+        [HttpGet("EnviarCorreoConCredenciales/{opta_Id}/{opta_Nombres}/{opta_Apellidos}/{opta_CorreoElectronico}/{usuario}/{contraseña}")]
+        public IActionResult EnviarCorreoConCredenciales(
+            int opta_Id,
+            string opta_Nombres,
+            string opta_Apellidos,
+            string opta_CorreoElectronico,
+            string usuario,
+            string contraseña)
+        {
+            // Crear el cuerpo del correo
+            var mailData = new MailData
+            {
+                EmailToId = opta_CorreoElectronico,
+                EmailToName = $"{opta_Nombres} {opta_Apellidos}",
+                EmailSubject = "Credenciales de Acceso al Sistema USAID",
+                EmailBody = $@"
+                    Estimado/a {opta_Nombres} {opta_Apellidos},
+
+                    Se ha registrado exitosamente en nuestro sistema. A continuación, 
+                    le proporcionamos sus credenciales de acceso:
+
+                    Usuario: {usuario}
+                    Contraseña: {contraseña}
+
+                    Por favor, cambie su contraseña al iniciar sesión por primera vez.
+
+                    Atentamente,
+                    El equipo de soporte de USAID"
+            };
+
+            // Enviar el correo utilizando _mailService
+            var result = _mailService.SendMail(mailData);
+
+            // Verificar si el correo fue enviado exitosamente
+            if (result)
+            {
+                return Ok(new { Message = "Correo enviado exitosamente con las credenciales.", OptanteId = opta_Id });
+            }
+            else
+            {
+                return BadRequest(new { Message = "El correo no pudo ser enviado.", OptanteId = opta_Id });
+            }
+        }
+
+
 
         /// <summary>
         /// Registra un nuevo optante.

@@ -7,6 +7,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using USAID_Pasantes.Common.Models.ModelsAcceso;
+
 namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGestion
 {
     public class OptanteRepository : IRepository<tbOptantes>
@@ -35,27 +37,57 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGestion
             RequestStatus result = new RequestStatus();
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
-                var parameter = new DynamicParameters();
-                parameter.Add("@opta_Imagen", item.opta_Imagen);
-                parameter.Add("@opta_DNI", item.opta_DNI);
-                parameter.Add("@opta_Nombres", item.opta_Nombres);
-                parameter.Add("@opta_Apellidos", item.opta_Apellidos);
-                parameter.Add("@opta_FechaNacimiento", item.opta_FechaNacimiento);
-                parameter.Add("@opta_Sexo", item.opta_Sexo);
-                parameter.Add("@opta_Direccion", item.opta_Direccion);
-                parameter.Add("@opta_CorreoElectronico", item.opta_CorreoElectronico);
-                parameter.Add("@opta_Telefono1", item.opta_Telefono1);
-                parameter.Add("@opta_Telefono2", item.opta_Telefono2);
-                parameter.Add("@civi_Id", item.civi_Id);
-                parameter.Add("@tisa_Id", item.tisa_Id);
-                parameter.Add("@muni_Id", item.muni_Id);
-                parameter.Add("@cafr_Id", item.cafr_Id);
+                try
+                {
+                    var parameter = new DynamicParameters();
+                    parameter.Add("@opta_Imagen", item.opta_Imagen);
+                    parameter.Add("@opta_DNI", item.opta_DNI);
+                    parameter.Add("@opta_Nombres", item.opta_Nombres);
+                    parameter.Add("@opta_Apellidos", item.opta_Apellidos);
+                    parameter.Add("@opta_FechaNacimiento", item.opta_FechaNacimiento);
+                    parameter.Add("@opta_Sexo", item.opta_Sexo);
+                    parameter.Add("@opta_Direccion", item.opta_Direccion);
+                    parameter.Add("@opta_CorreoElectronico", item.opta_CorreoElectronico);
+                    parameter.Add("@opta_Telefono1", item.opta_Telefono1);
+                    parameter.Add("@opta_Telefono2", item.opta_Telefono2);
+                    parameter.Add("@civi_Id", item.civi_Id);
+                    parameter.Add("@tisa_Id", item.tisa_Id);
+                    parameter.Add("@muni_Id", item.muni_Id);
+                    parameter.Add("@cafr_Id", item.cafr_Id);
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase.RegistrarOptante, parameter, commandType: CommandType.StoredProcedure);
-                result.CodeStatus = answer;
+                    // Llama al procedimiento almacenado y captura los resultados
+                    var resultData = db.QueryFirstOrDefault<dynamic>(
+                        ScriptsDataBase.RegistrarOptante, // Nombre del procedimiento almacenado
+                        parameter,
+                        commandType: CommandType.StoredProcedure
+                    );
+
+                    // Verifica si el procedimiento almacenado retornó datos
+                    if (resultData != null)
+                    {
+                        result.CodeStatus = 1;
+                        result.Data = new CredencialesOptantes
+                        {
+                            Usuario = resultData.Usuario,
+                            Contraseña = resultData.Contraseña
+                        };
+                    }
+                    else
+                    {
+                        result.CodeStatus = 0;
+                        result.Message = "Error al registrar el optante.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    result.CodeStatus = 0;
+                    result.Message = $"Error al ejecutar el procedimiento: {ex.Message}";
+                }
+
                 return result;
             }
         }
+
 
         /// <summary>
         /// Busca un optante por su ID.

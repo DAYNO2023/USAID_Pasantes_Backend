@@ -12,5 +12,6 @@ namespace USAID_Pasantes.DataAccess
         public string MessageStatus { get; set; }
         public string Message { get; internal set; }
         public bool Success { get; set; }
+        public object Data { get; set; }
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using USAID_Pasantes.Common.Models.ModelsAcceso;
 
 namespace USAID_Pasantes.BusinessLogic.Services.ServicesGestion
 {
@@ -39,6 +40,7 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesGestion
             }
         }
 
+
         /// <summary>
         /// Rrgistra un nuevo optante en la base de datos.
         /// </summary>
@@ -50,20 +52,27 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesGestion
             try
             {
                 var map = _optanteRepository.Register(item);
-                if (map.CodeStatus >= 1)
+
+                // Verifica si el repositorio retornó un registro exitoso
+                if (map.CodeStatus == 1)
                 {
-                    return result.Ok(map);
+                    // Castea el objeto Data a CredencialesOptante
+                    var data = (CredencialesOptantes)map.Data;
+
+                    // Retorna las credenciales generadas
+                    return result.Ok(new { Usuario = data.Usuario, Contraseña = data.Contraseña });
                 }
                 else
                 {
-                    return result.Error(map);
+                    return result.Error(map.Message);
                 }
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error($"Error al registrar el optante: {ex.Message}");
             }
         }
+
 
         /// <summary>
         /// Busca un optante por su ID.
