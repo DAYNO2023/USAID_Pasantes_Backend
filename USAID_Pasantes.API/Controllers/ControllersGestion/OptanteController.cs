@@ -50,7 +50,7 @@ namespace USAID_Pasantes.API.Controllers.ControllersGestion
             string usuario,
             string contraseña)
         {
-            // Crear el cuerpo del correo
+            // Cuerpo del correo
             var mailData = new MailData
             {
                 EmailToId = opta_CorreoElectronico,

@@ -53,23 +53,55 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesGestion
             {
                 var map = _optanteRepository.Register(item);
 
-                // Verifica si el repositorio retornó un registro exitoso
+                // Evaluamos el resultado del servicio
                 if (map.CodeStatus == 1)
                 {
-                    // Castea el objeto Data a CredencialesOptante
+                    // Caso de éxito: retorna credenciales generadas junto con success = 1
                     var data = (CredencialesOptantes)map.Data;
-
-                    // Retorna las credenciales generadas
-                    return result.Ok(new { Usuario = data.Usuario, Contraseña = data.Contraseña });
+                    return result.Ok(new
+                    {
+                        success = 1,
+                        Usuario = data.Usuario,
+                        Contraseña = data.Contraseña
+                    });
+                }
+                else if (map.CodeStatus == 2)
+                {
+                    // Caso de error: DNI ya registrado, respondemos con código 501 y success = 2
+                    return result.BadRequest(new
+                    {
+                        success = 2,
+                        message = "DNI ya registrado."
+                    });
+                }
+                else if (map.CodeStatus == 3)
+                {
+                    // Caso de error: correo ya registrado, respondemos con código 501 y success = 3
+                    return result.BadRequest(new
+                    {
+                        
+                        success = 3,
+                        message = "Correo ya registrado."
+                    });
                 }
                 else
                 {
-                    return result.Error(map.Message);
+                    // Caso de error inesperado, success = 0
+                    return result.Ok(new
+                    {
+                        success = 0,
+                        message = "Error desconocido al registrar el optante."
+                    });
                 }
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al registrar el optante: {ex.Message}");
+                // Caso de excepción, success = 0
+                return result.Error(new
+                {
+                    success = 0,
+                    message = $"Error al registrar el optante: {ex.Message}"
+                });
             }
         }
 
