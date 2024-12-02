@@ -157,7 +157,7 @@ namespace USAID_Pasantes.DataAccess
 
 
         #region Optante
-        public static string ListarOptantes = "";
+        public static string ListarOptantes = "Gest.SP_Optantes_Listar";
         public static string RegistrarOptante = "[Gest].[SP_Optante_Registrar]";
         public static string BuscarOptante = "";
         public static string InsertarOptante = "";
