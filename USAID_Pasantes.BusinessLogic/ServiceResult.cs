@@ -202,6 +202,14 @@ namespace USAID_Pasantes.BusinessLogic
             return SetMessage(message, ServiceResultType.BadRequest);
         }
 
+        public ServiceResult BadRequest(object data = null)
+        {
+            Success = false;
+            Data = data;
+            return SetMessage("Operacion fallida por autenticacion.", ServiceResultType.BadRequest);
+        }
+
+
         /// <summary>
         /// Resultado de servicio cuando un objeto o recurso esta deshabilidato (410).
         /// </summary>

@@ -57,25 +57,37 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGestion
 
                     // Llama al procedimiento almacenado y captura los resultados
                     var resultData = db.QueryFirstOrDefault<dynamic>(
-                        ScriptsDataBase.RegistrarOptante, // Nombre del procedimiento almacenado
+                        ScriptsDataBase.RegistrarOptante,
                         parameter,
                         commandType: CommandType.StoredProcedure
                     );
 
-                    // Verifica si el procedimiento almacenado retornó datos
+                    // Evalúa el resultado devuelto por el procedimiento
                     if (resultData != null)
                     {
-                        result.CodeStatus = 1;
-                        result.Data = new CredencialesOptantes
+                        result.CodeStatus = (int)resultData.Resultado;
+
+                        if (resultData.Resultado == 1)
                         {
-                            Usuario = resultData.Usuario,
-                            Contraseña = resultData.Contraseña
-                        };
+                            // Caso de éxito: usuario y contraseña generados
+                            result.Data = new CredencialesOptantes
+                            {
+                                Usuario = resultData.Usuario,
+                                Contraseña = resultData.Contraseña
+                            };
+                        }
+                        else if (resultData.Resultado == 2 || resultData.Resultado == 3)
+                        {
+                            // Mensaje genérico para errores de DNI o correo
+                            result.Message = resultData.Resultado == 2
+                                ? "El número de identidad (DNI) ya está registrado."
+                                : "El correo electrónico ya está registrado.";
+                        }
                     }
                     else
                     {
                         result.CodeStatus = 0;
-                        result.Message = "Error al registrar el optante.";
+                        result.Message = "Error desconocido.";
                     }
                 }
                 catch (Exception ex)
@@ -87,6 +99,9 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGestion
                 return result;
             }
         }
+
+
+
 
 
         /// <summary>

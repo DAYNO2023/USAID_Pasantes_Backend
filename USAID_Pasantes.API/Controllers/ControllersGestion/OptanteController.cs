@@ -41,16 +41,15 @@ namespace USAID_Pasantes.API.Controllers.ControllersGestion
             return Ok(response.Data);
         }
 
-        [HttpGet("EnviarCorreoConCredenciales/{opta_Id}/{opta_Nombres}/{opta_Apellidos}/{opta_CorreoElectronico}/{usuario}/{contraseña}")]
+        [HttpGet("EnviarCorreoConCredenciales/{opta_Nombres}/{opta_Apellidos}/{opta_CorreoElectronico}/{usuario}/{contraseña}")]
         public IActionResult EnviarCorreoConCredenciales(
-            int opta_Id,
             string opta_Nombres,
             string opta_Apellidos,
             string opta_CorreoElectronico,
             string usuario,
             string contraseña)
         {
-            // Crear el cuerpo del correo
+            // Cuerpo del correo
             var mailData = new MailData
             {
                 EmailToId = opta_CorreoElectronico,
@@ -77,11 +76,11 @@ namespace USAID_Pasantes.API.Controllers.ControllersGestion
             // Verificar si el correo fue enviado exitosamente
             if (result)
             {
-                return Ok(new { Message = "Correo enviado exitosamente con las credenciales.", OptanteId = opta_Id });
+                return Ok(new { Message = "Correo enviado exitosamente con las credenciales."});
             }
             else
             {
-                return BadRequest(new { Message = "El correo no pudo ser enviado.", OptanteId = opta_Id });
+                return BadRequest(new { Message = "El correo no pudo ser enviado." });
             }
         }
 
