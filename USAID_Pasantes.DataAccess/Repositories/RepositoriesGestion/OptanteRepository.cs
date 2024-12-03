@@ -54,6 +54,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesGestion
                     parameter.Add("@tisa_Id", item.tisa_Id);
                     parameter.Add("@muni_Id", item.muni_Id);
                     parameter.Add("@cafr_Id", item.cafr_Id);
+                    parameter.Add("@prco_Id", item.prco_Id);
 
                     // Llama al procedimiento almacenado y captura los resultados
                     var resultData = db.QueryFirstOrDefault<dynamic>(
