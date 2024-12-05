@@ -155,6 +155,13 @@ namespace USAID_Pasantes.DataAccess
            public static string EliminarBeneficio = "[Gest].[SP_Beneficio_Eliminar]";
         #endregion
 
+        #region Proyecto
+        public static string ListarProyectos = "[Gest].[SP_Proyectos_Listar]";
+        public static string BuscarProyecto = "[Gest].[SP_Proyecto_Buscar]";
+        public static string InsertarProyecto = "[Gest].[SP_Proyecto_Insertar]";
+        public static string ActualizarProyecto = "[Gest].[SP_Proyecto_Actualizar]";
+        public static string EliminarProyecto = "[Gest].[SP_Proyecto_Eliminar]";
+        #endregion
 
         #region Optante
         public static string ListarOptantes = "Gest.SP_Optantes_Listar";

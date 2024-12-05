@@ -54,6 +54,7 @@ namespace USAID_Pasantes.API.Extensions
             #region Gestión
             CreateMap<BeneficioViewModel, tbBeneficios>().ReverseMap();
             CreateMap<OptanteViewModel, tbOptantes>().ReverseMap();
+            CreateMap<ProyectoViewModel, tbProyectos>().ReverseMap();
             #endregion
         }
 

@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\ControllersComunicacion\" />
-    <Folder Include="Controllers\ControllersGestion\" />
 
     <Folder Include="wwwroot\" />
   </ItemGroup>

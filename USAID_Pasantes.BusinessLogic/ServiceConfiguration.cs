@@ -51,6 +51,7 @@ namespace USAID_Pasantes.BusinessLogic
             #region Gestion
             service.AddScoped<BeneficioRepository>();
             service.AddScoped<OptanteRepository>();
+            service.AddScoped<ProyectoRepository>();
             #endregion
         }
         public static void BusinessLogic(this IServiceCollection service)
@@ -83,6 +84,7 @@ namespace USAID_Pasantes.BusinessLogic
             #region Gestion
             service.AddScoped<BeneficioService>();
             service.AddScoped<OptanteService>();
+            service.AddScoped<ProyectoService>();
             #endregion
         }
     }
