@@ -22,15 +22,15 @@ namespace USAID_Pasantes.Common.Models.ModelsGestion
         public DateTime? opta_FechaInicio { get; set; }
         public DateTime? opta_FechaFin { get; set; }
         public string opta_Observacion { get; set; }
-        public int? comp_Id { get; set; }
         public int civi_Id { get; set; }
         public int tisa_Id { get; set; }
         public string muni_Id { get; set; }
         public int cafr_Id { get; set; }
         public int? banc_Id { get; set; }
+        public int? prco_Id { get; set; }
+        public bool opta_OptanteAceptado { get; set; }
         public bool? opta_TipoPago { get; set; }
         public string opta_CuentaBancaria { get; set; }
-        public bool opta_OptanteAceptado { get; set; }
         public int? opta_UsuarioCreacion { get; set; }
         public DateTime? opta_FechaCreacion { get; set; }
         public int? opta_UsuarioModificacion { get; set; }
