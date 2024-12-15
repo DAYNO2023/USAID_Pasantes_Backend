@@ -13,6 +13,7 @@ namespace USAID_Pasantes.Entities.Entities
             tbModulosPorRoles = new HashSet<tbModulosPorRoles>();
         }
 
+        public string codigo { get; set; }
         public int role_Id { get; set; }
         public string role_DescripcionRol { get; set; }
         public int? role_UsuarioCreacion { get; set; }

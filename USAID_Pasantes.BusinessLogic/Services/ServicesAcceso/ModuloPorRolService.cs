@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using USAID_Pasantes.Common.Models.ModelsAcceso;
 using USAID_Pasantes.DataAccess.Repositories.RepositoriesAcceso;
 using USAID_Pasantes.Entities.Entities;
 
@@ -47,25 +48,27 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesAcceso
 
 
         /// <summary>
-        /// Inserta una nueva relación entre una pantalla y un rol en la base de datos.
+        /// Inserta múltiples módulos asociados a un rol en la base de datos.
         /// </summary>
-        /// <param name="item">El objeto tbPantallasPorRoles que contiene los datos de la relación a insertar.</param>
+        /// <param name="item">El objeto que contiene el ID del rol y la lista de módulos.</param>
         /// <returns>Un objeto ServiceResult que indica el resultado de la operación.</returns>
-        public ServiceResult InsertarModulosPorRol(tbModulosPorRoles item)
+        public ServiceResult InsertarModulosPorRol(ModuloPorRolViewModel item)
         {
             var result = new ServiceResult();
 
             try
             {
-                var map = _moduloPorRolRepository.Insert(item);
+                var modulosCsv = string.Join(",", item.modu_Id);
+
+                var map = _moduloPorRolRepository.Insert(item.role_Id, modulosCsv);
 
                 if (map.CodeStatus == 1)
                 {
-                    return result.Ok(map);
+                    return result.Ok("Módulos asignados correctamente.");
                 }
                 else
                 {
-                    return result.Error(map);
+                    return result.Error("Error al asignar los módulos.");
                 }
             }
             catch (Exception ex)
@@ -73,7 +76,6 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesAcceso
                 return result.Error(ex.Message);
             }
         }
-
 
         public ServiceResult ActualizarModulosPorRol(tbModulosPorRoles item)
         {

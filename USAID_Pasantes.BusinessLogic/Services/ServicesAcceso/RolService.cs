@@ -47,9 +47,9 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesAcceso
 
 
         /// <summary>
-        /// Inserta una nueva relación entre una pantalla y un rol en la base de datos.
+        /// Inserta un nuevo rol en la base de datos.
         /// </summary>
-        /// <param name="item">El objeto tbPantallasPorRoles que contiene los datos de la relación a insertar.</param>
+        /// <param name="item">El objeto tbRoles que contiene los datos del rol a insertar.</param>
         /// <returns>Un objeto ServiceResult que indica el resultado de la operación.</returns>
         public ServiceResult InsertarRol(tbRoles item)
         {
@@ -59,20 +59,26 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesAcceso
             {
                 var map = _rolRepository.Insert(item);
 
-                if (map.CodeStatus == 1)
+                if (map.CodeStatus > 0) 
                 {
-                    return result.Ok(map);
+                    return result.Ok(map); 
+                }
+                else if (map.CodeStatus == -1) 
+                {
+                    return result.Error("Rol ya registrado.");
                 }
                 else
                 {
-                    return result.Error(map);
+                    return result.Error("Error al insertar el rol.");
                 }
             }
             catch (Exception ex)
             {
+                // Manejo de errores
                 return result.Error(ex.Message);
             }
         }
+
 
 
         public ServiceResult ActualizarRol(tbRoles item)

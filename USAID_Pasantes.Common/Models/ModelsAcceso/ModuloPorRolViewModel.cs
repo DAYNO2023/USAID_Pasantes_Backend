@@ -9,7 +9,8 @@ namespace USAID_Pasantes.Common.Models.ModelsAcceso
     public class ModuloPorRolViewModel
     {
         public int moro_Id { get; set; }
-        public int modu_Id { get; set; }
         public int role_Id { get; set; }
+        public List<int> modu_Id { get; set; } 
+
     }
 }

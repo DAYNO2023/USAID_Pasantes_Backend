@@ -45,21 +45,33 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesAcceso
             }
         }
 
+        /// <summary>
+        /// Inserta un nuevo rol en la base de datos.
+        /// </summary>
+        /// <param name="item">El objeto tbRoles que contiene los datos del rol a insertar.</param>
+        /// <returns>Un objeto RequestStatus que incluye el resultado de la operación.</returns>
         public RequestStatus Insert(tbRoles item)
         {
             RequestStatus result = new RequestStatus();
+
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
                 var parameter = new DynamicParameters();
-                parameter.Add("@Role_DescripcionRol", item.role_DescripcionRol);
-                parameter.Add("@Role_UsuarioCreacion", item.role_UsuarioCreacion);
-                parameter.Add("@Role_FechaCreacion", item.role_FechaCreacion);
+                parameter.Add("@role_DescripcionRol", item.role_DescripcionRol);
+                parameter.Add("@role_UsuarioCreacion", item.role_UsuarioCreacion);
+                parameter.Add("@role_FechaCreacion", DateTime.Now);
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase.InsertarRol, parameter, commandType: CommandType.StoredProcedure);
-                result.CodeStatus = answer;
+                var answer = db.QueryFirst<int>(
+                    ScriptsDataBase.InsertarRol,
+                    parameter,
+                    commandType: CommandType.StoredProcedure
+                );
+
+                result.CodeStatus = answer; 
                 return result;
             }
         }
+
 
         public IEnumerable<tbRoles> List()
         {

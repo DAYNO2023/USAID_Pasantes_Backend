@@ -42,12 +42,19 @@ namespace USAID_Pasantes.API.Controllers.ControllersAcceso
 
 
         [HttpPost("Insertar")]
-        public virtual IActionResult Create(ModuloPorRolViewModel ModuloPorRolViewModel)
+        public virtual IActionResult Insertar(ModuloPorRolViewModel moduloPorRolViewModel)
         {
-            var modelo = _mapper.Map<ModuloPorRolViewModel, tbModulosPorRoles>(ModuloPorRolViewModel);
-            var response = _moduloPorRolService.InsertarModulosPorRol(modelo);
-            return Ok(response);
+            try
+            {
+                var response = _moduloPorRolService.InsertarModulosPorRol(moduloPorRolViewModel);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { success = false, message = ex.Message });
+            }
         }
+
 
 
         [HttpPut("Actualizar")]

@@ -49,15 +49,21 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesAcceso
             throw new NotImplementedException();
         }
 
-        public RequestStatus Insert(tbModulosPorRoles item)
+        /// <summary>
+        /// Inserta múltiples módulos por rol utilizando un procedimiento almacenado.
+        /// </summary>
+        /// <param name="roleId">El ID del rol.</param>
+        /// <param name="modulosCsv">La cadena separada por comas con los IDs de los módulos.</param>
+        /// <returns>Un objeto RequestStatus que indica el resultado de la operación.</returns>
+        public RequestStatus Insert(int roleId, string modulosCsv)
         {
             RequestStatus result = new RequestStatus();
 
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
                 var parameter = new DynamicParameters();
-                parameter.Add("@Role_Id", item.role_Id);
-                parameter.Add("@Modu_Id", item.modu_Id);
+                parameter.Add("@role_Id", roleId);
+                parameter.Add("@modulos", modulosCsv);
 
                 var answer = db.QueryFirst<int>(
                     ScriptsDataBase.InsertarModulosPorRol,
@@ -69,6 +75,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesAcceso
                 return result;
             }
         }
+
 
         public IEnumerable<tbModulosPorRoles> List()
         {
@@ -94,6 +101,11 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesAcceso
                 result.CodeStatus = ansewer;
                 return result;
             }
+        }
+
+        public RequestStatus Insert(tbModulosPorRoles item)
+        {
+            throw new NotImplementedException();
         }
     }
 }
