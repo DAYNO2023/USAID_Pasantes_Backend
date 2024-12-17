@@ -50,9 +50,9 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesAcceso
         }
 
         /// <summary>
-        /// Inserta múltiples módulos por rol utilizando un procedimiento almacenado.
+        /// Inserta múltiples módulos asociados a un rol en la base de datos.
         /// </summary>
-        /// <param name="roleId">El ID del rol.</param>
+        /// <param name="roleId">El ID del rol al que se asignan los módulos.</param>
         /// <param name="modulosCsv">La cadena separada por comas con los IDs de los módulos.</param>
         /// <returns>Un objeto RequestStatus que indica el resultado de la operación.</returns>
         public RequestStatus Insert(int roleId, string modulosCsv)
@@ -87,23 +87,40 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesAcceso
             }
         }
 
-        public RequestStatus Update(tbModulosPorRoles item)
+        /// <summary>
+        /// Actualiza los módulos asociados a un rol en la base de datos.
+        /// </summary>
+        /// <param name="roleId">El ID del rol a actualizar.</param>
+        /// <param name="modulosCsv">La cadena separada por comas con los IDs de los módulos.</param>
+        /// <returns>Un objeto RequestStatus que indica el resultado de la operación.</returns>
+        public RequestStatus Update(int roleId, string modulosCsv)
         {
             RequestStatus result = new RequestStatus();
+
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
                 var parameter = new DynamicParameters();
-                parameter.Add("@Moro_Id", item.moro_Id);
-                parameter.Add("@Role_Id", item.role_Id);
-                parameter.Add("@Modu_Id", item.modu_Id);
+                parameter.Add("@role_Id", roleId);      
+                parameter.Add("@modulos", modulosCsv);  
 
-                var ansewer = db.QueryFirst<int>(ScriptsDataBase.ActualizarModulosPorRol, parameter, commandType: CommandType.StoredProcedure);
-                result.CodeStatus = ansewer;
+                var answer = db.QueryFirst<int>(
+                    ScriptsDataBase.ActualizarModulosPorRol,
+                    parameter,
+                    commandType: CommandType.StoredProcedure
+                );
+
+                result.CodeStatus = answer;
                 return result;
             }
         }
 
+
         public RequestStatus Insert(tbModulosPorRoles item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public RequestStatus Update(tbModulosPorRoles item)
         {
             throw new NotImplementedException();
         }

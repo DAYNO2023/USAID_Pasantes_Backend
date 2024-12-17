@@ -77,19 +77,27 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesAcceso
             }
         }
 
-        public ServiceResult ActualizarModulosPorRol(tbModulosPorRoles item)
+        /// <summary>
+        /// Actualiza los módulos asociados a un rol específico.
+        /// </summary>
+        /// <param name="item">El objeto que contiene el ID del rol y la lista de módulos actualizada.</param>
+        /// <returns>Un objeto ServiceResult que indica el resultado de la operación.</returns>
+        public ServiceResult ActualizarModulosPorRol(ModuloPorRolViewModel item)
         {
             var result = new ServiceResult();
             try
             {
-                var map = _moduloPorRolRepository.Update(item);
+                var modulosCsv = string.Join(",", item.modu_Id);
+
+                var map = _moduloPorRolRepository.Update(item.role_Id, modulosCsv);
+
                 if (map.CodeStatus == 1)
                 {
-                    return result.Ok(map);
+                    return result.Ok("Módulos actualizados correctamente.");
                 }
                 else
                 {
-                    return result.Error(map);
+                    return result.Error("Error al actualizar los módulos.");
                 }
             }
             catch (Exception ex)
@@ -97,6 +105,7 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesAcceso
                 return result.Error(ex.Message);
             }
         }
+
 
         /// <summary>
         /// Elimina la relación entre una pantalla y un rol específico en la base de datos.

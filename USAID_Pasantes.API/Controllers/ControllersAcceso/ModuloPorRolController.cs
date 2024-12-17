@@ -40,7 +40,11 @@ namespace USAID_Pasantes.API.Controllers.ControllersAcceso
         }
 
 
-
+        /// <summary>
+        /// Inserta múltiples módulos asociados a un rol.
+        /// </summary>
+        /// <param name="moduloPorRolViewModel">El objeto que contiene el ID del rol y la lista de módulos.</param>
+        /// <returns>Un resultado de la operación con un estado HTTP.</returns>
         [HttpPost("Insertar")]
         public virtual IActionResult Insertar(ModuloPorRolViewModel moduloPorRolViewModel)
         {
@@ -55,15 +59,25 @@ namespace USAID_Pasantes.API.Controllers.ControllersAcceso
             }
         }
 
-
-
+        /// <summary>
+        /// Actualiza los módulos asociados a un rol existente.
+        /// </summary>
+        /// <param name="moduloPorRolViewModel">El objeto que contiene el ID del rol y la lista actualizada de módulos.</param>
+        /// <returns>Un resultado de la operación con un estado HTTP.</returns>
         [HttpPut("Actualizar")]
-        public virtual IActionResult Update(ModuloPorRolViewModel ModuloPorRolViewModel)
+        public virtual IActionResult Actualizar(ModuloPorRolViewModel moduloPorRolViewModel)
         {
-            var modelo = _mapper.Map<ModuloPorRolViewModel, tbModulosPorRoles>(ModuloPorRolViewModel);
-            var response = _moduloPorRolService.ActualizarModulosPorRol(modelo);
-            return Ok(response);
+            try
+            {
+                var response = _moduloPorRolService.ActualizarModulosPorRol(moduloPorRolViewModel);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { success = false, message = ex.Message });
+            }
         }
+
 
         [HttpDelete("Eliminar")]
         public IActionResult Delete(int id)
