@@ -58,7 +58,7 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesAcceso
 
             try
             {
-                var modulosCsv = string.Join(",", item.modu_Id);
+                var modulosCsv = string.Join(",", item.modulos);
 
                 var map = _moduloPorRolRepository.Insert(item.role_Id, modulosCsv);
 
@@ -87,7 +87,7 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesAcceso
             var result = new ServiceResult();
             try
             {
-                var modulosCsv = string.Join(",", item.modu_Id);
+                var modulosCsv = string.Join(",", item.modulos);
 
                 var map = _moduloPorRolRepository.Update(item.role_Id, modulosCsv);
 

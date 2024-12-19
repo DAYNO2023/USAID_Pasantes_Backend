@@ -10,7 +10,7 @@ namespace USAID_Pasantes.Common.Models.ModelsAcceso
     {
         public int moro_Id { get; set; }
         public int role_Id { get; set; }
-        public List<int> modu_Id { get; set; } 
+        public List<int> modulos { get; set; } 
 
     }
 }

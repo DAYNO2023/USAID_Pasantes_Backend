@@ -19,7 +19,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesAcceso
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
                 var parameter = new DynamicParameters();
-                parameter.Add("@Role_Id", id);
+                parameter.Add("@role_Id", id);
 
                 var answer = db.QueryFirst<int>(
                     ScriptsDataBase.EliminarRol,
@@ -39,7 +39,7 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesAcceso
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
                 var parameter = new DynamicParameters();
-                parameter.Add("@Role_Id", id);
+                parameter.Add("@role_Id", id);
                 result = db.QueryFirst<tbRoles>(ScriptsDataBase.BuscarRol, parameter, commandType: CommandType.StoredProcedure);
                 return result;
             }
@@ -83,21 +83,33 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesAcceso
             }
         }
 
+        /// <summary>
+        /// Actualiza un rol en la base de datos.
+        /// </summary>
+        /// <param name="item">El objeto tbRoles que contiene los datos del rol a actualizar.</param>
+        /// <returns>Un objeto RequestStatus con el resultado del SP.</returns>
         public RequestStatus Update(tbRoles item)
         {
             RequestStatus result = new RequestStatus();
+
             using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
             {
                 var parameter = new DynamicParameters();
-                parameter.Add("@Role_Id", item.role_Id);
-                parameter.Add("@Role_DescripcionRol", item.role_DescripcionRol);
-                parameter.Add("@Role_UsuarioModificacion", item.role_UsuarioModificacion);
-                parameter.Add("@Role_FechaModificacion", item.role_FechaModificacion);
+                parameter.Add("@role_Id", item.role_Id);
+                parameter.Add("@role_DescripcionRol", item.role_DescripcionRol);
+                parameter.Add("@role_UsuarioModificacion", item.role_UsuarioModificacion);
+                parameter.Add("@role_FechaModificacion", DateTime.Now);
 
-                var answer = db.QueryFirst<int>(ScriptsDataBase.ActualizarRol, parameter, commandType: CommandType.StoredProcedure);
-                result.CodeStatus = answer;
+                var answer = db.QueryFirst<int>(
+                    ScriptsDataBase.ActualizarRol,
+                    parameter,
+                    commandType: CommandType.StoredProcedure
+                );
+
+                result.CodeStatus = answer; 
                 return result;
             }
         }
+
     }
 }

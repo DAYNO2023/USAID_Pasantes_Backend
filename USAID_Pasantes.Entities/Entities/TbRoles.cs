@@ -17,8 +17,10 @@ namespace USAID_Pasantes.Entities.Entities
         public int role_Id { get; set; }
         public string role_DescripcionRol { get; set; }
         public int? role_UsuarioCreacion { get; set; }
+        public string UsuarioCreacion { get; set; }
         public DateTime? role_FechaCreacion { get; set; }
         public int? role_UsuarioModificacion { get; set; }
+        public string? UsuarioModificacion { get; set; }
         public DateTime? role_FechaModificacion { get; set; }
         public bool? role_Estado { get; set; }
 

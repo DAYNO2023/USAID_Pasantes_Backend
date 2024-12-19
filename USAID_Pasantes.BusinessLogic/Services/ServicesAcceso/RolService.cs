@@ -69,27 +69,34 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesAcceso
                 }
                 else
                 {
-                    return result.Error("Error al insertar el rol.");
+                    return result.Error(map);
                 }
             }
             catch (Exception ex)
             {
-                // Manejo de errores
                 return result.Error(ex.Message);
             }
         }
 
-
-
+        /// <summary>
+        /// Actualiza un rol existente en la base de datos.
+        /// </summary>
+        /// <param name="item">El objeto tbRoles con los datos del rol a actualizar.</param>
+        /// <returns>Un objeto ServiceResult con el resultado de la operación.</returns>
         public ServiceResult ActualizarRol(tbRoles item)
         {
             var result = new ServiceResult();
             try
             {
                 var map = _rolRepository.Update(item);
+
                 if (map.CodeStatus == 1)
                 {
                     return result.Ok(map);
+                }
+                else if (map.CodeStatus == 2)
+                {
+                    return result.Error("Rol ya registrado.");
                 }
                 else
                 {
@@ -101,6 +108,7 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesAcceso
                 return result.Error(ex.Message);
             }
         }
+
 
         /// <summary>
         /// Elimina la relación entre una pantalla y un rol específico en la base de datos.
@@ -113,11 +121,17 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesAcceso
 
             try
             {
+                var response = _rolRepository.Delete(id);
+
                 var map = _rolRepository.Delete(id);
 
                 if (map.CodeStatus == 1)
                 {
                     return result.Ok(map);
+                }
+                else if (response.CodeStatus == 2)
+                {
+                    return result.Error("Rol ya en uso.");
                 }
                 else
                 {
@@ -129,5 +143,6 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesAcceso
                 return result.Error(ex.Message);
             }
         }
+
     }
 }
