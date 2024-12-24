@@ -25,15 +25,22 @@ namespace USAID_Pasantes.API.Controllers.ControllersAcceso
         }
 
         [HttpGet("InicioSesion/{usuario}/{clave}")]
-        public IActionResult IniciiarSesion(string usuario, string clave)
+        public IActionResult InicioSesion(string usuario, string clave)
         {
             var response = _loginService.IniciarSesion(usuario, clave);
 
-            if (response.Success)
-                return Ok(response.Data);
-            else
-                return BadRequest(response.Message);
+            // Usamos el código de estado proporcionado por ServiceResult
+            return StatusCode(response.Code, new
+            {
+                statusCode = response.Code,
+                success = response.Success,
+                message = response.Message,
+                data = response.Data
+                
+            });
         }
+
+
 
 
         [HttpGet("ControlCorreo/{correo_usuario}/{codigo}")]
@@ -85,10 +92,18 @@ namespace USAID_Pasantes.API.Controllers.ControllersAcceso
             return Ok(result);
         }
 
-        [HttpGet("BuscarUsuario/{id}")]
+        [HttpGet("Buscar/{id}")]
         public IActionResult Buscar(int id)
         {
-            var usuario = _loginService.BuscarUsuario(id);
+            var usuario = _loginService.Buscar(id);
+
+            return Ok(usuario);
+        }
+
+        [HttpGet("BuscarUsuario/{Usuario}")]
+        public IActionResult BuscarUsuario(string IdUsuario)
+        {
+            var usuario = _loginService.BuscarUsuario(IdUsuario);
 
             return Ok(usuario);
         }

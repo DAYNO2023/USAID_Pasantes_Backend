@@ -181,6 +181,7 @@ namespace USAID_Pasantes.DataAccess
         public static string InsertarCodigoVerificacion = "[Accs].[SP_Usuario_IngresarCodigoRestablecer]";
         public static string VerificarCodigoReestablecer = "[Accs].[SP_Usuario_VerificarCodigoRestablecer]";
         public static string Buscar_Usuario = "[Accs].[SP_Usuario_Buscar]";
+        public static string Buscar_UsuarioRestablecer = "[Accs].[SP_Usuario_UsuarioRestablecer]";
         public static string Reestablecer_Usuario = "[Accs].[SP_Usuario_Reestablecer]";
 
         #endregion

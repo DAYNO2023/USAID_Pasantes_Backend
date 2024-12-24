@@ -26,53 +26,31 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesAcceso
                 {
                     using (var multi = db.QueryMultiple(ScriptsDataBase.IniciarSesion, parameters, commandType: CommandType.StoredProcedure))
                     {
-                        Console.WriteLine("Reading user data...");
                         var usuarioData = multi.Read<UsuarioViewModel>().FirstOrDefault();
+
                         if (usuarioData == null)
                         {
-                            Console.WriteLine("Usuario no encontrado.");
-                            return null;
-                        }
-                        Console.WriteLine("User data read successfully.");
-
-                        List<dynamic> optanteData = new List<dynamic>();
-                        if (!multi.IsConsumed)
-                        {
-                            Console.WriteLine("Reading optant data...");
-                            optanteData = multi.Read<dynamic>().ToList();
-                            Console.WriteLine($"Optante Data Count: {optanteData.Count}");
+                            return null; // Usuario no encontrado
                         }
 
-                        // Reading modules data if applicable
-                        List<dynamic> modulos = new List<dynamic>();
-                        if (!multi.IsConsumed)
-                        {
-                            Console.WriteLine("Reading modules...");
-                            modulos = multi.Read<dynamic>().ToList();
-                            Console.WriteLine($"Modulos Count: {modulos.Count}");
-                        }
+                        var optanteData = multi.IsConsumed ? null : multi.Read<dynamic>().ToList();
+                        var modulos = multi.IsConsumed ? null : multi.Read<dynamic>().ToList();
 
-                        // Combine and return the data
                         return new
                         {
                             Usuario = usuarioData,
-                            Optante_o_empleado = optanteData.Any() ? optanteData : null,
+                            Optante_o_empleado = optanteData,
                             Modulos = modulos
                         };
                     }
                 }
-                catch (SqlException ex)
-                {
-                    Console.WriteLine("Error SQL: " + ex.Message);
-                    throw new Exception("Error al ejecutar el procedimiento almacenado: " + ex.Message);
-                }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error General: " + ex.Message);
-                    throw new Exception("Error General: " + ex.Message);
+                    throw new Exception("Error al ejecutar el procedimiento almacenado: " + ex.Message);
                 }
             }
         }
+
         public RequestStatus InsertarCodigoVerificacion(int usua_Id)
         {
             // Creamos un objeto RequestStatus para almacenar el resultado de la operación
@@ -137,6 +115,34 @@ namespace USAID_Pasantes.DataAccess.Repositories.RepositoriesAcceso
                 return result;
             }
         }
+
+        //Si lees estoy lo voy a dejar haci porque no quiero crear otro ViewModel difernte solo para capturar el correo 
+        public class UsuarioRestablecerViewModel
+        {
+            public int UsuaId { get; set; }
+            public string UsuaUsuario { get; set; }
+            public bool UsuaEsOptante { get; set; }
+            public int RelacionadoId { get; set; }
+            public string Nombre { get; set; }
+            public string Correo { get; set; }
+        }
+
+        public UsuarioRestablecerViewModel BuscarUsuario(string? IdUsuario)
+        {
+            UsuarioRestablecerViewModel result = new UsuarioRestablecerViewModel();
+            using (var db = new SqlConnection(USAID_Pasantes.ConnectionString))
+            {
+                var parameter = new DynamicParameters();
+                parameter.Add("@usua_Usuario", IdUsuario);
+                result = db.QueryFirstOrDefault<UsuarioRestablecerViewModel>(
+                    ScriptsDataBase.Buscar_UsuarioRestablecer,
+                    parameter,
+                    commandType: CommandType.StoredProcedure
+                );
+                return result;
+            }
+        }
+
 
         public RequestStatus Reestablecer(tbUsuarios item)
         {

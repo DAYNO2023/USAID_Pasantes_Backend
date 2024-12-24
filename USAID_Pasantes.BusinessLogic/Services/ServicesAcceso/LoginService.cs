@@ -21,23 +21,23 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesAcceso
 
         public ServiceResult IniciarSesion(string usuario, string clave)
         {
-            var result = new ServiceResult();
             try
             {
                 var userSessionData = _loginRepository.IniciarSesion(usuario, clave);
 
                 if (userSessionData == null)
                 {
-                    return result.Error("Usuario o contraseña incorrectos, o el usuario está inactivo.");
+                    return new ServiceResult().Unauthorized("Usuario o contraseña incorrectos, o el usuario está inactivo.");
                 }
 
-                return result.Ok(userSessionData);
+                return new ServiceResult().Ok("Inicio de sesión exitoso.", userSessionData);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al iniciar sesión: {ex.Message}");
+                return new ServiceResult().Error($"Error al iniciar sesión: {ex.Message}");
             }
         }
+
 
         public ServiceResult InsertarCodigoRestablecer(int usua_Id)
         {
@@ -85,13 +85,31 @@ namespace USAID_Pasantes.BusinessLogic.Services.ServicesAcceso
             }
         }
 
-        public ServiceResult BuscarUsuario(int? id)
+        public ServiceResult Buscar(int? id)
         {
             var result = new ServiceResult();
 
             try
             {
                 var usuario = _loginRepository.Find(id);
+
+                return result.Ok(usuario);
+            }
+            catch (Exception ex)
+            {
+                result.Error(ex.Message);
+
+                throw;
+            }
+        }
+
+        public ServiceResult BuscarUsuario(string? IdUsuario)
+        {
+            var result = new ServiceResult();
+
+            try
+            {
+                var usuario = _loginRepository.BuscarUsuario(IdUsuario);
 
                 return result.Ok(usuario);
             }
